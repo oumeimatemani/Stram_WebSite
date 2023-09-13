@@ -1,0 +1,117 @@
+.icon_box{
+    background: #090E24;
+    padding-bottom: 100px;
+    position: relative;
+    &::before{
+        content: "";
+        position: absolute;
+        background: var(--second-color);
+        width: 370px;
+        height: 100px;
+        right: 27px;
+        top: 0;
+    }
+}
+.icon_box_content{
+    border: 1px solid #2A3153;
+    padding: 27px;
+    position: relative;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 307px;
+    display: flex;
+    align-items: end;
+    margin-bottom: 20px;
+    -webkit-transition: all .5s;
+    -moz-transition: all .5s;
+    transition: all .5s;
+    &:hover{
+        .overlay{
+            opacity: 1;
+        }
+        h6{
+            margin-bottom: 15px;
+            -webkit-transition: all .5s;
+            -moz-transition: all .5s;
+            transition: all .5s;
+        }
+        p{
+            display: block;
+            margin-bottom: 20px;
+            -webkit-transition: all .5s;
+            -moz-transition: all .5s;
+            transition: all .5s;
+        }
+    }
+    &::before{
+        content: "";
+        position: absolute;
+        background-image: url("../images/iconbox/line.png");
+        top: 0;
+        width: 99%;
+        height: 10px;
+        left: 1px;
+        z-index: 99;
+        -webkit-transition: all .5s;
+        -moz-transition: all .5s;
+        transition: all .5s;
+    }
+    .icon_box_flex{
+        position: relative;
+        z-index: 9;
+    }
+    h6{
+        color: var(--white-color);
+        font-family: $paragraph-font;
+        font-weight: 500;
+        margin-top: 20px;
+        margin-bottom: 30px;
+        letter-spacing: .6px;
+    }
+    p{
+        font-family: $heading-font;
+        font-weight: $font-regular;
+        color: #979A9F;
+        font-size: 13px;
+        display: none;
+    }
+    a{
+        color: var(--second-color);
+        font-family: $paragraph-font;
+        font-size: 10px;
+        font-weight: 700;
+        display: flex;
+        align-items: center;
+        i{
+            background: rgba($color: var(--white-color), $alpha: .2);
+            width: 31px;
+            height: 29px;
+            position: relative;
+            border-radius: 3px;
+            margin-right: 12px;
+            &::before{
+                top: 9px;
+                position: absolute;
+                left: 12px;
+            }
+        }
+    }
+}
+.box_bottom{
+    margin-top: 30px;
+    p{
+        color: var(--white-color);
+        font-size: 15px;
+        font-family: $heading-font;
+        font-weight: $font-medium;
+        line-height: 26px;
+        margin-right: 3px;
+    }
+    a{
+        font-size: 15px;
+        font-family: $heading-font;
+        font-weight: $font-medium;
+        line-height: 26px;
+        text-decoration: underline;
+    }
+}

@@ -1,0 +1,125 @@
+app_back:
+    path: /admin
+    controller: App\Controller\BackController::index
+
+app_front:
+    path: /
+    controller: App\Controller\FrontController::index
+
+
+#Qui Sommes Nous??
+app_qui_sommes_nous:
+    path: /app_qui_sommes_nous
+    controller: App\Controller\QuiSommesNousController::index
+
+
+
+#contact
+app_contact:
+    path: /contact
+    controller: App\Controller\ContactController::index
+
+app_contact_algerie:
+    path: /algerie
+    controller: App\Controller\ContactController::algerie
+
+app_contact_senegal:
+    path: /senegal
+    controller: App\Controller\ContactController::senegal
+
+app_contact_niger:
+    path: /niger
+    controller: App\Controller\ContactController::niger
+
+app_contact_benin:
+    path: /benin
+    controller: App\Controller\ContactController::benin
+
+
+#carriere
+carriere_index:
+    path: /carriere
+    controller: App\Controller\CarriereController::index
+    methods: [GET]
+
+carriere_admin:
+    path: /carriereAdmin
+    controller: App\Controller\CarriereController::carriereAdmin
+    methods: [GET]
+
+carriere_submit:
+    path: /candidature/submit
+    controller: App\Controller\CarriereController::submit
+    methods: [POST]
+
+
+#clients 
+clients:
+    path: /clients
+    controller: App\Controller\ClientsController::index
+
+clients_admin:
+    path: /clientsAdmin
+    controller: App\Controller\ClientsController::clientsAdmin
+    methods: [GET]
+
+ajouterClient:
+    path: /ajouterClient
+    controller: App\Controller\ClientsController::ajouterClient
+    methods: [GET, POST]
+
+
+modifierClient:
+    path: /modifierClient/{id}
+    controller: App\Controller\ClientsController::modifierClient
+
+suppressionClient:
+    path: /suppressionClient/{id}
+    controller: App\Controller\ClientsController::suppressionClient
+
+
+
+#métiers
+metiers:
+    path: /metiers
+    controller: App\Controller\MetierController::index
+
+ajouterMetier:
+    path: /ajouterMetier
+    controller: App\Controller\MetierController::ajouterMetier
+    methods: [GET, POST]
+
+
+modifierMetier:
+    path: /modifierMetier/{id}
+    controller: App\Controller\MetierController::modifierMetier
+
+suppressionMetier:
+    path: /suppressionMetier/{id}
+    controller: App\Controller\MetierController::suppressionMetier
+
+
+#projets 
+projets:
+    path: /projets
+    controller: App\Controller\ProjetController::index
+
+ajouterProjet:
+    path: /ajouterProjet
+    controller: App\Controller\ProjetController::ajouterProjet
+    methods: [GET, POST]
+
+
+modifierProjet:
+    path: /modifierProjet/{id}
+    controller: App\Controller\ProjetController::modifierProjet
+
+suppressionProjet:
+    path: /suppressionProjet/{id}
+    controller: App\Controller\ProjetController::suppressionProjet
+
+
+#Chats
+messages:
+    path: /messages
+    controller: App\Controller\MessagesController::index

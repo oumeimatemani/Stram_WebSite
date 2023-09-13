@@ -1,0 +1,1390 @@
+<!DOCTYPE html>
+<html lang="zxx">
+
+	<head>
+		<!-- Meta Tags -->
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
+		<meta name="description" content="Société des Travaux Modernes (S.TRA.M)">
+		<meta
+		name="author" content="">
+
+		<!-- Page Title -->
+		<title>Société des Travaux Modernes (S.TRA.M)</title>
+
+		<!-- Favicon and touch Icons -->
+		<link href="images/stram-logo.png" rel="shortcut icon" type="image/png">
+		<link href="images/apple-touch-icon.png" rel="apple-touch-icon">
+		<link href="images/apple-touch-icon-72x72.png" rel="apple-touch-icon" sizes="72x72">
+		<link href="images/apple-touch-icon-114x114.png" rel="apple-touch-icon" sizes="114x114">
+		<link
+		href="images/apple-touch-icon-144x144.png" rel="apple-touch-icon" sizes="144x144">
+
+		<!-- Lead Style -->
+		<link href="css/style.css" rel="stylesheet" type="text/css">
+
+
+		<script>
+			function updateClockDisplay() {
+const now = new Date();
+const hours = now.getHours();
+const minutes = now.getMinutes();
+const formattedTime = `${hours}:${
+minutes < 10 ? "0" + minutes : minutes
+}`;
+
+document.getElementById("clockDisplay").textContent = formattedTime;
+}
+
+// Mettre à jour l'horloge toutes les minutes
+setInterval(updateClockDisplay, 60000); // 60000 ms = 1 minute
+		</script>
+
+		<style>
+			/* Add the CSS code here */
+			.banner_content {
+				text-align: center;
+				padding: 20px 0;
+			}
+
+			.circle-row {
+				display: flex;
+				justify-content: center;
+				gap: 30px; /* Increased gap between circles */
+			}
+
+			.circle {
+				text-align: center;
+				margin-right: 10px; /* Space between circles */
+			}
+
+			.circle:last-child {
+				margin-right: 0; /* No margin on the last circle */
+			}
+
+			.circle img {
+				width: 120px; /* Slightly larger circles */
+				height: auto;
+				border-radius: 80%;
+				border: 2px solid #333;
+			}
+		</style>
+
+
+	</head>
+
+	<body
+		class="dark-theme" data-aos-easing="ease" data-aos-duration="400" data-aos-delay="0">
+
+		<!-- Header 1 -->
+		<header class="header dark_mode">
+			<div class="top_bar">
+				<div class="container">
+					<div class="top_bar_inner">
+						<div class="header_social">
+							<a href="https://www.linkedin.com/company/stram-groupe/" target="_blank">
+								<h6>
+									Suivez-nous sur LinkedIn :
+									<i class="fa fa-linkedin"></i>
+								</h6>
+							</a>
+
+						</div>
+						<div class="header_info">
+
+
+							<div class="schedule">
+								<div class="hide_icon d-md-none" data-text="info@stram.tn">
+									<span>
+										<i class="fa fa-envelope"></i>
+									</span>
+								</div>
+								<div class="d-none d-md-block">
+									<span>
+										<i class="fa fa-envelope"></i>
+									</span>
+									<a href="https://mail.google.com/mail/u/0/?tab=rm&ogbl#inbox" target="_blank">info@stram.tn</a>
+
+								</div>
+							</div>
+							<div class="free_contact">
+								<a href="/admin" target="_blank" class="btn">Dashboard Admin</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="middle_bar">
+				<div class="container">
+					<div class="middle_bar_inner">
+
+						<div class="logo">
+							<a href="/" class="light_mode_logo"><img src="images/stram-logo.png" alt="logo"></a>
+							<a href="/" class="dark_mode_logo"><img src="images/stram-logo.png" alt="logo"></a>
+						</div>
+
+						<div class="header_right_part">
+							<div class="mainnav">
+								<ul class="main_menu">
+									<li class="menu-item menu-item-has-children active">
+										<a href="/">Acceuil</a>
+										<ul class="sub-menu">
+											<li class="menu-item active">
+												<a href="/">Acceuil</a>
+											</li>
+
+										</ul>
+									</li>
+									<li class="menu-item menu-item-has-children ">
+										<a href="/">S.TRA.M</a>
+										<ul class="sub-menu">
+											<li class="menu-item ">
+												<a href="{{ path('app_qui_sommes_nous') }}">Qui sommes-nous ?</a>
+											</li>
+										</ul>
+									</li>
+
+									<li class="menu-item menu-item-has-children">
+										<a href="#">Services</a>
+										<ul class="sub-menu">
+											<li class="menu-item">
+												<a href="services.html">Sols techniques</a>
+											</li>
+											<li class="menu-item">
+												<a href="services-2.html">Répara6ons & renforts de structure</a>
+											</li>
+
+											<li class="menu-item">
+												<a href="services-2.html">Étanchéité & Imperméabilisa6on</a>
+											</li>
+											<li class="menu-item">
+												<a href="services-2.html">Traitement des joints</a>
+											</li>
+
+											<li class="menu-item">
+												<a href="services-2.html">Centrales photovoltaique
+												</a>
+											</li>
+
+											<li class="menu-item">
+												<a href="services-2.html">
+													Études & Expertise
+												</a>
+											</li>
+											<li class="menu-item">
+												<a href="services-2.html">Peinture</a>
+											</li>
+
+										</ul>
+									</li>
+									<li class="menu-item menu-item-has-children">
+										<a href="#">Projets</a>
+										<ul class="sub-menu">
+
+											<li class="menu-item menu-item-has-children">
+												<a href="#">Afrique du Nord</a>
+												<ul class="sub-menu">
+													<li class="menu-item">
+														<a href="shop-1.html">Tunisie</a>
+													</li>
+													<li class="menu-item">
+														<a href="shop-2.html">
+															Algérie</a>
+													</li>
+												</ul>
+											</li>
+
+											<li class="menu-item menu-item-has-children">
+												<a href="#">Afrique du West</a>
+												<ul class="sub-menu">
+													<li class="menu-item">
+														<a href="shop-1.html">Sénégal</a>
+													</li>
+													<li class="menu-item">
+														<a href="shop-2.html">
+															Niger</a>
+													</li>
+													<li class="menu-item">
+														<a href="shop-2.html">Benin</a>
+													</li>
+												</ul>
+											</li>
+
+										</ul>
+									</li>
+
+
+									<li class="menu-item menu-item-has-children">
+										<a href="#">Clients</a>
+										<ul class="sub-menu">
+											<li class="menu-item">
+												<a href="/clients">Nos Clients</a>
+											</li>
+										</ul>
+									</li>
+									<li class="menu-item menu-item-has-children">
+										<a href="#">Carrière</a>
+										<ul class="sub-menu">
+											<li class="menu-item">
+												<a href="/carriere">Carrière</a>
+											</li>
+
+										</ul>
+									</li>
+									<li class="menu-item">
+										<a href="/contact">Contact</a>
+									</li>
+								</ul>
+
+
+							</div>
+
+
+						</div>
+					</div>
+				</div>
+			</div>
+		</header>
+
+		<div class="main_wrapper">
+			<div class="theme_slider_1">
+				<div class="slider" style="background-image: url('images/slider/img1.jpg')">
+					<div class="container">
+						<div class="row">
+							<div class="col-lg-6">
+								<div class="slide_content">
+									<h5 class="sub_heading aos-init aos-animate" data-aos="fade-up" data-aos-duration="1000">
+										<i class="fa fa-phone" aria-hidden="true"></i>
+										APPELEZ-NOUS À TOUT MOMENT<span>
+											(+216) {{acceuil.getNumrContact}}</span>
+									</h5>
+
+									<h2 class="heading aos-init aos-animate" data-aos="fade-up" data-aos-duration="1500">{{acceuil.getDescriptionSite1}}</h2>
+									<p class="desc aos-init aos-animate" data-aos="fade-up" data-aos-duration="2000">{{acceuil.getDescriptionSite2}}.</p>
+									<div class="slider_button aos-init aos-animate" data-aos="fade-right" data-aos-duration="2500">
+										<a href="{{ path('app_qui_sommes_nous') }}" class="button">Savoir Plus
+										</a>
+									</div>
+								</div>
+							</div>
+							<div class="col-lg-5 d-flex align-items-end aos-init aos-animate" data-aos="fade-left" data-aos-duration="2500">
+								<div class="layer_object">
+									<img src="images/slider/image2.png" alt="">
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="service">
+				<div class="container-fluid g-0">
+					<div class="row g-0">
+						<div class="col-lg-4 col-md-4">
+							<div class="service_inner service_inner2 bg_1">
+								<div class="service_content d-flex align-self-center">
+									<div class="icon_img">
+										<img src="images/services/s1.png" alt="">
+									</div>
+									<div class="services_content_flex_cenrer">
+										<h6>SERVICE ONE</h6>
+										<h4>
+											<a href="services.html">Industrial &amp; Highrise Construction</a>
+										</h4>
+										<a href="service-details.html">Get Service
+											<i class="fa fa-long-arrow-right" aria-hidden="true"></i>
+										</a>
+									</div>
+								</div>
+								<div class="main_img aos-init aos-animate" data-aos="fade-up" data-aos-duration="1000">
+									<img src="images/services/service1.png" alt="">
+								</div>
+							</div>
+						</div>
+						<div class="col-lg-4 col-md-4">
+							<div class="service_inner service_inner2 bg_2">
+								<div class="service_content d-flex align-self-center">
+									<div class="icon_img">
+										<img src="images/services/s2.png" alt="">
+									</div>
+									<div class="services_content_flex_cenrer">
+										<h6>SERVICE Two</h6>
+										<h4>
+											<a href="services-2.html">Real Estate &amp; Housing Construction</a>
+										</h4>
+										<a href="service-details.html">Get Service
+											<i class="fa fa-long-arrow-right" aria-hidden="true"></i>
+										</a>
+									</div>
+								</div>
+								<div class="main_img aos-init aos-animate" data-aos="fade-up" data-aos-duration="2000">
+									<img src="images/services/service2.png" alt="">
+								</div>
+							</div>
+						</div>
+						<div class="col-lg-4 col-md-4">
+							<div class="service_inner service_inner2 bg_3">
+								<div class="service_content d-flex align-self-center">
+									<div class="icon_img">
+										<img src="images/services/s3.png" alt="">
+									</div>
+									<div class="services_content_flex_cenrer">
+										<h6>SERVICE Three</h6>
+										<h4>
+											<a href="services.html">Commertial Design &amp; Building Construction</a>
+										</h4>
+										<a href="service-details.html">Get Service
+											<i class="fa fa-long-arrow-right" aria-hidden="true"></i>
+										</a>
+									</div>
+								</div>
+								<div class="main_img aos-init aos-animate" data-aos="fade-up" data-aos-duration="3000">
+									<img src="images/services/service3.png" alt="">
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="experience section">
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-6">
+							<div class="group_image_holder type_1">
+								<div class="expe_box">
+									<div class="expe_box_inner">
+										<h1>17
+											<h5>ans</h5>
+										</h1>
+										d'Expériences
+									</div>
+								</div>
+								<div class="image_object">
+									<img src="images/about/img2.png" alt="">
+									<div class="object">
+										<img src="images/about/3.png" alt="About">
+										<img src="images/about/3.png" alt="About">
+										<img src="images/about/3.png" alt="About">
+										<img src="images/about/s1.png" alt="About" data-aos="fade-down" data-aos-duration="3000" class="aos-init aos-animate">
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-lg-6 col-md-12">
+							<div class="experience_content">
+								<div class="section_header">
+									<div class="shadow_icon"><img src="images/about/shadow_icon1.png" alt=""></div>
+
+									<h1 class="section_title">{{acceuil.getDescriptionEntreprise1}}</h1>
+									<h6 class="section_sub_title">La Société des Travaux Modernes (S.TRA.M)</h6>
+									<p class="section_desc"> {{acceuil.getDescriptionEntreprise2}}.
+																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																			Fière de notre expertise, notre entreprise s’est métamorphosée pour devenir, 17ans plus tard, l’un des joueurs majeurs dans le domaine des travaux spéciaux relatifs au secteur du bâtiment et travaux publiques (BTP).</p>
+									<div class="about_below">
+										<div class="about_below_content">
+											<i class="ion ion-ios-checkmark-outline" aria-hidden="true"></i>
+											<div class="about_below_content_text">
+												<h5>Innovation</h5>
+												<p>Pionniers de l'innovation, nous intégrons les dernières technologies dans nos services BTP.</p>
+											</div>
+										</div>
+										<div class="about_below_content">
+											<i class="ion ion-ios-checkmark-outline" aria-hidden="true"></i>
+											<div class="about_below_content_text">
+												<h5>ÊTRE Leader
+												</h5>
+												<p>Notre offre complète en BTP vise à devenir une référence continentale.</p>
+											</div>
+										</div>
+									</div>
+								</div>
+								<a class="button" href="about.html">Learn More</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div id="funfacts" class="funfacts" style=" background-image: url(../images/funfact/bg6.png)">
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-8">
+							<div class="section_header">
+								<h6 class="section_sub_title">FUNFACTS OF BUILDERRINE CONSTRUCTION</h6>
+								<h1 class="section_title">{{acceuil.getDescriptionExperiences}}</h1>
+							</div>
+							<div class="fun_bottom">
+								<div class="row">
+									<div class="col-lg-6 col-sm-6">
+										<div class="funbox1">
+											<div class="fun_img">
+												<img src="images/funfact/p1.png" alt="icon">
+											</div>
+											<div class="fun_content">
+												<h1>
+													<span class="fun-number">33</span>
+												</h1>
+												<p>Years of Experience</p>
+											</div>
+										</div>
+									</div>
+									<div class="col-lg-6 col-sm-6">
+										<div class="funbox1">
+											<div class="fun_img">
+												<img src="images/funfact/p2.png" alt="icon">
+											</div>
+											<div class="fun_content">
+												<h1>
+													<span class="fun-number">100</span>
+													<span class="fun-suffix">+</span>
+												</h1>
+												<p>Projects Completed</p>
+											</div>
+										</div>
+									</div>
+
+									<div class="col-lg-6 col-sm-6">
+										<div class="funbox1">
+											<div class="fun_img">
+												<img src="images/funfact/p3.png" alt="icon">
+											</div>
+											<div class="fun_content">
+												<h1>
+													<span class="fun-number">300</span>
+													<span class="fun-suffix">+</span>
+												</h1>
+												<p>Expert Builders</p>
+											</div>
+										</div>
+									</div>
+
+									<div class="col-lg-6 col-sm-6">
+										<div class="funbox1">
+											<div class="fun_img">
+												<img src="images/funfact/p4.png" alt="icon">
+											</div>
+											<div class="fun_content">
+												<h1>
+													<span class="fun-number">36</span>
+												</h1>
+												<p>Ongoing Project</p>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-lg-4">
+							<div class="man_img aos-init aos-animate" data-aos="fade-left" data-aos-duration="3000">
+								<img src="images/funfact/img3.png" alt="icon">
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="section project_iso project_iso1">
+				<div class="container-fluid g-0">
+					<div class="section_header text-center">
+						<div class="shadow_icon"><img src="images/about/shadow_icon1.png" alt=""></div>
+						<h6 class="section_sub_title">À PROPOS LES PROJETS</h6>
+						<h1 class="section_title">{{acceuil.getDescriptionProjet2}}</h1>
+					</div>
+					<div class="row g-0">
+						<div class="col">
+							<div class="button-group filters-button-group">
+								<button class="button is-checked" data-filter="*">Tous</button>
+								<button class="button" data-filter=".Secteur1 ">Secteur 1
+								</button>
+								<button class="button" data-filter=".Secteur2">Secteur 2</button>
+								<button class="button" data-filter=".Secteur3">Secteur 3</button>
+								<button class="button" data-filter=".Secteur4">Secteur 4</button>
+							</div>
+
+							<div class="grid grid-5" style="position: relative; height: 835.876px;">
+								<div class="element-item highrise" style="position: absolute; left: 0%; top: 0px;">
+									<div class="teambox">
+										<img src="images/team/Project_2_Images/projet1.png" alt="">
+										<div class="teambox_inner">
+											<div class="team_social">
+												<div class="share">
+													<i class="ion-android-share-alt"></i>
+												</div>
+
+											</div>
+											<div class="teambox_intro">
+												<div class="team_flex">
+													<h6>Local 1</h6>
+													<h5>
+														<a href="project-details.html">Titre Projet 1
+														</a>
+													</h5>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="element-item highrise business" style="position: absolute; left: 33.3276%; top: 0px;">
+									<div class="teambox">
+										<img src="images/team/Project_2_Images/projet2.png" alt="">
+										<div class="teambox_inner">
+											<div class="team_social">
+												<div class="share">
+													<i class="ion-android-share-alt"></i>
+												</div>
+
+											</div>
+											<div class="teambox_intro">
+												<div class="team_flex">
+													<h6>Local 2</h6>
+													<h5>
+														<a href="project-details.html">Titre Projet 2</a>
+													</h5>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="element-item residential " style="position: absolute; left: 66.6552%; top: 0px;">
+									<div class="teambox">
+										<img src="images/team/Project_2_Images/projet3.png" alt="">
+										<div class="teambox_inner">
+											<div class="team_social">
+												<div class="share">
+													<i class="ion-android-share-alt"></i>
+												</div>
+
+											</div>
+											<div class="teambox_intro">
+												<div class="team_flex">
+													<h6>Local 3</h6>
+													<h5>
+														<a href="project-details.html">Titre Projet 3</a>
+													</h5>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="element-item commercial" style="position: absolute; left: 0%; top: 417.938px;">
+									<div class="teambox">
+										<img src="images/team/Project_2_Images/projet4.png" alt="">
+										<div class="teambox_inner">
+											<div class="team_social">
+												<div class="share">
+													<i class="ion-android-share-alt"></i>
+												</div>
+
+											</div>
+											<div class="teambox_intro">
+												<div class="team_flex">
+													<h6>Local 4</h6>
+													<h5>
+														<a href="project-details.html">Titre Projet 4</a>
+													</h5>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+
+							</div>
+
+						</div>
+					</div>
+
+				</div>
+			</div>
+
+			<div class="banner type_3">
+				<div class="container">
+					<div class="banner_content">
+						<div class="circle-row">
+							<div class="circle">
+								<img src="images/drapeau/tunisie.png" alt="Tunisia Flag">
+							</div>
+							<div class="circle">
+								<img src="images/drapeau/algerie.png" alt="Algeria Flag">
+							</div>
+							<div class="circle">
+								<img src="images/drapeau/sénégal.png" alt="Senegal Flag">
+							</div>
+							<div class="circle">
+								<img src="images/drapeau/niger.png" alt="Niger Flag">
+							</div>
+							<div class="circle">
+								<img src="images/drapeau/benin.png" alt="Benin Flag">
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+
+			<div class="testimonial pd_btom_80">
+				<div class="container">
+					<div class="section_header text-center">
+						<div class="shadow_icon"><img src="images/shadow_icon3.png" alt=""></div>
+						<h6 class="section_sub_title">Témoignages Clients</h6>
+						<h1 class="section_title">Opinions de nos clients</h1>
+						<p class="section_desc">{{acceuil.getDescriptionTemoignages}}..</p>
+					</div>
+					<div class="row">
+						<div class="col-12">
+							<div class="owl_testimonial1 owl-carousel owl-theme owl-loaded owl-drag">
+
+
+								<div class="owl-stage-outer">
+									<div class="owl-stage" style="transition: all 0s ease 0s; width: 5289px; transform: translate3d(-1201px, 0px, 0px);">
+										<div class="owl-item cloned" style="width: 450.75px; margin-right: 30px;">
+											<div class="item">
+												<div class="testibox1">
+													<div class="testibox_inner">
+														<div class="testi-content">
+															<ul>
+																<li class="text">Rating:</li>
+																<li>
+																	<i class="fa fa-star"></i>
+																</li>
+																<li>
+																	<i class="fa fa-star"></i>
+																</li>
+																<li>
+																	<i class="fa fa-star"></i>
+																</li>
+																<li>
+																	<i class="fa fa-star"></i>
+																</li>
+																<li>
+																	<i class="fa fa-star-o"></i>
+																</li>
+															</ul>
+															<p>“Builderrine Construction provides us nice serives. The have designed and build our Utah Shopping Mall project. They have exceeded our expectation and did such an amazing job. We are very happy with their work”</p>
+														</div>
+														<div class="testi-top">
+															<div class="testi-img">
+																<img src="images/reviewer3.png" alt="">
+															</div>
+															<div class="testi-info">
+																<h4>Oakland Gardner</h4>
+																<h6>UTAH</h6>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="owl-item cloned" style="width: 450.75px; margin-right: 30px;">
+											<div class="item">
+												<div class="testibox1">
+													<div class="testibox_inner">
+														<div class="testi-content">
+															<ul>
+																<li class="text">Rating:</li>
+																<li>
+																	<i class="fa fa-star"></i>
+																</li>
+																<li>
+																	<i class="fa fa-star"></i>
+																</li>
+																<li>
+																	<i class="fa fa-star"></i>
+																</li>
+																<li>
+																	<i class="fa fa-star"></i>
+																</li>
+																<li>
+																	<i class="fa fa-star-o"></i>
+																</li>
+															</ul>
+															<p>Builderrine Construction provides us nice serives. The have designed and build our NY Pent House project. They have exceeded our expectation and did such an amazing job. We are very happy with their work”</p>
+														</div>
+														<div class="testi-top">
+															<div class="testi-img">
+																<img src="images/reviewer1.png" alt="">
+															</div>
+															<div class="testi-info">
+																<h4>Johnathon Doe</h4>
+																<h6>New York</h6>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="owl-item cloned" style="width: 450.75px; margin-right: 30px;">
+											<div class="item">
+												<div class="testibox1">
+													<div class="testibox_inner">
+														<div class="testi-content">
+															<ul>
+																<li class="text">Rating:</li>
+																<li>
+																	<i class="fa fa-star"></i>
+																</li>
+																<li>
+																	<i class="fa fa-star"></i>
+																</li>
+																<li>
+																	<i class="fa fa-star"></i>
+																</li>
+																<li>
+																	<i class="fa fa-star"></i>
+																</li>
+																<li>
+																	<i class="fa fa-star-o"></i>
+																</li>
+															</ul>
+															<p>Builderrine Construction provides us nice serives. The have designed and build our NY Pent House project. They have exceeded our expectation and did such an amazing job. We are very happy with their work”</p>
+														</div>
+														<div class="testi-top">
+															<div class="testi-img">
+																<img src="images/reviewer1.png" alt="">
+															</div>
+															<div class="testi-info">
+																<h4>Johnathon Doe</h4>
+																<h6>New York</h6>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="owl-item active center" style="width: 450.75px; margin-right: 30px;">
+											<div class="item">
+												<div class="testibox1">
+													<div class="testibox_inner">
+														<div class="testi-content">
+															<ul>
+																<li class="text">Rating:</li>
+																<li>
+																	<i class="fa fa-star"></i>
+																</li>
+																<li>
+																	<i class="fa fa-star"></i>
+																</li>
+																<li>
+																	<i class="fa fa-star"></i>
+																</li>
+																<li>
+																	<i class="fa fa-star"></i>
+																</li>
+																<li>
+																	<i class="fa fa-star-o"></i>
+																</li>
+															</ul>
+															<p>“Builderrine Construction provides us amazing serives. The have designed and build our Miami grand Hotel project. They have exceeded our expectation and did such an amazing job. We are very happy with their work”</p>
+														</div>
+														<div class="testi-top">
+															<div class="testi-img">
+																<img src="images/reviewer1.png" alt="">
+															</div>
+															<div class="testi-info">
+																<h4>Johnathon Doe</h4>
+																<h6>MIAMI</h6>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="owl-item active" style="width: 450.75px; margin-right: 30px;">
+											<div class="item">
+												<div class="testibox1">
+													<div class="testibox_inner">
+														<div class="testi-content">
+															<ul>
+																<li class="text">Rating:</li>
+																<li>
+																	<i class="fa fa-star"></i>
+																</li>
+																<li>
+																	<i class="fa fa-star"></i>
+																</li>
+																<li>
+																	<i class="fa fa-star"></i>
+																</li>
+																<li>
+																	<i class="fa fa-star"></i>
+																</li>
+																<li>
+																	<i class="fa fa-star-o"></i>
+																</li>
+															</ul>
+															<p>“Builderrine Construction provides us nice serives. The have designed and build our NY Pent House project. They have exceeded our expectation and did such an amazing job. We are very happy with their work”</p>
+														</div>
+														<div class="testi-top">
+															<div class="testi-img">
+																<img src="images/reviewer4.png" alt="">
+															</div>
+															<div class="testi-info">
+																<h4>Marina Samuel</h4>
+																<h6>New York</h6>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="owl-item" style="width: 450.75px; margin-right: 30px;">
+											<div class="item">
+												<div class="testibox1">
+													<div class="testibox_inner">
+														<div class="testi-content">
+															<ul>
+																<li class="text">Rating:</li>
+																<li>
+																	<i class="fa fa-star"></i>
+																</li>
+																<li>
+																	<i class="fa fa-star"></i>
+																</li>
+																<li>
+																	<i class="fa fa-star"></i>
+																</li>
+																<li>
+																	<i class="fa fa-star"></i>
+																</li>
+																<li>
+																	<i class="fa fa-star-o"></i>
+																</li>
+															</ul>
+															<p>“Builderrine Construction provides us nice serives. The have designed and build our Utah Shopping Mall project. They have exceeded our expectation and did such an amazing job. We are very happy with their work”</p>
+														</div>
+														<div class="testi-top">
+															<div class="testi-img">
+																<img src="images/reviewer3.png" alt="">
+															</div>
+															<div class="testi-info">
+																<h4>Oakland Gardner</h4>
+																<h6>UTAH</h6>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="owl-item" style="width: 450.75px; margin-right: 30px;">
+											<div class="item">
+												<div class="testibox1">
+													<div class="testibox_inner">
+														<div class="testi-content">
+															<ul>
+																<li class="text">Rating:</li>
+																<li>
+																	<i class="fa fa-star"></i>
+																</li>
+																<li>
+																	<i class="fa fa-star"></i>
+																</li>
+																<li>
+																	<i class="fa fa-star"></i>
+																</li>
+																<li>
+																	<i class="fa fa-star"></i>
+																</li>
+																<li>
+																	<i class="fa fa-star-o"></i>
+																</li>
+															</ul>
+															<p>Builderrine Construction provides us nice serives. The have designed and build our NY Pent House project. They have exceeded our expectation and did such an amazing job. We are very happy with their work”</p>
+														</div>
+														<div class="testi-top">
+															<div class="testi-img">
+																<img src="images/reviewer1.png" alt="">
+															</div>
+															<div class="testi-info">
+																<h4>Johnathon Doe</h4>
+																<h6>New York</h6>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="owl-item" style="width: 450.75px; margin-right: 30px;">
+											<div class="item">
+												<div class="testibox1">
+													<div class="testibox_inner">
+														<div class="testi-content">
+															<ul>
+																<li class="text">Rating:</li>
+																<li>
+																	<i class="fa fa-star"></i>
+																</li>
+																<li>
+																	<i class="fa fa-star"></i>
+																</li>
+																<li>
+																	<i class="fa fa-star"></i>
+																</li>
+																<li>
+																	<i class="fa fa-star"></i>
+																</li>
+																<li>
+																	<i class="fa fa-star-o"></i>
+																</li>
+															</ul>
+															<p>Builderrine Construction provides us nice serives. The have designed and build our NY Pent House project. They have exceeded our expectation and did such an amazing job. We are very happy with their work”</p>
+														</div>
+														<div class="testi-top">
+															<div class="testi-img">
+																<img src="images/reviewer1.png" alt="">
+															</div>
+															<div class="testi-info">
+																<h4>Johnathon Doe</h4>
+																<h6>New York</h6>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="owl-item cloned" style="width: 450.75px; margin-right: 30px;">
+											<div class="item">
+												<div class="testibox1">
+													<div class="testibox_inner">
+														<div class="testi-content">
+															<ul>
+																<li class="text">Rating:</li>
+																<li>
+																	<i class="fa fa-star"></i>
+																</li>
+																<li>
+																	<i class="fa fa-star"></i>
+																</li>
+																<li>
+																	<i class="fa fa-star"></i>
+																</li>
+																<li>
+																	<i class="fa fa-star"></i>
+																</li>
+																<li>
+																	<i class="fa fa-star-o"></i>
+																</li>
+															</ul>
+															<p>“Builderrine Construction provides us amazing serives. The have designed and build our Miami grand Hotel project. They have exceeded our expectation and did such an amazing job. We are very happy with their work”</p>
+														</div>
+														<div class="testi-top">
+															<div class="testi-img">
+																<img src="images/reviewer1.png" alt="">
+															</div>
+															<div class="testi-info">
+																<h4>Johnathon Doe</h4>
+																<h6>MIAMI</h6>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="owl-item cloned" style="width: 450.75px; margin-right: 30px;">
+											<div class="item">
+												<div class="testibox1">
+													<div class="testibox_inner">
+														<div class="testi-content">
+															<ul>
+																<li class="text">Rating:</li>
+																<li>
+																	<i class="fa fa-star"></i>
+																</li>
+																<li>
+																	<i class="fa fa-star"></i>
+																</li>
+																<li>
+																	<i class="fa fa-star"></i>
+																</li>
+																<li>
+																	<i class="fa fa-star"></i>
+																</li>
+																<li>
+																	<i class="fa fa-star-o"></i>
+																</li>
+															</ul>
+															<p>“Builderrine Construction provides us nice serives. The have designed and build our NY Pent House project. They have exceeded our expectation and did such an amazing job. We are very happy with their work”</p>
+														</div>
+														<div class="testi-top">
+															<div class="testi-img">
+																<img src="images/reviewer4.png" alt="">
+															</div>
+															<div class="testi-info">
+																<h4>Marina Samuel</h4>
+																<h6>New York</h6>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="owl-item cloned" style="width: 450.75px; margin-right: 30px;">
+											<div class="item">
+												<div class="testibox1">
+													<div class="testibox_inner">
+														<div class="testi-content">
+															<ul>
+																<li class="text">Rating:</li>
+																<li>
+																	<i class="fa fa-star"></i>
+																</li>
+																<li>
+																	<i class="fa fa-star"></i>
+																</li>
+																<li>
+																	<i class="fa fa-star"></i>
+																</li>
+																<li>
+																	<i class="fa fa-star"></i>
+																</li>
+																<li>
+																	<i class="fa fa-star-o"></i>
+																</li>
+															</ul>
+															<p>“Builderrine Construction provides us nice serives. The have designed and build our Utah Shopping Mall project. They have exceeded our expectation and did such an amazing job. We are very happy with their work”</p>
+														</div>
+														<div class="testi-top">
+															<div class="testi-img">
+																<img src="images/reviewer3.png" alt="">
+															</div>
+															<div class="testi-info">
+																<h4>Oakland Gardner</h4>
+																<h6>UTAH</h6>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="owl-nav disabled">
+									<button type="button" role="presentation" class="owl-prev">
+										<i class="fa fa-long-arrow-left"></i>
+									</button>
+									<button type="button" role="presentation" class="owl-next">
+										<i class="fa fa-long-arrow-right"></i>
+									</button>
+								</div>
+								<div class="owl-dots">
+									<button role="button" class="owl-dot active">
+										<span></span>
+									</button>
+									<button role="button" class="owl-dot">
+										<span></span>
+									</button>
+									<button role="button" class="owl-dot">
+										<span></span>
+									</button>
+									<button role="button" class="owl-dot">
+										<span></span>
+									</button>
+									<button role="button" class="owl-dot">
+										<span></span>
+									</button>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="blog section">
+				<div class="container">
+					<div class="blog_grid">
+						<div class="row">
+							<div class="col-lg-4 col-md-12">
+								<div class="section_header text-left">
+									<h6 class="section_sub_title">Nouveauté</h6>
+									<h1 class="section_title">{{acceuil.getTitreNouveautées}}</h1>
+									<p class="section_desc">{{acceuil.getDescriptionNouveautées}}.</p>
+								</div>
+								<div class="read_more read_all">
+									<a class="button" href="blog-1.html">Learn More</a>
+								</div>
+							</div>
+							<div class="col-lg-4 col-md-6">
+								<article class="blog_post">
+									<div class="post_img">
+										<a href="blog-1.html"><img src="images/blog/b6.png" alt="img"></a>
+										<div class="calendar">
+											<a href="#">
+												<span class="date">30</span>
+												<br>May</a>
+											</div>
+										</div>
+										<div class="post_content">
+											<div class="post_header">
+												<h3 class="post_title">
+													<a href="blog-2.html">Diversity in Building Celebrated by Builderrine</a>
+												</h3>
+											</div>
+											<div class="post_intro">
+												<p>Builderrine will connect with 10000 people from 90 companies who work on its’ projects each day...</p>
+											</div>
+											<div class="post_footer">
+												<div class="read_more">
+													<a href="blog-details.html">
+														<span>Read Article</span>
+													</a>
+												</div>
+											</div>
+										</div>
+									</article>
+								</div>
+								<div class="col-lg-4 col-md-6">
+									<article class="blog_post">
+										<div class="post_img">
+											<a href="blog-1.html"><img src="images/blog/b7.png" alt="img"></a>
+											<div class="calendar">
+												<a href="#">
+													<span class="date">30</span>
+													<br>May</a>
+												</div>
+											</div>
+											<div class="post_content">
+												<div class="post_header">
+													<h3 class="post_title">
+														<a href="blog-1.html">Company Receives Recognition for Excellence</a>
+													</h3>
+												</div>
+												<div class="post_intro">
+													<p>The construction industry has the capacity to absorb more people into the workforce...</p>
+												</div>
+												<div class="post_footer">
+													<div class="read_more">
+														<a href="blog-details.html">
+															<span>Read Article</span>
+														</a>
+													</div>
+												</div>
+											</div>
+										</article>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="patner">
+						<div class="patner_image">
+							<img src="images/patner/new_patner/1.png" alt="">
+						</div>
+						<div class="patner_image">
+							<img src="images/patner/new_patner/2.png" alt="">
+						</div>
+						<div class="patner_image">
+							<img src="images/patner/new_patner/3.png" alt="">
+						</div>
+						<div class="patner_image">
+							<img src="images/patner/new_patner/4.png" alt="">
+						</div>
+						<div class="patner_image">
+							<img src="images/patner/new_patner/5.png" alt="">
+						</div>
+						<div class="patner_image">
+							<img src="images/patner/new_patner/6.png" alt="">
+						</div>
+					</div>
+
+
+					<!-- Footer 1 -->
+					<footer class="footer">
+						<div class="footer_above" style="background-image: url('images/footer4.jpg');">
+							<div class="container">
+
+								<div class="row">
+									<div class="col-lg-4 col-md-6 col-sm-12">
+										<div class="footer_widget footer_widget_padding">
+											<h4 class="widget_title">
+												À propos de STRAM
+											</h4>
+											<p>{{acceuil.getDescriptionSTram}}.<br>
+												Ils ont besoin des Services de Construction STRAM !</p>
+											<div class="subscribe">
+												<form class="form-inline">
+													<div class="input-group mb-2 mr-sm-2">
+														<input type="email" class="form-control" placeholder="Email Address">
+													</div>
+													<button type="submit" class="btn">S'abonner</button>
+												</form>
+											</div>
+										</div>
+									</div>
+
+									<div class="col-lg-2 col-md-6 col-sm-12">
+										<div class="footer_widget footer_links">
+											<h4 class="widget_title">
+												Nos Services
+											</h4>
+											<div class="footer_nav">
+												<ul class="footer_menu">
+													<li class="menu-item">
+														<a href="project.html">Sols techniques</a>
+													</li>
+													<li class="menu-item">
+														<a href="project-2.html">Réparations & renforts de structure</a>
+													</li>
+													<li class="menu-item">
+														<a href="project-details.html">Étanchéité & Imperméabilisation</a>
+													</li>
+													<li class="menu-item">
+														<a href="project-2.html">Traitement des joints</a>
+													</li>
+													<li class="menu-item">
+														<a href="project.html">Centrales photovoltaiques</a>
+													</li>
+
+													<li class="menu-item">
+														<a href="project-2.html">Études & Expertise</a>
+													</li>
+													<li class="menu-item">
+														<a href="project.html">Peinture</a>
+													</li>
+												</ul>
+											</div>
+										</div>
+									</div>
+									<div class="col-lg-2 col-md-6 col-sm-12">
+										<div class="footer_widget footer_links">
+											<h4 class="widget_title">
+												liens
+											</h4>
+											<div class="footer_nav">
+												<ul class="footer_menu">
+													<li class="menu-item">
+														<a href="/app_qui_sommes_nous">Qui Sommes-nous?</a>
+													</li>
+													<li class="menu-item">
+														<a href="/projets">Projets</a>
+													</li>
+													<li class="menu-item">
+														<a href="/clients">Clients</a>
+													</li>
+													<li class="menu-item">
+														<a href="/carriere">Carrière</a>
+													</li>
+													<li class="menu-item">
+														<a href="/contact">Contact</a>
+													</li>
+												</ul>
+											</div>
+										</div>
+									</div>
+									<div class="col-lg-4 col-md-6 col-sm-12" style="background-color:#">
+										<div class="footer_widget">
+											<h4 class="widget_title">
+												Adresse
+											</h4>
+											<ul>
+												<li>
+													<i class="fa fa-map-marker" aria-hidden="true"></i>
+													<span>{{acceuil.getAdresseContact}}</span>
+												</li>
+												<li>
+													<i class="fa fa-envelope" aria-hidden="true"></i>
+													<span>info@stram.tn</span>
+												</li>
+												<li>
+													<i class="fa fa-phone" aria-hidden="true"></i>
+													<span>
+														(+216) {{acceuil.getNumrContact}}</span>
+												</li>
+												<li>
+													<i class="fa fa-fax" aria-hidden="true"></i>
+													<span>
+														(+216) 71 432 112
+													</span>
+												</li>
+											</ul>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="footer_bottom" style="background-color:#D6D8DA">
+							<div class="container">
+								<div class="footer_bottom_inner">
+									<div class="logo">
+										<a href="/"><img src="images/stram-logo.png" alt="Logo"></a>
+									</div>
+									<div class="copyright">
+										<p style="color:#0D2C4A">
+
+											<a>Copyright @ 2023 Site developed by
+												<a href="http://www.sbc.tn/bienvenue/#/" target="_blank">
+													Smart Business Challenge
+												</a>
+
+											</p>
+										</p>
+									</div>
+
+									<div class="totop">
+										<a href="#">
+											<i class="ion-ios-arrow-up"></i>
+										</a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</body>
+				</html>
+
+			</body>
+		</html>
+	</footer>
+
+	<div class="slide_navi">
+		<div class="side_footer_social">
+			<ul class="bottom_social">
+				<li class="facebook">
+					<a href="#">
+						<i class="ion-social-facebook"></i>
+					</a>
+				</li>
+				<li class="twitter">
+					<a href="#">
+						<i class="ion-social-twitter"></i>
+					</a>
+				</li>
+				<li class="dribbble">
+					<a href="#">
+						<i class="ion-social-dribbble-outline"></i>
+					</a>
+				</li>
+				<li class="instagram">
+					<a href="#">
+						<i class="ion-social-instagram-outline"></i>
+					</a>
+				</li>
+				<li class="linkedin">
+					<a href="#">
+						<i class="ion-social-linkedin-outline"></i>
+					</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+
+</div>
+
+
+<!-- All JavaScript Files -->
+<script src="js/jquery-3.6.0.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="plugins/swiper/swiper-bundle.min.js"></script>
+
+<script src="plugins/menu/ma5-menu.min.js"></script>
+<script src="plugins/owlcarousel/owl.carousel.min.js"></script>
+
+<!-- Select2 -->
+<script src="plugins/select2/js/select2.min.js"></script>
+
+<!-- Isotope -->
+<script src="plugins/isotope/isotope.pkgd.min.js"></script>
+<script src="plugins/isotope/imagesloaded.pkgd.min.js"></script>
+
+<script src="plugins/aos/aos.js"></script>
+<script src="js/funfacts.js"></script>
+<script src="js/custom.js"></script></body></html>

@@ -1,0 +1,105 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}liste des Clients
+{% endblock %}
+
+{% block body %}
+
+	<main id="main" class="main">
+
+		<div class="pagetitle">
+			<h1>Gestionnaire des clients
+			</h1>
+			<nav>
+				<ol class="breadcrumb">
+					<li class="breadcrumb-item">
+						<a href="/admin">Home</a>
+					</li>
+					<li class="breadcrumb-item">
+						<a href="/clientsAdmin">Clients</a>
+					</li>
+				</ol>
+			</nav>
+		</div>
+		<!-- End Page Title -->
+
+		<section class="section">
+			<div class="row">
+				<div class="col-lg-12">
+
+					<div class="card">
+						<div class="card-body" style="background-color:#0e1641">
+
+							<h5 class="card-title" style="color:#DEE9F3">
+								<strong>Liste des clients AGM</strong>
+							</h5>
+
+							<table class="table" style="color:#DEE9F3">
+								<thead>
+									<tr>
+										<th scope="col">id</th>
+										<th scope="col">nom</th>
+										<th scope="col">secteur</th>
+										<th scope="col">service</th>
+										<th scope="col">Logo</th>
+										<th scope="col"></th>
+
+
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										{% if listC | length == 0 %}
+											<p style="text-align: center">Liste vide</p>
+										{% endif %}
+									</tr>
+									{% for c in listC  %}
+
+										<tr>
+
+											<td>{{c.id}}</td>
+											<td>{{c.nom}}</td>
+											<td>{{c.secteur }}</td>
+											<td>{{c.service }}</td>
+
+											<td><img style="width: 75px; height: 55px; padding: 5px;" src="{{ asset('uploads/'~c.logo) }}"/></td>
+											<td>
+												<a href="{{ path('modifierClient',{id:c.id}) }}">
+													<button type="button" class="btn btn-outline-warning">
+														<i class="bi bi-pen" style="color:#DEE9F3"></i>
+													</button>
+												</a>
+
+												<a href="{{ path('suppressionClient',{id:c.id}) }}">
+													<button type="button" class="btn btn-outline-warning">
+														<i class="bi bi-trash" style="color:#DEE9F3"></i>
+													</button>
+												</a>
+											</td>
+
+
+										</tr>
+
+									{% endfor %}
+
+
+								</tbody>
+
+
+							</table>
+							<a href="/clientsAdmin">
+								<button type="button" class="btn btn-warning" " style=" background-color:#ff9919 ">ajouter client</button>
+							</a>
+						</div>
+					</div>
+
+
+				</div>
+
+
+			</div>
+		</section>
+
+	</main>
+
+{% endblock %}

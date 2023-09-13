@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>
+			{% block title %}Welcome!
+			{% endblock %}
+		</title>
+		<link
+		href="images/shadow_icon4.png" rel="shortcut icon" type="image/png">
+
+		{# Run `composer require symfony/webpack-encore-bundle` to start using Symfony UX #}
+		{% block stylesheets %}
+			<link href="{{asset('assets/vendor/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet">
+			<link href="{{asset('assets/vendor/bootstrap-icons/bootstrap-icons.css') }}" rel="stylesheet">
+			<link href="{{ asset('assets/vendor/boxicons/css/boxicons.min.css') }}" rel="stylesheet">
+			<link href="{{ asset('assets/vendor/quill/quill.snow.css') }}" rel="stylesheet">
+			<link href="{{ asset('assets/vendor/quill/quill.bubble.css') }}" rel="stylesheet">
+			<link href="{{ asset('assets/vendor/remixicon/remixicon.css') }}" rel="stylesheet">
+			<link
+			href="{{ asset('assets/vendor/simple-datatables/style.css') }}" rel="stylesheet">
+
+			<!-- Template Main CSS File -->
+			<link href="{{ asset('assets/css/style.css') }}" rel="stylesheet">
+
+		{% endblock %}
+
+		{% block javascripts %}
+			<script src="{{ asset('assets/vendor/apexcharts/apexcharts.min.js') }}"></script>
+			<script src="{{ asset('assets/vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+			<script src="{{ asset('assets/vendor/chart.js/chart.umd.js') }}"></script>
+			<script src="{{ asset('assets/vendor/echarts/echarts.min.js') }}"></script>
+			<script src="{{ asset ('assets/vendor/quill/quill.min.js') }}"></script>
+			<script src="{{ asset ('assets/vendor/simple-datatables/simple-datatables.js') }}"></script>
+			<script src="{{ asset ('assets/vendor/tinymce/tinymce.min.js') }}"></script>
+			<script src="{{ asset ('assets/vendor/php-email-form/validate.js') }}"></script>
+
+			<!-- Template Main JS File -->
+			<script src="{{ asset('assets/js/main.js') }}"></script>
+		{% endblock %}
+	</head>
+	<body>
+
+		{% block header %}
+
+			<!-- ======= Header ======= -->
+			<header id="header" class="header fixed-top d-flex align-items-center" style="background-color: #B5BEC6;  height:4rem ;">
+				<div class="logo">
+					<a href="/admin" class="light_mode_logo"><img src="images/stram-logo.png" alt="logo"></a>
+				</div>
+				<div class="d-flex align-items-center justify-content-between">
+					<a class="logo d-flex align-items-center" href="/admin">
+						<img src="assets/img/stram-logo.png" alt="" style="width=20 , height= 80">
+						<span class="d-none d-lg-block"></span>
+					</a>
+				</div>
+			</header>
+			<!-- End Header -->
+		{% endblock %}
+		<!-- ======= Sidebar ======= -->
+		<aside id="sidebar" class="sidebar" style="background-color: #99A7B2">
+
+			<ul class=" sidebar-nav" id=" sidebar-nav">
+
+				<li class="nav-item">
+					<a class="nav-link " href="/admin">
+						<i class="bi bi-grid"></i>
+						<span style="color:#0e1641">Dashboard</span>
+					</a>
+				</li>
+				<!-- Dashboard-->
+
+				<li class="nav-item">
+					<a class="nav-link collapsed" data-bs-target="#tables-nav" data-bs-toggle="collapse" href="/metiers" style="background-color: #0e1641">
+						<i class="ri-account-circle-line"></i>
+						<span style="color:#DEE9F3">Gestion métiers</span>
+						<i class="bi bi-chevron-down ms-auto"></i>
+					</a>
+					<ul id="tables-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+						<li>
+							<a href="/metiers">
+								<i class="bi bi-circle"></i>
+								<span style="color:#DEE9F3 , text-color: dark ">affichage des métiers</span>
+							</a>
+						</li>
+
+						<li>
+							<a href=" {{path('ajouterMetier') }}">
+								<i class="bi bi-circle"></i>
+								<span style="color:#DEE9F3 , text-color: dark ">Ajouter métier</span>
+							</a>
+						</li>
+
+					</ul>
+				</li>
+				<!-- gestion métiers -->
+
+
+				<li class="nav-item">
+					<a class="nav-link collapsed" data-bs-target="#forms-nav" data-bs-toggle="collapse" href="/projets" style="background-color: #0e1641">
+						<i class="bi bi-journal-text"></i>
+						<span style="color:#DEE9F3">Gestion projets
+						</span>
+						<i class="bi bi-chevron-down ms-auto"></i>
+					</a>
+
+					<ul id="forms-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+						<li>
+							<a href="/projets">
+								<i class="bi bi-circle"></i>
+								<span style="color:#DEE9F3 , text-color: dark">affichage des projets</span>
+							</a>
+						</li>
+
+						<li>
+							<a href="{{path('ajouterProjet') }}">
+								<i class="bi bi-circle"></i>
+								<span style="color:#DEE9F3, text-color: dark">Ajouter projet</span>
+							</a>
+						</li>
+
+
+					</ul>
+				</li>
+				<!-- gestion projets  -->
+
+
+				<li class="nav-item">
+					<a class="nav-link collapsed" data-bs-target="#charts-nav" data-bs-toggle="collapse" href="#" style="background-color: #0e1641">
+						<i class="bi bi-bar-chart"></i>
+						<span style="color:#DEE9F3">Gestion Nouveauté</span>
+						<i class="bi bi-chevron-down ms-auto"></i>
+					</a>
+					<ul id="charts-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+
+						<li>
+							<a href="">
+								<i class="bi bi-circle"></i>
+								<span style="color:#DEE9F3 , text-color: dark ">événements</span>
+
+							</a>
+						</li>
+
+						<li>
+							<a href="">
+								<i class="bi bi-circle"></i>
+								<span style="color:#DEE9F3 , text-color: dark ">Actualités</span>
+							</a>
+						</li>
+
+					</li>
+				</li>
+			</ul>
+		</body>
+	</body>
+</html></li><!-- gestion Nouveauté  --><li class="nav-item">
+<a class="nav-link collapsed" data-bs-target="#icons-nav" data-bs-toggle="collapse" href="/clientsAdmin" style="background-color: #0e1641">
+	<i class="bi bi-gem"></i>
+	<span style="color:#DEE9F3">gestion clients</span>
+	<i class="bi bi-chevron-down ms-auto"></i>
+</a>
+<ul id="icons-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+	<li>
+		<a href="{{ path('clients_admin') }}">
+			<i class="bi bi-circle"></i>
+			<span style="color:#DEE9F3 , text-color: dark ">affichage des clients</span>
+		</a>
+	</li>
+	<li>
+		<a href="{{ path('ajouterClient') }}">
+			<i class="bi bi-circle"></i>
+			<span style="color:#DEE9F3 , text-color: dark ">ajouter client</span>
+		</a>
+	</li>
+
+</ul></li><!-- gestion clients--><li class="nav-item">
+<a class="nav-link collapsed" data-bs-target="#components-nav" data-bs-toggle="collapse" href="#" style="background-color: #0e1641">
+	<i class="bi bi-menu-button-wide"></i>
+	<span style="color:#DEE9F3">Gestion Carriéres</span>
+	<i class="bi bi-chevron-down ms-auto"></i>
+</a>
+<ul id="components-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+	<li>
+		<a href="">
+			<i class="bi bi-circle"></i>
+			<span style="color:#DEE9F3 , text-color: dark ">candidatures spontanées</span>
+		</a>
+	</li>
+
+	<li>
+		<a href="">
+			<i class="bi bi-circle"></i>
+			<span style="color:#DEE9F3 , text-color: dark ">offres d'emploi</span>
+		</a>
+	</li>
+</ul></li><!-- gestion Carriéres --><li class="nav-item">
+<a class="nav-link collapsed" data-bs-target="#icons-acceuil" data-bs-toggle="collapse" style="background-color: #0e1641">
+	<i class="bi bi-gem"></i>
+	<span style="color:#DEE9F3">gestion affichage
+	</span>
+	<i class="bi bi-chevron-down ms-auto"></i>
+</a>
+<ul id="icons-acceuil" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+	<li>
+		<a href="">
+			<i class="bi bi-circle"></i>
+			<span style="color:#DEE9F3 , text-color: dark ">Acceuil</span>
+		</a>
+	</li>
+	<li>
+		<a href="">
+			<i class="bi bi-circle"></i>
+			<span style="color:#DEE9F3 , text-color: dark ">STRAM</span>
+		</a>
+	</li>
+	<li>
+		<a href="">
+			<i class="bi bi-circle"></i>
+			<span style="color:#DEE9F3 , text-color: dark ">Services</span>
+		</a>
+	</li>
+</ul></li></aside><!-- End Sidebar-->{% block sidebar %}{% endblock %}{% block body %}{% endblock %}{% block footer %}<div class="footer">
+<div class="footer_bottom">
+	<div class="container">
+		<div class="footer_bottom_inner">
+			<div class="logo">
+				<a href="index.html"><img src="images/stram-logo.png" alt="Logo"></a>
+			</div>
+			<div class="copyright">
+				<p style="color:#0B0B53">&copy;2023 Site developed by</p>
+				<a href="http://www.sbc.tn/bienvenue/#/">Smart Business Challenge</a>
+			</div>
+			<div class="totop">
+				<a href="#">
+					<i class="ion-ios-arrow-up"></i>
+				</a>
+			</div>
+		</div>
+	</div>
+</div></div>{% endblock %}</body></html>
