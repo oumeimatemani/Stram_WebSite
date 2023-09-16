@@ -8,10 +8,10 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class AcceuilController extends AbstractController
 {
-    #[Route('/acceuil', name: 'app_acceuil')]
-    public function index(): Response
+    #[Route('/gestionAcceuil', name: 'acceuil')]
+    public function gestionAcceuil(): Response
     {
-        return $this->render('acceuil/index.html.twig', [
+        return $this->render('affichage/acceuil/index.html.twig', [
             'controller_name' => 'AcceuilController',
         ]);
     }

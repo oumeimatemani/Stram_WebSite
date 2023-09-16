@@ -331,7 +331,7 @@ class __TwigTemplate_6443d5bb488b32f4cadee80fe84914b1 extends Template
 \t\t\t</div>
 \t\t\t<div class=\"info_body\">
 \t\t\t\t<h5>Tél</h5>
-\t\t\t\t<h6>(+216) 71 432 144</h6>
+\t\t\t\t<h6>(+216)  71 432 144</h6>
 \t\t\t</div>
 \t\t</div>
 \t\t<div class=\"communication\">
@@ -350,7 +350,7 @@ class __TwigTemplate_6443d5bb488b32f4cadee80fe84914b1 extends Template
 \t\t\t</div>
 \t\t\t<div class=\"info_body\">
 \t\t\t\t<h5>Email Address</h5>
-\t\t\t\t<h6>info@stram.tn</h6>
+\t\t\t\t<h6>stram@gmail.com</h6>
 \t\t\t</div>
 \t\t</div>
 
@@ -360,9 +360,7 @@ class __TwigTemplate_6443d5bb488b32f4cadee80fe84914b1 extends Template
 \t\t\t</div>
 \t\t\t<div class=\"info_body\">
 \t\t\t\t<h5>Adresse</h5>
-\t\t\t\t<h6>Avenue Habib Bourgiba
-\t\t\t\t</br>Mégrine 2033
-\t\t\t</h6>
+\t\t\t\t<h6>Avenue Habib Bourgiba </br>Mégrine 2033</h6>
 \t\t</div>
 \t</div>
 </div></div><div class=\"col-lg-7 col-md-7 offset-lg-1\">
@@ -411,28 +409,28 @@ class __TwigTemplate_6443d5bb488b32f4cadee80fe84914b1 extends Template
 <div class=\"circle\">
 \t<img src=\"images/drapeau/algerie.png\" alt=\"Algeria Flag\">
 \t<a href=\"";
-        // line 368
+        // line 366
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_contact_algerie");
         echo "\" target=\"_blank\" class=\"learn-more\">Savoir plus</a>
 </div>
 <div class=\"circle\">
 \t<img src=\"images/drapeau/sénégal.png\" alt=\"Senegal Flag\">
 \t<a href=\"";
-        // line 372
+        // line 370
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_contact_senegal");
         echo "\" target=\"_blank\" class=\"learn-more\">Savoir plus</a>
 </div>
 <div class=\"circle\">
 \t<img src=\"images/drapeau/niger.png\" alt=\"Niger Flag\">
 \t<a href=\"";
-        // line 376
+        // line 374
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_contact_niger");
         echo "\" target=\"_blank\" class=\"learn-more\">Savoir plus</a>
 </div>
 <div class=\"circle\">
 \t<img src=\"images/drapeau/benin.png\" alt=\"Benin Flag\">
 \t<a href=\"";
-        // line 380
+        // line 378
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_contact_benin");
         echo "\" target=\"_blank\" class=\"learn-more\">Savoir plus</a>
 </div></div></div></div></div></div><!-- Footer 1 --><footer class=\"footer\"><div class=\"footer_above\" style=\"background-image: url('images/footer4.jpg');\"><div class=\"container\"><div class=\"row\"><div class=\"col-lg-4 col-md-6 col-sm-12\">
@@ -566,7 +564,7 @@ class __TwigTemplate_6443d5bb488b32f4cadee80fe84914b1 extends Template
 
     public function getDebugInfo()
     {
-        return array (  436 => 380,  429 => 376,  422 => 372,  415 => 368,  322 => 278,  43 => 1,);
+        return array (  434 => 378,  427 => 374,  420 => 370,  413 => 366,  322 => 278,  43 => 1,);
     }
 
     public function getSourceContext()
@@ -859,7 +857,7 @@ class __TwigTemplate_6443d5bb488b32f4cadee80fe84914b1 extends Template
 \t\t\t</div>
 \t\t\t<div class=\"info_body\">
 \t\t\t\t<h5>Tél</h5>
-\t\t\t\t<h6>(+216) 71 432 144</h6>
+\t\t\t\t<h6>(+216)  71 432 144</h6>
 \t\t\t</div>
 \t\t</div>
 \t\t<div class=\"communication\">
@@ -878,7 +876,7 @@ class __TwigTemplate_6443d5bb488b32f4cadee80fe84914b1 extends Template
 \t\t\t</div>
 \t\t\t<div class=\"info_body\">
 \t\t\t\t<h5>Email Address</h5>
-\t\t\t\t<h6>info@stram.tn</h6>
+\t\t\t\t<h6>stram@gmail.com</h6>
 \t\t\t</div>
 \t\t</div>
 
@@ -888,9 +886,7 @@ class __TwigTemplate_6443d5bb488b32f4cadee80fe84914b1 extends Template
 \t\t\t</div>
 \t\t\t<div class=\"info_body\">
 \t\t\t\t<h5>Adresse</h5>
-\t\t\t\t<h6>Avenue Habib Bourgiba
-\t\t\t\t</br>Mégrine 2033
-\t\t\t</h6>
+\t\t\t\t<h6>Avenue Habib Bourgiba </br>Mégrine 2033</h6>
 \t\t</div>
 \t</div>
 </div></div><div class=\"col-lg-7 col-md-7 offset-lg-1\">
@@ -1061,6 +1057,6 @@ class __TwigTemplate_6443d5bb488b32f4cadee80fe84914b1 extends Template
 <a href=\"#\">
 \t<i class=\"ion-ios-arrow-up\"></i>
 </a></div></div></div></div></footer></div><!-- All JavaScript Files --><script src=\"js/jquery-3.6.0.min.js\"></script><script src=\"js/bootstrap.min.js\"></script><script src=\"plugins/swiper/swiper-bundle.min.js\"></script><script src=\"plugins/menu/ma5-menu.min.js\"></script><script src=\"plugins/owlcarousel/owl.carousel.min.js\"></script><script src=\"plugins/isotope/isotope.pkgd.min.js\"></script><!-- Select2 --><script src=\"plugins/select2/js/select2.min.js\"></script><script src=\"js/map.js\"></script><script src=\"http://maps.google.com/maps/api/js?key=AIzaSyCUiaBC-cJ0wcEtqCUtoXF3I91o9wS42gQ\"></script><script src=\"plugins/aos/aos.js\"></script><script src=\"js/custom.js\"></script></body></html>
-", "contact/index.html.twig", "C:\\Users\\oumei\\Desktop\\Stram_WebSite\\templates\\contact\\index.html.twig");
+", "contact/index.html.twig", "C:\\Users\\oumei\\OneDrive\\Bureau\\Stram_WebSite\\templates\\contact\\index.html.twig");
     }
 }

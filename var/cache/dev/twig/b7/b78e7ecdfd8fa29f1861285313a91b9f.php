@@ -463,7 +463,12 @@ class __TwigTemplate_0315d03436d2e0ac2dca8354270bcb6e extends Template
 
 \t\t</div>
 \t</div>
-</div></div><!-- Footer 1 --><footer class=\"footer\">
+</div>
+
+</div>
+
+<!-- Footer 1 -->
+<footer class=\"footer\">
 <div class=\"footer_above\" style=\"background-image: url('images/footer4.jpg');\">
 \t<div class=\"container\">
 
@@ -1074,7 +1079,12 @@ suiteOffrePublieeFields.style.display = 'none';
 
 \t\t</div>
 \t</div>
-</div></div><!-- Footer 1 --><footer class=\"footer\">
+</div>
+
+</div>
+
+<!-- Footer 1 -->
+<footer class=\"footer\">
 <div class=\"footer_above\" style=\"background-image: url('images/footer4.jpg');\">
 \t<div class=\"container\">
 
@@ -1257,6 +1267,6 @@ candidatureSpontaneeFields.style.display = 'none';
 suiteOffrePublieeFields.style.display = 'none';
 }
 });</script><script src=\"js/jquery-3.6.0.min.js\"></script><script src=\"js/bootstrap.min.js\"></script><script src=\"plugins/swiper/swiper-bundle.min.js\"></script><script src=\"plugins/menu/ma5-menu.min.js\"></script><script src=\"plugins/owlcarousel/owl.carousel.min.js\"></script><!-- Select2 --><script src=\"plugins/select2/js/select2.min.js\"></script><script src=\"plugins/isotope/isotope.pkgd.min.js\"></script><script src=\"plugins/aos/aos.js\"></script><script src=\"js/custom.js\"></script></body></body></html></body></html>
-", "carriere/formulaire.html.twig", "C:\\Users\\oumei\\Desktop\\Stram_WebSite\\templates\\carriere\\formulaire.html.twig");
+", "carriere/formulaire.html.twig", "C:\\Users\\oumei\\OneDrive\\Bureau\\Stram_WebSite\\templates\\carriere\\formulaire.html.twig");
     }
 }

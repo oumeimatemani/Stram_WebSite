@@ -1177,9 +1177,7 @@ setInterval(updateClockDisplay, 60000); // 60000 ms = 1 minute
         echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["acceuil"]) || array_key_exists("acceuil", $context) ? $context["acceuil"] : (function () { throw new RuntimeError('Variable "acceuil" does not exist.', 1100, $this->source); })()), "getDescriptionNouveautées", [], "any", false, false, false, 1100), "html", null, true);
         echo ".</p>
 \t\t\t\t\t\t\t\t</div>
-\t\t\t\t\t\t\t\t<div class=\"read_more read_all\">
-\t\t\t\t\t\t\t\t\t<a class=\"button\" href=\"blog-1.html\">Learn More</a>
-\t\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t\t
 \t\t\t\t\t\t\t</div>
 \t\t\t\t\t\t\t<div class=\"col-lg-4 col-md-6\">
 \t\t\t\t\t\t\t\t<article class=\"blog_post\">
@@ -1278,8 +1276,8 @@ setInterval(updateClockDisplay, 60000); // 60000 ms = 1 minute
 \t\t\t\t\t\t\t\t\t\t\t\tÀ propos de STRAM
 \t\t\t\t\t\t\t\t\t\t\t</h4>
 \t\t\t\t\t\t\t\t\t\t\t<p>";
-        // line 1202
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["acceuil"]) || array_key_exists("acceuil", $context) ? $context["acceuil"] : (function () { throw new RuntimeError('Variable "acceuil" does not exist.', 1202, $this->source); })()), "getDescriptionSTram", [], "any", false, false, false, 1202), "html", null, true);
+        // line 1200
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["acceuil"]) || array_key_exists("acceuil", $context) ? $context["acceuil"] : (function () { throw new RuntimeError('Variable "acceuil" does not exist.', 1200, $this->source); })()), "getDescriptionSTram", [], "any", false, false, false, 1200), "html", null, true);
         echo ".<br>
 \t\t\t\t\t\t\t\t\t\t\t\tIls ont besoin des Services de Construction STRAM !</p>
 \t\t\t\t\t\t\t\t\t\t\t<div class=\"subscribe\">
@@ -1361,8 +1359,8 @@ setInterval(updateClockDisplay, 60000); // 60000 ms = 1 minute
 \t\t\t\t\t\t\t\t\t\t\t\t<li>
 \t\t\t\t\t\t\t\t\t\t\t\t\t<i class=\"fa fa-map-marker\" aria-hidden=\"true\"></i>
 \t\t\t\t\t\t\t\t\t\t\t\t\t<span>";
-        // line 1282
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["acceuil"]) || array_key_exists("acceuil", $context) ? $context["acceuil"] : (function () { throw new RuntimeError('Variable "acceuil" does not exist.', 1282, $this->source); })()), "getAdresseContact", [], "any", false, false, false, 1282), "html", null, true);
+        // line 1280
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["acceuil"]) || array_key_exists("acceuil", $context) ? $context["acceuil"] : (function () { throw new RuntimeError('Variable "acceuil" does not exist.', 1280, $this->source); })()), "getAdresseContact", [], "any", false, false, false, 1280), "html", null, true);
         echo "</span>
 \t\t\t\t\t\t\t\t\t\t\t\t</li>
 \t\t\t\t\t\t\t\t\t\t\t\t<li>
@@ -1373,8 +1371,8 @@ setInterval(updateClockDisplay, 60000); // 60000 ms = 1 minute
 \t\t\t\t\t\t\t\t\t\t\t\t\t<i class=\"fa fa-phone\" aria-hidden=\"true\"></i>
 \t\t\t\t\t\t\t\t\t\t\t\t\t<span>
 \t\t\t\t\t\t\t\t\t\t\t\t\t\t(+216) ";
-        // line 1291
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["acceuil"]) || array_key_exists("acceuil", $context) ? $context["acceuil"] : (function () { throw new RuntimeError('Variable "acceuil" does not exist.', 1291, $this->source); })()), "getNumrContact", [], "any", false, false, false, 1291), "html", null, true);
+        // line 1289
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["acceuil"]) || array_key_exists("acceuil", $context) ? $context["acceuil"] : (function () { throw new RuntimeError('Variable "acceuil" does not exist.', 1289, $this->source); })()), "getNumrContact", [], "any", false, false, false, 1289), "html", null, true);
         echo "</span>
 \t\t\t\t\t\t\t\t\t\t\t\t</li>
 \t\t\t\t\t\t\t\t\t\t\t\t<li>
@@ -1496,7 +1494,7 @@ setInterval(updateClockDisplay, 60000); // 60000 ms = 1 minute
 
     public function getDebugInfo()
     {
-        return array (  1377 => 1291,  1365 => 1282,  1282 => 1202,  1177 => 1100,  1173 => 1099,  703 => 632,  561 => 493,  481 => 416,  445 => 383,  440 => 381,  323 => 267,  318 => 265,  314 => 264,  308 => 261,  188 => 144,  43 => 1,);
+        return array (  1375 => 1289,  1363 => 1280,  1280 => 1200,  1177 => 1100,  1173 => 1099,  703 => 632,  561 => 493,  481 => 416,  445 => 383,  440 => 381,  323 => 267,  318 => 265,  314 => 264,  308 => 261,  188 => 144,  43 => 1,);
     }
 
     public function getSourceContext()
@@ -2602,9 +2600,7 @@ setInterval(updateClockDisplay, 60000); // 60000 ms = 1 minute
 \t\t\t\t\t\t\t\t\t<h1 class=\"section_title\">{{acceuil.getTitreNouveautées}}</h1>
 \t\t\t\t\t\t\t\t\t<p class=\"section_desc\">{{acceuil.getDescriptionNouveautées}}.</p>
 \t\t\t\t\t\t\t\t</div>
-\t\t\t\t\t\t\t\t<div class=\"read_more read_all\">
-\t\t\t\t\t\t\t\t\t<a class=\"button\" href=\"blog-1.html\">Learn More</a>
-\t\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t\t
 \t\t\t\t\t\t\t</div>
 \t\t\t\t\t\t\t<div class=\"col-lg-4 col-md-6\">
 \t\t\t\t\t\t\t\t<article class=\"blog_post\">
@@ -2891,6 +2887,6 @@ setInterval(updateClockDisplay, 60000); // 60000 ms = 1 minute
 <script src=\"plugins/aos/aos.js\"></script>
 <script src=\"js/funfacts.js\"></script>
 <script src=\"js/custom.js\"></script></body></html>
-", "baseFront.html.twig", "C:\\Users\\oumei\\Desktop\\Stram_WebSite\\templates\\baseFront.html.twig");
+", "baseFront.html.twig", "C:\\Users\\oumei\\OneDrive\\Bureau\\Stram_WebSite\\templates\\baseFront.html.twig");
     }
 }

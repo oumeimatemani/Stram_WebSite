@@ -15,7 +15,10 @@ class MetierType extends AbstractType
     {
         $builder
             ->add('titre')
-            ->add('image', FileType::class, array("data_class" => null))
+            ->add('image', FileType::class, [
+                'data_class' => null, // Pour autoriser la mise à jour du fichier
+                'required' => false,  // Rend le champ optionnel
+            ])
             ->add('description');
     }
 
@@ -23,6 +26,8 @@ class MetierType extends AbstractType
     {
         $resolver->setDefaults([
             'data_class' => Metier::class,
-        ]);
+                'choices' => [], // Set your choices here
+                'multiple' => true, // Set whether it's multiple selection or not
+            ]);
     }
 }

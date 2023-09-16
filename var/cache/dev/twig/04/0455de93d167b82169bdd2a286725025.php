@@ -69,6 +69,22 @@ class __TwigTemplate_d0098704fa3e487bcb187747d2999ac5 extends Template
         echo "\t<link rel=\"stylesheet\" href=\"";
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("../css/chats.css"), "html", null, true);
         echo "\">
+
+
+    <style>
+        /* Ajoutez du CSS personnalisé pour centrer le contenu du tableau */
+        .center-table {
+            margin: 0 auto; /* Centre le tableau horizontalement */
+            text-align: center; /* Centre le contenu du tableau horizontalement */
+        }
+
+        .center-table th,
+        .center-table td {
+            vertical-align: middle; /* Centre le contenu du tableau verticalement */
+        }
+    </style>
+
+
 ";
         
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
@@ -78,7 +94,7 @@ class __TwigTemplate_d0098704fa3e487bcb187747d2999ac5 extends Template
 
     }
 
-    // line 5
+    // line 21
     public function block_body($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -88,7 +104,7 @@ class __TwigTemplate_d0098704fa3e487bcb187747d2999ac5 extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
-        // line 6
+        // line 22
         echo "\t<main id=\"main\" class=\"main\">
 \t\t<section class=\"section dashboard\">
 \t\t\t<div class=\"row\">
@@ -132,33 +148,33 @@ class __TwigTemplate_d0098704fa3e487bcb187747d2999ac5 extends Template
 \t\t\t\t\t\t\t<th>Logo</th>
 \t\t\t\t\t\t</tr>
 \t\t\t\t\t</thead>
-\t\t\t\t\t<tbody style=\"color:#092F54 ; background-color:#F17F21\">
+\t\t\t\t\t<tbody style=\"color:#092F54 ; background-color:#F09F32\">
 \t\t\t\t\t\t";
-        // line 50
+        // line 66
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable((isset($context["topClients"]) || array_key_exists("topClients", $context) ? $context["topClients"] : (function () { throw new RuntimeError('Variable "topClients" does not exist.', 50, $this->source); })()));
+        $context['_seq'] = twig_ensure_traversable((isset($context["topClients"]) || array_key_exists("topClients", $context) ? $context["topClients"] : (function () { throw new RuntimeError('Variable "topClients" does not exist.', 66, $this->source); })()));
         foreach ($context['_seq'] as $context["_key"] => $context["client"]) {
-            // line 51
+            // line 67
             echo "\t\t\t\t\t\t\t<tr>
 \t\t\t\t\t\t\t\t<td>";
-            // line 52
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["client"], "id", [], "any", false, false, false, 52), "html", null, true);
+            // line 68
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["client"], "id", [], "any", false, false, false, 68), "html", null, true);
             echo "</td>
 \t\t\t\t\t\t\t\t<td>";
-            // line 53
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["client"], "nom", [], "any", false, false, false, 53), "html", null, true);
+            // line 69
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["client"], "nom", [], "any", false, false, false, 69), "html", null, true);
             echo "</td>
 \t\t\t\t\t\t\t\t<td>";
-            // line 54
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["client"], "secteur", [], "any", false, false, false, 54), "html", null, true);
+            // line 70
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["client"], "secteur", [], "any", false, false, false, 70), "html", null, true);
             echo "</td>
 \t\t\t\t\t\t\t\t<td>";
-            // line 55
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["client"], "service", [], "any", false, false, false, 55), "html", null, true);
+            // line 71
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["client"], "service", [], "any", false, false, false, 71), "html", null, true);
             echo "</td>
 \t\t\t\t\t\t\t\t<td><img src=\"";
-            // line 56
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["client"], "logo", [], "any", false, false, false, 56), "html", null, true);
+            // line 72
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["client"], "logo", [], "any", false, false, false, 72), "html", null, true);
             echo "\" alt=\"Logo\" style=\"width: 75px; height: 55px; padding: 5px;\"></td>
 \t\t\t\t\t\t\t</tr>
 \t\t\t\t\t\t";
@@ -166,7 +182,7 @@ class __TwigTemplate_d0098704fa3e487bcb187747d2999ac5 extends Template
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['client'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 59
+        // line 75
         echo "\t\t\t\t\t</tbody>
 \t\t\t\t</table>
 \t\t\t</div>
@@ -195,7 +211,7 @@ class __TwigTemplate_d0098704fa3e487bcb187747d2999ac5 extends Template
 
     public function getDebugInfo()
     {
-        return array (  170 => 59,  161 => 56,  157 => 55,  153 => 54,  149 => 53,  145 => 52,  142 => 51,  138 => 50,  92 => 6,  82 => 5,  69 => 3,  59 => 2,  36 => 1,);
+        return array (  186 => 75,  177 => 72,  173 => 71,  169 => 70,  165 => 69,  161 => 68,  158 => 67,  154 => 66,  108 => 22,  98 => 21,  69 => 3,  59 => 2,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -203,6 +219,22 @@ class __TwigTemplate_d0098704fa3e487bcb187747d2999ac5 extends Template
         return new Source("{% extends 'base.html.twig' %}
 {% block head %}
 \t<link rel=\"stylesheet\" href=\"{{ asset('../css/chats.css') }}\">
+
+
+    <style>
+        /* Ajoutez du CSS personnalisé pour centrer le contenu du tableau */
+        .center-table {
+            margin: 0 auto; /* Centre le tableau horizontalement */
+            text-align: center; /* Centre le contenu du tableau horizontalement */
+        }
+
+        .center-table th,
+        .center-table td {
+            vertical-align: middle; /* Centre le contenu du tableau verticalement */
+        }
+    </style>
+
+
 {% endblock %}
 {% block body %}
 \t<main id=\"main\" class=\"main\">
@@ -248,7 +280,7 @@ class __TwigTemplate_d0098704fa3e487bcb187747d2999ac5 extends Template
 \t\t\t\t\t\t\t<th>Logo</th>
 \t\t\t\t\t\t</tr>
 \t\t\t\t\t</thead>
-\t\t\t\t\t<tbody style=\"color:#092F54 ; background-color:#F17F21\">
+\t\t\t\t\t<tbody style=\"color:#092F54 ; background-color:#F09F32\">
 \t\t\t\t\t\t{% for client in topClients %}
 \t\t\t\t\t\t\t<tr>
 \t\t\t\t\t\t\t\t<td>{{ client.id }}</td>
@@ -266,6 +298,6 @@ class __TwigTemplate_d0098704fa3e487bcb187747d2999ac5 extends Template
 
 
 </div></section></main>{% endblock %}
-", "back/index.html.twig", "C:\\Users\\oumei\\Desktop\\Stram_WebSite\\templates\\back\\index.html.twig");
+", "back/index.html.twig", "C:\\Users\\oumei\\OneDrive\\Bureau\\Stram_WebSite\\templates\\back\\index.html.twig");
     }
 }

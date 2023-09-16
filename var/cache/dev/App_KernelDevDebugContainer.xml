@@ -367,6 +367,13 @@
         <argument type="service" id=".service_locator.mx0UMmY.App\Controller\FrontController"/>
       </call>
     </service>
+    <service id="App\Controller\GestionContactController" class="App\Controller\GestionContactController" public="true" autowire="true" autoconfigure="true">
+      <tag name="controller.service_arguments"/>
+      <tag name="container.service_subscriber"/>
+      <call method="setContainer">
+        <argument type="service" id=".service_locator.mx0UMmY.App\Controller\GestionContactController"/>
+      </call>
+    </service>
     <service id="App\Controller\MetierController" class="App\Controller\MetierController" public="true" autowire="true" autoconfigure="true">
       <tag name="controller.service_arguments"/>
       <tag name="container.service_subscriber"/>
@@ -386,6 +393,20 @@
       <tag name="container.service_subscriber"/>
       <call method="setContainer">
         <argument type="service" id=".service_locator.mx0UMmY.App\Controller\QuiSommesNousController"/>
+      </call>
+    </service>
+    <service id="App\Controller\ServicesController" class="App\Controller\ServicesController" public="true" autowire="true" autoconfigure="true">
+      <tag name="controller.service_arguments"/>
+      <tag name="container.service_subscriber"/>
+      <call method="setContainer">
+        <argument type="service" id=".service_locator.mx0UMmY.App\Controller\ServicesController"/>
+      </call>
+    </service>
+    <service id="App\Controller\StramController" class="App\Controller\StramController" public="true" autowire="true" autoconfigure="true">
+      <tag name="controller.service_arguments"/>
+      <tag name="container.service_subscriber"/>
+      <call method="setContainer">
+        <argument type="service" id=".service_locator.mx0UMmY.App\Controller\StramController"/>
       </call>
     </service>
     <service id="App\Form\ClientType" class="App\Form\ClientType" autowire="true" autoconfigure="true">
@@ -410,6 +431,10 @@
       <argument type="service" id="doctrine"/>
     </service>
     <service id="App\Repository\ContactRepository" class="App\Repository\ContactRepository" autowire="true" autoconfigure="true">
+      <tag name="doctrine.repository_service"/>
+      <argument type="service" id="doctrine"/>
+    </service>
+    <service id="App\Repository\GestionContactRepository" class="App\Repository\GestionContactRepository" autowire="true" autoconfigure="true">
       <tag name="doctrine.repository_service"/>
       <argument type="service" id="doctrine"/>
     </service>
@@ -4149,7 +4174,7 @@
     <service id="doctrine.orm.configuration" class="Doctrine\ORM\Configuration" abstract="true"/>
     <service id="doctrine.orm.entity_manager.abstract" class="Doctrine\ORM\EntityManager" lazy="true" abstract="true"/>
     <service id="doctrine.orm.container_repository_factory" class="Doctrine\Bundle\DoctrineBundle\Repository\ContainerRepositoryFactory">
-      <argument type="service" id=".service_locator.vSesw37"/>
+      <argument type="service" id=".service_locator.PJLz0Wv"/>
     </service>
     <service id="doctrine.orm.manager_configurator.abstract" class="Doctrine\Bundle\DoctrineBundle\ManagerConfigurator" abstract="true">
       <argument type="collection"/>
@@ -6065,6 +6090,9 @@
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\FrontController" class="App\Controller\FrontController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\FrontController" class="App\Controller\FrontController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\FrontController" class="App\Controller\FrontController" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\GestionContactController" class="App\Controller\GestionContactController" autowire="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\GestionContactController" class="App\Controller\GestionContactController" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Controller\GestionContactController" class="App\Controller\GestionContactController" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\MetierController" class="App\Controller\MetierController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\MetierController" class="App\Controller\MetierController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\MetierController" class="App\Controller\MetierController" autowire="true" autoconfigure="true" abstract="true"/>
@@ -6074,6 +6102,12 @@
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\QuiSommesNousController" class="App\Controller\QuiSommesNousController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\QuiSommesNousController" class="App\Controller\QuiSommesNousController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\QuiSommesNousController" class="App\Controller\QuiSommesNousController" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\ServicesController" class="App\Controller\ServicesController" autowire="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\ServicesController" class="App\Controller\ServicesController" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Controller\ServicesController" class="App\Controller\ServicesController" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\StramController" class="App\Controller\StramController" autowire="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\StramController" class="App\Controller\StramController" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Controller\StramController" class="App\Controller\StramController" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\ClientType" class="App\Form\ClientType" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Form\ClientType" class="App\Form\ClientType" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\MetierType" class="App\Form\MetierType" autowire="true" abstract="true"/>
@@ -6088,6 +6122,8 @@
     <service id=".abstract.instanceof.App\Repository\ClientRepository" class="App\Repository\ClientRepository" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\ContactRepository" class="App\Repository\ContactRepository" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Repository\ContactRepository" class="App\Repository\ContactRepository" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\GestionContactRepository" class="App\Repository\GestionContactRepository" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Repository\GestionContactRepository" class="App\Repository\GestionContactRepository" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\MetierRepository" class="App\Repository\MetierRepository" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Repository\MetierRepository" class="App\Repository\MetierRepository" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\PaysRepository" class="App\Repository\PaysRepository" autowire="true" abstract="true"/>
@@ -6474,39 +6510,44 @@
         <argument key="clientRepository" type="service_closure" id="App\Repository\ClientRepository"/>
       </argument>
     </service>
-    <service id=".service_locator._sqIFxE" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.7nN18nf" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
-        <argument key="client" type="service_closure" id=".errored..service_locator._sqIFxE.App\Entity\Client"/>
+        <argument key="clientRepository" type="service_closure" id="App\Repository\ClientRepository"/>
+        <argument key="entityManager" type="service_closure" id="doctrine.orm.default_entity_manager"/>
       </argument>
     </service>
-    <service id=".service_locator.fPva_Ka" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.5Bn.5hd" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
-        <argument key="metier" type="service_closure" id=".errored..service_locator.fPva_Ka.App\Entity\Metier"/>
+        <argument key="entityManager" type="service_closure" id="doctrine.orm.default_entity_manager"/>
+        <argument key="metierRepository" type="service_closure" id="App\Repository\MetierRepository"/>
       </argument>
     </service>
-    <service id=".service_locator.0Vaziks" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.Lqig3iN" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
-        <argument key="projet" type="service_closure" id=".errored..service_locator.0Vaziks.App\Entity\Projet"/>
+        <argument key="entityManager" type="service_closure" id="doctrine.orm.default_entity_manager"/>
+        <argument key="projetRepository" type="service_closure" id="App\Repository\ProjetRepository"/>
       </argument>
     </service>
-    <service id=".service_locator.qK92ERs" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.ND3fCwJ" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="App\Controller\BackController::index" type="service_closure" id=".service_locator.T1Cqnaw"/>
-        <argument key="App\Controller\ClientsController::suppressionClient" type="service_closure" id=".service_locator._sqIFxE"/>
-        <argument key="App\Controller\MetierController::suppressionMetier" type="service_closure" id=".service_locator.fPva_Ka"/>
-        <argument key="App\Controller\ProjetController::suppressionProjet" type="service_closure" id=".service_locator.0Vaziks"/>
+        <argument key="App\Controller\ClientsController::suppressionClient" type="service_closure" id=".service_locator.7nN18nf"/>
+        <argument key="App\Controller\MetierController::modifierMetier" type="service_closure" id=".service_locator.5Bn.5hd"/>
+        <argument key="App\Controller\MetierController::suppressionMetier" type="service_closure" id=".service_locator.5Bn.5hd"/>
+        <argument key="App\Controller\ProjetController::suppressionProjet" type="service_closure" id=".service_locator.Lqig3iN"/>
         <argument key="App\Kernel::loadRoutes" type="service_closure" id=".service_locator.xUrKPVU"/>
         <argument key="App\Kernel::registerContainerConfiguration" type="service_closure" id=".service_locator.xUrKPVU"/>
         <argument key="kernel::loadRoutes" type="service_closure" id=".service_locator.xUrKPVU"/>
         <argument key="kernel::registerContainerConfiguration" type="service_closure" id=".service_locator.xUrKPVU"/>
         <argument key="App\Controller\BackController:index" type="service_closure" id=".service_locator.T1Cqnaw"/>
-        <argument key="App\Controller\ClientsController:suppressionClient" type="service_closure" id=".service_locator._sqIFxE"/>
-        <argument key="App\Controller\MetierController:suppressionMetier" type="service_closure" id=".service_locator.fPva_Ka"/>
-        <argument key="App\Controller\ProjetController:suppressionProjet" type="service_closure" id=".service_locator.0Vaziks"/>
+        <argument key="App\Controller\ClientsController:suppressionClient" type="service_closure" id=".service_locator.7nN18nf"/>
+        <argument key="App\Controller\MetierController:modifierMetier" type="service_closure" id=".service_locator.5Bn.5hd"/>
+        <argument key="App\Controller\MetierController:suppressionMetier" type="service_closure" id=".service_locator.5Bn.5hd"/>
+        <argument key="App\Controller\ProjetController:suppressionProjet" type="service_closure" id=".service_locator.Lqig3iN"/>
         <argument key="kernel:loadRoutes" type="service_closure" id=".service_locator.xUrKPVU"/>
         <argument key="kernel:registerContainerConfiguration" type="service_closure" id=".service_locator.xUrKPVU"/>
       </argument>
@@ -6661,13 +6702,14 @@
         <argument key="doctrine.orm.messenger.doctrine_schema_subscriber" type="service_closure" id="doctrine.orm.messenger.doctrine_schema_subscriber"/>
       </argument>
     </service>
-    <service id=".service_locator.vSesw37" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.PJLz0Wv" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="App\Repository\AcceuilRepository" type="service_closure" id="App\Repository\AcceuilRepository"/>
         <argument key="App\Repository\CarrièreRepository" type="service_closure" id="App\Repository\CarrièreRepository"/>
         <argument key="App\Repository\ClientRepository" type="service_closure" id="App\Repository\ClientRepository"/>
         <argument key="App\Repository\ContactRepository" type="service_closure" id="App\Repository\ContactRepository"/>
+        <argument key="App\Repository\GestionContactRepository" type="service_closure" id="App\Repository\GestionContactRepository"/>
         <argument key="App\Repository\MetierRepository" type="service_closure" id="App\Repository\MetierRepository"/>
         <argument key="App\Repository\PaysRepository" type="service_closure" id="App\Repository\PaysRepository"/>
         <argument key="App\Repository\ProjetRepository" type="service_closure" id="App\Repository\ProjetRepository"/>
@@ -6976,6 +7018,12 @@
       <argument type="service" id="service_container"/>
       <factory service=".service_locator.mx0UMmY" method="withContext"/>
     </service>
+    <service id=".service_locator.mx0UMmY.App\Controller\GestionContactController" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\GestionContactController"/>
+      <argument>App\Controller\GestionContactController</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.mx0UMmY" method="withContext"/>
+    </service>
     <service id=".service_locator.mx0UMmY.App\Controller\MetierController" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator_context" id="App\Controller\MetierController"/>
       <argument>App\Controller\MetierController</argument>
@@ -6991,6 +7039,18 @@
     <service id=".service_locator.mx0UMmY.App\Controller\QuiSommesNousController" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator_context" id="App\Controller\QuiSommesNousController"/>
       <argument>App\Controller\QuiSommesNousController</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.mx0UMmY" method="withContext"/>
+    </service>
+    <service id=".service_locator.mx0UMmY.App\Controller\ServicesController" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\ServicesController"/>
+      <argument>App\Controller\ServicesController</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.mx0UMmY" method="withContext"/>
+    </service>
+    <service id=".service_locator.mx0UMmY.App\Controller\StramController" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\StramController"/>
+      <argument>App\Controller\StramController</argument>
       <argument type="service" id="service_container"/>
       <factory service=".service_locator.mx0UMmY" method="withContext"/>
     </service>
@@ -7164,12 +7224,12 @@
       <argument type="service" id="security.token_storage"/>
     </service>
     <service id="debug.argument_resolver.service.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver">
-      <argument type="service" id=".service_locator.qK92ERs"/>
+      <argument type="service" id=".service_locator.ND3fCwJ"/>
     </service>
     <service id="debug.argument_resolver.default.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver"/>
     <service id="debug.argument_resolver.variadic.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\VariadicValueResolver"/>
     <service id="debug.argument_resolver.not_tagged_controller.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\NotTaggedControllerValueResolver">
-      <argument type="service" id=".service_locator.qK92ERs"/>
+      <argument type="service" id=".service_locator.ND3fCwJ"/>
     </service>
     <service id="debug.traced.messenger.bus.default.inner" class="Symfony\Component\Messenger\MessageBus">
       <argument type="iterator">
@@ -7189,9 +7249,6 @@
       </call>
     </service>
     <service id=".errored..service_locator.xUrKPVU.Symfony\Component\Config\Loader\LoaderInterface" class="Symfony\Component\Config\Loader\LoaderInterface"/>
-    <service id=".errored..service_locator._sqIFxE.App\Entity\Client" class="App\Entity\Client"/>
-    <service id=".errored..service_locator.fPva_Ka.App\Entity\Metier" class="App\Entity\Metier"/>
-    <service id=".errored..service_locator.0Vaziks.App\Entity\Projet" class="App\Entity\Projet"/>
     <service id=".console.command.about.lazy" class="Symfony\Component\Console\Command\LazyCommand">
       <argument>about</argument>
       <argument type="collection"/>
@@ -8140,7 +8197,7 @@
     <service id="Psr\Log\LoggerInterface" alias="monolog.logger"/>
     <service id="container.env_var_processors_locator" alias=".service_locator.gSv9zYw" public="true"/>
     <service id="twig.loader.filesystem" alias="twig.loader.native_filesystem"/>
-    <service id="argument_resolver.controller_locator" alias=".service_locator.qK92ERs"/>
+    <service id="argument_resolver.controller_locator" alias=".service_locator.ND3fCwJ"/>
     <service id="session" alias=".session.do-not-use" public="true">
       <deprecated package="symfony/framework-bundle" version="5.3">The "%alias_id%" service and "SessionInterface" alias are deprecated, use "$requestStack-&gt;getSession()" instead.</deprecated>
     </service>
@@ -8164,7 +8221,8 @@
     <service id=".service_locator.80edgLI" alias="messenger.receiver_locator"/>
     <service id=".service_locator.h8Jkkd2" alias="messenger.retry_strategy_locator"/>
     <service id=".service_locator.0GV1BZZ" alias=".service_locator.gSv9zYw"/>
-    <service id=".service_locator.Sb8qpVy" alias=".service_locator.qK92ERs"/>
+    <service id=".service_locator.q.9rhAv" alias=".service_locator.7nN18nf"/>
+    <service id=".service_locator.MyUMGzX" alias=".service_locator.ND3fCwJ"/>
     <service id=".service_locator.wKF4yn1" alias=".service_locator.19_mNxd"/>
     <service id=".service_locator.IC_zK_d" alias=".service_locator.6Hz5oXV"/>
     <service id=".service_locator.nk0lT0X" alias=".service_locator.1kmbKC8"/>
@@ -8193,9 +8251,9 @@
     <service id="doctrine.orm.default_metadata_driver" alias=".doctrine.orm.default_metadata_driver"/>
     <service id=".service_locator.uo5c0SP" alias=".service_locator.xUrKPVU"/>
     <service id=".service_locator.2GcoWcp" alias=".service_locator.T1Cqnaw"/>
-    <service id=".service_locator.yEXbSC7" alias=".service_locator._sqIFxE"/>
-    <service id=".service_locator.8szmI2U" alias=".service_locator.fPva_Ka"/>
-    <service id=".service_locator.ptSg.2Z" alias=".service_locator.0Vaziks"/>
+    <service id=".service_locator.eGcAO2X" alias=".service_locator.7nN18nf"/>
+    <service id=".service_locator.MveU.Xe" alias=".service_locator.5Bn.5hd"/>
+    <service id=".service_locator.ZvEhi6l" alias=".service_locator.Lqig3iN"/>
     <service id=".service_locator.A740LBW" alias=".service_locator.mx0UMmY"/>
     <service id=".service_locator.L0rFhJm" alias=".service_locator.GVyCdgr"/>
     <service id=".service_locator.pFwChgS" alias=".service_locator.UkE3SaZ"/>

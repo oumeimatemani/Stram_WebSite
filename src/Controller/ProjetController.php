@@ -4,8 +4,10 @@ namespace App\Controller;
 
 
 use App\Entity\Projet;
+use App\Entity\Metier;
 use App\Form\ProjetType;
 use App\Repository\ClientRepository;
+use App\Repository\ProjetRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -35,23 +37,23 @@ class ProjetController extends AbstractController
     {
         $projet = new Projet();
         $form = $this->createForm(ProjetType::class, $projet);
+    
+        // Fetch the list of available Metiers from the database
+        $metiers = $this->getDoctrine()->getRepository(Metier::class)->findAll();
+    
         $form->handleRequest($request);
-
+    
         if ($form->isSubmitted() && $form->isValid()) {
-            // Gérer l'upload d'image et autres opérations ici
-            // Persist et flush l'entité $projet
-
             $em = $this->getDoctrine()->getManager();
             $em->persist($projet);
             $em->flush();
-
             $this->addFlash('success', 'Le projet a été ajouté avec succès.');
-            return $this->redirectToRoute('display_projets');
+            return $this->redirectToRoute('projets');
         }
-
+    
         return $this->render(
             'projet/ajoutProjet.html.twig',
-            ['P' => $form->createView()]
+            ['P' => $form->createView(), 'p' => $projet, 'metiers' => $metiers]
         );
     }
 
@@ -75,7 +77,7 @@ class ProjetController extends AbstractController
             $fileUpload = $form->get('image')->getData();
             $fileName = md5(uniqid()) . '.' . $fileUpload->guessExtension();
             $fileUpload->move($this->getParameter('kernel.project_dir') . '/public/uploads', $fileName);
-            $projet->setLogo($fileName);
+            $projet->setImage($fileName);
 
             $em = $this->getDoctrine()->getManager();
             $em->persist($projet);
@@ -86,7 +88,7 @@ class ProjetController extends AbstractController
 
         return $this->render(
             'projet/modifProjet.html.twig',
-            ['C' => $form->createView()]
+            ['P' => $form->createView()]
         );
     }
 
@@ -94,13 +96,17 @@ class ProjetController extends AbstractController
     /**
      * @Route("/suppressionProjet/{id}", name="suppressionProjet")
      */
-
-    public function suppressionProjet(Projet  $projet): Response
+    public function suppressionProjet(EntityManagerInterface $entityManager, ProjetRepository $projetRepository, $id): Response
     {
-
-        $em = $this->getDoctrine()->getManager();
-        $em->remove($projet);
-        $em->flush();
+        $projet = $projetRepository->find($id);
+    
+        if (!$projet) {
+            throw $this->createNotFoundException('Projet introuvable ');
+        }
+    
+        $entityManager->remove($projet);
+        $entityManager->flush();
+    
         return $this->redirectToRoute('projets');
     }
 }

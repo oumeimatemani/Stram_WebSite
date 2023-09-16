@@ -125,7 +125,9 @@ class __TwigTemplate_da4518ac1ac7a7a7e85597e75857c84f extends Template
 \t\t\t\t\t\t\t\t\t\t<th scope=\"col\">titre</th>
 \t\t\t\t\t\t\t\t\t\t<th scope=\"col\">Maître d'ouvrage</th>
 \t\t\t\t\t\t\t\t\t\t<th scope=\"col\">description</th>
+\t\t\t\t\t\t\t\t\t\t<th scope=\"col\">Afficher le project dans le site</th>
 \t\t\t\t\t\t\t\t\t\t<th scope=\"col\"></th>
+
 
 
 \t\t\t\t\t\t\t\t\t</tr>
@@ -133,44 +135,44 @@ class __TwigTemplate_da4518ac1ac7a7a7e85597e75857c84f extends Template
 \t\t\t\t\t\t\t\t<tbody>
 \t\t\t\t\t\t\t\t\t<tr>
 \t\t\t\t\t\t\t\t\t\t";
-        // line 53
-        if ((twig_length_filter($this->env, (isset($context["listP"]) || array_key_exists("listP", $context) ? $context["listP"] : (function () { throw new RuntimeError('Variable "listP" does not exist.', 53, $this->source); })())) == 0)) {
-            // line 54
+        // line 55
+        if ((twig_length_filter($this->env, (isset($context["listP"]) || array_key_exists("listP", $context) ? $context["listP"] : (function () { throw new RuntimeError('Variable "listP" does not exist.', 55, $this->source); })())) == 0)) {
+            // line 56
             echo "\t\t\t\t\t\t\t\t\t\t\t<p style=\"text-align: center\">Liste vide</p>
 \t\t\t\t\t\t\t\t\t\t";
         }
-        // line 56
+        // line 58
         echo "\t\t\t\t\t\t\t\t\t</tr>
 \t\t\t\t\t\t\t\t\t";
-        // line 57
+        // line 59
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable((isset($context["listP"]) || array_key_exists("listP", $context) ? $context["listP"] : (function () { throw new RuntimeError('Variable "listP" does not exist.', 57, $this->source); })()));
+        $context['_seq'] = twig_ensure_traversable((isset($context["listP"]) || array_key_exists("listP", $context) ? $context["listP"] : (function () { throw new RuntimeError('Variable "listP" does not exist.', 59, $this->source); })()));
         foreach ($context['_seq'] as $context["_key"] => $context["p"]) {
-            // line 58
+            // line 60
             echo "
 \t\t\t\t\t\t\t\t\t\t<tr>
 
 \t\t\t\t\t\t\t\t\t\t\t<td>";
-            // line 61
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["p"], "titre", [], "any", false, false, false, 61), "html", null, true);
-            echo "</td>
-\t\t\t\t\t\t\t\t\t\t\t<td>";
-            // line 62
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["p"], "proprietaire", [], "any", false, false, false, 62), "html", null, true);
-            echo "</td>
-\t\t\t\t\t\t\t\t\t\t\t<td>";
             // line 63
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["p"], "description", [], "any", false, false, false, 63), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["p"], "titre", [], "any", false, false, false, 63), "html", null, true);
             echo "</td>
-
-\t\t\t\t\t\t\t\t\t\t\t<td><img style=\"width: 75px; height: 55px; padding: 5px;\" src=\"";
+\t\t\t\t\t\t\t\t\t\t\t<td>";
+            // line 64
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["p"], "proprietaire", [], "any", false, false, false, 64), "html", null, true);
+            echo "</td>
+\t\t\t\t\t\t\t\t\t\t\t<td>";
             // line 65
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl(("uploads/" . twig_get_attribute($this->env, $this->source, $context["p"], "image", [], "any", false, false, false, 65))), "html", null, true);
-            echo "\"/></td>
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["p"], "description", [], "any", false, false, false, 65), "html", null, true);
+            echo "</td>
+                                            
+\t\t\t\t\t\t\t\t\t\t\t<td>";
+            // line 67
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["p"], "afficherProjet", [], "any", false, false, false, 67), "html", null, true);
+            echo "</td>
 \t\t\t\t\t\t\t\t\t\t\t<td>
 \t\t\t\t\t\t\t\t\t\t\t\t<a href=\"";
-            // line 67
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("modifierProjet", ["id" => twig_get_attribute($this->env, $this->source, $context["p"], "id", [], "any", false, false, false, 67)]), "html", null, true);
+            // line 69
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("modifierProjet", ["id" => twig_get_attribute($this->env, $this->source, $context["p"], "id", [], "any", false, false, false, 69)]), "html", null, true);
             echo "\">
 \t\t\t\t\t\t\t\t\t\t\t\t\t<button type=\"button\" class=\"btn btn-outline-warning\">
 \t\t\t\t\t\t\t\t\t\t\t\t\t\t<i class=\"bi bi-pen\" style=\"color:#DEE9F3\"></i>
@@ -178,8 +180,8 @@ class __TwigTemplate_da4518ac1ac7a7a7e85597e75857c84f extends Template
 \t\t\t\t\t\t\t\t\t\t\t\t</a>
 
 \t\t\t\t\t\t\t\t\t\t\t\t<a href=\"";
-            // line 73
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("suppressionProjet", ["id" => twig_get_attribute($this->env, $this->source, $context["p"], "id", [], "any", false, false, false, 73)]), "html", null, true);
+            // line 75
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("suppressionProjet", ["id" => twig_get_attribute($this->env, $this->source, $context["p"], "id", [], "any", false, false, false, 75)]), "html", null, true);
             echo "\">
 \t\t\t\t\t\t\t\t\t\t\t\t\t<button type=\"button\" class=\"btn btn-outline-warning\">
 \t\t\t\t\t\t\t\t\t\t\t\t\t\t<i class=\"bi bi-trash\" style=\"color:#DEE9F3\"></i>
@@ -195,7 +197,7 @@ class __TwigTemplate_da4518ac1ac7a7a7e85597e75857c84f extends Template
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['p'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 84
+        // line 86
         echo "
 
 \t\t\t\t\t\t\t\t</tbody>
@@ -203,7 +205,7 @@ class __TwigTemplate_da4518ac1ac7a7a7e85597e75857c84f extends Template
 
 \t\t\t\t\t\t\t</table>
 \t\t\t\t\t\t\t<a href=\"";
-        // line 90
+        // line 92
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("ajouterProjet");
         echo "\">
 \t\t\t\t\t\t\t\t<button type=\"button\" class=\"btn btn-warning\" style=\" background-color:#ff9919 \">ajouter projet</button>
@@ -241,7 +243,7 @@ class __TwigTemplate_da4518ac1ac7a7a7e85597e75857c84f extends Template
 
     public function getDebugInfo()
     {
-        return array (  207 => 90,  199 => 84,  182 => 73,  173 => 67,  168 => 65,  163 => 63,  159 => 62,  155 => 61,  150 => 58,  146 => 57,  143 => 56,  139 => 54,  137 => 53,  89 => 7,  79 => 6,  59 => 3,  36 => 1,);
+        return array (  209 => 92,  201 => 86,  184 => 75,  175 => 69,  170 => 67,  165 => 65,  161 => 64,  157 => 63,  152 => 60,  148 => 59,  145 => 58,  141 => 56,  139 => 55,  89 => 7,  79 => 6,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -291,7 +293,9 @@ class __TwigTemplate_da4518ac1ac7a7a7e85597e75857c84f extends Template
 \t\t\t\t\t\t\t\t\t\t<th scope=\"col\">titre</th>
 \t\t\t\t\t\t\t\t\t\t<th scope=\"col\">Maître d'ouvrage</th>
 \t\t\t\t\t\t\t\t\t\t<th scope=\"col\">description</th>
+\t\t\t\t\t\t\t\t\t\t<th scope=\"col\">Afficher le project dans le site</th>
 \t\t\t\t\t\t\t\t\t\t<th scope=\"col\"></th>
+
 
 
 \t\t\t\t\t\t\t\t\t</tr>
@@ -309,8 +313,8 @@ class __TwigTemplate_da4518ac1ac7a7a7e85597e75857c84f extends Template
 \t\t\t\t\t\t\t\t\t\t\t<td>{{p.titre}}</td>
 \t\t\t\t\t\t\t\t\t\t\t<td>{{p.proprietaire}}</td>
 \t\t\t\t\t\t\t\t\t\t\t<td>{{p.description }}</td>
-
-\t\t\t\t\t\t\t\t\t\t\t<td><img style=\"width: 75px; height: 55px; padding: 5px;\" src=\"{{ asset('uploads/'~p.image) }}\"/></td>
+                                            
+\t\t\t\t\t\t\t\t\t\t\t<td>{{p.afficherProjet}}</td>
 \t\t\t\t\t\t\t\t\t\t\t<td>
 \t\t\t\t\t\t\t\t\t\t\t\t<a href=\"{{ path('modifierProjet',{id:p.id}) }}\">
 \t\t\t\t\t\t\t\t\t\t\t\t\t<button type=\"button\" class=\"btn btn-outline-warning\">
@@ -351,6 +355,6 @@ class __TwigTemplate_da4518ac1ac7a7a7e85597e75857c84f extends Template
 \t</main>
 
 {% endblock %}
-", "projet/projetBack.html.twig", "C:\\Users\\oumei\\Desktop\\Stram_WebSite\\templates\\projet\\projetBack.html.twig");
+", "projet/projetBack.html.twig", "C:\\Users\\oumei\\OneDrive\\Bureau\\Stram_WebSite\\templates\\projet\\projetBack.html.twig");
     }
 }

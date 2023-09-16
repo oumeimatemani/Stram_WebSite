@@ -24,40 +24,34 @@ class ProjetType extends AbstractType
             ->add('proprietaire', TextType::class, [
                 'label' => 'Maître d\'ouvrage *',
             ])
-            ->add('afficherProjet', CheckboxType::class, [
-                'label' => 'Afficher le projet dans le site',
-                'required' => false,
-            ])
-            ->add('image', FileType::class, [
-                'label' => 'Image',
-                'required' => false,
-            ])
+     
             ->add('description', TextType::class, [
                 'label' => 'Description',
             ])
-            ->add('date', TextType::class, [
-                'label' => 'Date projet',
-                'attr' => [
-                    'class' => 'datepicker', // Add your datepicker class
-                    'placeholder' => 'jj/mm/aaaa', // Placeholder for user guidance
-                ],
+            ->add('image', FileType::class, [
+                'data_class' => null, // Pour autoriser la mise à jour du fichier
+                'required' => false,  // Rend le champ optionnel
             ])
-
-
+            ->add('date', DateType::class, [
+                'label' => 'Date de projet',
+                'widget' => 'single_text', // Utilisez 'single_text' pour afficher un champ de texte simple
+                'format' => 'yyyy-MM-dd', // Format de la date (modifiable selon vos besoins)
+            ])
+       
             ->add('metiers', EntityType::class, [
                 'class' => Metier::class,
-                'choice_label' => 'titre',
-                'multiple' => true,
-                'required' => false,
                 'label' => 'Métiers',
+                'multiple' => true, // Allow multiple selections
+                'expanded' => true, // Display as checkboxes
+                'choice_label' => 'titre', // Display the "titre" property of Metier entities
+                'attr' => ['class' => 'form-control'],
             ])
-            ->add('gallerie', CollectionType::class, [
-                'entry_type' => FileType::class,
-                'allow_add' => true,
-                'by_reference' => false,
-                'required' => false,
-                'label' => 'Galerie',
-            ]);
+     
+            ->add('gallerie', FileType::class, [
+                'data_class' => null, // Pour autoriser la mise à jour du fichier
+                'required' => false,  // Rend le champ optionnel
+            ])
+  ;
     }
 
     public function configureOptions(OptionsResolver $resolver)

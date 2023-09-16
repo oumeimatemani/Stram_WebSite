@@ -66,48 +66,60 @@ class MetierController extends AbstractController
     /**
      * @Route("/modifierMetier/{id}", name="modifierMetier")
      */
-    public function modifierMetier(Request $request, $id): Response
-    {
-        $entityManager = $this->getDoctrine()->getManager();
-        $metier = $entityManager->getRepository(Metier::class)->find($id);
 
-        if (!$metier) {
-            throw $this->createNotFoundException('Metier introuvable ');
-        }
+public function modifierMetier(Request $request, EntityManagerInterface $entityManager, MetierRepository $metierRepository, $id): Response
+{
+    $metier = $metierRepository->find($id);
 
-        $form = $this->createForm(MetierType::class, $metier);
-        $form->handleRequest($request);
+    if (!$metier) {
+        throw $this->createNotFoundException('Metier introuvable ');
+    }
 
-        if ($form->isSubmitted() && $form->isValid()) {
-            $fileUpload = $form->get('image')->getData();
+    // Créez le formulaire avec l'entité Metier existante
+    $form = $this->createForm(MetierType::class, $metier);
+
+    // Traitez la soumission du formulaire
+    $form->handleRequest($request);
+
+    if ($form->isSubmitted() && $form->isValid()) {
+        // Gérez le téléchargement du fichier (image) si nécessaire
+        $fileUpload = $form->get('image')->getData();
+        if ($fileUpload) {
             $fileName = md5(uniqid()) . '.' . $fileUpload->guessExtension();
             $fileUpload->move($this->getParameter('kernel.project_dir') . '/public/uploads', $fileName);
             $metier->setImage($fileName);
-
-            $em = $this->getDoctrine()->getManager();
-            $em->persist($metier);
-            $em->flush();
-            $this->addFlash('success', 'La metier  a été modifié avec succès.');
-            return $this->redirectToRoute('metiers');
         }
 
-        return $this->render(
-            'metiers/modifMetier.html.twig',
-            ['C' => $form->createView()]
-        );
+        // Enregistrez les modifications dans la base de données
+        $entityManager->flush();
+
+        $this->addFlash('success', 'La metier a été modifiée avec succès.');
+        return $this->redirectToRoute('metiers');
     }
+
+    // Affichez le formulaire de modification
+    return $this->render('metier/modifMetier.html.twig', [
+        'form' => $form->createView(),
+        'metier' => $metier,
+    ]);
+}
 
 
     /**
      * @Route("/suppressionMetier/{id}", name="suppressionMetier")
      */
-
-    public function suppressionMetier(Metier  $metier): Response
+    public function suppressionMetier(EntityManagerInterface $entityManager, MetierRepository $metierRepository, $id): Response
     {
-
-        $em = $this->getDoctrine()->getManager();
-        $em->remove($metier);
-        $em->flush();
+        $metier = $metierRepository->find($id);
+    
+        if (!$metier) {
+            throw $this->createNotFoundException('Metier introuvable ');
+        }
+    
+        $entityManager->remove($metier);
+        $entityManager->flush();
+    
         return $this->redirectToRoute('metiers');
     }
+    
 }

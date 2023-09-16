@@ -234,29 +234,37 @@ class __TwigTemplate_6e6b8f3e2012d1f531a432f25485f835 extends Template
 </a>
 <ul id=\"icons-acceuil\" class=\"nav-content collapse \" data-bs-parent=\"#sidebar-nav\">
 \t<li>
-\t\t<a href=\"\">
+\t\t<a href=\"/gestionAcceuil\">
 \t\t\t<i class=\"bi bi-circle\"></i>
 \t\t\t<span style=\"color:#DEE9F3 , text-color: dark \">Acceuil</span>
 \t\t</a>
 \t</li>
 \t<li>
-\t\t<a href=\"\">
+\t\t<a href=\"/gestionStram\">
 \t\t\t<i class=\"bi bi-circle\"></i>
 \t\t\t<span style=\"color:#DEE9F3 , text-color: dark \">STRAM</span>
 \t\t</a>
 \t</li>
 \t<li>
-\t\t<a href=\"\">
+\t\t<a href=\"/gestionServices\">
 \t\t\t<i class=\"bi bi-circle\"></i>
 \t\t\t<span style=\"color:#DEE9F3 , text-color: dark \">Services</span>
 \t\t</a>
 \t</li>
+\t
+\t<li>
+\t\t<a href=\"/gestionContact\">
+\t\t\t<i class=\"bi bi-circle\"></i>
+\t\t\t<span style=\"color:#DEE9F3 , text-color: dark \">Contact</span>
+\t\t</a>
+\t</li>
+
 </ul></li></aside><!-- End Sidebar-->";
-        // line 222
+        // line 230
         $this->displayBlock('sidebar', $context, $blocks);
         $this->displayBlock('body', $context, $blocks);
         $this->displayBlock('footer', $context, $blocks);
-        // line 240
+        // line 248
         echo "</body></html>
 ";
         
@@ -433,7 +441,7 @@ class __TwigTemplate_6e6b8f3e2012d1f531a432f25485f835 extends Template
 
     }
 
-    // line 222
+    // line 230
     public function block_sidebar($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -516,7 +524,7 @@ class __TwigTemplate_6e6b8f3e2012d1f531a432f25485f835 extends Template
 
     public function getDebugInfo()
     {
-        return array (  437 => 222,  413 => 45,  403 => 44,  391 => 39,  385 => 36,  381 => 35,  377 => 34,  373 => 33,  369 => 32,  365 => 31,  361 => 30,  356 => 29,  346 => 28,  333 => 24,  327 => 21,  322 => 19,  318 => 18,  314 => 17,  310 => 16,  306 => 15,  301 => 14,  291 => 13,  271 => 6,  260 => 240,  256 => 222,  201 => 170,  192 => 164,  141 => 116,  110 => 88,  80 => 60,  78 => 44,  73 => 41,  71 => 28,  68 => 27,  65 => 13,  59 => 8,  57 => 6,  50 => 1,);
+        return array (  445 => 230,  421 => 45,  411 => 44,  399 => 39,  393 => 36,  389 => 35,  385 => 34,  381 => 33,  377 => 32,  373 => 31,  369 => 30,  364 => 29,  354 => 28,  341 => 24,  335 => 21,  330 => 19,  326 => 18,  322 => 17,  318 => 16,  314 => 15,  309 => 14,  299 => 13,  279 => 6,  268 => 248,  264 => 230,  201 => 170,  192 => 164,  141 => 116,  110 => 88,  80 => 60,  78 => 44,  73 => 41,  71 => 28,  68 => 27,  65 => 13,  59 => 8,  57 => 6,  50 => 1,);
     }
 
     public function getSourceContext()
@@ -725,23 +733,31 @@ class __TwigTemplate_6e6b8f3e2012d1f531a432f25485f835 extends Template
 </a>
 <ul id=\"icons-acceuil\" class=\"nav-content collapse \" data-bs-parent=\"#sidebar-nav\">
 \t<li>
-\t\t<a href=\"\">
+\t\t<a href=\"/gestionAcceuil\">
 \t\t\t<i class=\"bi bi-circle\"></i>
 \t\t\t<span style=\"color:#DEE9F3 , text-color: dark \">Acceuil</span>
 \t\t</a>
 \t</li>
 \t<li>
-\t\t<a href=\"\">
+\t\t<a href=\"/gestionStram\">
 \t\t\t<i class=\"bi bi-circle\"></i>
 \t\t\t<span style=\"color:#DEE9F3 , text-color: dark \">STRAM</span>
 \t\t</a>
 \t</li>
 \t<li>
-\t\t<a href=\"\">
+\t\t<a href=\"/gestionServices\">
 \t\t\t<i class=\"bi bi-circle\"></i>
 \t\t\t<span style=\"color:#DEE9F3 , text-color: dark \">Services</span>
 \t\t</a>
 \t</li>
+\t
+\t<li>
+\t\t<a href=\"/gestionContact\">
+\t\t\t<i class=\"bi bi-circle\"></i>
+\t\t\t<span style=\"color:#DEE9F3 , text-color: dark \">Contact</span>
+\t\t</a>
+\t</li>
+
 </ul></li></aside><!-- End Sidebar-->{% block sidebar %}{% endblock %}{% block body %}{% endblock %}{% block footer %}<div class=\"footer\">
 <div class=\"footer_bottom\">
 \t<div class=\"container\">
@@ -761,6 +777,6 @@ class __TwigTemplate_6e6b8f3e2012d1f531a432f25485f835 extends Template
 \t\t</div>
 \t</div>
 </div></div>{% endblock %}</body></html>
-", "base.html.twig", "C:\\Users\\oumei\\Desktop\\Stram_WebSite\\templates\\base.html.twig");
+", "base.html.twig", "C:\\Users\\oumei\\OneDrive\\Bureau\\Stram_WebSite\\templates\\base.html.twig");
     }
 }

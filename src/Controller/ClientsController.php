@@ -64,7 +64,7 @@ class ClientsController extends AbstractController
             $em->persist($client);
             $em->flush();
             $this->addFlash('success', 'Le client  a été ajouté avec succès.');
-            return $this->redirectToRoute('clients');
+            return $this->redirectToRoute('clients_admin');
         }
 
         return $this->render(
@@ -101,7 +101,7 @@ class ClientsController extends AbstractController
             $em->persist($client);
             $em->flush();
             $this->addFlash('success', 'Le client  a été modifié avec succès.');
-            return $this->redirectToRoute('clients');
+            return $this->redirectToRoute('clients_admin');
         }
 
         return $this->render(
@@ -115,12 +115,17 @@ class ClientsController extends AbstractController
      * @Route("/suppressionClient/{id}", name="suppressionClient")
      */
 
-    public function suppressionClient(Client  $client): Response
-    {
-
-        $em = $this->getDoctrine()->getManager();
-        $em->remove($client);
-        $em->flush();
-        return $this->redirectToRoute('clients');
-    }
+     public function suppressionClient(EntityManagerInterface $entityManager, ClientRepository $clientRepository, $id): Response
+     {
+         $client = $clientRepository->find($id);
+     
+         if (!$client) {
+             throw $this->createNotFoundException('Client introuvable ');
+         }
+     
+         $entityManager->remove($client);
+         $entityManager->flush();
+     
+         return $this->redirectToRoute('clients_admin');
+     }
 }

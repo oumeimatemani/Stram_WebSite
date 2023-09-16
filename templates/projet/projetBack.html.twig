@@ -43,7 +43,9 @@
 										<th scope="col">titre</th>
 										<th scope="col">Maître d'ouvrage</th>
 										<th scope="col">description</th>
+										<th scope="col">Afficher le project dans le site</th>
 										<th scope="col"></th>
+
 
 
 									</tr>
@@ -61,8 +63,8 @@
 											<td>{{p.titre}}</td>
 											<td>{{p.proprietaire}}</td>
 											<td>{{p.description }}</td>
-
-											<td><img style="width: 75px; height: 55px; padding: 5px;" src="{{ asset('uploads/'~p.image) }}"/></td>
+                                            
+											<td>{{p.afficherProjet}}</td>
 											<td>
 												<a href="{{ path('modifierProjet',{id:p.id}) }}">
 													<button type="button" class="btn btn-outline-warning">

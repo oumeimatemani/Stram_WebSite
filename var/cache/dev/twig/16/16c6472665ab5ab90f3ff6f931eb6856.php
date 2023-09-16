@@ -191,13 +191,15 @@ class __TwigTemplate_97c59cb9c9d8487675324d06bc5e5bd2 extends Template
 
 \t\t\t\t\t\t\t<div class=\"row mb-3\">
 \t\t\t\t\t\t\t\t<div class=\"col-sm-10\">
+\t\t\t\t\t\t\t\t<a href=\"/metiers\">
 \t\t\t\t\t\t\t\t\t<button type=\"submit\" class=\"col-sm-4 btn btn-primary\">Ajouter
 \t\t\t\t\t\t\t\t\t</button>
+\t\t\t\t\t\t\t\t\t</a>
 \t\t\t\t\t\t\t\t</div>
 \t\t\t\t\t\t\t</div>
 \t\t\t\t\t\t\t";
-        // line 75
-        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["M"]) || array_key_exists("M", $context) ? $context["M"] : (function () { throw new RuntimeError('Variable "M" does not exist.', 75, $this->source); })()), 'form_end');
+        // line 77
+        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["M"]) || array_key_exists("M", $context) ? $context["M"] : (function () { throw new RuntimeError('Variable "M" does not exist.', 77, $this->source); })()), 'form_end');
         echo "
 
 \t\t\t\t\t\t</div>
@@ -231,7 +233,7 @@ class __TwigTemplate_97c59cb9c9d8487675324d06bc5e5bd2 extends Template
 
     public function getDebugInfo()
     {
-        return array (  200 => 75,  185 => 63,  176 => 56,  170 => 53,  167 => 52,  165 => 51,  160 => 49,  153 => 44,  147 => 41,  144 => 40,  142 => 39,  137 => 37,  129 => 32,  126 => 31,  117 => 29,  113 => 28,  89 => 6,  79 => 5,  59 => 2,  36 => 1,);
+        return array (  202 => 77,  185 => 63,  176 => 56,  170 => 53,  167 => 52,  165 => 51,  160 => 49,  153 => 44,  147 => 41,  144 => 40,  142 => 39,  137 => 37,  129 => 32,  126 => 31,  117 => 29,  113 => 28,  89 => 6,  79 => 5,  59 => 2,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -306,8 +308,10 @@ class __TwigTemplate_97c59cb9c9d8487675324d06bc5e5bd2 extends Template
 
 \t\t\t\t\t\t\t<div class=\"row mb-3\">
 \t\t\t\t\t\t\t\t<div class=\"col-sm-10\">
+\t\t\t\t\t\t\t\t<a href=\"/metiers\">
 \t\t\t\t\t\t\t\t\t<button type=\"submit\" class=\"col-sm-4 btn btn-primary\">Ajouter
 \t\t\t\t\t\t\t\t\t</button>
+\t\t\t\t\t\t\t\t\t</a>
 \t\t\t\t\t\t\t\t</div>
 \t\t\t\t\t\t\t</div>
 \t\t\t\t\t\t\t{{ form_end(M) }}
@@ -323,6 +327,6 @@ class __TwigTemplate_97c59cb9c9d8487675324d06bc5e5bd2 extends Template
 \t</section>
 
 </main>{% endblock %}
-", "metier/ajoutMetier.html.twig", "C:\\Users\\oumei\\Desktop\\Stram_WebSite\\templates\\metier\\ajoutMetier.html.twig");
+", "metier/ajoutMetier.html.twig", "C:\\Users\\oumei\\OneDrive\\Bureau\\Stram_WebSite\\templates\\metier\\ajoutMetier.html.twig");
     }
 }

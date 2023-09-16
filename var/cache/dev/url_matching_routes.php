@@ -31,7 +31,17 @@ return [
         '/ajouterMetier' => [[['_route' => 'ajouterMetier', '_controller' => 'App\\Controller\\MetierController::ajouterMetier'], null, ['GET' => 0, 'POST' => 1], null, false, false, null]],
         '/projets' => [[['_route' => 'projets', '_controller' => 'App\\Controller\\ProjetController::index'], null, null, null, false, false, null]],
         '/ajouterProjet' => [[['_route' => 'ajouterProjet', '_controller' => 'App\\Controller\\ProjetController::ajouterProjet'], null, ['GET' => 0, 'POST' => 1], null, false, false, null]],
-        '/messages' => [[['_route' => 'messages', '_controller' => 'App\\Controller\\MessagesController::index'], null, null, null, false, false, null]],
+        '/gestionAcceuil' => [[['_route' => 'acceuil', '_controller' => 'App\\Controller\\AcceuilController::gestionAcceuil'], null, null, null, false, false, null]],
+        '/gestionStram' => [[['_route' => 'stram', '_controller' => 'App\\Controller\\StramController::gestionStram'], null, null, null, false, false, null]],
+        '/gestionServices' => [[['_route' => 'services', '_controller' => 'App\\Controller\\ServicesController::gestionServices'], null, null, null, false, false, null]],
+        '/gestionContact' => [
+            [['_route' => 'gestion_Contact', '_controller' => 'App\\Controller\\GestionContactController::gestionContact'], null, null, null, false, false, null],
+            [['_route' => 'gestion_contact', '_controller' => 'App\\Controller\\GestionContactController::gestionContact'], null, ['GET' => 0], null, false, false, null],
+        ],
+        '/modifierContactTunisie' => [[['_route' => 'modifier_contact_tunisie', '_controller' => 'App\\Controller\\GestionContactController::modifierContactTunisie'], null, ['GET' => 0, 'POST' => 1], null, false, false, null]],
+        '/supprimerContactTunisie' => [[['_route' => 'supprimer_contact_tunisie', '_controller' => 'App\\Controller\\GestionContactController::supprimerContactTunisie'], null, ['GET' => 0], null, false, false, null]],
+        '/modifierContactAlgerie' => [[['_route' => 'modifier_contact_algerie', '_controller' => 'App\\Controller\\GestionContactController::modifierContactAlgerie'], null, ['GET' => 0, 'POST' => 1], null, false, false, null]],
+        '/supprimerContactAlgerie' => [[['_route' => 'supprimer_contact_algerie', '_controller' => 'App\\Controller\\GestionContactController::supprimerContactAlgerie'], null, ['GET' => 0], null, false, false, null]],
     ],
     [ // $regexpList
         0 => '{^(?'

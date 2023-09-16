@@ -119,7 +119,52 @@ suppressionProjet:
     controller: App\Controller\ProjetController::suppressionProjet
 
 
-#Chats
-messages:
-    path: /messages
-    controller: App\Controller\MessagesController::index
+#affichage
+acceuil:
+    path: /gestionAcceuil
+    controller: App\Controller\AcceuilController::gestionAcceuil
+
+stram:
+    path: /gestionStram
+    controller: App\Controller\StramController::gestionStram
+
+services:
+    path: /gestionServices
+    controller: App\Controller\ServicesController::gestionServices
+
+gestion_Contact:
+    path: /gestionContact
+    controller: App\Controller\GestionContactController::gestionContact
+
+
+# Route pour afficher la page de gestion des contacts
+gestion_contact:
+    path: /gestionContact
+    controller: App\Controller\GestionContactController::gestionContact
+    methods: ['GET']
+
+
+# Route pour modifier les coordonnées de la Tunisie
+modifier_contact_tunisie:
+    path: /modifierContactTunisie
+    controller: App\Controller\GestionContactController::modifierContactTunisie
+    methods: ['GET', 'POST']
+
+# Route pour supprimer les coordonnées de la Tunisie
+supprimer_contact_tunisie:
+    path: /supprimerContactTunisie
+    controller: App\Controller\GestionContactController::supprimerContactTunisie
+    methods: ['GET']
+
+
+# Route pour modifier les coordonnées de l'Algerie
+modifier_contact_algerie:
+    path: /modifierContactAlgerie
+    controller: App\Controller\GestionContactController::modifierContactAlgerie
+    methods: ['GET', 'POST']
+
+# Route pour supprimer les coordonnées de l'Algerie
+supprimer_contact_algerie:
+    path: /supprimerContactAlgerie
+    controller: App\Controller\GestionContactController::supprimerContactAlgerie
+    methods: ['GET']

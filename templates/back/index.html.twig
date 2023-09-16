@@ -1,6 +1,22 @@
 {% extends 'base.html.twig' %}
 {% block head %}
 	<link rel="stylesheet" href="{{ asset('../css/chats.css') }}">
+
+
+    <style>
+        /* Ajoutez du CSS personnalisé pour centrer le contenu du tableau */
+        .center-table {
+            margin: 0 auto; /* Centre le tableau horizontalement */
+            text-align: center; /* Centre le contenu du tableau horizontalement */
+        }
+
+        .center-table th,
+        .center-table td {
+            vertical-align: middle; /* Centre le contenu du tableau verticalement */
+        }
+    </style>
+
+
 {% endblock %}
 {% block body %}
 	<main id="main" class="main">
@@ -46,7 +62,7 @@
 							<th>Logo</th>
 						</tr>
 					</thead>
-					<tbody style="color:#092F54 ; background-color:#F17F21">
+					<tbody style="color:#092F54 ; background-color:#F09F32">
 						{% for client in topClients %}
 							<tr>
 								<td>{{ client.id }}</td>
