@@ -52,6 +52,11 @@ carriere_submit:
     controller: App\Controller\CarriereController::submit
     methods: [POST]
 
+offres : 
+    path: /offres
+    controller: App\Controller\OffresController::index
+    methods: [GET]
+
 
 #clients 
 clients:
@@ -167,4 +172,59 @@ modifier_contact_algerie:
 supprimer_contact_algerie:
     path: /supprimerContactAlgerie
     controller: App\Controller\GestionContactController::supprimerContactAlgerie
+    methods: ['GET']
+
+
+# Route Services
+solsTechniques:
+    path: /sols/techniques
+    controller: App\Controller\SolsTechniquesController::index
+    methods: ['GET']
+
+#---------------------------------------------
+
+reparation:
+    path: /reparation
+    controller: App\Controller\RéparationController::index
+    methods: ['GET']
+
+
+RenforcementChemisageClassique:
+    path: /renforcement/chemisage/classique
+    controller: App\Controller\RenforcementChemisageClassiqueController::index
+    methods: ['GET']
+
+
+renforcementFibreCarbone:
+    path: /renforcement/fibre/carbone
+    controller: App\Controller\RenforcementFibreCarboneController::index
+    methods: ['GET']
+
+#---------------------------------------------
+
+Étanchéité:
+    path: /Étanchéité
+    controller: App\Controller\ÉtanchéitéController::index
+    methods: ['GET']
+
+Imperméabilisation:
+    path: /Imperméabilisation
+    controller: App\Controller\ImperméabilisationController::index
+    methods: ['GET']
+
+#---------------------------------------------
+traitementJoints:
+    path: /traitement/joints
+    controller: App\Controller\TraitementJointsController::index
+    methods: ['GET']
+
+#---------------------------------------------
+RevêtementTechnique:
+    path: /RevêtementTechnique
+    controller: App\Controller\RevêtementTechniqueController::index
+    methods: ['GET']
+
+TraitementFaçades:
+    path: /TraitementFaçades
+    controller: App\Controller\TraitementFaçadesController::index
     methods: ['GET']

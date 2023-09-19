@@ -24,6 +24,7 @@ return [
         '/carriere' => [[['_route' => 'carriere_index', '_controller' => 'App\\Controller\\CarriereController::index'], null, ['GET' => 0], null, false, false, null]],
         '/carriereAdmin' => [[['_route' => 'carriere_admin', '_controller' => 'App\\Controller\\CarriereController::carriereAdmin'], null, ['GET' => 0], null, false, false, null]],
         '/candidature/submit' => [[['_route' => 'carriere_submit', '_controller' => 'App\\Controller\\CarriereController::submit'], null, ['POST' => 0], null, false, false, null]],
+        '/offres' => [[['_route' => 'offres', '_controller' => 'App\\Controller\\OffresController::index'], null, ['GET' => 0], null, false, false, null]],
         '/clients' => [[['_route' => 'clients', '_controller' => 'App\\Controller\\ClientsController::index'], null, null, null, false, false, null]],
         '/clientsAdmin' => [[['_route' => 'clients_admin', '_controller' => 'App\\Controller\\ClientsController::clientsAdmin'], null, ['GET' => 0], null, false, false, null]],
         '/ajouterClient' => [[['_route' => 'ajouterClient', '_controller' => 'App\\Controller\\ClientsController::ajouterClient'], null, ['GET' => 0, 'POST' => 1], null, false, false, null]],
@@ -42,6 +43,15 @@ return [
         '/supprimerContactTunisie' => [[['_route' => 'supprimer_contact_tunisie', '_controller' => 'App\\Controller\\GestionContactController::supprimerContactTunisie'], null, ['GET' => 0], null, false, false, null]],
         '/modifierContactAlgerie' => [[['_route' => 'modifier_contact_algerie', '_controller' => 'App\\Controller\\GestionContactController::modifierContactAlgerie'], null, ['GET' => 0, 'POST' => 1], null, false, false, null]],
         '/supprimerContactAlgerie' => [[['_route' => 'supprimer_contact_algerie', '_controller' => 'App\\Controller\\GestionContactController::supprimerContactAlgerie'], null, ['GET' => 0], null, false, false, null]],
+        '/sols/techniques' => [[['_route' => 'solsTechniques', '_controller' => 'App\\Controller\\SolsTechniquesController::index'], null, ['GET' => 0], null, false, false, null]],
+        '/reparation' => [[['_route' => 'reparation', '_controller' => 'App\\Controller\\RéparationController::index'], null, ['GET' => 0], null, false, false, null]],
+        '/renforcement/chemisage/classique' => [[['_route' => 'RenforcementChemisageClassique', '_controller' => 'App\\Controller\\RenforcementChemisageClassiqueController::index'], null, ['GET' => 0], null, false, false, null]],
+        '/renforcement/fibre/carbone' => [[['_route' => 'renforcementFibreCarbone', '_controller' => 'App\\Controller\\RenforcementFibreCarboneController::index'], null, ['GET' => 0], null, false, false, null]],
+        '/Étanchéité' => [[['_route' => 'Étanchéité', '_controller' => 'App\\Controller\\ÉtanchéitéController::index'], null, ['GET' => 0], null, false, false, null]],
+        '/Imperméabilisation' => [[['_route' => 'Imperméabilisation', '_controller' => 'App\\Controller\\ImperméabilisationController::index'], null, ['GET' => 0], null, false, false, null]],
+        '/traitement/joints' => [[['_route' => 'traitementJoints', '_controller' => 'App\\Controller\\TraitementJointsController::index'], null, ['GET' => 0], null, false, false, null]],
+        '/RevêtementTechnique' => [[['_route' => 'RevêtementTechnique', '_controller' => 'App\\Controller\\RevêtementTechniqueController::index'], null, ['GET' => 0], null, false, false, null]],
+        '/TraitementFaçades' => [[['_route' => 'TraitementFaçades', '_controller' => 'App\\Controller\\TraitementFaçadesController::index'], null, ['GET' => 0], null, false, false, null]],
     ],
     [ // $regexpList
         0 => '{^(?'

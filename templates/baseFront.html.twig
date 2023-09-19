@@ -149,66 +149,123 @@ setInterval(updateClockDisplay, 60000); // 60000 ms = 1 minute
 									<li class="menu-item menu-item-has-children">
 										<a href="#">Services</a>
 										<ul class="sub-menu">
-											<li class="menu-item">
-												<a href="services.html">Sols techniques</a>
+											<li class="menu-item menu-item-has-children">
+												<a href="#">Travaux Spéciaux</a>
+												<ul class="sub-menu">
+													<li class="menu-item">
+														<a href="{{ path('solsTechniques')}}">Sols techniques</a>
+													</li>
+													
+													<li class="menu-item menu-item-has-children">
+														<a href="#">Réparations & renforts de structure</a>
+													   <ul class="sub-menu">
+															<li class="menu-item active">
+																<a href="{{ path('reparation')}}">Réparation</a>
+															</li>
+															<li class="menu-item active">
+																<a href="{{ path('renforcementFibreCarbone')}}">Renforcement par Fibre de Carbone</a>
+															</li>
+															<li class="menu-item active">
+																<a href="{{ path('RenforcementChemisageClassique')}}">Renforcement par chemisage classique</a>
+															</li>
+														</ul>
+													</li>
+
+													<li class="menu-item menu-item-has-children">
+														<a href="#">Étanchéité & Imperméabilisation</a>
+													   <ul class="sub-menu">
+															<li class="menu-item active">
+																<a href="{{ path('Étanchéité')}}">Étanchéité</a>
+															</li>
+															<li class="menu-item active">
+																<a href="{{ path('Imperméabilisation')}}">Imperméabilisation</a>
+															</li>
+															
+														</ul>
+													</li>
+													
+																
+													<li class="menu-item">
+														<a href="{{ path('traitementJoints')}}">Traitement des joints</a>
+													</li>
+													
+													<li class="menu-item menu-item-has-children">
+														<a href="#">Revêtement & traitement de façades</a>
+
+                                                        <ul class="sub-menu">
+															<li class="menu-item active">
+																<a href="{{ path('RevêtementTechnique')}}">Revêtement technique</a>
+															</li>
+															<li class="menu-item active">
+																<a href="{{ path('TraitementFaçades')}}">Traitement de façades</a>
+															</li>
+														</ul>
+
+
+
+													</li>
+											    </ul>
 											</li>
+												
 											<li class="menu-item">
-												<a href="services-2.html">Répara6ons & renforts de structure</a>
+												<a href="services-2.html">Installation Centrale Photovoltaique au sol</a>
+											</li>
+
+											<li class="menu-item menu-item-has-children">
+												<a href="#">Etude, Diagnostic & Expertise</a>
+												<ul class="sub-menu">
+													<li class="menu-item">
+														<a href="shop-1.html">Travaux Spéciaux</a>
+													</li>
+													
+													<li class="menu-item">
+														<a href="shop-2.html">Photovoltaique</a>
+													</li>
+											    </ul>
 											</li>
 
 											<li class="menu-item">
-												<a href="services-2.html">Étanchéité & Imperméabilisa6on</a>
-											</li>
-											<li class="menu-item">
-												<a href="services-2.html">Traitement des joints</a>
-											</li>
-
-											<li class="menu-item">
-												<a href="services-2.html">Centrales photovoltaique
-												</a>
-											</li>
-
-											<li class="menu-item">
-												<a href="services-2.html">
-													Études & Expertise
-												</a>
-											</li>
-											<li class="menu-item">
-												<a href="services-2.html">Peinture</a>
+												<a href="services-2.html">Commerce</a>
 											</li>
 
 										</ul>
 									</li>
+
 									<li class="menu-item menu-item-has-children">
 										<a href="#">Projets</a>
-										<ul class="sub-menu">
-
-											<li class="menu-item menu-item-has-children">
-												<a href="#">Afrique du Nord</a>
-												<ul class="sub-menu">
-													<li class="menu-item">
-														<a href="shop-1.html">Tunisie</a>
-													</li>
-													<li class="menu-item">
-														<a href="shop-2.html">
-															Algérie</a>
-													</li>
-												</ul>
+										<ul class="sub-menu">											
+											<li class="menu-item">
+												<a href="/">Tunisie</a>
 											</li>
 
 											<li class="menu-item menu-item-has-children">
-												<a href="#">Afrique du West</a>
+												<a href="#">International</a>
 												<ul class="sub-menu">
-													<li class="menu-item">
-														<a href="shop-1.html">Sénégal</a>
+													<li class="menu-item menu-item-has-children">
+														<a href="shop-1.html">Afrique du Nord</a>
+														<ul class="sub-menu">											
+	                                                        <li class="menu-item">
+											                 	<a href="/">Algerie</a>
+											                </li>															
+											         	</ul>
+											        </li>
+											
 													</li>
-													<li class="menu-item">
-														<a href="shop-2.html">
-															Niger</a>
-													</li>
-													<li class="menu-item">
-														<a href="shop-2.html">Benin</a>
-													</li>
+
+													<li class="menu-item menu-item-has-children">
+														<a href="shop-2.html">Afrique du West</a>
+                                                        <ul class="sub-menu">											
+	                                                        <li class="menu-item">
+											                 	<a href="/">Senegal</a>
+											                </li>	
+															  <li class="menu-item">
+											                 	<a href="/">Niger</a>
+											                </li>	
+															  <li class="menu-item">
+											                 	<a href="/">Benin</a>
+											                </li>															
+											         	</ul>
+										          	</li>
 												</ul>
 											</li>
 
@@ -224,15 +281,22 @@ setInterval(updateClockDisplay, 60000); // 60000 ms = 1 minute
 											</li>
 										</ul>
 									</li>
-									<li class="menu-item menu-item-has-children">
-										<a href="#">Carrière</a>
-										<ul class="sub-menu">
-											<li class="menu-item">
-												<a href="/carriere">Carrière</a>
-											</li>
 
-										</ul>
-									</li>
+
+										<li class="menu-item menu-item-has-children">
+											<a href="/carriere">Carriére</a>
+											<ul class="sub-menu">											
+												<li class="menu-item">
+													<a href="/carriere">Carriére</a>
+												</li>	
+													<li class="menu-item">
+													<a href="/offres">Nos </a>
+												</li>	
+																										
+											</ul>
+										</li>
+
+
 									<li class="menu-item">
 										<a href="/contact">Contact</a>
 									</li>
@@ -1218,7 +1282,7 @@ setInterval(updateClockDisplay, 60000); // 60000 ms = 1 minute
 											<div class="footer_nav">
 												<ul class="footer_menu">
 													<li class="menu-item">
-														<a href="project.html">Sols techniques</a>
+														<a href="SolsTechniques.html.twig">Sols techniques</a>
 													</li>
 													<li class="menu-item">
 														<a href="project-2.html">Réparations & renforts de structure</a>

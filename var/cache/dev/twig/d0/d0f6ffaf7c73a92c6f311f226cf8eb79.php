@@ -24,16 +24,10 @@ class __TwigTemplate_da4518ac1ac7a7a7e85597e75857c84f extends Template
 
         $this->source = $this->getSourceContext();
 
-        $this->blocks = [
-            'title' => [$this, 'block_title'],
-            'body' => [$this, 'block_body'],
-        ];
-    }
+        $this->parent = false;
 
-    protected function doGetParent(array $context)
-    {
-        // line 1
-        return "base.html.twig";
+        $this->blocks = [
+        ];
     }
 
     protected function doDisplay(array $context, array $blocks = [])
@@ -45,189 +39,554 @@ class __TwigTemplate_da4518ac1ac7a7a7e85597e75857c84f extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "projet/projetBack.html.twig"));
 
-        $this->parent = $this->loadTemplate("base.html.twig", "projet/projetBack.html.twig", 1);
-        $this->parent->display($context, array_merge($this->blocks, $blocks));
-        
-        $__internal_5a27a8ba21ca79b61932376b2fa922d2->leave($__internal_5a27a8ba21ca79b61932376b2fa922d2_prof);
+        // line 1
+        echo "<!DOCTYPE html>
+<html lang=\"en\">
+    <head>
+        <meta charset=\"utf-8\" />
+        <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">
+        <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui\">
+        <title>Stram - Admin Dashboard</title>
+        <meta content=\"Admin Dashboard\" name=\"description\" />
+        <meta content=\"Mannatthemes\" name=\"author\" />
+        <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\" />
 
-        
-        $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
+        <link rel=\"shortcut icon\" href=\"assets1/images/favicon.ico\">
 
-    }
-
-    // line 3
-    public function block_title($context, array $blocks = [])
-    {
-        $macros = $this->macros;
-        $__internal_5a27a8ba21ca79b61932376b2fa922d2 = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
-        $__internal_5a27a8ba21ca79b61932376b2fa922d2->enter($__internal_5a27a8ba21ca79b61932376b2fa922d2_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "title"));
-
-        $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
-        $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "title"));
-
-        echo "liste des Clients
-";
-        
-        $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
-
-        
-        $__internal_5a27a8ba21ca79b61932376b2fa922d2->leave($__internal_5a27a8ba21ca79b61932376b2fa922d2_prof);
-
-    }
-
-    // line 6
-    public function block_body($context, array $blocks = [])
-    {
-        $macros = $this->macros;
-        $__internal_5a27a8ba21ca79b61932376b2fa922d2 = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
-        $__internal_5a27a8ba21ca79b61932376b2fa922d2->enter($__internal_5a27a8ba21ca79b61932376b2fa922d2_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
-
-        $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
-        $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
-
-        // line 7
-        echo "
-\t<main id=\"main\" class=\"main\">
-
-\t\t<div class=\"pagetitle\">
-\t\t\t<h1>Gestionnaire des projets
-
-\t\t\t</h1>
-\t\t\t<nav>
-\t\t\t\t<ol class=\"breadcrumb\">
-\t\t\t\t\t<li class=\"breadcrumb-item\">
-\t\t\t\t\t\t<a href=\"/admin\">Home</a>
-\t\t\t\t\t</li>
-\t\t\t\t\t<li class=\"breadcrumb-item\">
-\t\t\t\t\t\t<a href=\"/projets\">projets</a>
-\t\t\t\t\t</li>
-\t\t\t\t</ol>
-\t\t\t</nav>
-\t\t</div>
-\t\t<!-- End Page Title -->
-
-\t\t<section class=\"section\">
-\t\t\t<div class=\"row\">
-\t\t\t\t<div class=\"col-lg-12\">
-
-\t\t\t\t\t<div class=\"card\">
-\t\t\t\t\t\t<div class=\"card-body\" style=\"background-color:#0e1641\">
-
-\t\t\t\t\t\t\t<h5 class=\"card-title\" style=\"color:#DEE9F3\">
-\t\t\t\t\t\t\t\t<strong>Liste des projets AGM
-
-\t\t\t\t\t\t\t\t</strong>
-\t\t\t\t\t\t\t</h5>
-
-\t\t\t\t\t\t\t<table class=\"table\" style=\"color:#DEE9F3\">
-\t\t\t\t\t\t\t\t<thead>
-\t\t\t\t\t\t\t\t\t<tr>
-\t\t\t\t\t\t\t\t\t\t<th scope=\"col\">titre</th>
-\t\t\t\t\t\t\t\t\t\t<th scope=\"col\">Maître d'ouvrage</th>
-\t\t\t\t\t\t\t\t\t\t<th scope=\"col\">description</th>
-\t\t\t\t\t\t\t\t\t\t<th scope=\"col\">Afficher le project dans le site</th>
-\t\t\t\t\t\t\t\t\t\t<th scope=\"col\"></th>
+        <link href=\"assets1/css/bootstrap.min.css\" rel=\"stylesheet\" type=\"text/css\">
+        <link href=\"assets1/css/icons.css\" rel=\"stylesheet\" type=\"text/css\">
+        <link href=\"assets1/css/style.css\" rel=\"stylesheet\" type=\"text/css\">
+    </head>
 
 
+    <body class=\"fixed-left\">
 
-\t\t\t\t\t\t\t\t\t</tr>
-\t\t\t\t\t\t\t\t</thead>
-\t\t\t\t\t\t\t\t<tbody>
-\t\t\t\t\t\t\t\t\t<tr>
-\t\t\t\t\t\t\t\t\t\t";
-        // line 55
-        if ((twig_length_filter($this->env, (isset($context["listP"]) || array_key_exists("listP", $context) ? $context["listP"] : (function () { throw new RuntimeError('Variable "listP" does not exist.', 55, $this->source); })())) == 0)) {
-            // line 56
-            echo "\t\t\t\t\t\t\t\t\t\t\t<p style=\"text-align: center\">Liste vide</p>
-\t\t\t\t\t\t\t\t\t\t";
+        <!-- Loader -->
+        <div id=\"preloader\"><div id=\"status\"><div class=\"spinner\"></div></div></div>
+
+        <!-- Begin page -->
+        <div id=\"wrapper\">
+
+            <!-- ========== Left Sidebar Start ========== -->
+            <div class=\"left side-menu\">
+                <button type=\"button\" class=\"button-menu-mobile button-menu-mobile-topbar open-left waves-effect\">
+                    <i class=\"ion-close\"></i>
+                </button>
+
+                <!-- LOGO -->
+                <div class=\"topbar-left\">
+                    <div class=\"text-center bg-logo\">
+                        <a href=\"index.html\" class=\"logo\"><i class=\"mdi mdi-bowling text-warning\"></i> Stram</a>
+                        <!-- <a href=\"index.html\" class=\"logo\"><img src=\"assets1/images/stram.png\" height=\"24\" alt=\"logo\"></a> -->
+                    </div>
+                </div>
+                <div class=\"sidebar-user\">
+                    <img src=\"assets1/images/users/avatar-6.jpg\" alt=\"user\" class=\"rounded-circle img-thumbnail mb-1\">
+                    <h6 class=\"\">Mr. Michael Hill </h6> 
+                    <p class=\" online-icon text-dark\"><i class=\"mdi mdi-record text-success\"></i>online</p>                    
+                    <ul class=\"list-unstyled list-inline mb-0 mt-2\">
+                        <li class=\"list-inline-item\">
+                            <a href=\"#\" class=\"\" data-toggle=\"tooltip\" data-placement=\"top\" title=\"Profile\"><i class=\"dripicons-user text-purple\"></i></a>
+                        </li>
+                        <li class=\"list-inline-item\">
+                            <a href=\"#\" class=\"\" data-toggle=\"tooltip\" data-placement=\"top\" title=\"Settings\"><i class=\"dripicons-gear text-dark\"></i></a>
+                        </li>
+                        <li class=\"list-inline-item\">
+                            <a href=\"#\" class=\"\" data-toggle=\"tooltip\" data-placement=\"top\" title=\"Log out\"><i class=\"dripicons-power text-danger\"></i></a>
+                        </li>
+                    </ul>           
+                </div>
+
+                <div class=\"sidebar-inner slimscrollleft\">
+
+                    <div id=\"sidebar-menu\">
+                        <ul>
+                            <li class=\"menu-title\">Main</li>
+
+                            <li>
+                                <a href=\"/admin\" class=\"waves-effect\">
+                                    <i class=\"dripicons-device-desktop\"></i>
+                                    <span> Dashboard </span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href=\"/\" class=\"waves-effect\"><i class=\"dripicons-to-do\"></i><span> Stram </span></a>
+                            </li>
+
+                            <li class=\"menu-title\">Components</li>
+
+                            <li class=\"has_sub\">
+                                <a href=\"javascript:void(0);\" class=\"waves-effect\"><i class=\"dripicons-jewel\"></i> <span> Gestion Services</span> <span class=\"float-right\"><i class=\"mdi mdi-chevron-right\"></i></span></a>
+                                <ul class=\"list-unstyled\">
+                                    <li><a href=\"ui-alerts.html\">Alerts</a></li>
+                                    <li><a href=\"ui-alertify.html\">Alertify</a></li>
+                                    <li><a href=\"ui-badge.html\">Badge</a></li>
+                                    <li><a href=\"ui-buttons.html\">Buttons</a></li>
+                                    <li><a href=\"ui-carousel.html\">Carousel</a></li>                                   
+                                    <li><a href=\"ui-cards.html\">Cards</a></li>
+                                    <li><a href=\"ui-dropdowns.html\">Dropdowns</a></li>
+                                    <li><a href=\"ui-grid.html\">Grid</a></li>
+                                    <li><a href=\"ui-images.html\">Images</a></li>
+                                    <li><a href=\"ui-lightbox.html\">Lightbox</a></li>
+                                    <li><a href=\"ui-modals.html\">Modals</a></li>
+                                    <li><a href=\"ui-navs.html\">Navs</a></li>
+                                    <li><a href=\"ui-progressbars.html\">Progress Bars</a></li>
+                                    <li><a href=\"ui-pagination.html\">Pagination</a></li>
+                                    <li><a href=\"ui-popover-tooltips.html\">Popover & Tooltips</a></li>
+                                    <li><a href=\"ui-rating.html\">Rating</a></li>                                    
+                                    <li><a href=\"ui-rangeslider.html\">Range Slider</a></li>
+                                    <li><a href=\"ui-sweet-alert.html\">Sweet-Alert</a></li>                                    
+                                    <li><a href=\"ui-typography.html\">Typography</a></li>
+                                    <li><a href=\"ui-tabs-accordions.html\">Tabs &amp; Accordions</a></li>
+                                    <li><a href=\"ui-video.html\">Video</a></li>                                    
+                                </ul>
+                            </li>
+
+                            <li class=\"has_sub\">
+                                <a href=\"javascript:void(0);\" class=\"waves-effect\"><i class=\"dripicons-blog\"></i><span> Gestion Projets </span> </a>
+                                <ul class=\"list-unstyled\">
+                                    <li><a href=\"form-advanced.html\">Form Advanced</a></li>
+                                    <li><a href=\"form-elements.html\">Form Elements</a></li>
+                                    <li><a href=\"form-editors.html\">Form Editors</a></li>
+                                    <li><a href=\"form-uploads.html\">Form File Upload</a></li>
+                                    <li><a href=\"form-mask.html\">Form Mask</a></li>
+                                    <li><a href=\"form-summernote.html\">Summernote</a></li>
+                                    <li><a href=\"form-validation.html\">Form Validation</a></li>                                    
+                                    <li><a href=\"form-xeditable.html\">Form Xeditable</a></li>
+                                </ul>
+                            </li>
+
+                            <li class=\"has_sub\">
+                                <a href=\"javascript:void(0);\" class=\"waves-effect\"><i class=\"dripicons-graph-pie\"></i><span> Gestion Clients </span> <span class=\"float-right\"><i class=\"mdi mdi-chevron-right\"></i></span></a>
+                                <ul class=\"list-unstyled\">        
+\t\t\t\t\t\t\t\t    <li><a href=\"/clientsAdmin\">Liste de clients</a></li>                        
+                                    <li><a href=\"charts-chartist.html\">Chartist Chart</a></li>
+                                    <li><a href=\"charts-chartjs.html\">Chartjs Chart</a></li>
+                                    <li><a href=\"charts-c3.html\">C3 Chart</a></li>
+                                    <li><a href=\"charts-flot.html\">Flot Chart</a></li>
+                                    <li><a href=\"charts-other.html\">Jquery Knob Chart</a></li>
+                                    <li><a href=\"charts-morris.html\">Morris Chart</a></li>
+                                </ul>
+                            </li>
+
+                            <li class=\"has_sub\">
+                                <a href=\"javascript:void(0);\" class=\"waves-effect\"><i class=\"dripicons-trophy\"></i> <span> Gestion Carriére </span> <span class=\"float-right\"><i class=\"mdi mdi-chevron-right\"></i></span></a>
+                                <ul class=\"list-unstyled\">                                   
+                                    <li><a href=\"icons-dripicons.html\">Dripicons</a></li>
+                                    <li><a href=\"icons-fontawesome.html\">Font Awesome</a></li>
+                                    <li><a href=\"icons-ion.html\">Ion Icons</a></li>
+                                    <li><a href=\"icons-material.html\">Material Design</a></li>
+                                    <li><a href=\"icons-themify.html\">Themify Icons</a></li>
+                                    <li><a href=\"icons-typicons.html\">Typicons Icons</a></li>
+                                </ul>
+                            </li>
+
+
+                            <li class=\"menu-title\">Extra</li>
+
+                            <li class=\"has_sub\">
+                                <a href=\"javascript:void(0);\" class=\"waves-effect\"><i class=\"dripicons-map\"></i><span> Contact </span> </a>
+                                <ul class=\"list-unstyled\">
+                                    <li><a href=\"maps-google.html\"> Google Map</a></li>
+                                    <li><a href=\"maps-vector.html\"> Vector Map</a></li>
+                                </ul>
+                            </li>
+
+\t\t\t\t\t\t\t
+                            <li class=\"has_sub\">
+                                <a href=\"javascript:void(0);\" class=\"waves-effect\"><i class=\"dripicons-card\"></i><span> Gestion Affichage  </span> <span class=\"float-right\"><i class=\"mdi mdi-chevron-right\"></i></span></a>
+                                <ul class=\"list-unstyled\">
+                                    <li><a href=\"tables-basic.html\">Basic Tables</a></li>
+                                    <li><a href=\"tables-datatable.html\">Data Table</a></li>
+                                    <li><a href=\"tables-editable.html\">Editable Table</a></li>
+                                    <li><a href=\"tables-responsive.html\">Responsive Table</a></li>                                    
+                                </ul>
+                            </li>
+
+                            <li class=\"has_sub\">
+                                <a href=\"javascript:void(0);\" class=\"waves-effect\"><i class=\"dripicons-copy\"></i><span> Pages</span> <span class=\"float-right\"><i class=\"mdi mdi-chevron-right\"></i></span></a>
+                                <ul class=\"list-unstyled\">
+                                    <li><a href=\"pages-login.html\">Login</a></li>
+                                    <li><a href=\"pages-register.html\">Register</a></li>
+                                    <li><a href=\"pages-recoverpw.html\">Recover Password</a></li>
+                                    <li><a href=\"pages-lock-screen.html\">Lock Screen</a></li>
+                                    <li><a href=\"pages-blank.html\">Blank Page</a></li>
+                                    <li><a href=\"pages-404.html\">Error 404</a></li>
+                                    <li><a href=\"pages-500.html\">Error 500</a></li>
+                                </ul>
+                            </li>
+
+                        </ul>
+                    </div>
+                    <div class=\"clearfix\"></div>
+                </div> <!-- end sidebarinner -->
+            </div>
+            <!-- Left Sidebar End -->
+
+            <!-- Start right Content here -->
+
+            <div class=\"content-page\">
+                <!-- Start content -->
+                <div class=\"content\">
+
+                    <!-- Top Bar Start -->
+                    <div class=\"topbar\">
+
+                        <nav class=\"navbar-custom\">
+
+                            <ul class=\"list-inline float-right mb-0\">
+                                <!-- language-->
+                                <li class=\"list-inline-item dropdown notification-list hide-phone\">
+                                    <a class=\"nav-link dropdown-toggle arrow-none waves-effect text-white\" data-toggle=\"dropdown\" href=\"#\" role=\"button\"
+                                        aria-haspopup=\"false\" aria-expanded=\"false\">
+                                        Français <img src=\"assets1/images/flags/french_flag.jpg\" class=\"ml-2\" height=\"16\" alt=\"\"/>
+                                    </a>
+                                    <div class=\"dropdown-menu dropdown-menu-right language-switch\">
+                                        <a class=\"dropdown-item\" href=\"#\"><img src=\"assets1/images/flags/italy_flag.jpg\" alt=\"\" height=\"16\"/><span> Italian </span></a>
+                                        <a class=\"dropdown-item\" href=\"#\"><img src=\"assets1/images/flags/french_flag.jpg\" alt=\"\" height=\"16\"/><span> French </span></a>
+                                        <a class=\"dropdown-item\" href=\"#\"><img src=\"assets1/images/flags/spain_flag.jpg\" alt=\"\" height=\"16\"/><span> Spanish </span></a>
+                                        <a class=\"dropdown-item\" href=\"#\"><img src=\"assets1/images/flags/russia_flag.jpg\" alt=\"\" height=\"16\"/><span> Russian </span></a>
+                                    </div>
+                                </li>
+                             
+
+
+                                <li class=\"list-inline-item dropdown notification-list\">
+                                    <a class=\"nav-link dropdown-toggle arrow-none waves-effect nav-user\" data-toggle=\"dropdown\" href=\"#\" role=\"button\"
+                                       aria-haspopup=\"false\" aria-expanded=\"false\">
+                                        <img src=\"assets1/images/users/avatar-6.jpg\" alt=\"user\" class=\"rounded-circle\">
+                                    </a>
+                                    <div class=\"dropdown-menu dropdown-menu-right profile-dropdown \">
+                                        <!-- item-->
+                                        <div class=\"dropdown-item noti-title\">
+                                            <h5>Welcome</h5>
+                                        </div>
+                                        <a class=\"dropdown-item\" href=\"#\"><i class=\"mdi mdi-account-circle m-r-5 text-muted\"></i> Profile</a>
+                                        <a class=\"dropdown-item\" href=\"#\"><i class=\"mdi mdi-wallet m-r-5 text-muted\"></i> My Wallet</a>
+                                        <a class=\"dropdown-item\" href=\"#\"><span class=\"badge badge-success float-right\">5</span><i class=\"mdi mdi-settings m-r-5 text-muted\"></i> Settings</a>
+                                        <a class=\"dropdown-item\" href=\"#\"><i class=\"mdi mdi-lock-open-outline m-r-5 text-muted\"></i> Lock screen</a>
+                                        <div class=\"dropdown-divider\"></div>
+                                        <a class=\"dropdown-item\" href=\"#\"><i class=\"mdi mdi-logout m-r-5 text-muted\"></i> Logout</a>
+                                    </div>
+                                </li>
+                            </ul>
+
+                            <ul class=\"list-inline menu-left mb-0\">
+                                <li class=\"float-left\">
+                                    <button class=\"button-menu-mobile open-left waves-light waves-effect\">
+                                        <i class=\"mdi mdi-menu\"></i>
+                                    </button>
+                                </li>
+                                <li class=\"hide-phone app-search\">
+                                    <form role=\"search\" class=\"\">
+                                        <input type=\"text\" placeholder=\"Search...\" class=\"form-control\">
+                                        <a href=\"\"><i class=\"fas fa-search\"></i></a>
+                                    </form>
+                                </li>
+                            </ul>
+
+                            <div class=\"clearfix\"></div>
+                        </nav>
+                    </div>
+                    <!-- Top Bar End -->
+
+                    <div class=\"page-content-wrapper \">
+
+                        <div class=\"container-fluid\">
+
+                            <div class=\"row\">
+                                <div class=\"col-sm-12\">
+                                    <div class=\"page-title-box\">
+                                        <div class=\"btn-group float-right\">
+                                            <ol class=\"breadcrumb hide-phone p-0 m-0\">
+                                                <li class=\"breadcrumb-item\"><a href=\"/\">Stram</a></li>
+                                                <li class=\"breadcrumb-item active\">Dashboard</li>
+                                            </ol>
+                                        </div>
+                                        <h4 class=\"page-title\">Dashboard</h4>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- end page title end breadcrumb -->
+                            <div class=\"row\">
+                                <div class=\"col-lg-9\">
+                                    <div class=\"row\">
+                                        <div class=\"col-lg-3\">
+                                            <div class=\"card\">
+                                                <div class=\"card-body\">
+                                                    <div class=\"icon-contain\">
+                                                        <div class=\"row\">
+                                                            <div class=\"col-2 align-self-center\">
+                                                                <i class=\"fas fa-tasks text-gradient-success\"></i>
+                                                            </div>
+                                                            <div class=\"col-10 text-right\">
+                                                                <h5 class=\"mt-0 mb-1\">190</h5>
+                                                                <p class=\"mb-0 font-12 text-muted\">Nombre de Clients</p>   
+                                                            </div>
+                                                        </div>                                                        
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class=\"col-lg-3\">
+                                            <div class=\"card\">
+                                                <div class=\"card-body justify-content-center\">
+                                                    <div class=\"icon-contain\">
+                                                        <div class=\"row\">
+                                                            <div class=\"col-2 align-self-center\">
+                                                                <i class=\"far fa-gem text-gradient-danger\"></i>
+                                                            </div>
+                                                            <div class=\"col-10 text-right\">
+                                                                <h5 class=\"mt-0 mb-1\">62</h5>
+                                                                <p class=\"mb-0 font-12 text-muted\">Nombre de Secteurs</p>
+                                                            </div>
+                                                        </div>                                                        
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class=\"col-lg-3\">
+                                            <div class=\"card\">
+                                                <div class=\"card-body\">
+                                                    <div class=\"icon-contain\">
+                                                        <div class=\"row\">
+                                                            <div class=\"col-2 align-self-center\">
+                                                                <i class=\"fas fa-users text-gradient-warning\"></i>
+                                                            </div>
+                                                            <div class=\"col-10 text-right\">
+                                                                <h5 class=\"mt-0 mb-1\">14</h5>
+                                                                <p class=\"mb-0 font-12 text-muted\">nombre de services</p>    
+                                                            </div>
+                                                        </div>                                                        
+                                                    </div>                                                    
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class=\"col-lg-3\">
+                                            <div class=\"card \">
+                                                <div class=\"card-body\">
+                                                    <div class=\"icon-contain\">
+                                                        <div class=\"row\">
+                                                            <div class=\"col-2 align-self-center\">
+                                                                <i class=\"fas fa-database text-gradient-primary\"></i>
+                                                            </div>
+                                                            <div class=\"col-10 text-right\">
+                                                                <h5 class=\"mt-0 mb-1\">\$15562</h5>
+                                                                <p class=\"mb-0 font-12 text-muted\">nombre de projets </p>    
+                                                            </div>
+                                                        </div>                                                        
+                                                    </div>                                                    
+                                                </div>
+                                            </div>
+                                        </div>                                             
+                                    </div> 
+                                                               
+                                </div>
+                                <div class=\"col-lg-3\">
+                                    <div class=\"card\">
+                                      
+                                    </div>
+                                    <div class=\"card\">
+                                        
+                                        
+                                    </div>
+                                </div>                                
+                            </div>
+                            <div class=\"row\">
+                                
+                                <div class=\"col-xl-4\">
+                                 
+                                </div>
+                                <div class=\"col-xl-4 col-lg-6\">
+                                   
+
+                                </div>
+                                <div class=\"col-xl-4  col-lg-6\">
+                                   
+                                </div>
+                            </div>
+                            <div class=\"row\">
+                                <div class=\"col-xl-12\">
+                                    <div class=\"card\">                                
+                                        <div class=\"card-body\">
+                                            <h5 class=\"header-title pb-3 mt-0\">Nos Clients</h5>
+                                            <div class=\"table-responsive\">
+                                                <table class=\"table table-hover mb-0\">
+                                                    <thead>
+                                                        <tr class=\"align-self-center\">
+                                                            <th>Titre de Projet</th>
+                                                            <th>Proprietaire</th>
+                                                            <th>Description </th>
+                                                            <th>Date </th>
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<th>Afficher le Projet ? </th>
+\t\t\t\t\t\t\t\t\t\t\t\t\t    \t<th>Metiers </th>
+                                                            <th></th>                                                                                    
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t<tr>
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t";
+        // line 386
+        if ((twig_length_filter($this->env, (isset($context["listP"]) || array_key_exists("listP", $context) ? $context["listP"] : (function () { throw new RuntimeError('Variable "listP" does not exist.', 386, $this->source); })())) == 0)) {
+            // line 387
+            echo "\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<p style=\"text-align: center\">Liste vide</p>
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t";
         }
-        // line 58
-        echo "\t\t\t\t\t\t\t\t\t</tr>
-\t\t\t\t\t\t\t\t\t";
-        // line 59
+        // line 389
+        echo "\t\t\t\t\t\t\t\t\t\t\t\t\t   </tr>
+\t\t\t\t\t\t\t\t\t                   ";
+        // line 390
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable((isset($context["listP"]) || array_key_exists("listP", $context) ? $context["listP"] : (function () { throw new RuntimeError('Variable "listP" does not exist.', 59, $this->source); })()));
+        $context['_seq'] = twig_ensure_traversable((isset($context["listP"]) || array_key_exists("listP", $context) ? $context["listP"] : (function () { throw new RuntimeError('Variable "listP" does not exist.', 390, $this->source); })()));
         foreach ($context['_seq'] as $context["_key"] => $context["p"]) {
-            // line 60
-            echo "
-\t\t\t\t\t\t\t\t\t\t<tr>
-
-\t\t\t\t\t\t\t\t\t\t\t<td>";
-            // line 63
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["p"], "titre", [], "any", false, false, false, 63), "html", null, true);
+            // line 391
+            echo "                                                            <tr>
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<td>";
+            // line 392
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["p"], "getTitre", [], "any", false, false, false, 392), "html", null, true);
             echo "</td>
-\t\t\t\t\t\t\t\t\t\t\t<td>";
-            // line 64
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["p"], "proprietaire", [], "any", false, false, false, 64), "html", null, true);
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<td>";
+            // line 393
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["p"], "getProprietaire", [], "any", false, false, false, 393), "html", null, true);
             echo "</td>
-\t\t\t\t\t\t\t\t\t\t\t<td>";
-            // line 65
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["p"], "description", [], "any", false, false, false, 65), "html", null, true);
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<td>";
+            // line 394
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["p"], "getDescription", [], "any", false, false, false, 394), "html", null, true);
             echo "</td>
-                                            
-\t\t\t\t\t\t\t\t\t\t\t<td>";
-            // line 67
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["p"], "afficherProjet", [], "any", false, false, false, 67), "html", null, true);
+                                                                <td>";
+            // line 395
+            echo twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["p"], "getDate", [], "any", false, false, false, 395), "Y-m-d H:i:s"), "html", null, true);
             echo "</td>
-\t\t\t\t\t\t\t\t\t\t\t<td>
-\t\t\t\t\t\t\t\t\t\t\t\t<a href=\"";
-            // line 69
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("modifierProjet", ["id" => twig_get_attribute($this->env, $this->source, $context["p"], "id", [], "any", false, false, false, 69)]), "html", null, true);
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<td>";
+            // line 396
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["p"], "getAfficherProjet", [], "any", false, false, false, 396), "html", null, true);
+            echo "</td>
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<td>
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t";
+            // line 398
+            $context['_parent'] = $context;
+            $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, $context["p"], "getMetiers", [], "any", false, false, false, 398));
+            $context['loop'] = [
+              'parent' => $context['_parent'],
+              'index0' => 0,
+              'index'  => 1,
+              'first'  => true,
+            ];
+            if (is_array($context['_seq']) || (is_object($context['_seq']) && $context['_seq'] instanceof \Countable)) {
+                $length = count($context['_seq']);
+                $context['loop']['revindex0'] = $length - 1;
+                $context['loop']['revindex'] = $length;
+                $context['loop']['length'] = $length;
+                $context['loop']['last'] = 1 === $length;
+            }
+            foreach ($context['_seq'] as $context["_key"] => $context["metier"]) {
+                // line 399
+                echo "\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t";
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["metier"], "getTitre", [], "any", false, false, false, 399), "html", null, true);
+                if ( !twig_get_attribute($this->env, $this->source, $context["loop"], "last", [], "any", false, false, false, 399)) {
+                    echo ", ";
+                }
+                // line 400
+                echo "\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t";
+                ++$context['loop']['index0'];
+                ++$context['loop']['index'];
+                $context['loop']['first'] = false;
+                if (isset($context['loop']['length'])) {
+                    --$context['loop']['revindex0'];
+                    --$context['loop']['revindex'];
+                    $context['loop']['last'] = 0 === $context['loop']['revindex0'];
+                }
+            }
+            $_parent = $context['_parent'];
+            unset($context['_seq'], $context['_iterated'], $context['_key'], $context['metier'], $context['_parent'], $context['loop']);
+            $context = array_intersect_key($context, $_parent) + $_parent;
+            // line 401
+            echo "\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t</td>
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<td>
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<a href=\"";
+            // line 403
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("modifierProjet", ["id" => twig_get_attribute($this->env, $this->source, $context["p"], "id", [], "any", false, false, false, 403)]), "html", null, true);
             echo "\">
-\t\t\t\t\t\t\t\t\t\t\t\t\t<button type=\"button\" class=\"btn btn-outline-warning\">
-\t\t\t\t\t\t\t\t\t\t\t\t\t\t<i class=\"bi bi-pen\" style=\"color:#DEE9F3\"></i>
-\t\t\t\t\t\t\t\t\t\t\t\t\t</button>
-\t\t\t\t\t\t\t\t\t\t\t\t</a>
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<button type=\"button\" class=\"btn btn-outline-warning\">
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<i class=\"fa fa-pen\" style=\"color:#DEE9F3\"></i>
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t</button>
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t</a>
 
-\t\t\t\t\t\t\t\t\t\t\t\t<a href=\"";
-            // line 75
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("suppressionProjet", ["id" => twig_get_attribute($this->env, $this->source, $context["p"], "id", [], "any", false, false, false, 75)]), "html", null, true);
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<a href=\"";
+            // line 409
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("suppressionProjet", ["id" => twig_get_attribute($this->env, $this->source, $context["p"], "id", [], "any", false, false, false, 409)]), "html", null, true);
             echo "\">
-\t\t\t\t\t\t\t\t\t\t\t\t\t<button type=\"button\" class=\"btn btn-outline-warning\">
-\t\t\t\t\t\t\t\t\t\t\t\t\t\t<i class=\"bi bi-trash\" style=\"color:#DEE9F3\"></i>
-\t\t\t\t\t\t\t\t\t\t\t\t\t</button>
-\t\t\t\t\t\t\t\t\t\t\t\t</a>
-\t\t\t\t\t\t\t\t\t\t\t</td>
-
-
-\t\t\t\t\t\t\t\t\t\t</tr>
-
-\t\t\t\t\t\t\t\t\t";
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<button type=\"button\" class=\"btn btn-outline-warning\">
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<i class=\"fa fa-trash\" style=\"color:#DEE9F3\"></i>
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t</button>
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t</a>
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t</td>   
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t</tr>
+\t\t\t\t\t\t\t\t\t\t\t\t\t";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['p'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 86
-        echo "
+        // line 417
+        echo "                                                                     
+                                                    </tbody>
+                                                </table>
+                                            </div><!--end table-responsive-->
+                                            <div class=\"pt-3 border-top text-right\">
+                                                <a href=\"#\" class=\"text-primary\">View all <i class=\"mdi mdi-arrow-right\"></i></a>
+                                            </div> 
+                                        </div>
+                                    </div>                                                                   
+                                </div> 
+                            </div>
+                            <!-- end row -->
+                            
+                        </div><!-- container -->
 
-\t\t\t\t\t\t\t\t</tbody>
+                    </div> <!-- Page content Wrapper -->
+
+                </div> <!-- content -->
+
+                <footer class=\"footer\">
+                    <p class=\"copyright-text\">Copyright @ 2023 Site developed by
+\t\t\t\t\t\t<a href=\"http://www.sbc.tn\" target=\"_blank\">Smart Business Challenge</a>
+\t\t\t     \t</p>              
+\t\t\t    </footer>
+
+            </div>
+            <!-- End Right content here -->
+
+        </div>
+        <!-- END wrapper -->
 
 
-\t\t\t\t\t\t\t</table>
-\t\t\t\t\t\t\t<a href=\"";
-        // line 92
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("ajouterProjet");
-        echo "\">
-\t\t\t\t\t\t\t\t<button type=\"button\" class=\"btn btn-warning\" style=\" background-color:#ff9919 \">ajouter projet</button>
-\t\t\t\t\t\t\t</a>
-\t\t\t\t\t\t</div>
-\t\t\t\t\t</div>
+        <!-- jQuery  -->
+        <script src=\"assets1/js/jquery.min.js\"></script>
+        <script src=\"assets1/js/popper.min.js\"></script>
+        <script src=\"assets1/js/bootstrap.min.js\"></script>
+        <script src=\"assets1/js/modernizr.min.js\"></script>
+        <script src=\"assets1/js/detect.js\"></script>
+        <script src=\"assets1/js/fastclick.js\"></script>
+        <script src=\"assets1/js/jquery.slimscroll.js\"></script>
+        <script src=\"assets1/js/jquery.blockUI.js\"></script>
+        <script src=\"assets1/js/waves.js\"></script>
+        <script src=\"assets1/js/jquery.nicescroll.js\"></script>
+        <script src=\"assets1/js/jquery.scrollTo.min.js\"></script>
 
+        <script src=\"assets1/plugins/chart.js/chart.min.js\"></script>
+        <script src=\"assets1/pages/dashboard.js\"></script>
 
-\t\t\t\t</div>
-
-
-\t\t\t</div>
-\t\t</section>
-
-\t</main>
-
-";
+        <!-- App js -->
+        <script src=\"assets1/js/app.js\"></script>
         
-        $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
 
+    </body>
+</html>";
         
         $__internal_5a27a8ba21ca79b61932376b2fa922d2->leave($__internal_5a27a8ba21ca79b61932376b2fa922d2_prof);
+
+        
+        $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
 
     }
 
@@ -243,118 +602,480 @@ class __TwigTemplate_da4518ac1ac7a7a7e85597e75857c84f extends Template
 
     public function getDebugInfo()
     {
-        return array (  209 => 92,  201 => 86,  184 => 75,  175 => 69,  170 => 67,  165 => 65,  161 => 64,  157 => 63,  152 => 60,  148 => 59,  145 => 58,  141 => 56,  139 => 55,  89 => 7,  79 => 6,  59 => 3,  36 => 1,);
+        return array (  531 => 417,  517 => 409,  508 => 403,  504 => 401,  490 => 400,  484 => 399,  467 => 398,  462 => 396,  458 => 395,  454 => 394,  450 => 393,  446 => 392,  443 => 391,  439 => 390,  436 => 389,  432 => 387,  430 => 386,  43 => 1,);
     }
 
     public function getSourceContext()
     {
-        return new Source("{% extends 'base.html.twig' %}
+        return new Source("<!DOCTYPE html>
+<html lang=\"en\">
+    <head>
+        <meta charset=\"utf-8\" />
+        <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">
+        <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui\">
+        <title>Stram - Admin Dashboard</title>
+        <meta content=\"Admin Dashboard\" name=\"description\" />
+        <meta content=\"Mannatthemes\" name=\"author\" />
+        <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\" />
 
-{% block title %}liste des Clients
-{% endblock %}
+        <link rel=\"shortcut icon\" href=\"assets1/images/favicon.ico\">
 
-{% block body %}
-
-\t<main id=\"main\" class=\"main\">
-
-\t\t<div class=\"pagetitle\">
-\t\t\t<h1>Gestionnaire des projets
-
-\t\t\t</h1>
-\t\t\t<nav>
-\t\t\t\t<ol class=\"breadcrumb\">
-\t\t\t\t\t<li class=\"breadcrumb-item\">
-\t\t\t\t\t\t<a href=\"/admin\">Home</a>
-\t\t\t\t\t</li>
-\t\t\t\t\t<li class=\"breadcrumb-item\">
-\t\t\t\t\t\t<a href=\"/projets\">projets</a>
-\t\t\t\t\t</li>
-\t\t\t\t</ol>
-\t\t\t</nav>
-\t\t</div>
-\t\t<!-- End Page Title -->
-
-\t\t<section class=\"section\">
-\t\t\t<div class=\"row\">
-\t\t\t\t<div class=\"col-lg-12\">
-
-\t\t\t\t\t<div class=\"card\">
-\t\t\t\t\t\t<div class=\"card-body\" style=\"background-color:#0e1641\">
-
-\t\t\t\t\t\t\t<h5 class=\"card-title\" style=\"color:#DEE9F3\">
-\t\t\t\t\t\t\t\t<strong>Liste des projets AGM
-
-\t\t\t\t\t\t\t\t</strong>
-\t\t\t\t\t\t\t</h5>
-
-\t\t\t\t\t\t\t<table class=\"table\" style=\"color:#DEE9F3\">
-\t\t\t\t\t\t\t\t<thead>
-\t\t\t\t\t\t\t\t\t<tr>
-\t\t\t\t\t\t\t\t\t\t<th scope=\"col\">titre</th>
-\t\t\t\t\t\t\t\t\t\t<th scope=\"col\">Maître d'ouvrage</th>
-\t\t\t\t\t\t\t\t\t\t<th scope=\"col\">description</th>
-\t\t\t\t\t\t\t\t\t\t<th scope=\"col\">Afficher le project dans le site</th>
-\t\t\t\t\t\t\t\t\t\t<th scope=\"col\"></th>
+        <link href=\"assets1/css/bootstrap.min.css\" rel=\"stylesheet\" type=\"text/css\">
+        <link href=\"assets1/css/icons.css\" rel=\"stylesheet\" type=\"text/css\">
+        <link href=\"assets1/css/style.css\" rel=\"stylesheet\" type=\"text/css\">
+    </head>
 
 
+    <body class=\"fixed-left\">
 
-\t\t\t\t\t\t\t\t\t</tr>
-\t\t\t\t\t\t\t\t</thead>
-\t\t\t\t\t\t\t\t<tbody>
-\t\t\t\t\t\t\t\t\t<tr>
-\t\t\t\t\t\t\t\t\t\t{% if listP | length == 0 %}
-\t\t\t\t\t\t\t\t\t\t\t<p style=\"text-align: center\">Liste vide</p>
-\t\t\t\t\t\t\t\t\t\t{% endif %}
-\t\t\t\t\t\t\t\t\t</tr>
-\t\t\t\t\t\t\t\t\t{% for p in listP  %}
+        <!-- Loader -->
+        <div id=\"preloader\"><div id=\"status\"><div class=\"spinner\"></div></div></div>
 
-\t\t\t\t\t\t\t\t\t\t<tr>
+        <!-- Begin page -->
+        <div id=\"wrapper\">
 
-\t\t\t\t\t\t\t\t\t\t\t<td>{{p.titre}}</td>
-\t\t\t\t\t\t\t\t\t\t\t<td>{{p.proprietaire}}</td>
-\t\t\t\t\t\t\t\t\t\t\t<td>{{p.description }}</td>
-                                            
-\t\t\t\t\t\t\t\t\t\t\t<td>{{p.afficherProjet}}</td>
-\t\t\t\t\t\t\t\t\t\t\t<td>
-\t\t\t\t\t\t\t\t\t\t\t\t<a href=\"{{ path('modifierProjet',{id:p.id}) }}\">
-\t\t\t\t\t\t\t\t\t\t\t\t\t<button type=\"button\" class=\"btn btn-outline-warning\">
-\t\t\t\t\t\t\t\t\t\t\t\t\t\t<i class=\"bi bi-pen\" style=\"color:#DEE9F3\"></i>
-\t\t\t\t\t\t\t\t\t\t\t\t\t</button>
-\t\t\t\t\t\t\t\t\t\t\t\t</a>
+            <!-- ========== Left Sidebar Start ========== -->
+            <div class=\"left side-menu\">
+                <button type=\"button\" class=\"button-menu-mobile button-menu-mobile-topbar open-left waves-effect\">
+                    <i class=\"ion-close\"></i>
+                </button>
 
-\t\t\t\t\t\t\t\t\t\t\t\t<a href=\"{{ path('suppressionProjet',{id:p.id}) }}\">
-\t\t\t\t\t\t\t\t\t\t\t\t\t<button type=\"button\" class=\"btn btn-outline-warning\">
-\t\t\t\t\t\t\t\t\t\t\t\t\t\t<i class=\"bi bi-trash\" style=\"color:#DEE9F3\"></i>
-\t\t\t\t\t\t\t\t\t\t\t\t\t</button>
-\t\t\t\t\t\t\t\t\t\t\t\t</a>
-\t\t\t\t\t\t\t\t\t\t\t</td>
+                <!-- LOGO -->
+                <div class=\"topbar-left\">
+                    <div class=\"text-center bg-logo\">
+                        <a href=\"index.html\" class=\"logo\"><i class=\"mdi mdi-bowling text-warning\"></i> Stram</a>
+                        <!-- <a href=\"index.html\" class=\"logo\"><img src=\"assets1/images/stram.png\" height=\"24\" alt=\"logo\"></a> -->
+                    </div>
+                </div>
+                <div class=\"sidebar-user\">
+                    <img src=\"assets1/images/users/avatar-6.jpg\" alt=\"user\" class=\"rounded-circle img-thumbnail mb-1\">
+                    <h6 class=\"\">Mr. Michael Hill </h6> 
+                    <p class=\" online-icon text-dark\"><i class=\"mdi mdi-record text-success\"></i>online</p>                    
+                    <ul class=\"list-unstyled list-inline mb-0 mt-2\">
+                        <li class=\"list-inline-item\">
+                            <a href=\"#\" class=\"\" data-toggle=\"tooltip\" data-placement=\"top\" title=\"Profile\"><i class=\"dripicons-user text-purple\"></i></a>
+                        </li>
+                        <li class=\"list-inline-item\">
+                            <a href=\"#\" class=\"\" data-toggle=\"tooltip\" data-placement=\"top\" title=\"Settings\"><i class=\"dripicons-gear text-dark\"></i></a>
+                        </li>
+                        <li class=\"list-inline-item\">
+                            <a href=\"#\" class=\"\" data-toggle=\"tooltip\" data-placement=\"top\" title=\"Log out\"><i class=\"dripicons-power text-danger\"></i></a>
+                        </li>
+                    </ul>           
+                </div>
+
+                <div class=\"sidebar-inner slimscrollleft\">
+
+                    <div id=\"sidebar-menu\">
+                        <ul>
+                            <li class=\"menu-title\">Main</li>
+
+                            <li>
+                                <a href=\"/admin\" class=\"waves-effect\">
+                                    <i class=\"dripicons-device-desktop\"></i>
+                                    <span> Dashboard </span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href=\"/\" class=\"waves-effect\"><i class=\"dripicons-to-do\"></i><span> Stram </span></a>
+                            </li>
+
+                            <li class=\"menu-title\">Components</li>
+
+                            <li class=\"has_sub\">
+                                <a href=\"javascript:void(0);\" class=\"waves-effect\"><i class=\"dripicons-jewel\"></i> <span> Gestion Services</span> <span class=\"float-right\"><i class=\"mdi mdi-chevron-right\"></i></span></a>
+                                <ul class=\"list-unstyled\">
+                                    <li><a href=\"ui-alerts.html\">Alerts</a></li>
+                                    <li><a href=\"ui-alertify.html\">Alertify</a></li>
+                                    <li><a href=\"ui-badge.html\">Badge</a></li>
+                                    <li><a href=\"ui-buttons.html\">Buttons</a></li>
+                                    <li><a href=\"ui-carousel.html\">Carousel</a></li>                                   
+                                    <li><a href=\"ui-cards.html\">Cards</a></li>
+                                    <li><a href=\"ui-dropdowns.html\">Dropdowns</a></li>
+                                    <li><a href=\"ui-grid.html\">Grid</a></li>
+                                    <li><a href=\"ui-images.html\">Images</a></li>
+                                    <li><a href=\"ui-lightbox.html\">Lightbox</a></li>
+                                    <li><a href=\"ui-modals.html\">Modals</a></li>
+                                    <li><a href=\"ui-navs.html\">Navs</a></li>
+                                    <li><a href=\"ui-progressbars.html\">Progress Bars</a></li>
+                                    <li><a href=\"ui-pagination.html\">Pagination</a></li>
+                                    <li><a href=\"ui-popover-tooltips.html\">Popover & Tooltips</a></li>
+                                    <li><a href=\"ui-rating.html\">Rating</a></li>                                    
+                                    <li><a href=\"ui-rangeslider.html\">Range Slider</a></li>
+                                    <li><a href=\"ui-sweet-alert.html\">Sweet-Alert</a></li>                                    
+                                    <li><a href=\"ui-typography.html\">Typography</a></li>
+                                    <li><a href=\"ui-tabs-accordions.html\">Tabs &amp; Accordions</a></li>
+                                    <li><a href=\"ui-video.html\">Video</a></li>                                    
+                                </ul>
+                            </li>
+
+                            <li class=\"has_sub\">
+                                <a href=\"javascript:void(0);\" class=\"waves-effect\"><i class=\"dripicons-blog\"></i><span> Gestion Projets </span> </a>
+                                <ul class=\"list-unstyled\">
+                                    <li><a href=\"form-advanced.html\">Form Advanced</a></li>
+                                    <li><a href=\"form-elements.html\">Form Elements</a></li>
+                                    <li><a href=\"form-editors.html\">Form Editors</a></li>
+                                    <li><a href=\"form-uploads.html\">Form File Upload</a></li>
+                                    <li><a href=\"form-mask.html\">Form Mask</a></li>
+                                    <li><a href=\"form-summernote.html\">Summernote</a></li>
+                                    <li><a href=\"form-validation.html\">Form Validation</a></li>                                    
+                                    <li><a href=\"form-xeditable.html\">Form Xeditable</a></li>
+                                </ul>
+                            </li>
+
+                            <li class=\"has_sub\">
+                                <a href=\"javascript:void(0);\" class=\"waves-effect\"><i class=\"dripicons-graph-pie\"></i><span> Gestion Clients </span> <span class=\"float-right\"><i class=\"mdi mdi-chevron-right\"></i></span></a>
+                                <ul class=\"list-unstyled\">        
+\t\t\t\t\t\t\t\t    <li><a href=\"/clientsAdmin\">Liste de clients</a></li>                        
+                                    <li><a href=\"charts-chartist.html\">Chartist Chart</a></li>
+                                    <li><a href=\"charts-chartjs.html\">Chartjs Chart</a></li>
+                                    <li><a href=\"charts-c3.html\">C3 Chart</a></li>
+                                    <li><a href=\"charts-flot.html\">Flot Chart</a></li>
+                                    <li><a href=\"charts-other.html\">Jquery Knob Chart</a></li>
+                                    <li><a href=\"charts-morris.html\">Morris Chart</a></li>
+                                </ul>
+                            </li>
+
+                            <li class=\"has_sub\">
+                                <a href=\"javascript:void(0);\" class=\"waves-effect\"><i class=\"dripicons-trophy\"></i> <span> Gestion Carriére </span> <span class=\"float-right\"><i class=\"mdi mdi-chevron-right\"></i></span></a>
+                                <ul class=\"list-unstyled\">                                   
+                                    <li><a href=\"icons-dripicons.html\">Dripicons</a></li>
+                                    <li><a href=\"icons-fontawesome.html\">Font Awesome</a></li>
+                                    <li><a href=\"icons-ion.html\">Ion Icons</a></li>
+                                    <li><a href=\"icons-material.html\">Material Design</a></li>
+                                    <li><a href=\"icons-themify.html\">Themify Icons</a></li>
+                                    <li><a href=\"icons-typicons.html\">Typicons Icons</a></li>
+                                </ul>
+                            </li>
 
 
-\t\t\t\t\t\t\t\t\t\t</tr>
+                            <li class=\"menu-title\">Extra</li>
 
-\t\t\t\t\t\t\t\t\t{% endfor %}
+                            <li class=\"has_sub\">
+                                <a href=\"javascript:void(0);\" class=\"waves-effect\"><i class=\"dripicons-map\"></i><span> Contact </span> </a>
+                                <ul class=\"list-unstyled\">
+                                    <li><a href=\"maps-google.html\"> Google Map</a></li>
+                                    <li><a href=\"maps-vector.html\"> Vector Map</a></li>
+                                </ul>
+                            </li>
+
+\t\t\t\t\t\t\t
+                            <li class=\"has_sub\">
+                                <a href=\"javascript:void(0);\" class=\"waves-effect\"><i class=\"dripicons-card\"></i><span> Gestion Affichage  </span> <span class=\"float-right\"><i class=\"mdi mdi-chevron-right\"></i></span></a>
+                                <ul class=\"list-unstyled\">
+                                    <li><a href=\"tables-basic.html\">Basic Tables</a></li>
+                                    <li><a href=\"tables-datatable.html\">Data Table</a></li>
+                                    <li><a href=\"tables-editable.html\">Editable Table</a></li>
+                                    <li><a href=\"tables-responsive.html\">Responsive Table</a></li>                                    
+                                </ul>
+                            </li>
+
+                            <li class=\"has_sub\">
+                                <a href=\"javascript:void(0);\" class=\"waves-effect\"><i class=\"dripicons-copy\"></i><span> Pages</span> <span class=\"float-right\"><i class=\"mdi mdi-chevron-right\"></i></span></a>
+                                <ul class=\"list-unstyled\">
+                                    <li><a href=\"pages-login.html\">Login</a></li>
+                                    <li><a href=\"pages-register.html\">Register</a></li>
+                                    <li><a href=\"pages-recoverpw.html\">Recover Password</a></li>
+                                    <li><a href=\"pages-lock-screen.html\">Lock Screen</a></li>
+                                    <li><a href=\"pages-blank.html\">Blank Page</a></li>
+                                    <li><a href=\"pages-404.html\">Error 404</a></li>
+                                    <li><a href=\"pages-500.html\">Error 500</a></li>
+                                </ul>
+                            </li>
+
+                        </ul>
+                    </div>
+                    <div class=\"clearfix\"></div>
+                </div> <!-- end sidebarinner -->
+            </div>
+            <!-- Left Sidebar End -->
+
+            <!-- Start right Content here -->
+
+            <div class=\"content-page\">
+                <!-- Start content -->
+                <div class=\"content\">
+
+                    <!-- Top Bar Start -->
+                    <div class=\"topbar\">
+
+                        <nav class=\"navbar-custom\">
+
+                            <ul class=\"list-inline float-right mb-0\">
+                                <!-- language-->
+                                <li class=\"list-inline-item dropdown notification-list hide-phone\">
+                                    <a class=\"nav-link dropdown-toggle arrow-none waves-effect text-white\" data-toggle=\"dropdown\" href=\"#\" role=\"button\"
+                                        aria-haspopup=\"false\" aria-expanded=\"false\">
+                                        Français <img src=\"assets1/images/flags/french_flag.jpg\" class=\"ml-2\" height=\"16\" alt=\"\"/>
+                                    </a>
+                                    <div class=\"dropdown-menu dropdown-menu-right language-switch\">
+                                        <a class=\"dropdown-item\" href=\"#\"><img src=\"assets1/images/flags/italy_flag.jpg\" alt=\"\" height=\"16\"/><span> Italian </span></a>
+                                        <a class=\"dropdown-item\" href=\"#\"><img src=\"assets1/images/flags/french_flag.jpg\" alt=\"\" height=\"16\"/><span> French </span></a>
+                                        <a class=\"dropdown-item\" href=\"#\"><img src=\"assets1/images/flags/spain_flag.jpg\" alt=\"\" height=\"16\"/><span> Spanish </span></a>
+                                        <a class=\"dropdown-item\" href=\"#\"><img src=\"assets1/images/flags/russia_flag.jpg\" alt=\"\" height=\"16\"/><span> Russian </span></a>
+                                    </div>
+                                </li>
+                             
 
 
-\t\t\t\t\t\t\t\t</tbody>
+                                <li class=\"list-inline-item dropdown notification-list\">
+                                    <a class=\"nav-link dropdown-toggle arrow-none waves-effect nav-user\" data-toggle=\"dropdown\" href=\"#\" role=\"button\"
+                                       aria-haspopup=\"false\" aria-expanded=\"false\">
+                                        <img src=\"assets1/images/users/avatar-6.jpg\" alt=\"user\" class=\"rounded-circle\">
+                                    </a>
+                                    <div class=\"dropdown-menu dropdown-menu-right profile-dropdown \">
+                                        <!-- item-->
+                                        <div class=\"dropdown-item noti-title\">
+                                            <h5>Welcome</h5>
+                                        </div>
+                                        <a class=\"dropdown-item\" href=\"#\"><i class=\"mdi mdi-account-circle m-r-5 text-muted\"></i> Profile</a>
+                                        <a class=\"dropdown-item\" href=\"#\"><i class=\"mdi mdi-wallet m-r-5 text-muted\"></i> My Wallet</a>
+                                        <a class=\"dropdown-item\" href=\"#\"><span class=\"badge badge-success float-right\">5</span><i class=\"mdi mdi-settings m-r-5 text-muted\"></i> Settings</a>
+                                        <a class=\"dropdown-item\" href=\"#\"><i class=\"mdi mdi-lock-open-outline m-r-5 text-muted\"></i> Lock screen</a>
+                                        <div class=\"dropdown-divider\"></div>
+                                        <a class=\"dropdown-item\" href=\"#\"><i class=\"mdi mdi-logout m-r-5 text-muted\"></i> Logout</a>
+                                    </div>
+                                </li>
+                            </ul>
+
+                            <ul class=\"list-inline menu-left mb-0\">
+                                <li class=\"float-left\">
+                                    <button class=\"button-menu-mobile open-left waves-light waves-effect\">
+                                        <i class=\"mdi mdi-menu\"></i>
+                                    </button>
+                                </li>
+                                <li class=\"hide-phone app-search\">
+                                    <form role=\"search\" class=\"\">
+                                        <input type=\"text\" placeholder=\"Search...\" class=\"form-control\">
+                                        <a href=\"\"><i class=\"fas fa-search\"></i></a>
+                                    </form>
+                                </li>
+                            </ul>
+
+                            <div class=\"clearfix\"></div>
+                        </nav>
+                    </div>
+                    <!-- Top Bar End -->
+
+                    <div class=\"page-content-wrapper \">
+
+                        <div class=\"container-fluid\">
+
+                            <div class=\"row\">
+                                <div class=\"col-sm-12\">
+                                    <div class=\"page-title-box\">
+                                        <div class=\"btn-group float-right\">
+                                            <ol class=\"breadcrumb hide-phone p-0 m-0\">
+                                                <li class=\"breadcrumb-item\"><a href=\"/\">Stram</a></li>
+                                                <li class=\"breadcrumb-item active\">Dashboard</li>
+                                            </ol>
+                                        </div>
+                                        <h4 class=\"page-title\">Dashboard</h4>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- end page title end breadcrumb -->
+                            <div class=\"row\">
+                                <div class=\"col-lg-9\">
+                                    <div class=\"row\">
+                                        <div class=\"col-lg-3\">
+                                            <div class=\"card\">
+                                                <div class=\"card-body\">
+                                                    <div class=\"icon-contain\">
+                                                        <div class=\"row\">
+                                                            <div class=\"col-2 align-self-center\">
+                                                                <i class=\"fas fa-tasks text-gradient-success\"></i>
+                                                            </div>
+                                                            <div class=\"col-10 text-right\">
+                                                                <h5 class=\"mt-0 mb-1\">190</h5>
+                                                                <p class=\"mb-0 font-12 text-muted\">Nombre de Clients</p>   
+                                                            </div>
+                                                        </div>                                                        
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class=\"col-lg-3\">
+                                            <div class=\"card\">
+                                                <div class=\"card-body justify-content-center\">
+                                                    <div class=\"icon-contain\">
+                                                        <div class=\"row\">
+                                                            <div class=\"col-2 align-self-center\">
+                                                                <i class=\"far fa-gem text-gradient-danger\"></i>
+                                                            </div>
+                                                            <div class=\"col-10 text-right\">
+                                                                <h5 class=\"mt-0 mb-1\">62</h5>
+                                                                <p class=\"mb-0 font-12 text-muted\">Nombre de Secteurs</p>
+                                                            </div>
+                                                        </div>                                                        
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class=\"col-lg-3\">
+                                            <div class=\"card\">
+                                                <div class=\"card-body\">
+                                                    <div class=\"icon-contain\">
+                                                        <div class=\"row\">
+                                                            <div class=\"col-2 align-self-center\">
+                                                                <i class=\"fas fa-users text-gradient-warning\"></i>
+                                                            </div>
+                                                            <div class=\"col-10 text-right\">
+                                                                <h5 class=\"mt-0 mb-1\">14</h5>
+                                                                <p class=\"mb-0 font-12 text-muted\">nombre de services</p>    
+                                                            </div>
+                                                        </div>                                                        
+                                                    </div>                                                    
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class=\"col-lg-3\">
+                                            <div class=\"card \">
+                                                <div class=\"card-body\">
+                                                    <div class=\"icon-contain\">
+                                                        <div class=\"row\">
+                                                            <div class=\"col-2 align-self-center\">
+                                                                <i class=\"fas fa-database text-gradient-primary\"></i>
+                                                            </div>
+                                                            <div class=\"col-10 text-right\">
+                                                                <h5 class=\"mt-0 mb-1\">\$15562</h5>
+                                                                <p class=\"mb-0 font-12 text-muted\">nombre de projets </p>    
+                                                            </div>
+                                                        </div>                                                        
+                                                    </div>                                                    
+                                                </div>
+                                            </div>
+                                        </div>                                             
+                                    </div> 
+                                                               
+                                </div>
+                                <div class=\"col-lg-3\">
+                                    <div class=\"card\">
+                                      
+                                    </div>
+                                    <div class=\"card\">
+                                        
+                                        
+                                    </div>
+                                </div>                                
+                            </div>
+                            <div class=\"row\">
+                                
+                                <div class=\"col-xl-4\">
+                                 
+                                </div>
+                                <div class=\"col-xl-4 col-lg-6\">
+                                   
+
+                                </div>
+                                <div class=\"col-xl-4  col-lg-6\">
+                                   
+                                </div>
+                            </div>
+                            <div class=\"row\">
+                                <div class=\"col-xl-12\">
+                                    <div class=\"card\">                                
+                                        <div class=\"card-body\">
+                                            <h5 class=\"header-title pb-3 mt-0\">Nos Clients</h5>
+                                            <div class=\"table-responsive\">
+                                                <table class=\"table table-hover mb-0\">
+                                                    <thead>
+                                                        <tr class=\"align-self-center\">
+                                                            <th>Titre de Projet</th>
+                                                            <th>Proprietaire</th>
+                                                            <th>Description </th>
+                                                            <th>Date </th>
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<th>Afficher le Projet ? </th>
+\t\t\t\t\t\t\t\t\t\t\t\t\t    \t<th>Metiers </th>
+                                                            <th></th>                                                                                    
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t<tr>
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t{% if listP | length == 0 %}
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<p style=\"text-align: center\">Liste vide</p>
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t{% endif %}
+\t\t\t\t\t\t\t\t\t\t\t\t\t   </tr>
+\t\t\t\t\t\t\t\t\t                   {% for p in listP  %}
+                                                            <tr>
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<td>{{p.getTitre}}</td>
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<td>{{p.getProprietaire}}</td>
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<td>{{p.getDescription}}</td>
+                                                                <td>{{ p.getDate|date('Y-m-d H:i:s') }}</td>
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<td>{{p.getAfficherProjet}}</td>
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<td>
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t{% for metier in p.getMetiers %}
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t{{ metier.getTitre }}{% if not loop.last %}, {% endif %}
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t{% endfor %}
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t</td>
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<td>
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<a href=\"{{ path('modifierProjet',{id:p.id}) }}\">
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<button type=\"button\" class=\"btn btn-outline-warning\">
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<i class=\"fa fa-pen\" style=\"color:#DEE9F3\"></i>
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t</button>
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t</a>
+
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<a href=\"{{ path('suppressionProjet',{id:p.id}) }}\">
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<button type=\"button\" class=\"btn btn-outline-warning\">
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<i class=\"fa fa-trash\" style=\"color:#DEE9F3\"></i>
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t</button>
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t</a>
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t</td>   
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t</tr>
+\t\t\t\t\t\t\t\t\t\t\t\t\t{% endfor %}
+                                                                     
+                                                    </tbody>
+                                                </table>
+                                            </div><!--end table-responsive-->
+                                            <div class=\"pt-3 border-top text-right\">
+                                                <a href=\"#\" class=\"text-primary\">View all <i class=\"mdi mdi-arrow-right\"></i></a>
+                                            </div> 
+                                        </div>
+                                    </div>                                                                   
+                                </div> 
+                            </div>
+                            <!-- end row -->
+                            
+                        </div><!-- container -->
+
+                    </div> <!-- Page content Wrapper -->
+
+                </div> <!-- content -->
+
+                <footer class=\"footer\">
+                    <p class=\"copyright-text\">Copyright @ 2023 Site developed by
+\t\t\t\t\t\t<a href=\"http://www.sbc.tn\" target=\"_blank\">Smart Business Challenge</a>
+\t\t\t     \t</p>              
+\t\t\t    </footer>
+
+            </div>
+            <!-- End Right content here -->
+
+        </div>
+        <!-- END wrapper -->
 
 
-\t\t\t\t\t\t\t</table>
-\t\t\t\t\t\t\t<a href=\"{{ path('ajouterProjet') }}\">
-\t\t\t\t\t\t\t\t<button type=\"button\" class=\"btn btn-warning\" style=\" background-color:#ff9919 \">ajouter projet</button>
-\t\t\t\t\t\t\t</a>
-\t\t\t\t\t\t</div>
-\t\t\t\t\t</div>
+        <!-- jQuery  -->
+        <script src=\"assets1/js/jquery.min.js\"></script>
+        <script src=\"assets1/js/popper.min.js\"></script>
+        <script src=\"assets1/js/bootstrap.min.js\"></script>
+        <script src=\"assets1/js/modernizr.min.js\"></script>
+        <script src=\"assets1/js/detect.js\"></script>
+        <script src=\"assets1/js/fastclick.js\"></script>
+        <script src=\"assets1/js/jquery.slimscroll.js\"></script>
+        <script src=\"assets1/js/jquery.blockUI.js\"></script>
+        <script src=\"assets1/js/waves.js\"></script>
+        <script src=\"assets1/js/jquery.nicescroll.js\"></script>
+        <script src=\"assets1/js/jquery.scrollTo.min.js\"></script>
 
+        <script src=\"assets1/plugins/chart.js/chart.min.js\"></script>
+        <script src=\"assets1/pages/dashboard.js\"></script>
 
-\t\t\t\t</div>
+        <!-- App js -->
+        <script src=\"assets1/js/app.js\"></script>
+        
 
-
-\t\t\t</div>
-\t\t</section>
-
-\t</main>
-
-{% endblock %}
-", "projet/projetBack.html.twig", "C:\\Users\\oumei\\OneDrive\\Bureau\\Stram_WebSite\\templates\\projet\\projetBack.html.twig");
+    </body>
+</html>", "projet/projetBack.html.twig", "C:\\Users\\oumei\\OneDrive\\Bureau\\Stram_WebSite\\templates\\projet\\projetBack.html.twig");
     }
 }

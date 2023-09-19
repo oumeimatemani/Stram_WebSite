@@ -194,66 +194,150 @@ setInterval(updateClockDisplay, 60000); // 60000 ms = 1 minute
 \t\t\t\t\t\t\t\t\t<li class=\"menu-item menu-item-has-children\">
 \t\t\t\t\t\t\t\t\t\t<a href=\"#\">Services</a>
 \t\t\t\t\t\t\t\t\t\t<ul class=\"sub-menu\">
-\t\t\t\t\t\t\t\t\t\t\t<li class=\"menu-item\">
-\t\t\t\t\t\t\t\t\t\t\t\t<a href=\"services.html\">Sols techniques</a>
+\t\t\t\t\t\t\t\t\t\t\t<li class=\"menu-item menu-item-has-children\">
+\t\t\t\t\t\t\t\t\t\t\t\t<a href=\"#\">Travaux Spéciaux</a>
+\t\t\t\t\t\t\t\t\t\t\t\t<ul class=\"sub-menu\">
+\t\t\t\t\t\t\t\t\t\t\t\t\t<li class=\"menu-item\">
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t<a href=\"";
+        // line 156
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("solsTechniques");
+        echo "\">Sols techniques</a>
+\t\t\t\t\t\t\t\t\t\t\t\t\t</li>
+\t\t\t\t\t\t\t\t\t\t\t\t\t
+\t\t\t\t\t\t\t\t\t\t\t\t\t<li class=\"menu-item menu-item-has-children\">
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t<a href=\"#\">Réparations & renforts de structure</a>
+\t\t\t\t\t\t\t\t\t\t\t\t\t   <ul class=\"sub-menu\">
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<li class=\"menu-item active\">
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<a href=\"";
+        // line 163
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("reparation");
+        echo "\">Réparation</a>
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t</li>
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<li class=\"menu-item active\">
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<a href=\"";
+        // line 166
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("renforcementFibreCarbone");
+        echo "\">Renforcement par Fibre de Carbone</a>
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t</li>
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<li class=\"menu-item active\">
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<a href=\"";
+        // line 169
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("RenforcementChemisageClassique");
+        echo "\">Renforcement par chemisage classique</a>
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t</li>
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t</ul>
+\t\t\t\t\t\t\t\t\t\t\t\t\t</li>
+
+\t\t\t\t\t\t\t\t\t\t\t\t\t<li class=\"menu-item menu-item-has-children\">
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t<a href=\"#\">Étanchéité & Imperméabilisation</a>
+\t\t\t\t\t\t\t\t\t\t\t\t\t   <ul class=\"sub-menu\">
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<li class=\"menu-item active\">
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<a href=\"";
+        // line 178
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("Étanchéité");
+        echo "\">Étanchéité</a>
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t</li>
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<li class=\"menu-item active\">
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<a href=\"";
+        // line 181
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("Imperméabilisation");
+        echo "\">Imperméabilisation</a>
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t</li>
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t</ul>
+\t\t\t\t\t\t\t\t\t\t\t\t\t</li>
+\t\t\t\t\t\t\t\t\t\t\t\t\t
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t
+\t\t\t\t\t\t\t\t\t\t\t\t\t<li class=\"menu-item\">
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t<a href=\"";
+        // line 189
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("traitementJoints");
+        echo "\">Traitement des joints</a>
+\t\t\t\t\t\t\t\t\t\t\t\t\t</li>
+\t\t\t\t\t\t\t\t\t\t\t\t\t
+\t\t\t\t\t\t\t\t\t\t\t\t\t<li class=\"menu-item menu-item-has-children\">
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t<a href=\"#\">Revêtement & traitement de façades</a>
+
+                                                        <ul class=\"sub-menu\">
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<li class=\"menu-item active\">
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<a href=\"";
+        // line 197
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("RevêtementTechnique");
+        echo "\">Revêtement technique</a>
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t</li>
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<li class=\"menu-item active\">
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<a href=\"";
+        // line 200
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("TraitementFaçades");
+        echo "\">Traitement de façades</a>
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t</li>
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t</ul>
+
+
+
+\t\t\t\t\t\t\t\t\t\t\t\t\t</li>
+\t\t\t\t\t\t\t\t\t\t\t    </ul>
 \t\t\t\t\t\t\t\t\t\t\t</li>
+\t\t\t\t\t\t\t\t\t\t\t\t
 \t\t\t\t\t\t\t\t\t\t\t<li class=\"menu-item\">
-\t\t\t\t\t\t\t\t\t\t\t\t<a href=\"services-2.html\">Répara6ons & renforts de structure</a>
+\t\t\t\t\t\t\t\t\t\t\t\t<a href=\"services-2.html\">Installation Centrale Photovoltaique au sol</a>
+\t\t\t\t\t\t\t\t\t\t\t</li>
+
+\t\t\t\t\t\t\t\t\t\t\t<li class=\"menu-item menu-item-has-children\">
+\t\t\t\t\t\t\t\t\t\t\t\t<a href=\"#\">Etude, Diagnostic & Expertise</a>
+\t\t\t\t\t\t\t\t\t\t\t\t<ul class=\"sub-menu\">
+\t\t\t\t\t\t\t\t\t\t\t\t\t<li class=\"menu-item\">
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t<a href=\"shop-1.html\">Travaux Spéciaux</a>
+\t\t\t\t\t\t\t\t\t\t\t\t\t</li>
+\t\t\t\t\t\t\t\t\t\t\t\t\t
+\t\t\t\t\t\t\t\t\t\t\t\t\t<li class=\"menu-item\">
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t<a href=\"shop-2.html\">Photovoltaique</a>
+\t\t\t\t\t\t\t\t\t\t\t\t\t</li>
+\t\t\t\t\t\t\t\t\t\t\t    </ul>
 \t\t\t\t\t\t\t\t\t\t\t</li>
 
 \t\t\t\t\t\t\t\t\t\t\t<li class=\"menu-item\">
-\t\t\t\t\t\t\t\t\t\t\t\t<a href=\"services-2.html\">Étanchéité & Imperméabilisa6on</a>
-\t\t\t\t\t\t\t\t\t\t\t</li>
-\t\t\t\t\t\t\t\t\t\t\t<li class=\"menu-item\">
-\t\t\t\t\t\t\t\t\t\t\t\t<a href=\"services-2.html\">Traitement des joints</a>
-\t\t\t\t\t\t\t\t\t\t\t</li>
-
-\t\t\t\t\t\t\t\t\t\t\t<li class=\"menu-item\">
-\t\t\t\t\t\t\t\t\t\t\t\t<a href=\"services-2.html\">Centrales photovoltaique
-\t\t\t\t\t\t\t\t\t\t\t\t</a>
-\t\t\t\t\t\t\t\t\t\t\t</li>
-
-\t\t\t\t\t\t\t\t\t\t\t<li class=\"menu-item\">
-\t\t\t\t\t\t\t\t\t\t\t\t<a href=\"services-2.html\">
-\t\t\t\t\t\t\t\t\t\t\t\t\tÉtudes & Expertise
-\t\t\t\t\t\t\t\t\t\t\t\t</a>
-\t\t\t\t\t\t\t\t\t\t\t</li>
-\t\t\t\t\t\t\t\t\t\t\t<li class=\"menu-item\">
-\t\t\t\t\t\t\t\t\t\t\t\t<a href=\"services-2.html\">Peinture</a>
+\t\t\t\t\t\t\t\t\t\t\t\t<a href=\"services-2.html\">Commerce</a>
 \t\t\t\t\t\t\t\t\t\t\t</li>
 
 \t\t\t\t\t\t\t\t\t\t</ul>
 \t\t\t\t\t\t\t\t\t</li>
+
 \t\t\t\t\t\t\t\t\t<li class=\"menu-item menu-item-has-children\">
 \t\t\t\t\t\t\t\t\t\t<a href=\"#\">Projets</a>
-\t\t\t\t\t\t\t\t\t\t<ul class=\"sub-menu\">
-
-\t\t\t\t\t\t\t\t\t\t\t<li class=\"menu-item menu-item-has-children\">
-\t\t\t\t\t\t\t\t\t\t\t\t<a href=\"#\">Afrique du Nord</a>
-\t\t\t\t\t\t\t\t\t\t\t\t<ul class=\"sub-menu\">
-\t\t\t\t\t\t\t\t\t\t\t\t\t<li class=\"menu-item\">
-\t\t\t\t\t\t\t\t\t\t\t\t\t\t<a href=\"shop-1.html\">Tunisie</a>
-\t\t\t\t\t\t\t\t\t\t\t\t\t</li>
-\t\t\t\t\t\t\t\t\t\t\t\t\t<li class=\"menu-item\">
-\t\t\t\t\t\t\t\t\t\t\t\t\t\t<a href=\"shop-2.html\">
-\t\t\t\t\t\t\t\t\t\t\t\t\t\t\tAlgérie</a>
-\t\t\t\t\t\t\t\t\t\t\t\t\t</li>
-\t\t\t\t\t\t\t\t\t\t\t\t</ul>
+\t\t\t\t\t\t\t\t\t\t<ul class=\"sub-menu\">\t\t\t\t\t\t\t\t\t\t\t
+\t\t\t\t\t\t\t\t\t\t\t<li class=\"menu-item\">
+\t\t\t\t\t\t\t\t\t\t\t\t<a href=\"/\">Tunisie</a>
 \t\t\t\t\t\t\t\t\t\t\t</li>
 
 \t\t\t\t\t\t\t\t\t\t\t<li class=\"menu-item menu-item-has-children\">
-\t\t\t\t\t\t\t\t\t\t\t\t<a href=\"#\">Afrique du West</a>
+\t\t\t\t\t\t\t\t\t\t\t\t<a href=\"#\">International</a>
 \t\t\t\t\t\t\t\t\t\t\t\t<ul class=\"sub-menu\">
-\t\t\t\t\t\t\t\t\t\t\t\t\t<li class=\"menu-item\">
-\t\t\t\t\t\t\t\t\t\t\t\t\t\t<a href=\"shop-1.html\">Sénégal</a>
+\t\t\t\t\t\t\t\t\t\t\t\t\t<li class=\"menu-item menu-item-has-children\">
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t<a href=\"shop-1.html\">Afrique du Nord</a>
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t<ul class=\"sub-menu\">\t\t\t\t\t\t\t\t\t\t\t
+\t                                                        <li class=\"menu-item\">
+\t\t\t\t\t\t\t\t\t\t\t                 \t<a href=\"/\">Algerie</a>
+\t\t\t\t\t\t\t\t\t\t\t                </li>\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t
+\t\t\t\t\t\t\t\t\t\t\t         \t</ul>
+\t\t\t\t\t\t\t\t\t\t\t        </li>
+\t\t\t\t\t\t\t\t\t\t\t
 \t\t\t\t\t\t\t\t\t\t\t\t\t</li>
-\t\t\t\t\t\t\t\t\t\t\t\t\t<li class=\"menu-item\">
-\t\t\t\t\t\t\t\t\t\t\t\t\t\t<a href=\"shop-2.html\">
-\t\t\t\t\t\t\t\t\t\t\t\t\t\t\tNiger</a>
-\t\t\t\t\t\t\t\t\t\t\t\t\t</li>
-\t\t\t\t\t\t\t\t\t\t\t\t\t<li class=\"menu-item\">
-\t\t\t\t\t\t\t\t\t\t\t\t\t\t<a href=\"shop-2.html\">Benin</a>
-\t\t\t\t\t\t\t\t\t\t\t\t\t</li>
+
+\t\t\t\t\t\t\t\t\t\t\t\t\t<li class=\"menu-item menu-item-has-children\">
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t<a href=\"shop-2.html\">Afrique du West</a>
+                                                        <ul class=\"sub-menu\">\t\t\t\t\t\t\t\t\t\t\t
+\t                                                        <li class=\"menu-item\">
+\t\t\t\t\t\t\t\t\t\t\t                 \t<a href=\"/\">Senegal</a>
+\t\t\t\t\t\t\t\t\t\t\t                </li>\t
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t  <li class=\"menu-item\">
+\t\t\t\t\t\t\t\t\t\t\t                 \t<a href=\"/\">Niger</a>
+\t\t\t\t\t\t\t\t\t\t\t                </li>\t
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t  <li class=\"menu-item\">
+\t\t\t\t\t\t\t\t\t\t\t                 \t<a href=\"/\">Benin</a>
+\t\t\t\t\t\t\t\t\t\t\t                </li>\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t
+\t\t\t\t\t\t\t\t\t\t\t         \t</ul>
+\t\t\t\t\t\t\t\t\t\t          \t</li>
 \t\t\t\t\t\t\t\t\t\t\t\t</ul>
 \t\t\t\t\t\t\t\t\t\t\t</li>
 
@@ -269,15 +353,22 @@ setInterval(updateClockDisplay, 60000); // 60000 ms = 1 minute
 \t\t\t\t\t\t\t\t\t\t\t</li>
 \t\t\t\t\t\t\t\t\t\t</ul>
 \t\t\t\t\t\t\t\t\t</li>
-\t\t\t\t\t\t\t\t\t<li class=\"menu-item menu-item-has-children\">
-\t\t\t\t\t\t\t\t\t\t<a href=\"#\">Carrière</a>
-\t\t\t\t\t\t\t\t\t\t<ul class=\"sub-menu\">
-\t\t\t\t\t\t\t\t\t\t\t<li class=\"menu-item\">
-\t\t\t\t\t\t\t\t\t\t\t\t<a href=\"/carriere\">Carrière</a>
-\t\t\t\t\t\t\t\t\t\t\t</li>
 
-\t\t\t\t\t\t\t\t\t\t</ul>
-\t\t\t\t\t\t\t\t\t</li>
+
+\t\t\t\t\t\t\t\t\t\t<li class=\"menu-item menu-item-has-children\">
+\t\t\t\t\t\t\t\t\t\t\t<a href=\"/carriere\">Carriére</a>
+\t\t\t\t\t\t\t\t\t\t\t<ul class=\"sub-menu\">\t\t\t\t\t\t\t\t\t\t\t
+\t\t\t\t\t\t\t\t\t\t\t\t<li class=\"menu-item\">
+\t\t\t\t\t\t\t\t\t\t\t\t\t<a href=\"/carriere\">Carriére</a>
+\t\t\t\t\t\t\t\t\t\t\t\t</li>\t
+\t\t\t\t\t\t\t\t\t\t\t\t\t<li class=\"menu-item\">
+\t\t\t\t\t\t\t\t\t\t\t\t\t<a href=\"/offres\">Nos </a>
+\t\t\t\t\t\t\t\t\t\t\t\t</li>\t
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t
+\t\t\t\t\t\t\t\t\t\t\t</ul>
+\t\t\t\t\t\t\t\t\t\t</li>
+
+
 \t\t\t\t\t\t\t\t\t<li class=\"menu-item\">
 \t\t\t\t\t\t\t\t\t\t<a href=\"/contact\">Contact</a>
 \t\t\t\t\t\t\t\t\t</li>
@@ -304,22 +395,22 @@ setInterval(updateClockDisplay, 60000); // 60000 ms = 1 minute
 \t\t\t\t\t\t\t\t\t\t<i class=\"fa fa-phone\" aria-hidden=\"true\"></i>
 \t\t\t\t\t\t\t\t\t\tAPPELEZ-NOUS À TOUT MOMENT<span>
 \t\t\t\t\t\t\t\t\t\t\t(+216) ";
-        // line 261
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["acceuil"]) || array_key_exists("acceuil", $context) ? $context["acceuil"] : (function () { throw new RuntimeError('Variable "acceuil" does not exist.', 261, $this->source); })()), "getNumrContact", [], "any", false, false, false, 261), "html", null, true);
+        // line 325
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["acceuil"]) || array_key_exists("acceuil", $context) ? $context["acceuil"] : (function () { throw new RuntimeError('Variable "acceuil" does not exist.', 325, $this->source); })()), "getNumrContact", [], "any", false, false, false, 325), "html", null, true);
         echo "</span>
 \t\t\t\t\t\t\t\t\t</h5>
 
 \t\t\t\t\t\t\t\t\t<h2 class=\"heading aos-init aos-animate\" data-aos=\"fade-up\" data-aos-duration=\"1500\">";
-        // line 264
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["acceuil"]) || array_key_exists("acceuil", $context) ? $context["acceuil"] : (function () { throw new RuntimeError('Variable "acceuil" does not exist.', 264, $this->source); })()), "getDescriptionSite1", [], "any", false, false, false, 264), "html", null, true);
+        // line 328
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["acceuil"]) || array_key_exists("acceuil", $context) ? $context["acceuil"] : (function () { throw new RuntimeError('Variable "acceuil" does not exist.', 328, $this->source); })()), "getDescriptionSite1", [], "any", false, false, false, 328), "html", null, true);
         echo "</h2>
 \t\t\t\t\t\t\t\t\t<p class=\"desc aos-init aos-animate\" data-aos=\"fade-up\" data-aos-duration=\"2000\">";
-        // line 265
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["acceuil"]) || array_key_exists("acceuil", $context) ? $context["acceuil"] : (function () { throw new RuntimeError('Variable "acceuil" does not exist.', 265, $this->source); })()), "getDescriptionSite2", [], "any", false, false, false, 265), "html", null, true);
+        // line 329
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["acceuil"]) || array_key_exists("acceuil", $context) ? $context["acceuil"] : (function () { throw new RuntimeError('Variable "acceuil" does not exist.', 329, $this->source); })()), "getDescriptionSite2", [], "any", false, false, false, 329), "html", null, true);
         echo ".</p>
 \t\t\t\t\t\t\t\t\t<div class=\"slider_button aos-init aos-animate\" data-aos=\"fade-right\" data-aos-duration=\"2500\">
 \t\t\t\t\t\t\t\t\t\t<a href=\"";
-        // line 267
+        // line 331
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_qui_sommes_nous");
         echo "\" class=\"button\">Savoir Plus
 \t\t\t\t\t\t\t\t\t\t</a>
@@ -436,13 +527,13 @@ setInterval(updateClockDisplay, 60000); // 60000 ms = 1 minute
 \t\t\t\t\t\t\t\t\t<div class=\"shadow_icon\"><img src=\"images/about/shadow_icon1.png\" alt=\"\"></div>
 
 \t\t\t\t\t\t\t\t\t<h1 class=\"section_title\">";
-        // line 381
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["acceuil"]) || array_key_exists("acceuil", $context) ? $context["acceuil"] : (function () { throw new RuntimeError('Variable "acceuil" does not exist.', 381, $this->source); })()), "getDescriptionEntreprise1", [], "any", false, false, false, 381), "html", null, true);
+        // line 445
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["acceuil"]) || array_key_exists("acceuil", $context) ? $context["acceuil"] : (function () { throw new RuntimeError('Variable "acceuil" does not exist.', 445, $this->source); })()), "getDescriptionEntreprise1", [], "any", false, false, false, 445), "html", null, true);
         echo "</h1>
 \t\t\t\t\t\t\t\t\t<h6 class=\"section_sub_title\">La Société des Travaux Modernes (S.TRA.M)</h6>
 \t\t\t\t\t\t\t\t\t<p class=\"section_desc\"> ";
-        // line 383
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["acceuil"]) || array_key_exists("acceuil", $context) ? $context["acceuil"] : (function () { throw new RuntimeError('Variable "acceuil" does not exist.', 383, $this->source); })()), "getDescriptionEntreprise2", [], "any", false, false, false, 383), "html", null, true);
+        // line 447
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["acceuil"]) || array_key_exists("acceuil", $context) ? $context["acceuil"] : (function () { throw new RuntimeError('Variable "acceuil" does not exist.', 447, $this->source); })()), "getDescriptionEntreprise2", [], "any", false, false, false, 447), "html", null, true);
         echo ".
 \t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\tFière de notre expertise, notre entreprise s’est métamorphosée pour devenir, 17ans plus tard, l’un des joueurs majeurs dans le domaine des travaux spéciaux relatifs au secteur du bâtiment et travaux publiques (BTP).</p>
 \t\t\t\t\t\t\t\t\t<div class=\"about_below\">
@@ -477,8 +568,8 @@ setInterval(updateClockDisplay, 60000); // 60000 ms = 1 minute
 \t\t\t\t\t\t\t<div class=\"section_header\">
 \t\t\t\t\t\t\t\t<h6 class=\"section_sub_title\">FUNFACTS OF BUILDERRINE CONSTRUCTION</h6>
 \t\t\t\t\t\t\t\t<h1 class=\"section_title\">";
-        // line 416
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["acceuil"]) || array_key_exists("acceuil", $context) ? $context["acceuil"] : (function () { throw new RuntimeError('Variable "acceuil" does not exist.', 416, $this->source); })()), "getDescriptionExperiences", [], "any", false, false, false, 416), "html", null, true);
+        // line 480
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["acceuil"]) || array_key_exists("acceuil", $context) ? $context["acceuil"] : (function () { throw new RuntimeError('Variable "acceuil" does not exist.', 480, $this->source); })()), "getDescriptionExperiences", [], "any", false, false, false, 480), "html", null, true);
         echo "</h1>
 \t\t\t\t\t\t\t</div>
 \t\t\t\t\t\t\t<div class=\"fun_bottom\">
@@ -557,8 +648,8 @@ setInterval(updateClockDisplay, 60000); // 60000 ms = 1 minute
 \t\t\t\t\t\t<div class=\"shadow_icon\"><img src=\"images/about/shadow_icon1.png\" alt=\"\"></div>
 \t\t\t\t\t\t<h6 class=\"section_sub_title\">À PROPOS LES PROJETS</h6>
 \t\t\t\t\t\t<h1 class=\"section_title\">";
-        // line 493
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["acceuil"]) || array_key_exists("acceuil", $context) ? $context["acceuil"] : (function () { throw new RuntimeError('Variable "acceuil" does not exist.', 493, $this->source); })()), "getDescriptionProjet2", [], "any", false, false, false, 493), "html", null, true);
+        // line 557
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["acceuil"]) || array_key_exists("acceuil", $context) ? $context["acceuil"] : (function () { throw new RuntimeError('Variable "acceuil" does not exist.', 557, $this->source); })()), "getDescriptionProjet2", [], "any", false, false, false, 557), "html", null, true);
         echo "</h1>
 \t\t\t\t\t</div>
 \t\t\t\t\t<div class=\"row g-0\">
@@ -699,8 +790,8 @@ setInterval(updateClockDisplay, 60000); // 60000 ms = 1 minute
 \t\t\t\t\t\t<h6 class=\"section_sub_title\">Témoignages Clients</h6>
 \t\t\t\t\t\t<h1 class=\"section_title\">Opinions de nos clients</h1>
 \t\t\t\t\t\t<p class=\"section_desc\">";
-        // line 632
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["acceuil"]) || array_key_exists("acceuil", $context) ? $context["acceuil"] : (function () { throw new RuntimeError('Variable "acceuil" does not exist.', 632, $this->source); })()), "getDescriptionTemoignages", [], "any", false, false, false, 632), "html", null, true);
+        // line 696
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["acceuil"]) || array_key_exists("acceuil", $context) ? $context["acceuil"] : (function () { throw new RuntimeError('Variable "acceuil" does not exist.', 696, $this->source); })()), "getDescriptionTemoignages", [], "any", false, false, false, 696), "html", null, true);
         echo "..</p>
 \t\t\t\t\t</div>
 \t\t\t\t\t<div class=\"row\">
@@ -1169,12 +1260,12 @@ setInterval(updateClockDisplay, 60000); // 60000 ms = 1 minute
 \t\t\t\t\t\t\t\t<div class=\"section_header text-left\">
 \t\t\t\t\t\t\t\t\t<h6 class=\"section_sub_title\">Nouveauté</h6>
 \t\t\t\t\t\t\t\t\t<h1 class=\"section_title\">";
-        // line 1099
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["acceuil"]) || array_key_exists("acceuil", $context) ? $context["acceuil"] : (function () { throw new RuntimeError('Variable "acceuil" does not exist.', 1099, $this->source); })()), "getTitreNouveautées", [], "any", false, false, false, 1099), "html", null, true);
+        // line 1163
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["acceuil"]) || array_key_exists("acceuil", $context) ? $context["acceuil"] : (function () { throw new RuntimeError('Variable "acceuil" does not exist.', 1163, $this->source); })()), "getTitreNouveautées", [], "any", false, false, false, 1163), "html", null, true);
         echo "</h1>
 \t\t\t\t\t\t\t\t\t<p class=\"section_desc\">";
-        // line 1100
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["acceuil"]) || array_key_exists("acceuil", $context) ? $context["acceuil"] : (function () { throw new RuntimeError('Variable "acceuil" does not exist.', 1100, $this->source); })()), "getDescriptionNouveautées", [], "any", false, false, false, 1100), "html", null, true);
+        // line 1164
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["acceuil"]) || array_key_exists("acceuil", $context) ? $context["acceuil"] : (function () { throw new RuntimeError('Variable "acceuil" does not exist.', 1164, $this->source); })()), "getDescriptionNouveautées", [], "any", false, false, false, 1164), "html", null, true);
         echo ".</p>
 \t\t\t\t\t\t\t\t</div>
 \t\t\t\t\t\t\t
@@ -1276,8 +1367,8 @@ setInterval(updateClockDisplay, 60000); // 60000 ms = 1 minute
 \t\t\t\t\t\t\t\t\t\t\t\tÀ propos de STRAM
 \t\t\t\t\t\t\t\t\t\t\t</h4>
 \t\t\t\t\t\t\t\t\t\t\t<p>";
-        // line 1200
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["acceuil"]) || array_key_exists("acceuil", $context) ? $context["acceuil"] : (function () { throw new RuntimeError('Variable "acceuil" does not exist.', 1200, $this->source); })()), "getDescriptionSTram", [], "any", false, false, false, 1200), "html", null, true);
+        // line 1264
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["acceuil"]) || array_key_exists("acceuil", $context) ? $context["acceuil"] : (function () { throw new RuntimeError('Variable "acceuil" does not exist.', 1264, $this->source); })()), "getDescriptionSTram", [], "any", false, false, false, 1264), "html", null, true);
         echo ".<br>
 \t\t\t\t\t\t\t\t\t\t\t\tIls ont besoin des Services de Construction STRAM !</p>
 \t\t\t\t\t\t\t\t\t\t\t<div class=\"subscribe\">
@@ -1299,7 +1390,7 @@ setInterval(updateClockDisplay, 60000); // 60000 ms = 1 minute
 \t\t\t\t\t\t\t\t\t\t\t<div class=\"footer_nav\">
 \t\t\t\t\t\t\t\t\t\t\t\t<ul class=\"footer_menu\">
 \t\t\t\t\t\t\t\t\t\t\t\t\t<li class=\"menu-item\">
-\t\t\t\t\t\t\t\t\t\t\t\t\t\t<a href=\"project.html\">Sols techniques</a>
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t<a href=\"SolsTechniques.html.twig\">Sols techniques</a>
 \t\t\t\t\t\t\t\t\t\t\t\t\t</li>
 \t\t\t\t\t\t\t\t\t\t\t\t\t<li class=\"menu-item\">
 \t\t\t\t\t\t\t\t\t\t\t\t\t\t<a href=\"project-2.html\">Réparations & renforts de structure</a>
@@ -1359,8 +1450,8 @@ setInterval(updateClockDisplay, 60000); // 60000 ms = 1 minute
 \t\t\t\t\t\t\t\t\t\t\t\t<li>
 \t\t\t\t\t\t\t\t\t\t\t\t\t<i class=\"fa fa-map-marker\" aria-hidden=\"true\"></i>
 \t\t\t\t\t\t\t\t\t\t\t\t\t<span>";
-        // line 1280
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["acceuil"]) || array_key_exists("acceuil", $context) ? $context["acceuil"] : (function () { throw new RuntimeError('Variable "acceuil" does not exist.', 1280, $this->source); })()), "getAdresseContact", [], "any", false, false, false, 1280), "html", null, true);
+        // line 1344
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["acceuil"]) || array_key_exists("acceuil", $context) ? $context["acceuil"] : (function () { throw new RuntimeError('Variable "acceuil" does not exist.', 1344, $this->source); })()), "getAdresseContact", [], "any", false, false, false, 1344), "html", null, true);
         echo "</span>
 \t\t\t\t\t\t\t\t\t\t\t\t</li>
 \t\t\t\t\t\t\t\t\t\t\t\t<li>
@@ -1371,8 +1462,8 @@ setInterval(updateClockDisplay, 60000); // 60000 ms = 1 minute
 \t\t\t\t\t\t\t\t\t\t\t\t\t<i class=\"fa fa-phone\" aria-hidden=\"true\"></i>
 \t\t\t\t\t\t\t\t\t\t\t\t\t<span>
 \t\t\t\t\t\t\t\t\t\t\t\t\t\t(+216) ";
-        // line 1289
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["acceuil"]) || array_key_exists("acceuil", $context) ? $context["acceuil"] : (function () { throw new RuntimeError('Variable "acceuil" does not exist.', 1289, $this->source); })()), "getNumrContact", [], "any", false, false, false, 1289), "html", null, true);
+        // line 1353
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["acceuil"]) || array_key_exists("acceuil", $context) ? $context["acceuil"] : (function () { throw new RuntimeError('Variable "acceuil" does not exist.', 1353, $this->source); })()), "getNumrContact", [], "any", false, false, false, 1353), "html", null, true);
         echo "</span>
 \t\t\t\t\t\t\t\t\t\t\t\t</li>
 \t\t\t\t\t\t\t\t\t\t\t\t<li>
@@ -1494,7 +1585,7 @@ setInterval(updateClockDisplay, 60000); // 60000 ms = 1 minute
 
     public function getDebugInfo()
     {
-        return array (  1375 => 1289,  1363 => 1280,  1280 => 1200,  1177 => 1100,  1173 => 1099,  703 => 632,  561 => 493,  481 => 416,  445 => 383,  440 => 381,  323 => 267,  318 => 265,  314 => 264,  308 => 261,  188 => 144,  43 => 1,);
+        return array (  1466 => 1353,  1454 => 1344,  1371 => 1264,  1268 => 1164,  1264 => 1163,  794 => 696,  652 => 557,  572 => 480,  536 => 447,  531 => 445,  414 => 331,  409 => 329,  405 => 328,  399 => 325,  271 => 200,  265 => 197,  254 => 189,  243 => 181,  237 => 178,  225 => 169,  219 => 166,  213 => 163,  203 => 156,  188 => 144,  43 => 1,);
     }
 
     public function getSourceContext()
@@ -1650,66 +1741,123 @@ setInterval(updateClockDisplay, 60000); // 60000 ms = 1 minute
 \t\t\t\t\t\t\t\t\t<li class=\"menu-item menu-item-has-children\">
 \t\t\t\t\t\t\t\t\t\t<a href=\"#\">Services</a>
 \t\t\t\t\t\t\t\t\t\t<ul class=\"sub-menu\">
-\t\t\t\t\t\t\t\t\t\t\t<li class=\"menu-item\">
-\t\t\t\t\t\t\t\t\t\t\t\t<a href=\"services.html\">Sols techniques</a>
+\t\t\t\t\t\t\t\t\t\t\t<li class=\"menu-item menu-item-has-children\">
+\t\t\t\t\t\t\t\t\t\t\t\t<a href=\"#\">Travaux Spéciaux</a>
+\t\t\t\t\t\t\t\t\t\t\t\t<ul class=\"sub-menu\">
+\t\t\t\t\t\t\t\t\t\t\t\t\t<li class=\"menu-item\">
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t<a href=\"{{ path('solsTechniques')}}\">Sols techniques</a>
+\t\t\t\t\t\t\t\t\t\t\t\t\t</li>
+\t\t\t\t\t\t\t\t\t\t\t\t\t
+\t\t\t\t\t\t\t\t\t\t\t\t\t<li class=\"menu-item menu-item-has-children\">
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t<a href=\"#\">Réparations & renforts de structure</a>
+\t\t\t\t\t\t\t\t\t\t\t\t\t   <ul class=\"sub-menu\">
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<li class=\"menu-item active\">
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<a href=\"{{ path('reparation')}}\">Réparation</a>
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t</li>
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<li class=\"menu-item active\">
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<a href=\"{{ path('renforcementFibreCarbone')}}\">Renforcement par Fibre de Carbone</a>
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t</li>
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<li class=\"menu-item active\">
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<a href=\"{{ path('RenforcementChemisageClassique')}}\">Renforcement par chemisage classique</a>
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t</li>
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t</ul>
+\t\t\t\t\t\t\t\t\t\t\t\t\t</li>
+
+\t\t\t\t\t\t\t\t\t\t\t\t\t<li class=\"menu-item menu-item-has-children\">
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t<a href=\"#\">Étanchéité & Imperméabilisation</a>
+\t\t\t\t\t\t\t\t\t\t\t\t\t   <ul class=\"sub-menu\">
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<li class=\"menu-item active\">
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<a href=\"{{ path('Étanchéité')}}\">Étanchéité</a>
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t</li>
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<li class=\"menu-item active\">
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<a href=\"{{ path('Imperméabilisation')}}\">Imperméabilisation</a>
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t</li>
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t</ul>
+\t\t\t\t\t\t\t\t\t\t\t\t\t</li>
+\t\t\t\t\t\t\t\t\t\t\t\t\t
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t
+\t\t\t\t\t\t\t\t\t\t\t\t\t<li class=\"menu-item\">
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t<a href=\"{{ path('traitementJoints')}}\">Traitement des joints</a>
+\t\t\t\t\t\t\t\t\t\t\t\t\t</li>
+\t\t\t\t\t\t\t\t\t\t\t\t\t
+\t\t\t\t\t\t\t\t\t\t\t\t\t<li class=\"menu-item menu-item-has-children\">
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t<a href=\"#\">Revêtement & traitement de façades</a>
+
+                                                        <ul class=\"sub-menu\">
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<li class=\"menu-item active\">
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<a href=\"{{ path('RevêtementTechnique')}}\">Revêtement technique</a>
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t</li>
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<li class=\"menu-item active\">
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<a href=\"{{ path('TraitementFaçades')}}\">Traitement de façades</a>
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t</li>
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t</ul>
+
+
+
+\t\t\t\t\t\t\t\t\t\t\t\t\t</li>
+\t\t\t\t\t\t\t\t\t\t\t    </ul>
 \t\t\t\t\t\t\t\t\t\t\t</li>
+\t\t\t\t\t\t\t\t\t\t\t\t
 \t\t\t\t\t\t\t\t\t\t\t<li class=\"menu-item\">
-\t\t\t\t\t\t\t\t\t\t\t\t<a href=\"services-2.html\">Répara6ons & renforts de structure</a>
+\t\t\t\t\t\t\t\t\t\t\t\t<a href=\"services-2.html\">Installation Centrale Photovoltaique au sol</a>
+\t\t\t\t\t\t\t\t\t\t\t</li>
+
+\t\t\t\t\t\t\t\t\t\t\t<li class=\"menu-item menu-item-has-children\">
+\t\t\t\t\t\t\t\t\t\t\t\t<a href=\"#\">Etude, Diagnostic & Expertise</a>
+\t\t\t\t\t\t\t\t\t\t\t\t<ul class=\"sub-menu\">
+\t\t\t\t\t\t\t\t\t\t\t\t\t<li class=\"menu-item\">
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t<a href=\"shop-1.html\">Travaux Spéciaux</a>
+\t\t\t\t\t\t\t\t\t\t\t\t\t</li>
+\t\t\t\t\t\t\t\t\t\t\t\t\t
+\t\t\t\t\t\t\t\t\t\t\t\t\t<li class=\"menu-item\">
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t<a href=\"shop-2.html\">Photovoltaique</a>
+\t\t\t\t\t\t\t\t\t\t\t\t\t</li>
+\t\t\t\t\t\t\t\t\t\t\t    </ul>
 \t\t\t\t\t\t\t\t\t\t\t</li>
 
 \t\t\t\t\t\t\t\t\t\t\t<li class=\"menu-item\">
-\t\t\t\t\t\t\t\t\t\t\t\t<a href=\"services-2.html\">Étanchéité & Imperméabilisa6on</a>
-\t\t\t\t\t\t\t\t\t\t\t</li>
-\t\t\t\t\t\t\t\t\t\t\t<li class=\"menu-item\">
-\t\t\t\t\t\t\t\t\t\t\t\t<a href=\"services-2.html\">Traitement des joints</a>
-\t\t\t\t\t\t\t\t\t\t\t</li>
-
-\t\t\t\t\t\t\t\t\t\t\t<li class=\"menu-item\">
-\t\t\t\t\t\t\t\t\t\t\t\t<a href=\"services-2.html\">Centrales photovoltaique
-\t\t\t\t\t\t\t\t\t\t\t\t</a>
-\t\t\t\t\t\t\t\t\t\t\t</li>
-
-\t\t\t\t\t\t\t\t\t\t\t<li class=\"menu-item\">
-\t\t\t\t\t\t\t\t\t\t\t\t<a href=\"services-2.html\">
-\t\t\t\t\t\t\t\t\t\t\t\t\tÉtudes & Expertise
-\t\t\t\t\t\t\t\t\t\t\t\t</a>
-\t\t\t\t\t\t\t\t\t\t\t</li>
-\t\t\t\t\t\t\t\t\t\t\t<li class=\"menu-item\">
-\t\t\t\t\t\t\t\t\t\t\t\t<a href=\"services-2.html\">Peinture</a>
+\t\t\t\t\t\t\t\t\t\t\t\t<a href=\"services-2.html\">Commerce</a>
 \t\t\t\t\t\t\t\t\t\t\t</li>
 
 \t\t\t\t\t\t\t\t\t\t</ul>
 \t\t\t\t\t\t\t\t\t</li>
+
 \t\t\t\t\t\t\t\t\t<li class=\"menu-item menu-item-has-children\">
 \t\t\t\t\t\t\t\t\t\t<a href=\"#\">Projets</a>
-\t\t\t\t\t\t\t\t\t\t<ul class=\"sub-menu\">
-
-\t\t\t\t\t\t\t\t\t\t\t<li class=\"menu-item menu-item-has-children\">
-\t\t\t\t\t\t\t\t\t\t\t\t<a href=\"#\">Afrique du Nord</a>
-\t\t\t\t\t\t\t\t\t\t\t\t<ul class=\"sub-menu\">
-\t\t\t\t\t\t\t\t\t\t\t\t\t<li class=\"menu-item\">
-\t\t\t\t\t\t\t\t\t\t\t\t\t\t<a href=\"shop-1.html\">Tunisie</a>
-\t\t\t\t\t\t\t\t\t\t\t\t\t</li>
-\t\t\t\t\t\t\t\t\t\t\t\t\t<li class=\"menu-item\">
-\t\t\t\t\t\t\t\t\t\t\t\t\t\t<a href=\"shop-2.html\">
-\t\t\t\t\t\t\t\t\t\t\t\t\t\t\tAlgérie</a>
-\t\t\t\t\t\t\t\t\t\t\t\t\t</li>
-\t\t\t\t\t\t\t\t\t\t\t\t</ul>
+\t\t\t\t\t\t\t\t\t\t<ul class=\"sub-menu\">\t\t\t\t\t\t\t\t\t\t\t
+\t\t\t\t\t\t\t\t\t\t\t<li class=\"menu-item\">
+\t\t\t\t\t\t\t\t\t\t\t\t<a href=\"/\">Tunisie</a>
 \t\t\t\t\t\t\t\t\t\t\t</li>
 
 \t\t\t\t\t\t\t\t\t\t\t<li class=\"menu-item menu-item-has-children\">
-\t\t\t\t\t\t\t\t\t\t\t\t<a href=\"#\">Afrique du West</a>
+\t\t\t\t\t\t\t\t\t\t\t\t<a href=\"#\">International</a>
 \t\t\t\t\t\t\t\t\t\t\t\t<ul class=\"sub-menu\">
-\t\t\t\t\t\t\t\t\t\t\t\t\t<li class=\"menu-item\">
-\t\t\t\t\t\t\t\t\t\t\t\t\t\t<a href=\"shop-1.html\">Sénégal</a>
+\t\t\t\t\t\t\t\t\t\t\t\t\t<li class=\"menu-item menu-item-has-children\">
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t<a href=\"shop-1.html\">Afrique du Nord</a>
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t<ul class=\"sub-menu\">\t\t\t\t\t\t\t\t\t\t\t
+\t                                                        <li class=\"menu-item\">
+\t\t\t\t\t\t\t\t\t\t\t                 \t<a href=\"/\">Algerie</a>
+\t\t\t\t\t\t\t\t\t\t\t                </li>\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t
+\t\t\t\t\t\t\t\t\t\t\t         \t</ul>
+\t\t\t\t\t\t\t\t\t\t\t        </li>
+\t\t\t\t\t\t\t\t\t\t\t
 \t\t\t\t\t\t\t\t\t\t\t\t\t</li>
-\t\t\t\t\t\t\t\t\t\t\t\t\t<li class=\"menu-item\">
-\t\t\t\t\t\t\t\t\t\t\t\t\t\t<a href=\"shop-2.html\">
-\t\t\t\t\t\t\t\t\t\t\t\t\t\t\tNiger</a>
-\t\t\t\t\t\t\t\t\t\t\t\t\t</li>
-\t\t\t\t\t\t\t\t\t\t\t\t\t<li class=\"menu-item\">
-\t\t\t\t\t\t\t\t\t\t\t\t\t\t<a href=\"shop-2.html\">Benin</a>
-\t\t\t\t\t\t\t\t\t\t\t\t\t</li>
+
+\t\t\t\t\t\t\t\t\t\t\t\t\t<li class=\"menu-item menu-item-has-children\">
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t<a href=\"shop-2.html\">Afrique du West</a>
+                                                        <ul class=\"sub-menu\">\t\t\t\t\t\t\t\t\t\t\t
+\t                                                        <li class=\"menu-item\">
+\t\t\t\t\t\t\t\t\t\t\t                 \t<a href=\"/\">Senegal</a>
+\t\t\t\t\t\t\t\t\t\t\t                </li>\t
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t  <li class=\"menu-item\">
+\t\t\t\t\t\t\t\t\t\t\t                 \t<a href=\"/\">Niger</a>
+\t\t\t\t\t\t\t\t\t\t\t                </li>\t
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t  <li class=\"menu-item\">
+\t\t\t\t\t\t\t\t\t\t\t                 \t<a href=\"/\">Benin</a>
+\t\t\t\t\t\t\t\t\t\t\t                </li>\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t
+\t\t\t\t\t\t\t\t\t\t\t         \t</ul>
+\t\t\t\t\t\t\t\t\t\t          \t</li>
 \t\t\t\t\t\t\t\t\t\t\t\t</ul>
 \t\t\t\t\t\t\t\t\t\t\t</li>
 
@@ -1725,15 +1873,22 @@ setInterval(updateClockDisplay, 60000); // 60000 ms = 1 minute
 \t\t\t\t\t\t\t\t\t\t\t</li>
 \t\t\t\t\t\t\t\t\t\t</ul>
 \t\t\t\t\t\t\t\t\t</li>
-\t\t\t\t\t\t\t\t\t<li class=\"menu-item menu-item-has-children\">
-\t\t\t\t\t\t\t\t\t\t<a href=\"#\">Carrière</a>
-\t\t\t\t\t\t\t\t\t\t<ul class=\"sub-menu\">
-\t\t\t\t\t\t\t\t\t\t\t<li class=\"menu-item\">
-\t\t\t\t\t\t\t\t\t\t\t\t<a href=\"/carriere\">Carrière</a>
-\t\t\t\t\t\t\t\t\t\t\t</li>
 
-\t\t\t\t\t\t\t\t\t\t</ul>
-\t\t\t\t\t\t\t\t\t</li>
+
+\t\t\t\t\t\t\t\t\t\t<li class=\"menu-item menu-item-has-children\">
+\t\t\t\t\t\t\t\t\t\t\t<a href=\"/carriere\">Carriére</a>
+\t\t\t\t\t\t\t\t\t\t\t<ul class=\"sub-menu\">\t\t\t\t\t\t\t\t\t\t\t
+\t\t\t\t\t\t\t\t\t\t\t\t<li class=\"menu-item\">
+\t\t\t\t\t\t\t\t\t\t\t\t\t<a href=\"/carriere\">Carriére</a>
+\t\t\t\t\t\t\t\t\t\t\t\t</li>\t
+\t\t\t\t\t\t\t\t\t\t\t\t\t<li class=\"menu-item\">
+\t\t\t\t\t\t\t\t\t\t\t\t\t<a href=\"/offres\">Nos </a>
+\t\t\t\t\t\t\t\t\t\t\t\t</li>\t
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t
+\t\t\t\t\t\t\t\t\t\t\t</ul>
+\t\t\t\t\t\t\t\t\t\t</li>
+
+
 \t\t\t\t\t\t\t\t\t<li class=\"menu-item\">
 \t\t\t\t\t\t\t\t\t\t<a href=\"/contact\">Contact</a>
 \t\t\t\t\t\t\t\t\t</li>
@@ -2719,7 +2874,7 @@ setInterval(updateClockDisplay, 60000); // 60000 ms = 1 minute
 \t\t\t\t\t\t\t\t\t\t\t<div class=\"footer_nav\">
 \t\t\t\t\t\t\t\t\t\t\t\t<ul class=\"footer_menu\">
 \t\t\t\t\t\t\t\t\t\t\t\t\t<li class=\"menu-item\">
-\t\t\t\t\t\t\t\t\t\t\t\t\t\t<a href=\"project.html\">Sols techniques</a>
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t<a href=\"SolsTechniques.html.twig\">Sols techniques</a>
 \t\t\t\t\t\t\t\t\t\t\t\t\t</li>
 \t\t\t\t\t\t\t\t\t\t\t\t\t<li class=\"menu-item\">
 \t\t\t\t\t\t\t\t\t\t\t\t\t\t<a href=\"project-2.html\">Réparations & renforts de structure</a>

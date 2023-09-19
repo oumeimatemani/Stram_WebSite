@@ -572,8 +572,8 @@ class __TwigTemplate_227ef24346aca59ba60042caa395468c extends Template
 \t\t\t\t<div class=\"container\">
 \t\t\t\t\t<div class=\"section_header text-center\">
 \t\t\t\t\t\t<div class=\"shadow_icon\"><img src=\"images/shadow_icon3.png\" alt=\"\"></div>
-\t\t\t\t\t\t<h6 class=\"section_sub_title\">Clients testimonial</h6>
-\t\t\t\t\t\t<h1 class=\"section_title\">What our clients say about us</h1>
+\t\t\t\t\t\t<h6 class=\"section_sub_title\">Témoignages </h6>
+\t\t\t\t\t\t<h1 class=\"section_title\">Témoignages de l’équipe directrice</h1>
 \t\t\t\t\t\t<p class=\"section_desc\">Builderrine is the best constructioncompany. It has best team who are provideing best service possible.</p>
 \t\t\t\t\t</div>
 \t\t\t\t\t<div class=\"row\">
@@ -1540,8 +1540,8 @@ class __TwigTemplate_227ef24346aca59ba60042caa395468c extends Template
 \t\t\t\t<div class=\"container\">
 \t\t\t\t\t<div class=\"section_header text-center\">
 \t\t\t\t\t\t<div class=\"shadow_icon\"><img src=\"images/shadow_icon3.png\" alt=\"\"></div>
-\t\t\t\t\t\t<h6 class=\"section_sub_title\">Clients testimonial</h6>
-\t\t\t\t\t\t<h1 class=\"section_title\">What our clients say about us</h1>
+\t\t\t\t\t\t<h6 class=\"section_sub_title\">Témoignages </h6>
+\t\t\t\t\t\t<h1 class=\"section_title\">Témoignages de l’équipe directrice</h1>
 \t\t\t\t\t\t<p class=\"section_desc\">Builderrine is the best constructioncompany. It has best team who are provideing best service possible.</p>
 \t\t\t\t\t</div>
 \t\t\t\t\t<div class=\"row\">
@@ -1953,6 +1953,6 @@ class __TwigTemplate_227ef24346aca59ba60042caa395468c extends Template
 \t\t<script src=\"js/custom.js\"></script>
 \t</body>
 </html>
-", "qui_sommes_nous/index.html.twig", "C:\\Users\\oumei\\Desktop\\Stram_WebSite\\templates\\qui_sommes_nous\\index.html.twig");
+", "qui_sommes_nous/index.html.twig", "C:\\Users\\oumei\\OneDrive\\Bureau\\Stram_WebSite\\templates\\qui_sommes_nous\\index.html.twig");
     }
 }
