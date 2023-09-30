@@ -1,0 +1,275 @@
+
+/* Forms (shipping_form) */
+.shipping_form {        
+    .select2-container--default .select2-selection--single .select2-selection__arrow,
+    .select2-container .select2-selection--single,
+    .select2-container--default .select2-selection--single .select2-selection__arrow{
+        height: 50px;
+        line-height: 46px;
+        right: 5px;
+        border: none;
+    }
+    .select2-container--default .select2-selection--single .select2-selection__arrow b {
+        position: relative;
+        top: auto;
+        left: auto;
+        width: 0;
+        height: 5px;
+        display: inline-block;
+        border-color: #888 transparent transparent transparent;
+        border-style: solid;
+        border-width: 0px 0px 0 0px;
+        margin-left: 0;
+        margin-top: 0;
+    }
+    .select2-container--default .select2-selection--single .select2-selection__arrow b::before {
+        content: "\f123";
+        font-family: 'Ionicons';
+        font-size: 10px;
+    }
+    
+    
+    .select2-container--default .select2-selection--single .select2-selection__rendered,
+    .select2-container .select2-selection--single .select2-selection__rendered{
+        padding: 0px;
+        line-height: 52px;
+    }
+    .select2-container--default .select2-selection--multiple,
+    .select2-container--default .select2-selection--single{
+        display: block;
+        width: 100%;
+        height: 50px;
+        padding: 0px 15px;
+        font-size: $font-14;
+        line-height: 1.5;
+        background-color: var(--white-color);
+        background-clip: padding-box;
+        @include bordered(1px, solid, #e4e4e4);
+        transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+        -webkit-backface-visibility: hidden;
+        box-sizing: border-box;
+        outline: none;
+        -webkit-appearance: none;
+        outline-offset: 0;
+    }
+    .select2-container--default .select2-selection--multiple:focus,
+    .select2-container--default .select2-selection--single:focus,
+    .select2-container--default.select2-container--focus .select2-selection--multiple,
+    .select2-container--default.select2-container--focus .select2-selection--single {
+        border-color: #00326F;
+        outline: none;
+        outline-offset: 0px;
+    }
+    label{
+        display: block;
+        font-family: $heading-font;
+        font-size: $font-14;
+        font-weight: $font-bold;
+        line-height: $font-20;
+        color: var(--text-heading-color);
+        margin-top: 0px;
+        margin-bottom: 10px;
+    }
+    .form-group{
+        margin-top: 10px;
+        margin-bottom: 15px;
+        display: inline-block;
+        width: 100%;
+    }
+    textarea.form-control {
+        height: 90px;
+    }
+    .form-control:focus {
+        background-color:#fff;
+        border-color: var(--second-color);
+        outline: 0;
+        box-shadow: none;
+    }
+    select, input[type="text"], input[type="email"], input[type="url"], input[type="password"], input[type="search"], input[type="number"], input[type="tel"], input[type="range"], input[type="date"], input[type="month"], input[type="week"], input[type="time"], input[type="datetime"], input[type="datetime-local"], input[type="color"] {
+        border: 1px solid #e4e4e4;
+    }
+
+    /* Coupon Code */
+    .have_coupon {
+        background: #f7f7f7;
+        border-left: 7px solid var(--second-color);
+        padding: 30px 15px;
+        margin-bottom: 55px;
+        .form-group {
+            display: flex;
+            flex-flow: row wrap;
+            align-items: center;
+            justify-content: center;
+            margin: 0px 0px;
+            label {
+                font-size: $font-20;
+                color: var(--text-heading-color);
+                line-height: 26px;
+                margin-right: 12px;
+                margin-bottom: 0px;
+            }
+            input[type="text"] {
+                width: 250px;
+                height: 45px;
+            }
+        }
+        ::-webkit-input-placeholder {
+            font-weight: $font-regular;
+            color: var(--second-color);
+        }
+        ::-moz-placeholder { 
+            font-weight: $font-regular;
+            color: var(--second-color);
+        }
+        :-ms-input-placeholder { 
+            font-weight: $font-regular;
+            color: var(--second-color);
+        }
+        :-moz-placeholder { 
+            font-weight: $font-regular;
+            color: var(--second-color);
+        }
+        :placeholder { 
+            font-weight: $font-regular;
+            color: var(--second-color);
+        }
+    }
+}
+
+
+.place_order{
+    ul{
+        margin: 0px;
+        padding: 0px;
+        li{
+            list-style: none;
+            font-family: $heading-font;
+            font-size: $font-14;
+            font-weight: $font-bold;
+            line-height: 26px;
+            color: #656A7C;
+            padding: 14px 0px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            @include bordered-bottom (1px, solid, #ededed);
+            &:first-child {
+                padding-top: 0px;
+            }
+            .form-group {
+                width: auto;
+                margin: 0px;
+            }
+            span.value{
+                font-family: $heading-font;
+                font-size: $font-16;
+                font-weight: $font-bold;
+                line-height: 26px;
+                color: var(--body-color);
+            }
+            &.totalvalue{
+                font-size: $font-18;
+                font-weight: $font-bold;
+                line-height: 30px;
+                color: var(--text-heading-color);
+                span.text {
+                    margin-right: 10px;
+                }
+                span.value{
+                    font-family: $paragraph-font;
+                    color: var(--text-heading-color);
+                }
+            }
+        }
+    }
+    /* Customize Radio Button */
+    label.radio_circle {
+        display: inline-block;
+        position: relative;
+        padding-left: 25px;
+        cursor: pointer;
+        font-family: $heading-font;
+        font-size: $font-14;
+        font-weight: $font-bold;
+        line-height: 16px;
+        margin-bottom: 0px;
+        color: var(--body-color);
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        &:not(:last-child) {
+            margin-right: 15px;
+        }
+        input {
+            position: absolute;
+            opacity: 0;
+            cursor: pointer;
+            left: 0;
+        }
+        .checkmark {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 15px;
+            width: 15px;
+            background-color: var(--white-color);
+            border-radius: 100%;
+            @include bordered(1px, solid, #788a9c);
+            &:after {
+                content: "";
+                position: absolute;
+                display: none;
+                top: 3px;
+                left: 3px;
+                width: 7px;
+                height: 7px;
+                border-radius: 1000%;
+                background: var(--second-color);
+            }
+        }
+        &:hover input ~ .checkmark {
+            background-color: var(--white-color);
+            @include bordered(1px, solid, var(--second-color));
+        }
+        input:checked ~ .checkmark {
+            background-color: var(--white-color);
+            @include bordered(1px, solid, var(--second-color));
+            &:after {
+                display: block;
+            }
+        }
+    }
+
+    .paymentmethod {
+        margin-top: 40px;
+        label.radio_circle {
+            display: block;
+            font-size: $font-16;
+            color: var(--text-heading-color);
+            &:not(:last-child) {
+                @include bordered-bottom (1px, solid, #ededed);
+                padding-bottom: 25px;
+                margin-bottom: 25px;
+            }
+        }
+        span.text{
+            display: block;
+            font-size: $font-14;
+            font-weight: $font-regular;
+            line-height: $font-22;
+            color: #656A7C;
+            margin-top: 10px;
+        }
+    }
+    .button_group {
+        margin-top: 25px;
+        .button {
+            font-family: $heading-font;
+            font-size: $font-14;
+            font-weight: $font-semibold;
+            line-height: $font-16;
+            padding: 12px 60px;
+        }
+    }
+}

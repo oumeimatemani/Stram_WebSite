@@ -1,0 +1,248 @@
+{% extends 'base.html.twig' %}
+
+{% block head %} 
+    {% block title %}Gestionnaire des Contacts{% endblock %}
+    {% block style %}
+       .small-flag {
+            width: 30px; 
+            height: auto; 
+        }
+
+        /* Nouveaux styles pour centrer les drapeaux */
+        .centered-drapeaux {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh; /* Centrage vertical */
+        }
+
+        /* Styles pour le formulaire */
+        .contact-form {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        /* Style pour les champs du formulaire */
+        .form-group {
+            margin-bottom: 15px;
+        }
+    {% endblock %}
+{% endblock %}
+
+{% block body %}
+    <main id="main" class="main">
+        <div class="pagetitle">
+            <h1>Gestionnaire des contacts</h1>
+            <nav>
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item">
+                        <a href="/admin">Home</a>
+                    </li>
+                    <li class="breadcrumb-item">
+                        <a href="/gestionContact">Gestion des Contact </a>
+                    </li>
+                </ol>
+            </nav>
+        </div>
+        <!-- End Page Title -->
+        <section class="section">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="card">
+                        <div class="card-body" style="background-color:#0e1641">
+                            <h5 class="card-title" style="color:#DEE9F3">
+                                <strong>Nos Contacts</strong>
+                            </h5>
+                            <!-- Ajout de la classe "centered-drapeaux" pour centrer les drapeaux -->
+                            <div class="centered-drapeaux">
+                                <div class="col-lg-4">
+                                    <div class="banner_phone">
+                                        <div class="banner banner_bg_color ">
+                                            <div class="circle-rown d-flex justify-content-between">
+                                                <div class="circle" data-toggle="contact-form" data-country="tunisie">
+                                                    <img src="images/drapeau/tunisie.png" alt="Tunisia Flag" style="width: 90px; height: auto; margin: 0 auto;">
+                                                </div>
+                                                <div style="color:#0e1641">...</div>
+                                                
+												<div class="circle" data-toggle="contact-form" data-country="algerie">
+													<img src="images/drapeau/algerie.png" alt="Algeria Flag" style="width: 90px; height: auto; margin: 0 auto;">
+												</div>
+											    <div style="color:#0e1641">...</div>
+
+												<div class="circle" data-toggle="contact-form" data-country="senegal">
+													<img src="images/drapeau/sénégal.png" alt="Senegal Flag" style="width: 90px; height: auto; margin: 0 auto;">
+												</div>
+
+											 <div style="color:#0e1641">...</div>
+
+												<div class="circle" data-toggle="contact-form" data-country="niger">
+													<img src="images/drapeau/niger.png" alt="Niger Flag" style="width: 90px; height: auto; margin: 0 auto;">
+												</div>
+												<div style="color:#0e1641">...</div>
+
+												<div class="circle" data-toggle="contact-form" data-country="benin">
+													<img src="images/drapeau/benin.png" alt="Benin Flag" style="width: 90px; height: auto; margin: 0 auto;">
+												</div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Formulaire de contact pour la Tunisie -->
+        <section class="contact-form" id="contact-form-tunisie" style="display: none;">
+            <h2>Contactez-nous (Tunisie)</h2>
+            <form action="/modifierContactTunisie" method="POST">
+               <div class="form-group">
+                    <label for="telTunisie">Téléphone</label>
+                    <input type="text" id="telTunisie" name="telTunisie" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <label for="FaxTunisie">Fax</label>
+                    <input type="text" id="FaxTunisie" name="FaxTunisie" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <label for="EmailTunisie">Mail</label>
+                    <input type="email" id="EmailTunisie" name="EmailTunisie" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <label for="adresseTunisie">Adresse</label>
+                    <textarea id="adresseTunisie" name="adresseTunisie" class="form-control" required></textarea>
+                </div>
+				</br>
+                <button type="submit" class="btn btn-primary">Modifier</button>            </form>
+        </section>
+
+        <!-- Formulaire de contact pour l'Algérie -->
+        <section class="contact-form" id="contact-form-algerie" style="display: none;">
+            <h2>Contactez-nous (Algérie)</h2>
+            <form action="/gestionContactAlgerie" method="POST">
+                <div class="form-group">
+                    <label for="telAlgerie">Téléphone</label>
+                    <input type="text" id="telAlgerie" name="telAlgerie" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <label for="FaxAlgerie">Fax</label>
+                    <input type="text" id="FaxAlgerie" name="FaxAlgerie" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <label for="EmailAlgerie">Mail</label>
+                    <input type="email" id="EmailAlgerie" name="EmailAlgerie" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <label for="adresseAlgerie">Adresse</label>
+                    <textarea id="adresseAlgerie" name="adresseAlgerie" class="form-control" required></textarea>
+                </div>
+				</br>
+                <button type="submit" class="btn btn-primary">Modifier</button>            </form>
+        </section>
+
+        <!-- Formulaire de contact pour le Sénégal -->
+        <section class="contact-form" id="contact-form-senegal" style="display: none;">
+            <h2>Contactez-nous (Sénégal)</h2>
+            <form action="/gestionContactSenegal" method="POST">
+                   <div class="form-group">
+                    <label for="telSenegal">Téléphone</label>
+                    <input type="text" id="telSenegal" name="telSenegal" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <label for="FaxSenegal">Fax</label>
+                    <input type="text" id="FaxSenegal" name="FaxSenegal" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <label for="EmailSenegal">Mail</label>
+                    <input type="email" id="EmailSenegal" name="EmailSenegal" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <label for="adresseSenegal">Adresse</label>
+                    <textarea id="adresseSenegal" name="adresseSenegal" class="form-control" required></textarea>
+                </div>
+			   </br>
+                <button type="submit" class="btn btn-primary">Modifier</button>
+            </form>
+        </section>
+
+        <!-- Formulaire de contact pour le Niger -->
+        <section class="contact-form" id="contact-form-niger" style="display: none;">
+            <h2>Contactez-nous (Niger)</h2>
+            <form action="/gestionContactNiger" method="POST">
+                   <div class="form-group">
+                    <label for="telNiger">Téléphone</label>
+                    <input type="text" id="telNiger" name="telNiger" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <label for="FaxNiger">Fax</label>
+                    <input type="text" id="FaxNiger" name="FaxNiger" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <label for="EmailNiger">Mail</label>
+                    <input type="email" id="EmailNiger" name="EmailNiger" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <label for="adresseNiger">Adresse</label>
+                    <textarea id="adresseNiger" name="adresseNiger" class="form-control" required></textarea>
+                </div>
+				</br>
+                <button type="submit" class="btn btn-primary">Modifier</button>
+            </form>
+        </section>
+
+        <!-- Formulaire de contact pour le Bénin -->
+        <section class="contact-form" id="contact-form-benin" style="display: none;">
+            <h2>Contactez-nous (Bénin)</h2>
+            <form action="/gestionContactBenin" method="POST">
+                   <div class="form-group">
+                    <label for="telBenin">Téléphone</label>
+                    <input type="text" id="telBenin" name="telBenin" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <label for="FaxBenin">Fax</label>
+                    <input type="text" id="FaxBenin" name="FaxBenin" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <label for="EmailBenin">Mail</label>
+                    <input type="email" id="EmailBenin" name="EmailBenin" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <label for="adresseBenin">Adresse</label>
+                    <textarea id="adresseBenin" name="adresseBenin" class="form-control" required></textarea>
+                </div>
+				</br>
+                <button type="submit" class="btn btn-primary">Modifier</button>
+            </form>
+        </section>
+    </main>
+{% endblock %}
+
+{% block javascripts %}
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const drapeaux = document.querySelectorAll('[data-toggle="contact-form"]');
+            const contactForms = document.querySelectorAll('.contact-form');
+
+            drapeaux.forEach(drapeau => {
+                drapeau.addEventListener('click', function () {
+                    // Récupérer le pays associé au drapeau
+                    const country = drapeau.getAttribute('data-country');
+
+                    // Masquer tous les formulaires de contact
+                    contactForms.forEach(form => {
+                        form.style.display = 'none';
+                    });
+
+                    // Afficher le formulaire correspondant au pays
+                    const contactForm = document.getElementById(`contact-form-${country}`);
+                    if (contactForm) {
+                        contactForm.style.display = 'block';
+                    }
+                });
+            });
+        });
+    </script>
+{% endblock %}

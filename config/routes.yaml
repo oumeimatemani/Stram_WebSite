@@ -1,0 +1,258 @@
+app_back:
+    path: /admin
+    controller: App\Controller\BackController::index
+
+app_front:
+    path: /
+    controller: App\Controller\FrontController::index
+
+
+#Qui Sommes Nous??
+app_qui_sommes_nous:
+    path: /app_qui_sommes_nous
+    controller: App\Controller\QuiSommesNousController::index
+
+
+
+#contact
+app_contact:
+    path: /contact
+    controller: App\Controller\ContactController::index
+
+app_contact_algerie:
+    path: /algerie
+    controller: App\Controller\ContactController::algerie
+
+app_contact_senegal:
+    path: /senegal
+    controller: App\Controller\ContactController::senegal
+
+app_contact_niger:
+    path: /niger
+    controller: App\Controller\ContactController::niger
+
+app_contact_benin:
+    path: /benin
+    controller: App\Controller\ContactController::benin
+
+
+#carriere
+carriere_index:
+    path: /carriere
+    controller: App\Controller\CarriereController::index
+    methods: [GET]
+
+carriere_admin:
+    path: /carriereAdmin
+    controller: App\Controller\CarriereController::carriereAdmin
+    methods: [GET]
+
+carriere_submit:
+    path: /candidature/submit
+    controller: App\Controller\CarriereController::submit
+    methods: [POST]
+
+offres : 
+    path: /offres
+    controller: App\Controller\OffresController::index
+    methods: [GET]
+
+
+#clients 
+clients:
+    path: /clients
+    controller: App\Controller\ClientsController::index
+
+clients_admin:
+    path: /clientsAdmin
+    controller: App\Controller\ClientsController::clientsAdmin
+    methods: [GET]
+
+ajouterClient:
+    path: /ajouterClient
+    controller: App\Controller\ClientsController::ajouterClient
+    methods: [GET, POST]
+
+
+modifierClient:
+    path: /modifierClient/{id}
+    controller: App\Controller\ClientsController::modifierClient
+
+suppressionClient:
+    path: /suppressionClient/{id}
+    controller: App\Controller\ClientsController::suppressionClient
+
+
+
+#métiers
+metiers:
+    path: /metiers
+    controller: App\Controller\MetierController::index
+
+ajouterMetier:
+    path: /ajouterMetier
+    controller: App\Controller\MetierController::ajouterMetier
+    methods: [GET, POST]
+
+
+modifierMetier:
+    path: /modifierMetier/{id}
+    controller: App\Controller\MetierController::modifierMetier
+
+suppressionMetier:
+    path: /suppressionMetier/{id}
+    controller: App\Controller\MetierController::suppressionMetier
+
+
+#projets 
+projets:
+    path: /projets
+    controller: App\Controller\ProjetController::index
+
+ajouterProjet:
+    path: /ajouterProjet
+    controller: App\Controller\ProjetController::ajouterProjet
+    methods: [GET, POST]
+
+
+modifierProjet:
+    path: /modifierProjet/{id}
+    controller: App\Controller\ProjetController::modifierProjet
+
+suppressionProjet:
+    path: /suppressionProjet/{id}
+    controller: App\Controller\ProjetController::suppressionProjet
+
+
+#affichage
+acceuil:
+    path: /gestionAcceuil
+    controller: App\Controller\AcceuilController::gestionAcceuil
+
+stram:
+    path: /gestionStram
+    controller: App\Controller\StramController::gestionStram
+
+
+gestion_Contact:
+    path: /gestionContact
+    controller: App\Controller\GestionContactController::gestionContact
+
+
+#services
+gestionServices:
+    path: /gestionServices
+    controller: App\Controller\ServicesController::gestionServices
+
+ajouterService:
+    path: /ajouterService
+    controller: App\Controller\ServicesController::ajouterService
+    methods: [GET, POST]
+
+
+
+
+# Route pour afficher la page de gestion des contacts
+gestion_contact:
+    path: /gestionContact
+    controller: App\Controller\GestionContactController::gestionContact
+    methods: ['GET']
+
+
+# Route pour modifier les coordonnées de la Tunisie
+modifier_contact_tunisie:
+    path: /modifierContactTunisie
+    controller: App\Controller\GestionContactController::modifierContactTunisie
+    methods: ['GET', 'POST']
+
+# Route pour supprimer les coordonnées de la Tunisie
+supprimer_contact_tunisie:
+    path: /supprimerContactTunisie
+    controller: App\Controller\GestionContactController::supprimerContactTunisie
+    methods: ['GET']
+
+
+# Route pour modifier les coordonnées de l'Algerie
+modifier_contact_algerie:
+    path: /modifierContactAlgerie
+    controller: App\Controller\GestionContactController::modifierContactAlgerie
+    methods: ['GET', 'POST']
+
+# Route pour supprimer les coordonnées de l'Algerie
+supprimer_contact_algerie:
+    path: /supprimerContactAlgerie
+    controller: App\Controller\GestionContactController::supprimerContactAlgerie
+    methods: ['GET']
+
+
+# Route Services
+solsTechniques:
+    path: /sols/techniques
+    controller: App\Controller\SolsTechniquesController::index
+    methods: ['GET']
+
+#---------------------------------------------
+
+reparation:
+    path: /reparation
+    controller: App\Controller\RéparationController::index
+    methods: ['GET']
+
+
+RenforcementChemisageClassique:
+    path: /renforcement/chemisage/classique
+    controller: App\Controller\RenforcementChemisageClassiqueController::index
+    methods: ['GET']
+
+
+renforcementFibreCarbone:
+    path: /renforcement/fibre/carbone
+    controller: App\Controller\RenforcementFibreCarboneController::index
+    methods: ['GET']
+
+#---------------------------------------------
+
+Étanchéité:
+    path: /Étanchéité
+    controller: App\Controller\ÉtanchéitéController::index
+    methods: ['GET']
+
+Imperméabilisation:
+    path: /Imperméabilisation
+    controller: App\Controller\ImperméabilisationController::index
+    methods: ['GET']
+
+#---------------------------------------------
+traitement/traitement/jointsJoints:
+    path: /traitement/joints
+    controller: App\Controller\TraitementJointsController::index
+    methods: ['GET']
+
+#---------------------------------------------
+RevêtementTechnique:
+    path: /RevêtementTechnique
+    controller: App\Controller\RevêtementTechniqueController::index
+    methods: ['GET']
+
+TraitementFaçades:
+    path: /TraitementFaçades
+    controller: App\Controller\TraitementFaçadesController::index
+    methods: ['GET']
+
+# services
+services:
+    path: /Services
+    controller: App\Controller\ServicesController::Services
+    methods: ['GET']
+
+
+#authentification
+login:
+    path: /login
+    controller: App\Controller\LoginController::login
+    methods: ['GET']
+
+register:
+    path: /register
+    controller: App\Controller\RegisterController::register
+    methods: ['GET']

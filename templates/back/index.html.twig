@@ -1,0 +1,82 @@
+{% extends 'base.html.twig' %}
+{% block head %}
+	<link rel="stylesheet" href="{{ asset('../css/chats.css') }}">
+
+
+    <style>
+        /* Ajoutez du CSS personnalisé pour centrer le contenu du tableau */
+        .center-table {
+            margin: 0 auto; /* Centre le tableau horizontalement */
+            text-align: center; /* Centre le contenu du tableau horizontalement */
+        }
+
+        .center-table th,
+        .center-table td {
+            vertical-align: middle; /* Centre le contenu du tableau verticalement */
+        }
+    </style>
+
+
+{% endblock %}
+{% block body %}
+	<main id="main" class="main">
+		<section class="section dashboard">
+			<div class="row">
+				<div class="patner" style="display: flex;">
+
+					<div class="patner_image">
+						<img src="images/back/img1.jpeg" alt="" style="height:200px">
+					</div>
+					<div class="patner_image">
+						<img src="images/back/img2.jpeg" alt="" style="height:200px">
+					</div>
+					<div class="patner_image">
+						<img src="images/back/img3.jpeg" alt="" style="height:200px">
+					</div>
+					<div class="patner_image">
+						<img src="images/back/img4.jpg" alt="" style="height:200px">
+					</div>
+					<div class="patner_image">
+						<img src="images/back/img5.jpg" alt="" style="height:200px">
+					</div>
+				</div>
+			</div>
+
+		</br>
+	</br>
+	<div class="row">
+		<div
+			class="col-lg-12">
+			<!-- Tableau des top clients -->
+			<div style="max-width: 80%">
+				<div>
+					<h3>Top Clients</h3>
+				</div>
+				<table style="background-color:#092F54 ; width: 80%">
+					<thead>
+						<tr style=" color:#F17F21">
+							<th>ID</th>
+							<th>Nom</th>
+							<th>Secteur</th>
+							<th>Service</th>
+							<th>Logo</th>
+						</tr>
+					</thead>
+					<tbody style="color:#092F54 ; background-color:#F09F32">
+						{% for client in topClients %}
+							<tr>
+								<td>{{ client.id }}</td>
+								<td>{{ client.nom }}</td>
+								<td>{{ client.secteur }}</td>
+								<td>{{ client.service }}</td>
+								<td><img src="{{ client.logo }}" alt="Logo" style="width: 75px; height: 55px; padding: 5px;"></td>
+							</tr>
+						{% endfor %}
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</br>
+
+
+</div></section></main>{% endblock %}
