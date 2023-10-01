@@ -42,10 +42,29 @@ carriere_index:
     controller: App\Controller\CarriereController::index
     methods: [GET]
 
-carriere_admin:
+carriereAdmin:
     path: /carriereAdmin
     controller: App\Controller\CarriereController::carriereAdmin
     methods: [GET]
+
+ajouterCarriere:
+    path: /ajouterCarriere
+    controller: App\Controller\CarriereController::ajouterCarriere
+    methods: [GET, POST]
+
+modifierCarriere:
+    path: /modifierCarriere/{id}
+    controller: App\Controller\CarriereController::modifierCarriere
+
+suppressionCarriere:
+    path: /suppressionCarriere/{id}
+    controller: App\Controller\CarriereController::suppressionCarriere
+
+
+
+
+
+
 
 carriere_submit:
     path: /candidature/submit

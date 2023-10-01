@@ -2,7 +2,9 @@
 
 namespace App\Controller;
 
-use App\Entity\Carriere; // Add this line to import the Carriere entity
+use App\Entity\Carriere; 
+use App\Form\CarriereType;
+use App\Repository\CarriereRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\Request;
@@ -20,7 +22,7 @@ class CarriereController extends AbstractController
 
  
     /**
-     * @Route("/carriereAdmin", name="carriere_admin")
+     * @Route("/carriereAdmin", name="carriereAdmin")
      */
     public function carriereAdmin(): Response
     {
@@ -51,4 +53,33 @@ class CarriereController extends AbstractController
         // Rediriger l'utilisateur vers une page de confirmation ou afficher un message de succès
         return $this->redirectToRoute('confirmation_page');
     }
+
+
+
+    
+    /**
+     * @Route("/ajouterCarriere", name="ajouterCarriere")
+     */
+    public function ajouterCarriere(Request $request): Response
+    {
+        $carriere = new Carriere();
+        $form = $this->createForm(CarriereType::class, $carriere);
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            $em = $this->getDoctrine()->getManager();
+            $em->persist($carriere);
+            $em->flush();
+
+            $this->addFlash('success', 'La carrierea été ajoutée avec succès.');
+            return $this->redirectToRoute('carriereAdmin');
+        }
+
+        return $this->render(
+            'carriere/ajoutCarriere.html.twig',
+            ['Ca' => $form->createView()]
+        );
+    }
+    
+
 }
