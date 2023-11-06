@@ -6,7 +6,26 @@ app_front:
     path: /
     controller: App\Controller\FrontController::index
 
+#HomePage
+home_one_get:
+    path: /home
+    controller: App\Controller\AcceuilController::getHomeOne
+    methods: GET
 
+home_one_update:
+    path: /home/homeOne/update
+    controller: App\Controller\AcceuilController::updateHomeOne
+    methods: [PUT,PATCH]
+
+home_two_get:
+    path: /home/homeTwo
+    controller: App\Controller\AcceuilController::getHomeTwo
+    methods: GET
+
+home_two_update:
+    path: /home/homeTwo/update
+    controller: App\Controller\AcceuilController::updateHomeTwo
+    methods: [PUT,PATCH]
 #Qui Sommes Nous??
 app_qui_sommes_nous:
     path: /app_qui_sommes_nous
@@ -144,9 +163,8 @@ suppressionProjet:
 
 
 #affichage
-acceuil:
-    path: /gestionAcceuil
-    controller: App\Controller\AcceuilController::gestionAcceuil
+
+
 
 stram:
     path: /gestionStram
