@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use App\Repository\ServiceRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 #[ORM\Entity(repositoryClass: ServiceRepository::class)]
@@ -14,52 +16,89 @@ class Service
     private ?int $id = null;
 
     #[ORM\Column(length: 255)]
-    private ?string $nom = null;
+    private ?string $name = null;
 
-    #[ORM\Column(length: 255)]
-    private ?string $descriptionService = null;
+    #[ORM\Column]
+    private ?int $orderInList = null;
 
-    #[ORM\Column(length: 255)]
-    private ?string $imageService = null;
+    #[ORM\ManyToOne(targetEntity: self::class, inversedBy: 'subServices')]
+    private ?self $service = null;
 
+    #[ORM\OneToMany(mappedBy: 'service', targetEntity: self::class)]
+    private Collection $subServices;
+
+    public function __construct()
+    {
+        $this->subServices = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
         return $this->id;
     }
 
-    public function getNom(): ?string
+    public function getName(): ?string
     {
-        return $this->nom;
+        return $this->name;
     }
 
-    public function setNom(string $nom): static
+    public function setName(string $name): static
     {
-        $this->nom = $nom;
+        $this->name = $name;
 
         return $this;
     }
 
-    public function getDescriptionService(): ?string
+    public function getOrderInList(): ?int
     {
-        return $this->descriptionService;
+        return $this->orderInList;
     }
 
-    public function setDescriptionService(string $descriptionService): static
+    public function setOrderInList(int $orderInList): static
     {
-        $this->descriptionService = $descriptionService;
+        $this->orderInList = $orderInList;
 
         return $this;
     }
 
-    public function getImageService(): ?string
+    public function getService(): ?self
     {
-        return $this->imageService;
+        return $this->service;
     }
 
-    public function setImageService(string $imageService): static
+    public function setService(?self $service): static
     {
-        $this->imageService = $imageService;
+        $this->service = $service;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, self>
+     */
+    public function getSubServices(): Collection
+    {
+        return $this->subServices;
+    }
+
+    public function addSubService(self $subService): static
+    {
+        if (!$this->subServices->contains($subService)) {
+            $this->subServices->add($subService);
+            $subService->setService($this);
+        }
+
+        return $this;
+    }
+
+    public function removeSubService(self $subService): static
+    {
+        if ($this->subServices->removeElement($subService)) {
+            // set the owning side to null (unless already changed)
+            if ($subService->getService() === $this) {
+                $subService->setService(null);
+            }
+        }
 
         return $this;
     }

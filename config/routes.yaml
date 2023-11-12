@@ -26,6 +26,27 @@ home_two_update:
     path: /home/homeTwo/update
     controller: App\Controller\AcceuilController::updateHomeTwo
     methods: [PUT,PATCH]
+#Testimonial
+client_testimonial_get:
+    path: /testimonial/client
+    controller: App\Controller\TestimonialController::getAll
+    methods: GET
+client_testimonial_get_by_id:
+    path: /testimonial/client/{id}
+    controller: App\Controller\TestimonialController::getTestimonialById
+    methods: GET
+create_testimonial_client:
+    path: /testimonial/client/create
+    controller: App\Controller\TestimonialController::createClientTestimonial
+    methods: POST
+update_testimonial_client:
+    path: /testimonial/client/update/{id}
+    controller: App\Controller\TestimonialController::updateTestimonial
+    methods: [PUT,PATCH]
+client_testimonial_delete:
+    path: /testimonial/client/delete/{id}
+    controller: App\Controller\TestimonialController::deleteById
+    methods: DELETE     
 #Qui Sommes Nous??
 app_qui_sommes_nous:
     path: /app_qui_sommes_nous
@@ -176,19 +197,6 @@ gestion_Contact:
     controller: App\Controller\GestionContactController::gestionContact
 
 
-#services
-gestionServices:
-    path: /gestionServices
-    controller: App\Controller\ServicesController::gestionServices
-
-ajouterService:
-    path: /ajouterService
-    controller: App\Controller\ServicesController::ajouterService
-    methods: [GET, POST]
-
-
-
-
 # Route pour afficher la page de gestion des contacts
 gestion_contact:
     path: /gestionContact
@@ -222,11 +230,6 @@ supprimer_contact_algerie:
     methods: ['GET']
 
 
-# Route Services
-solsTechniques:
-    path: /sols/techniques
-    controller: App\Controller\SolsTechniquesController::index
-    methods: ['GET']
 
 #---------------------------------------------
 
@@ -274,12 +277,6 @@ RevêtementTechnique:
 TraitementFaçades:
     path: /TraitementFaçades
     controller: App\Controller\TraitementFaçadesController::index
-    methods: ['GET']
-
-# services
-services:
-    path: /Services
-    controller: App\Controller\ServicesController::Services
     methods: ['GET']
 
 

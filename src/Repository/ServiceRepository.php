@@ -6,7 +6,6 @@ use App\Entity\Service;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
 
-
 /**
  * @extends ServiceEntityRepository<Service>
  *
