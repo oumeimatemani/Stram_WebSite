@@ -21,6 +21,62 @@ class ServiceRepository extends ServiceEntityRepository
         parent::__construct($registry, Service::class);
     }
 
+    public function findServicesWithNullService_id()
+    {
+        $queryBuilder = $this->createQueryBuilder('s');
+    $queryBuilder
+        ->leftJoin('s.subServices', 'sub')
+        ->where('s.service IS NULL')
+        ->orderBy('s.orderInList', 'ASC')
+        ->addSelect('sub')
+        ->addOrderBy('sub.orderInList', 'ASC');
+
+    return $queryBuilder->getQuery()->getResult();
+    }
+    public function countByService($service): int
+    {
+        return $this->createQueryBuilder('s')
+            ->select('COUNT(s)')
+            ->where('s.service = :service')
+            ->setParameter('service', $service)
+            ->getQuery()
+            ->getSingleScalarResult();
+    }
+    public function findByOrderInList($order)
+    {
+         $queryBuilder =$this->createQueryBuilder('s');
+         $queryBuilder
+            ->andWhere('s.orderInList = :order')
+            ->andWhere('s.service IS NULL')
+            ->setParameter('order', $order);
+
+            return $queryBuilder->getQuery()->getResult();
+    }
+
+
+    public function findByOrderInSubList($order, $motherService)
+    {
+        return $this->createQueryBuilder('s')
+            ->andWhere('s.orderInList = :order')
+            ->andWhere('s.service = :motherService')
+            ->setParameter('order', $order)
+            ->setParameter('motherService', $motherService)
+            ->getQuery()
+            ->getResult();
+    }
+    /* OLD 
+    public function findServicesWithNullService_id()
+    {
+        $queryBuilder = $this->createQueryBuilder('s');
+        $queryBuilder
+            ->where('s.service IS NULL')
+            ->orderBy('s.orderInList', 'ASC');
+
+        return $queryBuilder->getQuery()->getResult();
+    }
+
+    */
+
 //    /**
 //     * @return Service[] Returns an array of Service objects
 //     */

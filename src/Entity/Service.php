@@ -5,6 +5,8 @@ namespace App\Entity;
 use App\Repository\ServiceRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
+use Symfony\Component\Serializer\Annotation\Groups;
+
 use Doctrine\ORM\Mapping as ORM;
 
 #[ORM\Entity(repositoryClass: ServiceRepository::class)]
@@ -21,10 +23,17 @@ class Service
     #[ORM\Column]
     private ?int $orderInList = null;
 
+    
     #[ORM\ManyToOne(targetEntity: self::class, inversedBy: 'subServices')]
     private ?self $service = null;
 
+   
+    
     #[ORM\OneToMany(mappedBy: 'service', targetEntity: self::class)]
+   /*
+     * @ORM\OneToMany(mappedBy="service", targetEntity="self")
+     * @Groups({"service"}) // Add this line to specify the serialization group
+     */
     private Collection $subServices;
 
     public function __construct()

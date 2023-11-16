@@ -26,6 +26,7 @@ home_two_update:
     path: /home/homeTwo/update
     controller: App\Controller\AcceuilController::updateHomeTwo
     methods: [PUT,PATCH]
+
 #Testimonial
 client_testimonial_get:
     path: /testimonial/client
@@ -47,6 +48,29 @@ client_testimonial_delete:
     path: /testimonial/client/delete/{id}
     controller: App\Controller\TestimonialController::deleteById
     methods: DELETE     
+
+#Services
+get_all_services:
+    path: /services/
+    controller: App\Controller\ServicesController::getServices
+    methods: GET
+get_one_service:
+    path: /services/{id}
+    controller: App\Controller\ServicesController::getServiceById
+    methods: GET
+Add_new_service_to_list:
+    path: /services/create
+    controller: App\Controller\ServicesController::addServiceToList
+    methods: POST
+count_service_list:
+    path: /services/CountList/{isMother}/{id}
+    controller: App\Controller\ServicesController::getListLength
+    methods: GET
+update_service:
+    path: /services/update
+    controller: App\Controller\ServicesController::updateService
+    methods: [PUT,PATCH]
+    
 #Qui Sommes Nous??
 app_qui_sommes_nous:
     path: /app_qui_sommes_nous
