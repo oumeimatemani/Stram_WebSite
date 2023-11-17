@@ -70,7 +70,11 @@ update_service:
     path: /services/update
     controller: App\Controller\ServicesController::updateService
     methods: [PUT,PATCH]
-    
+delete_service:
+    path: /services/{id}
+    controller: App\Controller\ServicesController::deleteService
+    methods: DELETE 
+
 #Qui Sommes Nous??
 app_qui_sommes_nous:
     path: /app_qui_sommes_nous

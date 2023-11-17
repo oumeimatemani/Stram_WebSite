@@ -12,6 +12,7 @@ use Symfony\Component\Serializer\Normalizer\AbstractNormalizer;
 use Symfony\Component\Serializer\SerializerInterface;
 use App\Repository\ServiceRepository;
 use Psr\Log\LoggerInterface;
+use Doctrine\ORM\EntityManagerInterface;
 
 class ServicesController extends AbstractController
 {
@@ -115,14 +116,24 @@ class ServicesController extends AbstractController
     }
 
 
-    public function updateService(Request $request):Response{
+    public function updateService(Request $request, LoggerInterface $logger):Response{
         $data = json_decode($request->getContent(), true);
         $entityManager = $this->getDoctrine()->getManager();
         if ( !(isset($data['id']) ) || !( isset($data['newOrder']) ) || !(isset($data['name'])) ) {
-            return $this->json(['message' => 'Variables are missing'], Response::HTTP_NOT_FOUND);
+            if( !(isset($data['id']) )){
+                return $this->json(['message' => 'id is missing'], Response::HTTP_NOT_FOUND);
+            }else if ( !(isset($data['newOrder']) )) {
+                return $this->json(['message' => 'new order is missing'], Response::HTTP_NOT_FOUND);
+            }else if( !(isset($data['name']) ) ){
+                return $this->json(['message' => 'name is missing'], Response::HTTP_NOT_FOUND);
+            }
+            else{
+            return $this->json(['message' => 'variables are missing'], Response::HTTP_NOT_FOUND);
+         }
         }
-        $id= $data['id'];
-        $newOrder = $data['newOrder'];
+        
+        $id=$data['id'];
+        $newOrder =  (int) $data['newOrder'];
         $name= $data['name'];
         $service=$this->getDoctrine()->getRepository(Service::class)->find($id);
         if (!$service) {
@@ -134,7 +145,10 @@ class ServicesController extends AbstractController
             if($hasMother == false){
                 $otherService = $this->getDoctrine()->getRepository(Service::class)->findByOrderInList($newOrder);
             }else{
-                $motherId = $data['motherId'];
+                $motherId =  (int)$data['motherId'];
+                if(!$motherId){
+                    return $this->json(['message' => 'mother id are missing'], Response::HTTP_NOT_FOUND);
+                }
                 $motherService = $this->getDoctrine()->getRepository(Service::class)->find($motherId);
                 if(!$motherService){
                     return $this->json(['message' => 'mother service not found'], Response::HTTP_NOT_FOUND);
@@ -167,7 +181,42 @@ class ServicesController extends AbstractController
         return $this->json(['message' => 'Service updated'], Response::HTTP_OK);
     }
 
-
+    public function deleteService(int $id, EntityManagerInterface $entityManager):Response{
+        $service=$this->getDoctrine()->getRepository(Service::class)->find($id);
+       if (!$service) {
+        return $this->json(['message' => 'Servcie not found'], Response::HTTP_NOT_FOUND);
+       }
+        $isMotherItem = true;
+        $findMotherItem = $service->getService();
+        $motherServiceId=0;
+        echo "test before if";
+        if($findMotherItem !== null){
+            echo "here !";
+            $motherServiceId = $service->getService()->getId();
+            echo "mother serviceId".$motherServiceId;
+            $isMotherItem = false;
+        }
+       $listCount= $this->getListLength($isMotherItem,$motherServiceId);
+       $orderInList=$service->getOrderInList();
+       if ($orderInList != $listCount){
+        
+            for( $i=$orderInList+1 ; $i<=$listCount ; $i++ ){
+                if($isMotherItem){
+                    $serviceWithNextOrder = $this->getDoctrine()->getRepository(Service::class)->findByOrderInList($i);
+                }else{
+                    $serviceWithNextOrder = $this->getDoctrine()->getRepository(Service::class)->findByOrderInSubList($i,$motherServiceId);
+                }
+                if(!$serviceWithNextOrder){
+                    return $this->json(['error' => 'service with next order not found !'], Response::HTTP_NOT_FOUND);
+                }
+                $serviceWithNextOrder[0]->setOrderInList($i-1);
+            }
+        }  
+        $entityManager->remove($service);
+        $entityManager->flush();
+        return $this->json(['message' => 'Service deleted'], Response::HTTP_OK);
+       }
+       
     public function getListLength(bool $isMother, int $id):int{
         if($isMother){
             $listLength = count($this->getDoctrine()->getRepository(Service::class)->findServicesWithNullService_id());
