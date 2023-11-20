@@ -18,7 +18,7 @@ class ServicesController extends AbstractController
 {
    
 
-    public function getServices(SerializerInterface $serializer): JsonResponse
+    public function getServices(): JsonResponse
     {
         $services = $this->getDoctrine()->getRepository(Service::class)->findServicesWithNullService_id();
         $result = [];
@@ -51,6 +51,22 @@ class ServicesController extends AbstractController
 
         return $serviceData;
     }
+
+    public function getAllServices(): JsonResponse{
+        $services = $this->getDoctrine()->getRepository(Service::class)->findAll();
+        foreach($services as $service){
+            $hasContent = false;
+            if($service->getContent() != null){ $hasContent = true;}
+            $serviceData = [
+                'id' => $service->getId(),
+                'name' => $service->getName(),
+                'hasContent' => $hasContent
+            ];
+            $result[] = $serviceData;
+        }
+        return $this->json($result, Response::HTTP_OK);
+    }
+    
 
     public function getServiceById(int $id,SerializerInterface $serializer): Response{
        $service=$this->getDoctrine()->getRepository(Service::class)->find($id);
@@ -189,11 +205,8 @@ class ServicesController extends AbstractController
         $isMotherItem = true;
         $findMotherItem = $service->getService();
         $motherServiceId=0;
-        echo "test before if";
         if($findMotherItem !== null){
-            echo "here !";
             $motherServiceId = $service->getService()->getId();
-            echo "mother serviceId".$motherServiceId;
             $isMotherItem = false;
         }
        $listCount= $this->getListLength($isMotherItem,$motherServiceId);

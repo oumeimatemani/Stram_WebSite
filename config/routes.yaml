@@ -54,6 +54,10 @@ get_all_services:
     path: /services/
     controller: App\Controller\ServicesController::getServices
     methods: GET
+get_all_services2:
+    path: /services/all
+    controller: App\Controller\ServicesController::getAllServices
+    methods: GET 
 get_one_service:
     path: /services/{id}
     controller: App\Controller\ServicesController::getServiceById
@@ -74,6 +78,12 @@ delete_service:
     path: /services/{id}
     controller: App\Controller\ServicesController::deleteService
     methods: DELETE 
+
+#Service Content
+Add_content_to_service:
+    path: /services/content/create
+    controller: App\Controller\ServicesContentController::createContent
+    methods: POST
 
 #Qui Sommes Nous??
 app_qui_sommes_nous:

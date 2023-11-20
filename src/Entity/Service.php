@@ -36,6 +36,9 @@ class Service
      */
     private Collection $subServices;
 
+    #[ORM\OneToOne(cascade: ['persist', 'remove'])]
+    private ?ServiceContent $content = null;
+
     public function __construct()
     {
         $this->subServices = new ArrayCollection();
@@ -108,6 +111,18 @@ class Service
                 $subService->setService(null);
             }
         }
+
+        return $this;
+    }
+
+    public function getContent(): ?ServiceContent
+    {
+        return $this->content;
+    }
+
+    public function setContent(?ServiceContent $content): static
+    {
+        $this->content = $content;
 
         return $this;
     }

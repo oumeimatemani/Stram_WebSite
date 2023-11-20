@@ -5,6 +5,8 @@
 # https://symfony.com/doc/current/best_practices.html#use-parameters-for-application-configuration
 parameters:
     client_testimonial_photos_directory: '%kernel.project_dir%/public/testimonial/client/'
+    services_content_photo_directory: '%kernel.project_dir%/public/images/services/photos/'
+    servives_content_logos: '%kernel.project_dir%/public/images/services/logos/'
 services:
     # default configuration for services in *this* file
     _defaults:
