@@ -167,5 +167,61 @@ class ServicesContentController extends AbstractController{
         return $this->json(['message' => 'content updated'], Response::HTTP_OK);
     }
 
+    public function deleteContent(int $id, Filesystem $filesystem):Response{
+        $service=$this->getDoctrine()->getRepository(Service::class)->find($id);
+        if(!$service) return $this->json(['message' => 'Servcie not found'], Response::HTTP_NOT_FOUND);
+        $content = $service->getContent();
+        if(!$content) return $this->json(['message' => 'Content not found'], Response::HTTP_NOT_FOUND);
+        // Get the images filename
+        $photoFilename1 = $content->getImgOne();
+        $photoFilename2 = $content->getImgTwo();
+        $photoFilename3 = $content->getImgThree();
+        $photoFilename4 = $content->getImgFour();
+        $photoFilename5 = $content->getImgFive();
+        $photoFilename6 = $content->getImgSix();
+
+        $service->setContent(NULL);
+        $content->setService(NULL);
+        // Remove the content from the database
+        $this->entityManager->remove($content);
+        // setServiceContent to null
+        
+        $this->entityManager->flush();
+
+        // Delete the images file from the server
+        $photoPath1 = $this->getParameter('services_content_photo_directory') . $photoFilename1;
+        if ($filesystem->exists($photoPath1)) {
+            $filesystem->remove($photoPath1);
+        }
+
+        $photoPath2 = $this->getParameter('services_content_photo_directory') . $photoFilename2;
+        if ($filesystem->exists($photoPath2)) {
+            $filesystem->remove($photoPath2);
+        }
+
+        $photoPath3 = $this->getParameter('services_content_photo_directory') . $photoFilename3;
+        if ($filesystem->exists($photoPath3)) {
+            $filesystem->remove($photoPath3);
+        }
+
+        $photoPath4 = $this->getParameter('services_content_photo_directory') . $photoFilename4;
+        if ($filesystem->exists($photoPath4)) {
+            $filesystem->remove($photoPath4);
+        }
+
+        $photoPath5 = $this->getParameter('services_content_photo_directory') . $photoFilename5;
+        if ($filesystem->exists($photoPath5)) {
+            $filesystem->remove($photoPath5);
+        }
+
+        $photoPath6 = $this->getParameter('services_content_photo_directory') . $photoFilename6;
+        if ($filesystem->exists($photoPath6)) {
+            $filesystem->remove($photoPath6);
+        }
+
+        return $this->json(['message' => 'Content and associated photo deleted'], Response::HTTP_OK);
+
+    }
+
 
 }

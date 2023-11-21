@@ -92,6 +92,10 @@ update_content:
     path: /services/content/update/{id}
     controller: App\Controller\ServicesContentController::updateContent
     methods: [PUT,PATCH]
+delete_content_by_service_id:
+    path: /services/content/{id}
+    controller: App\Controller\ServicesContentController::deleteContent
+    methods: DELETE
 
 
 #Qui Sommes Nous??
