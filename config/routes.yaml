@@ -80,10 +80,15 @@ delete_service:
     methods: DELETE 
 
 #Service Content
+get_content:
+    path: /services/content/{id}
+    controller: App\Controller\ServicesContentController::getContent
+    methods: GET
 Add_content_to_service:
     path: /services/content/create
     controller: App\Controller\ServicesContentController::createContent
     methods: POST
+
 
 #Qui Sommes Nous??
 app_qui_sommes_nous:

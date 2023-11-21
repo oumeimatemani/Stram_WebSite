@@ -28,7 +28,37 @@ class ServicesContentController extends AbstractController{
     {
         $this->entityManager = $entityManager;
     }
-
+    public function getContent(int $id,SerializerInterface $serializer):Response{
+        $service=$this->getDoctrine()->getRepository(Service::class)->find($id);
+        if(!$service) return $this->json(['message' => 'Servcie not found'], Response::HTTP_NOT_FOUND);
+        $content = $service->getContent();
+        if(!$content) return $this->json(['message' => 'Content not found'], Response::HTTP_NOT_FOUND);
+        $serializedContent = $serializer->normalize($content, null, [
+            AbstractNormalizer::ATTRIBUTES => [
+                'id',
+                'serviceName',
+                'logo',
+                'imgOne',
+                'imgTwo',
+                'imgThree',
+                'imgFour',
+                'imgFive',
+                'imgSix',
+                'shortDescription',
+                'detailedDescription',
+                'AdditionalInformation',
+                'subTitle',
+                'phrase',
+                'caracteristicOne',
+                'caracteristicTwo',
+                'caracteristicThree'
+            ],
+        ]);
+        $serviceName= $service->getName();
+        $serializedContent['serviceName'] = $serviceName;
+        $serializedContent['AdditionalInformation']= $content->getAdditionalInformation();
+        return $this->json($serializedContent, Response::HTTP_OK);
+    }
     public function createContent(Request $request,SerializerInterface $serializer,ValidatorInterface $validator , SluggerInterface $slugger):Response{
         $data = $request->request->all();
         $serviceId = $data['serviceId'];
