@@ -127,7 +127,7 @@ class TestimonialController extends AbstractController
             return $this->json(['message' => 'Testimonial not found'], Response::HTTP_NOT_FOUND);
         }
 
-        $data = $request->request->all();
+        $data = json_decode($request->getContent(), true);
         $newPhoto = $request->files->get('photo');
 
         // If there is a new photo, delete the previous photo and update the testimonial

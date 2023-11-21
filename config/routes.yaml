@@ -88,6 +88,10 @@ Add_content_to_service:
     path: /services/content/create
     controller: App\Controller\ServicesContentController::createContent
     methods: POST
+update_content:
+    path: /services/content/update/{id}
+    controller: App\Controller\ServicesContentController::updateContent
+    methods: [PUT,PATCH]
 
 
 #Qui Sommes Nous??

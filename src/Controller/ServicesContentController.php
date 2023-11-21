@@ -137,6 +137,35 @@ class ServicesContentController extends AbstractController{
             return $newFilename;
         
     }
+    
+    public function updateContent(int $id,Request $request):Response{
+        $data = json_decode($request->getContent(), true);
+        $contentId = $id;
+        if(!$contentId) return $this->json(['message' => 'content id not found'], Response::HTTP_NOT_FOUND); 
+        $content= $this->getDoctrine()->getRepository(ServiceContent::class)->find($contentId);
+        if(!$content) return $this->json(['message' => 'content not found'], Response::HTTP_NOT_FOUND);
+        $logo = $data['logo'];
+        $shortDescription= $data['shortDescription'];
+        $detailedDescription=$data['detailedDescription'];
+        $AdditionalInformation=$data['AdditionalInformation'];
+        $subTitle=$data['subTitle'];
+        $phrase=$data['phrase'];
+        $caracteristicOne=$data['caracteristicOne'];
+        $caracteristicTwo=$data['caracteristicTwo'];
+        $caracteristicThree= $data['caracteristicThree'];
+
+        if($logo) $content->setLogo($logo);
+        if($shortDescription) $content->setShortDescription($shortDescription);
+        if($detailedDescription) $content->setDetailedDescription($detailedDescription);
+        if($AdditionalInformation) $content->setAdditionalInformation($AdditionalInformation);
+        if($subTitle) $content->setSubTitle($subTitle);
+        if($phrase) $content->setPhrase($phrase);
+        if($caracteristicOne) $content->setCaracteristicOne($caracteristicOne);
+        if($caracteristicTwo) $content->setCaracteristicTwo($caracteristicTwo);
+        if($caracteristicThree) $content->setCaracteristicThree($caracteristicThree);
+        $this->entityManager->flush();
+        return $this->json(['message' => 'content updated'], Response::HTTP_OK);
+    }
 
 
 }
