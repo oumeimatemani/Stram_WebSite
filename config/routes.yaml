@@ -57,12 +57,16 @@ get_all_services:
 get_all_services2:
     path: /services/all
     controller: App\Controller\ServicesController::getAllServices
-    methods: GET 
+    methods: GET
+get_services_with_content:
+    path: /services/withContent
+    controller: App\Controller\ServicesController::getServicesWithContent
+    methods: GET
 get_one_service:
     path: /services/{id}
     controller: App\Controller\ServicesController::getServiceById
     methods: GET
-Add_new_service_to_list:
+add_new_service_to_list:
     path: /services/create
     controller: App\Controller\ServicesController::addServiceToList
     methods: POST
@@ -84,7 +88,7 @@ get_content:
     path: /services/content/{id}
     controller: App\Controller\ServicesContentController::getContent
     methods: GET
-Add_content_to_service:
+add_content_to_service:
     path: /services/content/create
     controller: App\Controller\ServicesContentController::createContent
     methods: POST

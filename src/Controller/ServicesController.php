@@ -36,12 +36,15 @@ class ServicesController extends AbstractController
      */
     private function serializeService(Service $service): array
     {
+        $hasContent = false;
+            if($service->getContent() != null) $hasContent = true;
         $hasSubService = $service->getSubServices()->count() > 0;
         $serviceData = [
             'id' => $service->getId(),
             'name' => $service->getName(),
             'orderInList' => $service->getOrderInList(),
             'hasSubService' => $hasSubService,
+            'hasContent' => $hasContent,
             'subServices' => [],
         ];
 
@@ -67,6 +70,17 @@ class ServicesController extends AbstractController
         return $this->json($result, Response::HTTP_OK);
     }
     
+    public function getServicesWithContent():JsonResponse{
+        $services =$this->getDoctrine()->getRepository(Service::class)->getServicesWithContent();
+        foreach($services as $service){
+            $serviceData=[
+                'id'=> $service->getId(),
+                'name'=> $service->getName()
+            ];
+            $result[]=$serviceData; 
+        }
+        return $this->json($result,Response::HTTP_OK);
+    }
 
     public function getServiceById(int $id,SerializerInterface $serializer): Response{
        $service=$this->getDoctrine()->getRepository(Service::class)->find($id);

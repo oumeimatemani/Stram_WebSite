@@ -64,41 +64,9 @@ class ServiceRepository extends ServiceEntityRepository
             ->getQuery()
             ->getResult();
     }
-    /* OLD 
-    public function findServicesWithNullService_id()
-    {
+    public function getServicesWithContent(){
         $queryBuilder = $this->createQueryBuilder('s');
-        $queryBuilder
-            ->where('s.service IS NULL')
-            ->orderBy('s.orderInList', 'ASC');
-
+        $queryBuilder ->where('s.content IS NOT NULL');
         return $queryBuilder->getQuery()->getResult();
     }
-
-    */
-
-//    /**
-//     * @return Service[] Returns an array of Service objects
-//     */
-//    public function findByExampleField($value): array
-//    {
-//        return $this->createQueryBuilder('s')
-//            ->andWhere('s.exampleField = :val')
-//            ->setParameter('val', $value)
-//            ->orderBy('s.id', 'ASC')
-//            ->setMaxResults(10)
-//            ->getQuery()
-//            ->getResult()
-//        ;
-//    }
-
-//    public function findOneBySomeField($value): ?Service
-//    {
-//        return $this->createQueryBuilder('s')
-//            ->andWhere('s.exampleField = :val')
-//            ->setParameter('val', $value)
-//            ->getQuery()
-//            ->getOneOrNullResult()
-//        ;
-//    }
 }
