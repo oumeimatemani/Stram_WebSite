@@ -44,6 +44,15 @@ class HomeOne
     #[ORM\Column(type: Types::TEXT)]
     private ?string $secondSmallDescription = null;
 
+    #[ORM\OneToOne(cascade: ['persist', 'remove'])]
+    private ?Service $service1 = null;
+
+    #[ORM\OneToOne(cascade: ['persist', 'remove'])]
+    private ?Service $service2 = null;
+
+    #[ORM\OneToOne(cascade: ['persist', 'remove'])]
+    private ?Service $service3 = null;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -165,6 +174,42 @@ class HomeOne
     public function setSecondSmallDescription(string $secondSmallDescription): static
     {
         $this->secondSmallDescription = $secondSmallDescription;
+
+        return $this;
+    }
+
+    public function getService1(): ?Service
+    {
+        return $this->service1;
+    }
+
+    public function setService1(?Service $service1): static
+    {
+        $this->service1 = $service1;
+
+        return $this;
+    }
+
+    public function getService2(): ?Service
+    {
+        return $this->service2;
+    }
+
+    public function setService2(?Service $service2): static
+    {
+        $this->service2 = $service2;
+
+        return $this;
+    }
+
+    public function getService3(): ?Service
+    {
+        return $this->service3;
+    }
+
+    public function setService3(?Service $service3): static
+    {
+        $this->service3 = $service3;
 
         return $this;
     }
