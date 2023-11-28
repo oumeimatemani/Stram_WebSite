@@ -101,11 +101,15 @@ delete_content_by_service_id:
     controller: App\Controller\ServicesContentController::deleteContent
     methods: DELETE
 
-
-#Qui Sommes Nous??
-app_qui_sommes_nous:
-    path: /app_qui_sommes_nous
-    controller: App\Controller\QuiSommesNousController::index
+#About Us
+get_about_us_stram:
+    path: /about/
+    controller: App\Controller\AboutController::getAboutStram
+    methods: GET
+update_about_us_stram:
+    path: /about/update
+    controller: App\Controller\AboutController::updateAboutStram
+    methods: [PUT,PATCH]
 
 
 

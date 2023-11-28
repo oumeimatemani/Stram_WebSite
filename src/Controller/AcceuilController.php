@@ -17,7 +17,6 @@ use Symfony\Component\Validator\Validator\ValidatorInterface;
 
 class AcceuilController extends AbstractController
 {
-    #[Route("/", name: "getHome1Section", methods: ["GET"])]
     public function getHomeOne(SerializerInterface $serializer): JsonResponse
     {
         $homeOne = $this->getDoctrine()->getRepository(HomeOne::class)->findOneBy(['id' => 1]);
