@@ -110,6 +110,27 @@ update_about_us_stram:
     path: /about/update
     controller: App\Controller\AboutController::updateAboutStram
     methods: [PUT,PATCH]
+#About us team section
+get_about_us_team:
+    path: /about/team
+    controller: App\Controller\AboutController::getTeam
+    methods: GET
+get_team_by_id:
+    path: /about/team/{id}
+    controller: App\Controller\AboutController::getTeamById
+    methods: GET
+create_team:
+    path: /about/team/create
+    controller: App\Controller\AboutController::createTeam
+    methods: POST
+update_team:
+    path: /about/team/update/{id}
+    controller: App\Controller\AboutController::updateTeam
+    methods: [PUT,PATCH]
+delete_team:
+    path: /about/team/delete/{id}
+    controller: App\Controller\AboutController::deleteTeamById
+    methods: DELETE
 
 
 

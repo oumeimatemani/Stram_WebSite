@@ -147,7 +147,21 @@ class TestimonialController extends AbstractController
         }
 
         // Update the other attributes
-        $serializer->deserialize(json_encode($data), ClientTestimonial::class, 'json', [AbstractNormalizer::OBJECT_TO_POPULATE => $testimonial]);
+        if(isset($data["fullname"]) && $data['fullname']!=null){
+            echo "ddd";
+            $testimonial->setFullname($data["fullname"]);
+        }
+        if(isset($data["message"]) && $data['message']!=null){
+            $testimonial->setMessage($data["message"]);
+        }
+        if(isset($data["country"]) && $data['country']!=null){
+            $testimonial->setCountry($data["country"]);
+        }
+        if(isset($data["rating"]) && $data['rating']!=null){
+            $rating = intval($data["rating"]);
+            $testimonial->setRating($data["rating"]);
+        }
+       // $serializer->deserialize(json_encode($data), ClientTestimonial::class, 'json', [AbstractNormalizer::OBJECT_TO_POPULATE => $testimonial]);
 
         $entityManager->flush();
 
