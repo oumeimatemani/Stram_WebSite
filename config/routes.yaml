@@ -47,7 +47,28 @@ update_testimonial_client:
 client_testimonial_delete:
     path: /testimonial/client/delete/{id}
     controller: App\Controller\TestimonialController::deleteById
-    methods: DELETE     
+    methods: DELETE 
+#Team Testimonial
+team_testimonial_get:
+    path: /testimonial/team
+    controller: App\Controller\TestimonialTeamController::getAll
+    methods: GET
+team_testimonial_get_by_id:
+    path: /testimonial/team/{id}
+    controller: App\Controller\TestimonialTeamController::getTeamTestimonialById
+    methods: GET
+create_testimonial_team:
+    path: /testimonial/team/create
+    controller: App\Controller\TestimonialTeamController::createTeamTestimonial
+    methods: POST
+update_testimonial_team:
+    path: /testimonial/team/update/{id}
+    controller: App\Controller\TestimonialTeamController::updateTeamTestimonial
+    methods: [PUT,PATCH]
+team_testimonial_delete:
+    path: /testimonial/team/delete/{id}
+    controller: App\Controller\TestimonialTeamController::deleteById
+    methods: DELETE       
 
 #Services
 get_all_services:

@@ -25,7 +25,7 @@ class AboutController extends AbstractController{
     }
     
     public function updateAboutStram(Request $request, SerializerInterface $serializer): JsonResponse{
-        
+        $entityManager = $this->getDoctrine()->getManager();
         $about = $entityManager->getRepository(About::class)->find(1);
         if (!$about) return $this->json(['message' => 'HomeOne entity with id = 1 not found'], Response::HTTP_NOT_FOUND);
     
