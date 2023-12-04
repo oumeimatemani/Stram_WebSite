@@ -73,9 +73,28 @@ class ServicesController extends AbstractController
     public function getServicesWithContent():JsonResponse{
         $services =$this->getDoctrine()->getRepository(Service::class)->getServicesWithContent();
         foreach($services as $service){
+            $content = 
             $serviceData=[
                 'id'=> $service->getId(),
                 'name'=> $service->getName()
+            ];
+            $result[]=$serviceData; 
+        }
+        return $this->json($result,Response::HTTP_OK);
+    }
+
+    public function getServicesWithContent2():JsonResponse{
+        $services =$this->getDoctrine()->getRepository(Service::class)->getServicesWithContent();
+        foreach($services as $service){
+            $logo = $service->getContent()->getLogo();
+            $description = $service->getContent()->getShortDescription();
+            $mainImg = $service->getContent()->getImgOne();
+            $serviceData=[
+                'id'=> $service->getId(),
+                'name'=> $service->getName(),
+                'logo'=> $logo,
+                'shortDescription' => $description,
+                'imgOne' => $mainImg
             ];
             $result[]=$serviceData; 
         }

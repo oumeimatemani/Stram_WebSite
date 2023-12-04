@@ -83,6 +83,10 @@ get_services_with_content:
     path: /services/withContent
     controller: App\Controller\ServicesController::getServicesWithContent
     methods: GET
+get_services_with_content_logo:
+    path: /services/withContent2
+    controller: App\Controller\ServicesController::getServicesWithContent2
+    methods: GET
 get_one_service:
     path: /services/{id}
     controller: App\Controller\ServicesController::getServiceById
