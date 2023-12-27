@@ -157,8 +157,37 @@ delete_team:
     controller: App\Controller\AboutController::deleteTeamById
     methods: DELETE
 
-
-
+#Partner Section
+get_about_us_Partner:
+    path: /partner
+    controller: App\Controller\PartnerController::getPartner
+    methods: GET
+get_Partner_by_id:
+    path: /partner/{id}
+    controller: App\Controller\PartnerController::getPartnerById
+    methods: GET
+create_Partner:
+    path: /partner/create
+    controller: App\Controller\PartnerController::createPartner
+    methods: POST
+update_Partner:
+    path: /partner/update/{id}
+    controller: App\Controller\PartnerController::updatePartner
+    methods: [PUT,PATCH]
+delete_Partner:
+    path: /partner/delete/{id}
+    controller: App\Controller\PartnerController::deletePartnerById
+    methods: DELETE
+#newslette
+get_all_newsletter:
+    path: /newsletter
+    controller: App\Controller\ContactController::list
+create_newsletter:
+    path: /newsletter/create
+    controller: App\Controller\ContactController::createNewsletter
+delete_newsletter:
+    path: /newsletter/delete/{id}
+    controller: App\Controller\ContactController::deleteNewsLetter
 #contact
 app_contact:
     path: /contact

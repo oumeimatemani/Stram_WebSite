@@ -9,6 +9,7 @@ parameters:
     services_content_photo_directory: '%kernel.project_dir%/public/images/services/photos/'
     servives_content_logos: '%kernel.project_dir%/public/images/services/logos/'
     team_photos_directory: '%kernel.project_dir%/public/images/team/'
+    partner_photos_directory: '%kernel.project_dir%/public/images/partner/'
 services:
     # default configuration for services in *this* file
     _defaults:
