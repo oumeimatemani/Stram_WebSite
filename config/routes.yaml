@@ -182,32 +182,33 @@ delete_Partner:
 get_all_newsletter:
     path: /newsletter
     controller: App\Controller\ContactController::list
+    methods: GET
 create_newsletter:
     path: /newsletter/create
     controller: App\Controller\ContactController::createNewsletter
+    methods: POST
 delete_newsletter:
     path: /newsletter/delete/{id}
     controller: App\Controller\ContactController::deleteNewsLetter
+    methods: DELETE
 #contact
-app_contact:
+get_all_contact:
     path: /contact
-    controller: App\Controller\ContactController::index
+    controller:  App\Controller\ContactController::listContacts
+    methods: GET
+get_one_contact: 
+    path: /contact/{id}
+    controller: App\Controller\ContactController::readContact
+    methods: GET
+create_contact:
+    path: /contact/create
+    controller: App\Controller\ContactController::createContact
+    methods: POST
+delete_contact:
+    path: /contact/delete/{id}
+    controller: App\Controller\ContactController::deleteContact
+    methods: DELETE
 
-app_contact_algerie:
-    path: /algerie
-    controller: App\Controller\ContactController::algerie
-
-app_contact_senegal:
-    path: /senegal
-    controller: App\Controller\ContactController::senegal
-
-app_contact_niger:
-    path: /niger
-    controller: App\Controller\ContactController::niger
-
-app_contact_benin:
-    path: /benin
-    controller: App\Controller\ContactController::benin
 
 
 #carriere
