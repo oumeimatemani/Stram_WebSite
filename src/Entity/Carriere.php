@@ -15,28 +15,26 @@ class Carriere
     private ?int $id = null;
 
     #[ORM\Column(length: 255)]
-    private ?string $typeCandidature = null;
+    private ?string $name = null;
 
     #[ORM\Column(length: 255)]
-    private ?string $origineCandidature = null;
+    private ?string $mail = null;
 
-    #[ORM\Column(length: 255)]
-    private ?string $nomPrenom = null;
-
-    #[ORM\Column(length: 255)]
-    private ?string $adresseMail = null;
+    #[ORM\Column]
+    private ?bool $isPosteOffer = null;
 
     #[ORM\Column(length: 255)]
     private ?string $cv = null;
 
-    #[ORM\Column(length: 255)]
-    private ?string $lettreMotivation = null;
+    #[ORM\Column(length: 255, nullable: true)]
+    private ?string $motivationLetter = null;
 
-    #[ORM\Column(length: 255)]
-    private ?string $referenceOffre = null;
+    #[ORM\Column(type: Types::TEXT, nullable: true)]
+    private ?string $message = null;
 
-    #[ORM\Column(type: Types::TEXT)]
-    private ?string $commentaire = null;
+   
+
+
 
 
 
@@ -45,50 +43,38 @@ class Carriere
         return $this->id;
     }
 
-    public function getTypeCandidature(): ?string
+    public function getName(): ?string
     {
-        return $this->typeCandidature;
+        return $this->name;
     }
 
-    public function setTypeCandidature(string $typeCandidature): static
+    public function setName(string $name): static
     {
-        $this->typeCandidature = $typeCandidature;
+        $this->name = $name;
 
         return $this;
     }
 
-    public function getOrigineCandidature(): ?string
+    public function getMail(): ?string
     {
-        return $this->origineCandidature;
+        return $this->mail;
     }
 
-    public function setOrigineCandidature(string $origineCandidature): static
+    public function setMail(string $mail): static
     {
-        $this->origineCandidature = $origineCandidature;
+        $this->mail = $mail;
 
         return $this;
     }
 
-    public function getNomPrenom(): ?string
+    public function isPosteOffer(): ?bool
     {
-        return $this->nomPrenom;
+        return $this->isPosteOffer;
     }
 
-    public function setNomPrenom(string $nomPrenom): static
+    public function setIsPosteOffer(bool $type): static
     {
-        $this->nomPrenom = $nomPrenom;
-
-        return $this;
-    }
-
-    public function getAdresseMail(): ?string
-    {
-        return $this->adresseMail;
-    }
-
-    public function setAdresseMail(string $adresseMail): static
-    {
-        $this->adresseMail = $adresseMail;
+        $this->isPosteOffer = $type;
 
         return $this;
     }
@@ -105,39 +91,29 @@ class Carriere
         return $this;
     }
 
-    public function getLettreMotivation(): ?string
+    public function getMotivationLetter(): ?string
     {
-        return $this->lettreMotivation;
+        return $this->motivationLetter;
     }
 
-    public function setLettreMotivation(string $lettreMotivation): static
+    public function setMotivationLetter(?string $motivationLetter): static
     {
-        $this->lettreMotivation = $lettreMotivation;
+        $this->motivationLetter = $motivationLetter;
 
         return $this;
     }
 
-    public function getReferenceOffre(): ?string
+    public function getMessage(): ?string
     {
-        return $this->referenceOffre;
+        return $this->message;
     }
 
-    public function setReferenceOffre(string $referenceOffre): static
+    public function setMessage(?string $message): static
     {
-        $this->referenceOffre = $referenceOffre;
+        $this->message = $message;
 
         return $this;
     }
 
-    public function getCommentaire(): ?string
-    {
-        return $this->commentaire;
-    }
-
-    public function setCommentaire(string $commentaire): static
-    {
-        $this->commentaire = $commentaire;
-
-        return $this;
-    }
+  
 }

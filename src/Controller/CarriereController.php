@@ -3,83 +3,208 @@
 namespace App\Controller;
 
 use App\Entity\Carriere; 
-use App\Form\CarriereType;
 use App\Repository\CarriereRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\Serializer\Normalizer\AbstractNormalizer;
+use Symfony\Component\Serializer\SerializerInterface;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
-
+use Symfony\Component\Validator\Validator\ValidatorInterface;
+use Symfony\Component\String\Slugger\SluggerInterface;
+use Symfony\Component\String\UnicodeString;
+use Symfony\Component\Filesystem\Filesystem;
 class CarriereController extends AbstractController
 {
-    #[Route('/carriere', name: 'carriere_index')]
-    public function index(): Response
-    {
-        return $this->render('carriere/formulaire.html.twig', [
-            'controller_name' => 'CarriereController',
+    public function getAllSpontanious(CarriereRepository $repository, SerializerInterface $serializer): Response {
+        $career = $repository->findAllWithFalsePosteOffer();
+
+        // Serialize the results to include the full path of the photo
+        $serializedCareer = $serializer->normalize($career, null, [
+            AbstractNormalizer::ATTRIBUTES => [
+                'id',
+                'name',
+                'mail',
+                'cv',
+                'motivationLetter',
+                'message'
+            ],
         ]);
+        return $this->json($serializedCareer, Response::HTTP_OK);
     }
 
- 
-    /**
-     * @Route("/carriereAdmin", name="carriereAdmin")
-     */
-    public function carriereAdmin(): Response
-    {
+    public function createSpontaneousCareer(Request $request, 
+        SerializerInterface $serializer,
+        ValidatorInterface $validator,
+        SluggerInterface $slugger,
+     CarriereRepository $carriereRepository): Response
+     {
+        // Get data from the request sent by Angular
+        $data = $request->request->all();
+        
+        $cv = $request->files->get('cv');
+        $letter = $request->files->get('motivationLetter');
+        $career = new Carriere();
+        if ($cv) {
+            $originalFilename = pathinfo($cv->getClientOriginalName(), PATHINFO_FILENAME);
+            $safeFilename = $slugger->slug(new UnicodeString($originalFilename));
+            $newFilename = $safeFilename . '-' . uniqid() . '.' . $cv->guessExtension();
 
-        $em = $this->getDoctrine()->getManager()->getRepository(Carriere::class); 
+            try {
+                $cv->move(
+                    $this->getParameter('candidate_cv_directory'),
+                    $newFilename
+                );
+            } catch (FileException $e) {
+                return $this->json(['error' => 'File upload failed'], Response::HTTP_INTERNAL_SERVER_ERROR);
+            }
 
-        $carriere = $em->findAll(); 
-        return $this->render('carriere/CarriereBack.html.twig', ['listCa' => $carriere]);
-    }
+            $career->setCv($newFilename);
+        }
+        if ($letter) {
+            $originalFilename2 = pathinfo($letter->getClientOriginalName(), PATHINFO_FILENAME);
+            $safeFilename2 = $slugger->slug(new UnicodeString($originalFilename2));
+            $newFilename2 = $safeFilename2 . '-' . uniqid() . '.' . $letter->guessExtension();
 
+            try {
+                $letter->move(
+                    $this->getParameter('candidate_letter_directory'),
+                    $newFilename2
+                );
+            } catch (FileException $e) {
+                return $this->json(['error' => 'File upload failed'], Response::HTTP_INTERNAL_SERVER_ERROR);
+            }
 
-    public function submit(Request $request): Response
-    {
-        // Traitement des données soumises par le formulaire
-        $typeCandidature = $request->request->get('typeCandidature');
-        $origineCandidature = $request->request->get('origineCandidature');
-        $nomPrenom = $request->request->get('nomPrenom');
-        $adresseMail = $request->request->get('adresseMail');
-        $cvFile = $request->files->get('cv');
-        $lettreMotivationFile = $request->files->get('lettreMotivation');
-        $referenceOffre = $request->request->get('referenceOffre');
-        $commentaire = $request->request->get('commentaire');
-
-        // Valider les données soumises (vous pouvez utiliser les validateurs de Symfony)
-        // Enregistrer la candidature dans la base de données si nécessaire
-        // Si vous avez créé une entité "Carriere" et configuré Doctrine, vous pouvez utiliser l'EntityManager pour persister l'entité dans la base de données.
-
-        // Rediriger l'utilisateur vers une page de confirmation ou afficher un message de succès
-        return $this->redirectToRoute('confirmation_page');
-    }
-
-
-
-    
-    /**
-     * @Route("/ajouterCarriere", name="ajouterCarriere")
-     */
-    public function ajouterCarriere(Request $request): Response
-    {
-        $carriere = new Carriere();
-        $form = $this->createForm(CarriereType::class, $carriere);
-        $form->handleRequest($request);
-
-        if ($form->isSubmitted() && $form->isValid()) {
-            $em = $this->getDoctrine()->getManager();
-            $em->persist($carriere);
-            $em->flush();
-
-            $this->addFlash('success', 'La carrierea été ajoutée avec succès.');
-            return $this->redirectToRoute('carriereAdmin');
+            $career->setMotivationLetter($newFilename2);
         }
 
-        return $this->render(
-            'carriere/ajoutCarriere.html.twig',
-            ['Ca' => $form->createView()]
-        );
+        $career->setName($data['name']);
+        $career->setMail($data['mail']);
+        $career->setMessage($data['message']);
+
+        // Set isPosteOffer to null
+        $career->setIsPosteOffer(false);
+
+        // Persist the new Carriere entity
+        $entityManager = $this->getDoctrine()->getManager();
+        $entityManager->persist($career);
+        $entityManager->flush();
+
+        // Serialize the created career for the response
+        $serializedCareer = $serializer->normalize($career, null, [
+            AbstractNormalizer::ATTRIBUTES => [
+                'id',
+                'name',
+                'mail',
+                'cv',
+                'motivationLetter',
+                'message'
+            ],
+        ]);
+
+        return $this->json($serializedCareer, Response::HTTP_CREATED);
     }
+
+    public function getCarriereById(int $id, CarriereRepository $carriereRepository, SerializerInterface $serializer): Response
+    {
+        $carriere = $carriereRepository->find($id);
+
+        if (!$carriere) {
+            throw new NotFoundHttpException('Carriere not found');
+        }
+
+        $serializedCarriere = $serializer->normalize($carriere, null, [
+            AbstractNormalizer::ATTRIBUTES => [
+                'id',
+                'name',
+                'mail',
+                'cv',
+                'motivationLetter',
+                'message'
+            ],
+        ]);
+
+        return $this->json($serializedCarriere, Response::HTTP_OK);
+    }
+
+
+
+    public function updateCarriere(int $id, Request $request, CarriereRepository $carriereRepository, SerializerInterface $serializer): Response
+    {
+        $carriere = $carriereRepository->find($id);
+
+        if (!$carriere) {
+            throw $this->createNotFoundException('Carriere not found');
+        }
+
+        // Get updated data from the request
+        $data = json_decode($request->getContent(), true);
+
+        // Update Carriere properties if they are present in the request data
+        if (isset($data['name'])) {
+            $carriere->setName($data['name']);
+        }
+
+        if (isset($data['mail'])) {
+            $carriere->setMail($data['mail']);
+        }
+
+        if (isset($data['cv'])) {
+            $carriere->setCv($data['cv']);
+        }
+
+        if (isset($data['motivationLetter'])) {
+            $carriere->setMotivationLetter($data['motivationLetter']);
+        }
+
+        if (isset($data['message'])) {
+            $carriere->setMessage($data['message']);
+        }
+
+        $entityManager = $this->getDoctrine()->getManager();
+        $entityManager->flush();
+
+        $serializedCarriere = $serializer->normalize($carriere, null, [
+            AbstractNormalizer::ATTRIBUTES => [
+                'id',
+                'name',
+                'mail',
+                'cv',
+                'motivationLetter',
+                'message'
+            ],
+        ]);
+
+        return $this->json($serializedCarriere, Response::HTTP_OK);
+    }
+
+
+
+    public function deleteSpontanious(int $id, CarriereRepository $carriereRepository,  Filesystem $filesystem): Response
+    {
+        $entityManager = $this->getDoctrine()->getManager();
+        $carriere = $carriereRepository->find($id);
+
+        if (!$carriere) {
+            throw $this->createNotFoundException('Carriere not found');
+        }
+        $cvFilename = $carriere->getCv();
+        $letterFilename = $carriere->getMotivationLetter();
+        $cvPath = $this->getParameter('candidate_cv_directory') . $cvFilename;
+        $entityManager->remove($carriere);
+        $entityManager->flush();
+        if ($filesystem->exists($cvPath)) {
+            $filesystem->remove($cvPath);
+        }
+        if($letterFilename){
+            $letterPath = $this->getParameter('candidate_letter_directory') . $letterFilename;
+        if ($filesystem->exists($letterPath)) {
+            $filesystem->remove($letterPath);
+        }
+        }
+        return $this->json(['message' => 'Candidate and associated cv deleted'], Response::HTTP_OK);
+    }
+
     
 
 }

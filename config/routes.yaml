@@ -209,42 +209,19 @@ delete_contact:
     controller: App\Controller\ContactController::deleteContact
     methods: DELETE
 
-
-
 #carriere
-carriere_index:
-    path: /carriere
-    controller: App\Controller\CarriereController::index
+carriere_get_all_spontanious:
+    path: /carrier/spontanious
+    controller: App\Controller\CarriereController::getAllSpontanious
     methods: [GET]
-
-carriereAdmin:
-    path: /carriereAdmin
-    controller: App\Controller\CarriereController::carriereAdmin
-    methods: [GET]
-
-ajouterCarriere:
-    path: /ajouterCarriere
-    controller: App\Controller\CarriereController::ajouterCarriere
-    methods: [GET, POST]
-
-modifierCarriere:
-    path: /modifierCarriere/{id}
-    controller: App\Controller\CarriereController::modifierCarriere
-
-suppressionCarriere:
-    path: /suppressionCarriere/{id}
-    controller: App\Controller\CarriereController::suppressionCarriere
-
-
-
-
-
-
-
-carriere_submit:
-    path: /candidature/submit
-    controller: App\Controller\CarriereController::submit
+create_spontanious_candidate:
+    path: /carrier/spontanious/create
+    controller: App\Controller\CarriereController::createSpontaneousCareer
     methods: [POST]
+delete_spontanious_candidate:
+    path: /carrier/spontanious/delete/{id}
+    controller: App\Controller\CarriereController::deleteSpontanious
+    methods: [DELETE]
 
 offres : 
     path: /offres

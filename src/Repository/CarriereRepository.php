@@ -21,28 +21,11 @@ class CarriereRepository extends ServiceEntityRepository
         parent::__construct($registry, Carriere::class);
     }
 
-//    /**
-//     * @return Carriere[] Returns an array of Carriere objects
-//     */
-//    public function findByExampleField($value): array
-//    {
-//        return $this->createQueryBuilder('c')
-//            ->andWhere('c.exampleField = :val')
-//            ->setParameter('val', $value)
-//            ->orderBy('c.id', 'ASC')
-//            ->setMaxResults(10)
-//            ->getQuery()
-//            ->getResult()
-//        ;
-//    }
-
-//    public function findOneBySomeField($value): ?Carriere
-//    {
-//        return $this->createQueryBuilder('c')
-//            ->andWhere('c.exampleField = :val')
-//            ->setParameter('val', $value)
-//            ->getQuery()
-//            ->getOneOrNullResult()
-//        ;
-//    }
+    public function findAllWithFalsePosteOffer(): array
+    {
+        return $this->createQueryBuilder('c')
+            ->andWhere('c.isPosteOffer = FALSE')
+            ->getQuery()
+            ->getResult();
+    }
 }
