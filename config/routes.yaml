@@ -250,6 +250,10 @@ create_candidate_by_job_offer:
     path: /carrier/offer/create/{id}
     controller: App\Controller\CarriereController::createCandidateByJobOffer
     methods: [POST]
+get_applications_by_job_offer:
+    path: /carrier/applications/{id}
+    controller: App\Controller\CarriereController::getApplicationsByJobOffer
+    methods: [GET]
 
 #clients 
 clients:

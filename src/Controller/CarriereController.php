@@ -33,13 +33,30 @@ class CarriereController extends AbstractController
         ]);
         return $this->json($serializedCareer, Response::HTTP_OK);
     }
-/*
-    public function getAllJobOffers(JobRepository $repository,SerializerInterface $serializer){
-        $jobs= $repository->findAll();
-        return $this->json($serializer->serialize($jobs, 'json', ['groups' => 'job']), Response::HTTP_OK);
-
+    public function getApplicationsByJobOffer(int $id,
+     JobRepository $jobRepository,
+     CarriereRepository $repository,
+     SerializerInterface $serializer): Response {
+        $job = $jobRepository->find($id);
+        if (!$job) {
+            return new Response('Job not found', Response::HTTP_NOT_FOUND);
+        }
+    
+        
+        $career = $repository->findByJob($id);
+        $serializedCareer = $serializer->normalize($career, null, [
+            AbstractNormalizer::ATTRIBUTES => [
+                'id',
+                'name',
+                'mail',
+                'cv',
+                'motivationLetter',
+                'message'
+            ],
+        ]);
+        return $this->json($serializedCareer, Response::HTTP_OK);
     }
-*/
+
     public function getAllJobOffers(JobRepository $repository, SerializerInterface $serializer){
         $jobs= $repository->findAll();
         

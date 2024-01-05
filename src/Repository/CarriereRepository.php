@@ -20,7 +20,14 @@ class CarriereRepository extends ServiceEntityRepository
     {
         parent::__construct($registry, Carriere::class);
     }
-
+    public function findByJob($jobId)
+    {
+        return $this->createQueryBuilder('c')
+            ->andWhere('c.job = :jobId')
+            ->setParameter('jobId', $jobId)
+            ->getQuery()
+            ->getResult();
+    }
     public function findAllWithFalsePosteOffer(): array
     {
         return $this->createQueryBuilder('c')
