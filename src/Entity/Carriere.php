@@ -32,6 +32,9 @@ class Carriere
     #[ORM\Column(type: Types::TEXT, nullable: true)]
     private ?string $message = null;
 
+    #[ORM\ManyToOne(inversedBy: 'candidates')]
+    private ?Job $job = null;
+
    
 
 
@@ -111,6 +114,18 @@ class Carriere
     public function setMessage(?string $message): static
     {
         $this->message = $message;
+
+        return $this;
+    }
+
+    public function getJob(): ?Job
+    {
+        return $this->job;
+    }
+
+    public function setJob(?Job $job): static
+    {
+        $this->job = $job;
 
         return $this;
     }

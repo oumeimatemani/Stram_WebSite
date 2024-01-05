@@ -209,7 +209,7 @@ delete_contact:
     controller: App\Controller\ContactController::deleteContact
     methods: DELETE
 
-#carriere
+#spontanious candidature
 carriere_get_all_spontanious:
     path: /carrier/spontanious
     controller: App\Controller\CarriereController::getAllSpontanious
@@ -217,16 +217,40 @@ carriere_get_all_spontanious:
 create_spontanious_candidate:
     path: /carrier/spontanious/create
     controller: App\Controller\CarriereController::createSpontaneousCareer
-    methods: [POST]
+    methods: POST
 delete_spontanious_candidate:
     path: /carrier/spontanious/delete/{id}
     controller: App\Controller\CarriereController::deleteSpontanious
-    methods: [DELETE]
+    methods: DELETE
 
-offres : 
-    path: /offres
-    controller: App\Controller\OffresController::index
-    methods: [GET]
+#jobOffers
+get_all_jobs:
+    path: /carrier/jobs
+    controller: App\Controller\CarriereController::getAllJobOffers
+    methods: GET
+get_one_job: 
+    path: /carrier/job/{id}
+    controller: App\Controller\CarriereController::getOneJob
+    methods: GET
+create_job:
+    path: /carrier/job/create
+    controller: App\Controller\CarriereController::createJob
+    methods: POST
+update_job:
+    path: /carrier/job/update/{id}
+    controller: App\Controller\CarriereController::updateJob
+    methods: [PUT,PATCH]
+hide_job_offer:
+    path: /carrier/job/hide/{id}
+    controller: App\Controller\CarriereController::hideJob
+    methods: [PUT,PATCH]
+
+#candidature by job offer
+create_candidate_by_job_offer:
+    path: /carrier/offer/create/{id}
+    controller: App\Controller\CarriereController::createCandidateByJobOffer
+    methods: [POST]
+
 
 
 #clients 
