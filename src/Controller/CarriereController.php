@@ -4,6 +4,7 @@ namespace App\Controller;
 
 use App\Entity\Carriere;
 use App\Entity\Job;  
+use App\DTO\JobDTO;
 use App\Repository\CarriereRepository;
 use App\Repository\JobRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -32,19 +33,51 @@ class CarriereController extends AbstractController
         ]);
         return $this->json($serializedCareer, Response::HTTP_OK);
     }
-
-    public function getAllJobOffers(JobRepository $repository){
+/*
+    public function getAllJobOffers(JobRepository $repository,SerializerInterface $serializer){
         $jobs= $repository->findAll();
-        return $this->json($jobs, Response::HTTP_OK);
+        return $this->json($serializer->serialize($jobs, 'json', ['groups' => 'job']), Response::HTTP_OK);
+
+    }
+*/
+    public function getAllJobOffers(JobRepository $repository, SerializerInterface $serializer){
+        $jobs= $repository->findAll();
+        
+        $serializedJobs = $serializer->normalize($jobs, null, [
+            AbstractNormalizer::ATTRIBUTES => [
+                'id',
+                'title',
+                'ref',
+                'isHide',
+                'description',
+                'shortDescription',
+            ],
+        ]);
+        
+        return $this->json($serializedJobs, Response::HTTP_OK);
     }
 
-    public function getOneJob(int $id,JobRepository $repository): Response
+    public function getOneJob(int $id,JobRepository $repository , SerializerInterface $serializer): Response
     {
         $job = $repository->find($id);
         if (!$job) {
             return $this->json(['status' => 'error, job not found!'], Response::HTTP_NOT_FOUND);
         }
-        return $this->json($job);
+        $serializedJobs = $serializer->normalize($job, null, [
+            AbstractNormalizer::ATTRIBUTES => [
+                'id',
+                'title',
+                'ref',
+                'description',
+                'shortDescription',
+                'requirment1',
+                'requirment2',
+                'requirment3',
+                'requirment4',
+                'requirment5',
+            ],
+        ]);
+        return $this->json($serializedJobs);
     }
 
     public function createJob(Request $request): Response
@@ -219,8 +252,7 @@ class CarriereController extends AbstractController
         JobRepository $jobRepository,
         CarriereRepository $carriereRepository): Response
      {
-        $job = $jobRepository->find([$id]);
-
+        $job = $jobRepository->find($id);
         $data = $request->request->all();
         $cv = $request->files->get('cv');
         $letter = $request->files->get('motivationLetter');

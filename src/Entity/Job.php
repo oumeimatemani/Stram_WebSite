@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Entity;
+use Symfony\Component\Serializer\Annotation\Groups;
 
 use App\Repository\JobRepository;
 use Doctrine\Common\Collections\ArrayCollection;
@@ -44,6 +45,7 @@ class Job
     private ?string $requirment5 = null;
 
     #[ORM\OneToMany(mappedBy: 'job', targetEntity: Carriere::class)]
+    #[Groups(['job'])]
     private Collection $candidates;
 
     #[ORM\Column(nullable: true)]

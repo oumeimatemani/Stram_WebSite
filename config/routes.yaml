@@ -209,7 +209,7 @@ delete_contact:
     controller: App\Controller\ContactController::deleteContact
     methods: DELETE
 
-#spontanious candidature
+#spontanious applications
 carriere_get_all_spontanious:
     path: /carrier/spontanious
     controller: App\Controller\CarriereController::getAllSpontanious
@@ -245,13 +245,11 @@ hide_job_offer:
     controller: App\Controller\CarriereController::hideJob
     methods: [PUT,PATCH]
 
-#candidature by job offer
+#Application by job offer
 create_candidate_by_job_offer:
     path: /carrier/offer/create/{id}
     controller: App\Controller\CarriereController::createCandidateByJobOffer
     methods: [POST]
-
-
 
 #clients 
 clients:
