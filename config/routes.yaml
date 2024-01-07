@@ -178,6 +178,31 @@ delete_Partner:
     path: /partner/delete/{id}
     controller: App\Controller\PartnerController::deletePartnerById
     methods: DELETE
+
+#clients 
+clients:
+    path: /client
+    controller: App\Controller\ClientsController::index
+    methods: GET
+
+get_client_by_id:
+    path: /client/{id}
+    controller: App\Controller\ClientsController::getOne
+    methods: GET
+
+create_client:
+    path: /client/create
+    controller: App\Controller\ClientsController::addClient
+    methods: POST
+
+update_client:
+    path: /client/update/{id}
+    controller: App\Controller\ClientsController::updateClient
+
+delete_client:
+    path: /client/delete/{id}
+    controller: App\Controller\ClientsController::deleteClient
+    methods: DELETE
 #newslette
 get_all_newsletter:
     path: /newsletter
@@ -255,50 +280,8 @@ get_applications_by_job_offer:
     controller: App\Controller\CarriereController::getApplicationsByJobOffer
     methods: [GET]
 
-#clients 
-clients:
-    path: /clients
-    controller: App\Controller\ClientsController::index
-
-clients_admin:
-    path: /clientsAdmin
-    controller: App\Controller\ClientsController::clientsAdmin
-    methods: [GET]
-
-ajouterClient:
-    path: /ajouterClient
-    controller: App\Controller\ClientsController::ajouterClient
-    methods: [GET, POST]
 
 
-modifierClient:
-    path: /modifierClient/{id}
-    controller: App\Controller\ClientsController::modifierClient
-
-suppressionClient:
-    path: /suppressionClient/{id}
-    controller: App\Controller\ClientsController::suppressionClient
-
-
-
-#métiers
-metiers:
-    path: /metiers
-    controller: App\Controller\MetierController::index
-
-ajouterMetier:
-    path: /ajouterMetier
-    controller: App\Controller\MetierController::ajouterMetier
-    methods: [GET, POST]
-
-
-modifierMetier:
-    path: /modifierMetier/{id}
-    controller: App\Controller\MetierController::modifierMetier
-
-suppressionMetier:
-    path: /suppressionMetier/{id}
-    controller: App\Controller\MetierController::suppressionMetier
 
 
 #projets 
@@ -321,51 +304,6 @@ suppressionProjet:
     controller: App\Controller\ProjetController::suppressionProjet
 
 
-#affichage
-
-
-
-stram:
-    path: /gestionStram
-    controller: App\Controller\StramController::gestionStram
-
-
-gestion_Contact:
-    path: /gestionContact
-    controller: App\Controller\GestionContactController::gestionContact
-
-
-# Route pour afficher la page de gestion des contacts
-gestion_contact:
-    path: /gestionContact
-    controller: App\Controller\GestionContactController::gestionContact
-    methods: ['GET']
-
-
-# Route pour modifier les coordonnées de la Tunisie
-modifier_contact_tunisie:
-    path: /modifierContactTunisie
-    controller: App\Controller\GestionContactController::modifierContactTunisie
-    methods: ['GET', 'POST']
-
-# Route pour supprimer les coordonnées de la Tunisie
-supprimer_contact_tunisie:
-    path: /supprimerContactTunisie
-    controller: App\Controller\GestionContactController::supprimerContactTunisie
-    methods: ['GET']
-
-
-# Route pour modifier les coordonnées de l'Algerie
-modifier_contact_algerie:
-    path: /modifierContactAlgerie
-    controller: App\Controller\GestionContactController::modifierContactAlgerie
-    methods: ['GET', 'POST']
-
-# Route pour supprimer les coordonnées de l'Algerie
-supprimer_contact_algerie:
-    path: /supprimerContactAlgerie
-    controller: App\Controller\GestionContactController::supprimerContactAlgerie
-    methods: ['GET']
 
 
 

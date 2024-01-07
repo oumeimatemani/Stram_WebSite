@@ -10,6 +10,7 @@ parameters:
     servives_content_logos: '%kernel.project_dir%/public/images/services/logos/'
     team_photos_directory: '%kernel.project_dir%/public/images/team/'
     partner_photos_directory: '%kernel.project_dir%/public/images/partner/'
+    client_photos_directory: '%kernel.project_dir%/public/images/client/'
     candidate_cv_directory: '%kernel.project_dir%/public/cv/'
     candidate_letter_directory: '%kernel.project_dir%/public/letter/'
 services:

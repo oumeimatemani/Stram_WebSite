@@ -11,6 +11,14 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\DependencyInjection\Loader\Configurator\form;
+use Symfony\Component\HttpFoundation\JsonResponse;
+use Symfony\Component\Serializer\SerializerInterface;
+use Symfony\Component\Serializer\Normalizer\AbstractNormalizer;
+use Symfony\Component\Validator\Validator\ValidatorInterface;
+use Symfony\Component\String\Slugger\SluggerInterface;
+use Symfony\Component\String\UnicodeString;
+use Symfony\Component\Filesystem\Filesystem;
+
 
 
 class ClientsController extends AbstractController
@@ -23,54 +31,66 @@ class ClientsController extends AbstractController
 
         $em = $this->getDoctrine()->getManager()->getRepository(Client::class); 
 
-        $client = $em->findAll(); // Select * from clients;
-        return $this->render('clients/index.html.twig', ['listC' => $client]);
+        $clients = $em->findAll(); 
+        return $this->json($clients,Response::HTTP_OK);
     }
 
-    /**
-     * @Route("/clientsAdmin", name="display_clientsAdmin")
-     */
-    public function clientsAdmin(): Response
-    {
+    public function getOne(int $id, ClientRepository $repository, SerializerInterface $serializer): Response {
+        $Client = $repository->find($id);
 
-        $em = $this->getDoctrine()->getManager()->getRepository(Client::class); 
-
-        $client = $em->findAll(); // Select * from clients;
-        return $this->render('clients/clientBack.html.twig', ['listC' => $client]);
-    }
-
-
-
-    /**
-     * @Route("/ajouterClient", name="ajouterClient")
-     */
-
-    public function ajouterClient(Request $request): Response
-    {
-
-        $client = new Client();
-        $form = $this->createForm(ClientType::class, $client);
-        $form->handleRequest($request);
-
-        if ($form->isSubmitted() && $form->isValid()) {
-
-            $fileUpload = $form->get('logo')->getData();
-            $fileName = md5(uniqid()) . '.' . $fileUpload->guessExtension();
-            $fileUpload->move($this->getParameter('kernel.project_dir') . '/public/uploads', $fileName);
-            $client->setLogo($fileName);
-
-
-            $em = $this->getDoctrine()->getManager();
-            $em->persist($client);
-            $em->flush();
-            $this->addFlash('success', 'Le client  a été ajouté avec succès.');
-            return $this->redirectToRoute('clients_admin');
+        if (!$Client) {
+            return $this->json(['message' => 'Client not found'], Response::HTTP_NOT_FOUND);
         }
+        $serializedClient = $serializer->normalize($Client, null, [
+            AbstractNormalizer::ATTRIBUTES => [
+                'id',
+                'nom',
+                'logo',
+                'secteur',
+                'about'
+            ],
+        ]);
+        return $this->json($serializedClient, Response::HTTP_OK);
+    }
 
-        return $this->render(
-            'clients/ajoutClient.html.twig',
-            ['C' => $form->createView(), 'c' => $client]
+    public function addClient(Request $request,
+        EntityManagerInterface $entityManager,
+        SerializerInterface $serializer,
+        ValidatorInterface $validator,
+        SluggerInterface $slugger): Response
+     {
+        $data = $request->request->all();
+        $file = $request->files->get('logo');
+        $client = $serializer->denormalize($data, Client::class);
 
+        $errors = $validator->validate($client);
+        if (count($errors) > 0) {
+            return $this->json(['errors' => $errors], Response::HTTP_BAD_REQUEST);
+        }
+        if ($file) {
+            $originalFilename = pathinfo($file->getClientOriginalName(), PATHINFO_FILENAME);
+            $safeFilename = $slugger->slug(new UnicodeString($originalFilename));
+            $newFilename = $safeFilename . '-' . uniqid() . '.' . $file->guessExtension();
+
+            try {
+                $file->move(
+                    $this->getParameter('client_photos_directory'),
+                    $newFilename
+                );
+            } catch (FileException $e) {
+                return $this->json(['error' => 'File upload failed'], Response::HTTP_INTERNAL_SERVER_ERROR);
+            }
+
+            $client->setLogo($newFilename);
+        }
+        $entityManager->persist($client);
+        $entityManager->flush();
+
+        return $this->json(
+            $client,
+            Response::HTTP_CREATED,
+            [],
+            [AbstractNormalizer::GROUPS => 'client']
         );
     }
 
@@ -79,53 +99,75 @@ class ClientsController extends AbstractController
     /**
      * @Route("/modifierClient/{id}", name="modifierClient")
      */
-    public function modifierClient(Request $request, $id): Response
+    public function updateClient(int $id,
+        Request $request,
+        ClientRepository $repository,
+        EntityManagerInterface $entityManager,
+        Filesystem $filesystem,
+        SerializerInterface $serializer): Response
     {
-        $entityManager = $this->getDoctrine()->getManager();
-        $client = $entityManager->getRepository(Client::class)->find($id);
+        $client = $repository->find($id);
 
         if (!$client) {
-            throw $this->createNotFoundException('Client not found');
+            return $this->json(['message' => 'client not found'], Response::HTTP_NOT_FOUND);
         }
 
-        $form = $this->createForm(ClientType::class, $client);
-        $form->handleRequest($request);
+        $data = json_decode($request->getContent(), true);
+        $newPhoto = $request->files->get('logo');
 
-        if ($form->isSubmitted() && $form->isValid()) {
-            $fileUpload = $form->get('logo')->getData();
-            $fileName = md5(uniqid()) . '.' . $fileUpload->guessExtension();
-            $fileUpload->move($this->getParameter('kernel.project_dir') . '/public/uploads', $fileName);
-            $client->setLogo($fileName);
+        // If there is a new photo, delete the previous photo and update the client
+        if ($newPhoto) {
+            // Get the photo filename and delete the previous photo
+            $previousPhoto = $client->getLogo();
+            if ($previousPhoto) {
+                $photoPath = $this->getParameter('client_photos_directory') . $previousPhoto;
+                if ($filesystem->exists($photoPath)) {
+                    $filesystem->remove($photoPath);
+                }
+            }
 
-            $em = $this->getDoctrine()->getManager();
-            $em->persist($client);
-            $em->flush();
-            $this->addFlash('success', 'Le client  a été modifié avec succès.');
-            return $this->redirectToRoute('clients_admin');
+            // Handle the new file upload
+            $newFilename = $this->handleFileUpload($newPhoto);
+            $client->setLogo($newFilename);
         }
 
-        return $this->render(
-            'clients/modifClient.html.twig',
-            ['C' => $form->createView()]
-        );
+        // Update the other attributes
+        if(isset($data["nom"]) && $data['nom']!=null){
+            $client->setNom($data["nom"]);
+        }
+        if(isset($data["about"]) && $data['about']!=null){
+            $client->setAbout($data["about"]);
+        }
+        if(isset($data["secteur"]) && $data['secteur']!=null){
+            $client->setSecteur($data["secteur"]);
+        }
+
+        $entityManager->flush();
+
+        return $this->json(['message' => 'client updated'], Response::HTTP_OK);
     }
+
 
 
     /**
      * @Route("/suppressionClient/{id}", name="suppressionClient")
      */
 
-     public function suppressionClient(EntityManagerInterface $entityManager, ClientRepository $clientRepository, $id): Response
+     public function deleteClient(EntityManagerInterface $entityManager, ClientRepository $clientRepository, int $id, Filesystem $filesystem): Response
      {
          $client = $clientRepository->find($id);
      
          if (!$client) {
              throw $this->createNotFoundException('Client introuvable ');
          }
-     
+         $photoFilename = $client->getLogo();
          $entityManager->remove($client);
          $entityManager->flush();
+         $photoPath = $this->getParameter('client_photos_directory') . $photoFilename;
+        if ($filesystem->exists($photoPath)) {
+            $filesystem->remove($photoPath);
+        }
      
-         return $this->redirectToRoute('clients_admin');
+         return $this->json(['message'=>'deleted'],Response::HTTP_OK);
      }
 }

@@ -3,6 +3,7 @@
 namespace App\Entity;
 
 use App\Repository\ClientRepository;
+use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 
 #[ORM\Entity(repositoryClass: ClientRepository::class)]
@@ -25,8 +26,11 @@ class Client
     #[ORM\Column(length: 255)]
     private ?string $secteur = null;
 
-    #[ORM\Column(length: 255)]
+    #[ORM\Column(length: 255, nullable: true)]
     private ?string $service = null;
+
+    #[ORM\Column(type: Types::TEXT, nullable: true)]
+    private ?string $about = null;
 
     public function getId(): ?int
     {
@@ -77,6 +81,18 @@ class Client
     public function setService(string $service): static
     {
         $this->service = $service;
+
+        return $this;
+    }
+
+    public function getAbout(): ?string
+    {
+        return $this->about;
+    }
+
+    public function setAbout(?string $about): static
+    {
+        $this->about = $about;
 
         return $this;
     }
