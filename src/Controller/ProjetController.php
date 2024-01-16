@@ -3,110 +3,270 @@
 namespace App\Controller;
 
 
-use App\Entity\Projet;
-use App\Entity\Metier;
+use App\Entity\Pays;
+use App\Entity\Project;
+use App\Repository\ProjectRepository;
 use App\Form\ProjetType;
-use App\Repository\ClientRepository;
-use App\Repository\ProjetRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
+use Symfony\Component\Serializer\SerializerInterface;
+use Symfony\Component\Serializer\Normalizer\AbstractNormalizer;
+use Symfony\Component\Validator\Validator\ValidatorInterface;
+
+use Symfony\Component\String\Slugger\SluggerInterface;
+use Symfony\Component\String\UnicodeString;
+use Symfony\Component\Filesystem\Filesystem;
+use Symfony\Component\HttpFoundation\File\UploadedFile;
+
+
 class ProjetController extends AbstractController
 {
+    private $entityManager;
 
-    /**
-     * @Route("/projets", name="display_projets")
-     */
-    public function index(): Response
+    public function __construct(EntityManagerInterface $entityManager  )
     {
-
-        $em = $this->getDoctrine()->getManager()->getRepository(Projet::class); // ENTITY MANAGER ELY FIH FONCTIONS PREDIFINES
-
-        $projet = $em->findAll(); // Select * from projets;
-        return $this->render('projet/projetBack.html.twig', ['listP' => $projet]);
+        $this->entityManager = $entityManager;
     }
 
-
-    /**
-     * @Route("/ajouterProjet", name="ajouterProjet")
-     */
-    public function ajouterProjet(Request $request): Response
+    public function getAllOne(ProjectRepository $repository): Response
     {
-        $projet = new Projet();
-        $form = $this->createForm(ProjetType::class, $projet);
-    
-        // Fetch the list of available Metiers from the database
-        $metiers = $this->getDoctrine()->getRepository(Metier::class)->findAll();
-    
-        $form->handleRequest($request);
-    
-        if ($form->isSubmitted() && $form->isValid()) {
-            $em = $this->getDoctrine()->getManager();
-            $em->persist($projet);
-            $em->flush();
-            $this->addFlash('success', 'Le projet a été ajouté avec succès.');
-            return $this->redirectToRoute('projets');
+        $projects = $repository->getAllOne();
+        return $this->json($projects);
+    }
+    public function getOneProject(ProjectRepository $repository , int $id): Response
+    {
+        $project = $repository->findOneProject($id);
+        if(!$project){
+            return $this->json("Project not found",Response::HTTP_NOT_FOUND);
         }
-    
-        return $this->render(
-            'projet/ajoutProjet.html.twig',
-            ['P' => $form->createView(), 'p' => $projet, 'metiers' => $metiers]
-        );
+        return $this->json($project);
     }
+
+
+
+    public function createProject(Request $request,
+        EntityManagerInterface $entityManager,
+        SerializerInterface $serializer,
+        ValidatorInterface $validator,
+        SluggerInterface $slugger): Response
+    {
+        $data = $request->request->all();
+        $file1 = $request->files->get('img1');
+        $file2 = $request->files->get('img2');
+        $file3 = $request->files->get('img3');
+        $file4 = $request->files->get('img4');
+        $file5 = $request->files->get('img5');
+        $file6 = $request->files->get('img6');
+        $file7 = $request->files->get('img7');
+        $project = $serializer->denormalize($data, Project::class);
+        if(!isset($data['country']) || $data['country'] == 'undefined' || $data['country'] == null ){
+
+            $tunisia = $this->getDoctrine()->getRepository(Pays::class)->findTheCountry('Tunisie');
+            $project->setCountry($tunisia);
+            
+        }else{
+            $countryId = $data['country'];
+          //  return $this->json($countryId);
+            $country = $this->getDoctrine()->getRepository(Pays::class)->find($countryId);
+            if(!$country){
+                throw $this->createNotFoundException('country introuvable');
+            }
+            $project->setCountry($country);
+        }
+        
+        
+        
+
+        $errors = $validator->validate($project);
+        if (count($errors) > 0) {
+            return $this->json(['errors' => $errors], Response::HTTP_BAD_REQUEST);
+        }
+        if ($file1){
+            $newFilename1 = $this->handleImage($file1,$slugger);
+            $project->setImg1($newFilename1);
+        }
+        
+        if ($file2){
+            $newFilename2 = $this->handleImage($file2,$slugger);
+            $project->setImg2($newFilename2);
+        }
+        
+        if ($file3){
+            $newFilename3 = $this->handleImage($file3,$slugger);
+            $project->setImg3($newFilename3);
+        }
+        
+        if ($file4){
+            $newFilename4 = $this->handleImage($file4,$slugger);
+            $project->setImg4($newFilename4);
+        }
+       
+        if ($file5){
+            $newFilename5 = $this->handleImage($file5,$slugger);
+            $project->setImg5($newFilename5);
+        }
+        
+        if ($file6){
+            $newFilename6 = $this->handleImage($file6,$slugger);
+            $project->setImg6($newFilename6);
+        }
+
+        if ($file7){
+            $newFilename7 = $this->handleImage($file7,$slugger);
+            $project->setImg7($newFilename7);
+        }
+        
+       
+
+        $this->entityManager->persist($project);
+        $this->entityManager->flush();
+
+        return $this->json(
+            $project,
+            Response::HTTP_CREATED,
+            [],
+            ['groups' => 'country_relationships']
+        );
+
+    }
+
+    public function handleImage(UploadedFile $file ,  SluggerInterface $slugger ){
+        
+        $originalFilename = pathinfo($file->getClientOriginalName(), PATHINFO_FILENAME);
+        $safeFilename = $slugger->slug(new UnicodeString($originalFilename));
+        $newFilename = $safeFilename . '-' . uniqid() . '.' . $file->guessExtension();
+
+        try {
+            $file->move(
+                $this->getParameter('project_photo_directory'),
+                $newFilename
+            );
+        } catch (FileException $e) {
+            return $this->json(['error' => 'File upload failed'], Response::HTTP_INTERNAL_SERVER_ERROR);
+        }
+        return $newFilename;
+    
+}
 
 
     /**
      * @Route("/modifierProjet/{id}", name="modifierProjet")
      */
-    public function modifierProjet(Request $request, $id): Response
+    public function updateProject(Request $request, int $id,
+            ProjectRepository $repository,
+            EntityManagerInterface $entityManager,
+            Filesystem $filesystem,
+            SerializerInterface $serializer): Response
     {
-        $entityManager = $this->getDoctrine()->getManager();
-        $projet = $entityManager->getRepository(Projet::class)->find($id);
+        $projet = $repository->find($id);
 
         if (!$projet) {
-            throw $this->createNotFoundException('projet introuvable');
+            return $this->json(['message' => 'Project not found'], Response::HTTP_NOT_FOUND);
+        }
+        $data = json_decode($request->getContent(), true);
+        $entityManager = $this->getDoctrine()->getManager();
+     
+        if( isset($data['country'] ) && $data['country'] !== null ){
+            $countryId = $data['country'];
+            $country = $this->getDoctrine()->getRepository(Pays::class)->find($countryId);
+            if(!$country){
+                throw $this->createNotFoundException('country introuvable');
+            }
+            $projet->setCountry($country);
+        }
+         if(isset($data["title"]) && $data['title']!=null){
+            $projet->setTitle($data["title"]);
+        }
+        if(isset($data["description"]) && $data['description']!=null){
+            $projet->setDescription($data["description"]);
+        }
+        if(isset($data["shortDescription"]) && $data['shortDescription']!=null){
+            $projet->setShortDescription($data["shortDescription"]);
+        }
+        if(isset($data["technic1"]) && $data['technic1']!=null){
+            $projet->setTechnic1($data["technic1"]);
+        }
+        if(isset($data["technic2"]) && $data['technic2']!=null){
+            $projet->setTechnic2($data["technic2"]);
+        }
+        if(isset($data["technic3"]) && $data['technic3']!=null){
+            $projet->setTechnic3($data["technic3"]);
+        }
+        if(isset($data["technic4"]) && $data['technic4']!=null){
+            $projet->setTechnic4($data["technic4"]);
+        }
+        if(isset($data["technic5"]) && $data['technic5']!=null){
+            $projet->setTechnic5($data["technic5"]);
+        }
+        if(isset($data["technic6"]) && $data['technic6']!=null){
+            $projet->setTechnic6($data["technic6"]);
         }
 
-        $form = $this->createForm(ProjetType::class, $projet);
-        $form->handleRequest($request);
+       
+        $entityManager->flush();
 
-        if ($form->isSubmitted() && $form->isValid()) {
-            $fileUpload = $form->get('image')->getData();
-            $fileName = md5(uniqid()) . '.' . $fileUpload->guessExtension();
-            $fileUpload->move($this->getParameter('kernel.project_dir') . '/public/uploads', $fileName);
-            $projet->setImage($fileName);
-
-            $em = $this->getDoctrine()->getManager();
-            $em->persist($projet);
-            $em->flush();
-            $this->addFlash('success', 'Le projet  a été modifié avec succès.');
-            return $this->redirectToRoute('projets');
-        }
-
-        return $this->render(
-            'projet/modifProjet.html.twig',
-            ['P' => $form->createView()]
-        );
+        return $this->json(['message' => 'Project updated'], Response::HTTP_OK);
     }
 
 
-    /**
-     * @Route("/suppressionProjet/{id}", name="suppressionProjet")
-     */
-    public function suppressionProjet(EntityManagerInterface $entityManager, ProjetRepository $projetRepository, $id): Response
-    {
-        $projet = $projetRepository->find($id);
-    
-        if (!$projet) {
-            throw $this->createNotFoundException('Projet introuvable ');
+    public function deleteProject(int $id, Filesystem $filesystem):Response{
+        $project=$this->getDoctrine()->getRepository(Project::class)->find($id);
+        if(!$project) return $this->json(['message' => 'Project not found'], Response::HTTP_NOT_FOUND);
+
+        $photoFilename1 = $project->getImg1();
+        $photoFilename2 = $project->getImg2();
+        $photoFilename3 = $project->getImg3();
+        $photoFilename4 = $project->getImg4();
+        $photoFilename5 = $project->getImg5();
+        $photoFilename6 = $project->getImg6();
+        $photoFilename7 = $project->getImg7();
+
+        // Remove the content from the database
+        $this->entityManager->remove($project);
+        // setServiceContent to null
+        
+        $this->entityManager->flush();
+
+        // Delete the images file from the server
+        $photoPath1 = $this->getParameter('project_photo_directory') . $photoFilename1;
+        if ($filesystem->exists($photoPath1)) {
+            $filesystem->remove($photoPath1);
         }
-    
-        $entityManager->remove($projet);
-        $entityManager->flush();
-    
-        return $this->redirectToRoute('projets');
+
+        $photoPath2 = $this->getParameter('project_photo_directory') . $photoFilename2;
+        if ($filesystem->exists($photoPath2)) {
+            $filesystem->remove($photoPath2);
+        }
+
+        $photoPath3 = $this->getParameter('project_photo_directory') . $photoFilename3;
+        if ($filesystem->exists($photoPath3)) {
+            $filesystem->remove($photoPath3);
+        }
+
+        $photoPath4 = $this->getParameter('project_photo_directory') . $photoFilename4;
+        if ($filesystem->exists($photoPath4)) {
+            $filesystem->remove($photoPath4);
+        }
+
+        $photoPath5 = $this->getParameter('project_photo_directory') . $photoFilename5;
+        if ($filesystem->exists($photoPath5)) {
+            $filesystem->remove($photoPath5);
+        }
+
+        $photoPath6 = $this->getParameter('project_photo_directory') . $photoFilename6;
+        if ($filesystem->exists($photoPath6)) {
+            $filesystem->remove($photoPath6);
+        }
+        $photoPath7 = $this->getParameter('project_photo_directory') . $photoFilename7;
+        if ($filesystem->exists($photoPath7)) {
+            $filesystem->remove($photoPath7);
+        }
+
+        return $this->json(['message' => 'Project and associated photo deleted'], Response::HTTP_OK);
+
     }
 }

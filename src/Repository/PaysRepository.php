@@ -21,6 +21,15 @@ class PaysRepository extends ServiceEntityRepository
         parent::__construct($registry, Pays::class);
     }
 
+    public function findTheCountry(string $countryName): ?Pays
+    {
+        return $this->createQueryBuilder('p')
+            ->where('UPPER(p.countryName) = UPPER(:countryName)')
+            ->setParameter('countryName', $countryName)
+            ->getQuery()
+            ->getOneOrNullResult();
+    }
+
 //    /**
 //     * @return Pays[] Returns an array of Pays objects
 //     */

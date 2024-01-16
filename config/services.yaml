@@ -8,6 +8,7 @@ parameters:
     team_testimonial_photos_directory: '%kernel.project_dir%/public/images/testimonial/team/'
     services_content_photo_directory: '%kernel.project_dir%/public/images/services/photos/'
     servives_content_logos: '%kernel.project_dir%/public/images/services/logos/'
+    project_photo_directory: '%kernel.project_dir%/public/images/project/'
     team_photos_directory: '%kernel.project_dir%/public/images/team/'
     partner_photos_directory: '%kernel.project_dir%/public/images/partner/'
     client_photos_directory: '%kernel.project_dir%/public/images/client/'

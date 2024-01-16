@@ -39,9 +39,13 @@ class Service
     #[ORM\OneToOne(cascade: ['persist', 'remove'])]
     private ?ServiceContent $content = null;
 
+    #[ORM\ManyToMany(targetEntity: Project::class, mappedBy: 'services')]
+    private Collection $projects;
+
     public function __construct()
     {
         $this->subServices = new ArrayCollection();
+        $this->projects = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -123,6 +127,33 @@ class Service
     public function setContent(?ServiceContent $content): static
     {
         $this->content = $content;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, Project>
+     */
+    public function getProjects(): Collection
+    {
+        return $this->projects;
+    }
+
+    public function addProject(Project $project): static
+    {
+        if (!$this->projects->contains($project)) {
+            $this->projects->add($project);
+            $project->addService($this);
+        }
+
+        return $this;
+    }
+
+    public function removeProject(Project $project): static
+    {
+        if ($this->projects->removeElement($project)) {
+            $project->removeService($this);
+        }
 
         return $this;
     }

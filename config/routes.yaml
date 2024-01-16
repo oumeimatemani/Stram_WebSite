@@ -280,80 +280,46 @@ get_applications_by_job_offer:
     controller: App\Controller\CarriereController::getApplicationsByJobOffer
     methods: [GET]
 
+#countries managment
+get_all_countires:
+    path: /country
+    controller: App\Controller\CountryController::list
+    methods: GET
+get_all_countries22:
+    path: /country
+    controller: App\Controller\CountryController::getAllJobOffers
+    methods: GET
+create_country:
+    path: /country/create
+    controller: App\Controller\CountryController::createCountry
+    methods: POST
+delete_pays:
+    path: /country/delete/{id}
+    controller: App\Controller\CountryController::deleteCountry
+    methods: DELETE
 
+#projects 
+projects:
+    path: /project/getAllOne
+    controller: App\Controller\ProjetController::getAllOne
+    methods: GET
+get_one_project: 
+    path: /project/{id}
+    controller: App\Controller\ProjetController::getOneProject
+    methods: GET
+create_project:
+    path: /project/create
+    controller: App\Controller\ProjetController::createProject
+    methods: POST
+update_project:
+    path: /project/update/{id}
+    controller: App\Controller\ProjetController::updateProject
+    methods: [PUT, PATCH]
+delete_project:
+    path: /project/delete/{id}
+    controller: App\Controller\ProjetController::deleteProject
+    methods: DELETE
 
-
-
-#projets 
-projets:
-    path: /projets
-    controller: App\Controller\ProjetController::index
-
-ajouterProjet:
-    path: /ajouterProjet
-    controller: App\Controller\ProjetController::ajouterProjet
-    methods: [GET, POST]
-
-
-modifierProjet:
-    path: /modifierProjet/{id}
-    controller: App\Controller\ProjetController::modifierProjet
-
-suppressionProjet:
-    path: /suppressionProjet/{id}
-    controller: App\Controller\ProjetController::suppressionProjet
-
-
-
-
-
-#---------------------------------------------
-
-reparation:
-    path: /reparation
-    controller: App\Controller\RéparationController::index
-    methods: ['GET']
-
-
-RenforcementChemisageClassique:
-    path: /renforcement/chemisage/classique
-    controller: App\Controller\RenforcementChemisageClassiqueController::index
-    methods: ['GET']
-
-
-renforcementFibreCarbone:
-    path: /renforcement/fibre/carbone
-    controller: App\Controller\RenforcementFibreCarboneController::index
-    methods: ['GET']
-
-#---------------------------------------------
-
-Étanchéité:
-    path: /Étanchéité
-    controller: App\Controller\ÉtanchéitéController::index
-    methods: ['GET']
-
-Imperméabilisation:
-    path: /Imperméabilisation
-    controller: App\Controller\ImperméabilisationController::index
-    methods: ['GET']
-
-#---------------------------------------------
-traitement/traitement/jointsJoints:
-    path: /traitement/joints
-    controller: App\Controller\TraitementJointsController::index
-    methods: ['GET']
-
-#---------------------------------------------
-RevêtementTechnique:
-    path: /RevêtementTechnique
-    controller: App\Controller\RevêtementTechniqueController::index
-    methods: ['GET']
-
-TraitementFaçades:
-    path: /TraitementFaçades
-    controller: App\Controller\TraitementFaçadesController::index
-    methods: ['GET']
 
 
 #authentification

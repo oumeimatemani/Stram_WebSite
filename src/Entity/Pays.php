@@ -6,6 +6,7 @@ use App\Repository\PaysRepository;
 use Doctrine\ORM\Mapping as ORM;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\Common\Collections\ArrayCollection;
+use Symfony\Component\Serializer\Annotation\Groups;
 
 
 #[ORM\Entity(repositoryClass: PaysRepository::class)]
@@ -17,20 +18,22 @@ class Pays
     private ?int $id = null;
 
     #[ORM\Column(length: 255)]
-    private ?string $nomPays = null;
+    private ?string $countryName = null;
 
     #[ORM\Column(length: 255)]
-    private ?string $drapeau = null;
+    private ?string $countryCode = null;
 
+    #[ORM\Column(length: 255 , nullable: true)]
+    private ?string $flag = null;
 
+    #[Groups(["country_projects"])]
+    #[ORM\OneToMany(mappedBy: 'country', targetEntity: Project::class)]
+    private Collection $projects;
 
-    #[ORM\ManyToOne(targetEntity: Region::class)]
-    #[ORM\JoinColumn(name: "region_id", referencedColumnName: "id")]
-    private ?Region $region;
-
-    #[ORM\OneToMany(mappedBy: "pays", targetEntity: Contact::class)]
-    private Collection $contacts;
-
+    public function __construct()
+    {
+        $this->projects = new ArrayCollection();
+    }
 
 
     public function getId(): ?int
@@ -38,44 +41,70 @@ class Pays
         return $this->id;
     }
 
-    public function getNomPays(): ?string
+    public function getCountryName(): ?string
     {
-        return $this->nomPays;
+        return $this->countryName;
     }
 
-    public function setNomPays(string $nomPays): static
+    public function setCountryName(string $countryName): static
     {
-        $this->nomPays = $nomPays;
+        $this->countryName = $countryName;
 
         return $this;
     }
 
-    public function getDrapeau(): ?string
+    public function getCountryCode(): ?string
     {
-        return $this->drapeau;
+        return $this->countryCode;
     }
 
-    public function setDrapeau(string $drapeau): static
+    public function setCountryCode(string $countryCode): static
     {
-        $this->drapeau = $drapeau;
+        $this->countryCode = $countryCode;
 
         return $this;
     }
 
-
-    public function getRegion(): ?Region
+    public function getFlag(): ?string
     {
-        return $this->region;
+        return $this->flag;
     }
 
-    public function setRegion(?Region $region): self
+    public function setFlag(string $flag): static
     {
-        $this->region = $region;
+        $this->flag = $flag;
+
         return $this;
     }
 
-    public function getContacts(): Collection
+    /**
+     * @return Collection<int, Project>
+     */
+    public function getProjects(): Collection
     {
-        return $this->contacts;
+        return $this->projects;
     }
+
+    public function addProject(Project $project): static
+    {
+        if (!$this->projects->contains($project)) {
+            $this->projects->add($project);
+            $project->setCountry($this);
+        }
+
+        return $this;
+    }
+
+    public function removeProject(Project $project): static
+    {
+        if ($this->projects->removeElement($project)) {
+            // set the owning side to null (unless already changed)
+            if ($project->getCountry() === $this) {
+                $project->setCountry(null);
+            }
+        }
+
+        return $this;
+    }
+
 }
