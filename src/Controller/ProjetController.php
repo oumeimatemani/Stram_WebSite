@@ -27,7 +27,7 @@ class ProjetController extends AbstractController
 {
     private $entityManager;
 
-    public function __construct(EntityManagerInterface $entityManager  )
+    public function __construct(EntityManagerInterface $entityManager)
     {
         $this->entityManager = $entityManager;
     }
@@ -35,6 +35,17 @@ class ProjetController extends AbstractController
     public function getAllOne(ProjectRepository $repository): Response
     {
         $projects = $repository->getAllOne();
+        return $this->json($projects);
+    }
+    public function getProjectsByCountry(Request $request, ProjectRepository $projectRepository): Response
+    {
+        $data = json_decode($request->getContent(), true);
+        $countryName = $data['countryName'];
+        $projects = $projectRepository->findByCountryName($countryName);
+
+        if (!$projects) {
+            return $this->json(['message' => 'No projects found for this country'], JsonResponse::HTTP_NOT_FOUND);
+        }
         return $this->json($projects);
     }
     public function getOneProject(ProjectRepository $repository , int $id): Response

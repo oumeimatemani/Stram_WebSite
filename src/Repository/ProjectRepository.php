@@ -34,11 +34,22 @@ class ProjectRepository extends ServiceEntityRepository
     public function findOneProject($projectId)
     {
         return $this->createQueryBuilder('p')
-            ->select('p.id', 'p.title', 'p.description', 'p.shortDescription', 'c.countryName', 'p.img1', 'p.technic1', 'p.technic2','p.technic3','p.technic4','p.technic5','p.technic6')
+            ->select('p.id', 'p.title', 'p.description', 'p.shortDescription', 'c.countryName', 'p.img1','p.img2','p.img3','p.img4','p.img5','p.img6','p.img7', 'p.technic1', 'p.technic2','p.technic3','p.technic4','p.technic5','p.technic6')
             ->andWhere('p.id = :projectId')
             ->setParameter('projectId', $projectId)
             ->leftJoin('p.country', 'c')
             ->getQuery()
             ->getOneOrNullResult();
+    }
+
+    public function findByCountryName(string $countryName): array
+    {
+        return $this->createQueryBuilder('p')
+            ->select('p.id', 'p.title', 'p.shortDescription', 'c.countryName', 'p.img1')
+            ->join('p.country', 'c')
+            ->where('c.countryName = :countryName')
+            ->setParameter('countryName', $countryName)
+            ->getQuery()
+            ->getResult();
     }
 }
