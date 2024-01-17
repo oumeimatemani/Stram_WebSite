@@ -324,7 +324,19 @@ delete_project:
     controller: App\Controller\ProjetController::deleteProject
     methods: DELETE
 
-
+#Project-services
+get_services_by_project:
+    path: /project/getServices
+    controller: App\Controller\ProjetController::getAllServicesByProjectId
+    methods: POST
+add_service_to_project:
+    path: /project/addService
+    controller: App\Controller\ProjetController::addServiceToProject
+    methods: POST
+delete_service_from_project:
+    path: /project/{projectId}/removeService/{serviceId}
+    controller: App\Controller\ProjetController::removeServiceFromProject
+    methods: DELETE
 
 #authentification
 login:

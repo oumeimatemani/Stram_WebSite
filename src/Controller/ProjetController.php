@@ -5,6 +5,7 @@ namespace App\Controller;
 
 use App\Entity\Pays;
 use App\Entity\Project;
+use App\Entity\Service;
 use App\Repository\ProjectRepository;
 use App\Form\ProjetType;
 use Doctrine\ORM\EntityManagerInterface;
@@ -12,7 +13,7 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
-
+use App\DTO\ServiceDTO;
 use Symfony\Component\Serializer\SerializerInterface;
 use Symfony\Component\Serializer\Normalizer\AbstractNormalizer;
 use Symfony\Component\Validator\Validator\ValidatorInterface;
@@ -164,9 +165,7 @@ class ProjetController extends AbstractController
 }
 
 
-    /**
-     * @Route("/modifierProjet/{id}", name="modifierProjet")
-     */
+
     public function updateProject(Request $request, int $id,
             ProjectRepository $repository,
             EntityManagerInterface $entityManager,
@@ -279,5 +278,72 @@ class ProjetController extends AbstractController
 
         return $this->json(['message' => 'Project and associated photo deleted'], Response::HTTP_OK);
 
+    }
+
+
+    public function addServiceToProject(Request $request, EntityManagerInterface $entityManager): Response
+        {
+            $data = json_decode($request->getContent(), true);
+            $projectId = $data['projectId'];
+            $serviceId = $data['serviceId'];
+
+            $project = $entityManager->getRepository(Project::class)->find($projectId);
+            $service = $entityManager->getRepository(Service::class)->find($serviceId);
+
+            if (!$project) {
+                return $this->json(['message' => 'Project not found'], Response::HTTP_NOT_FOUND);
+            }
+
+            if (!$service) {
+                return $this->json(['message' => 'Service not found'], Response::HTTP_NOT_FOUND);
+            }
+
+            $project->addService($service);
+
+            $entityManager->persist($project);
+            $entityManager->flush();
+
+            return $this->json(['message' => 'Service added to project successfully']);
+        }
+
+
+    public function getAllServicesByProjectId(Request $request,ProjectRepository $projectRepository): Response
+    {
+        $data = json_decode($request->getContent(), true);
+        $projectId = $data['projectId'];
+        $project = $projectRepository->find($projectId);
+
+        if (!$project) {
+            return $this->json(['message' => 'Project not found'], Response::HTTP_NOT_FOUND);
+        }
+
+        $servicesDTOs = array_map(function ($service) {
+            return new ServiceDTO($service->getId(), $service->getName());
+        }, $project->getServices()->toArray());
+
+        return $this->json( $servicesDTOs, Response::HTTP_OK);
+    }
+
+    public function removeServiceFromProject(int $projectId,int $serviceId, EntityManagerInterface $entityManager): Response
+    {
+
+        $project = $entityManager->getRepository(Project::class)->find($projectId);
+        $service = $entityManager->getRepository(Service::class)->find($serviceId);
+
+        if (!$project) {
+            return $this->json(['message' => 'Project not found'], Response::HTTP_NOT_FOUND);
+        }
+
+        if (!$service) {
+            return $this->json(['message' => 'Service not found'], Response::HTTP_NOT_FOUND);
+        }
+
+        // Remove the service from the project
+        $project->removeService($service);
+
+        $entityManager->persist($project);
+        $entityManager->flush();
+
+        return $this->json(['message' => 'Service removed from project successfully']);
     }
 }
