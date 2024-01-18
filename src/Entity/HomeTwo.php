@@ -31,20 +31,7 @@ class HomeTwo
     #[ORM\Column]
     private ?int $inProgressProjects = null;
 
-    #[ORM\Column(length: 255)]
-    private ?string $sector1 = null;
 
-    #[ORM\Column(length: 255)]
-    private ?string $sector2 = null;
-
-    #[ORM\Column(length: 255)]
-    private ?string $sector3 = null;
-
-    #[ORM\Column(length: 255)]
-    private ?string $sector4 = null;
-
-    #[ORM\Column(length: 255)]
-    private ?string $sector5 = null;
 
     public function getId(): ?int
     {
@@ -123,63 +110,5 @@ class HomeTwo
         return $this;
     }
 
-    public function getSector1(): ?string
-    {
-        return $this->sector1;
-    }
-
-    public function setSector1(string $sector1): static
-    {
-        $this->sector1 = $sector1;
-
-        return $this;
-    }
-
-    public function getSector2(): ?string
-    {
-        return $this->sector2;
-    }
-
-    public function setSector2(string $sector2): static
-    {
-        $this->sector2 = $sector2;
-
-        return $this;
-    }
-
-    public function getSector3(): ?string
-    {
-        return $this->sector3;
-    }
-
-    public function setSector3(string $sector3): static
-    {
-        $this->sector3 = $sector3;
-
-        return $this;
-    }
-
-    public function getSector4(): ?string
-    {
-        return $this->sector4;
-    }
-
-    public function setSector4(string $sector4): static
-    {
-        $this->sector4 = $sector4;
-
-        return $this;
-    }
-
-    public function getSector5(): ?string
-    {
-        return $this->sector5;
-    }
-
-    public function setSector5(string $sector5): static
-    {
-        $this->sector5 = $sector5;
-
-        return $this;
-    }
+  
 }

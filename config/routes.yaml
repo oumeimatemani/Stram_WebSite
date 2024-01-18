@@ -352,6 +352,21 @@ delete_similar_project_from_project:
     controller: App\Controller\ProjetController::removeSimilarProjectFromProject
     methods: DELETE
 
+
+#popular Projects
+make_project_popular:
+    path: /project/popular
+    controller: App\Controller\ProjetController::makeProjectPopular
+    methods: POST
+make_project_non_popular:
+    path: /project/unpopular
+    controller: App\Controller\ProjetController::makePopularProjectNotPopular
+    methods: POST
+get_all_popular_project:
+    path: /project/all/popular
+    controller: App\Controller\ProjetController::getAllPopularProjects
+    methods: GET
+
 #authentification
 login:
     path: /login

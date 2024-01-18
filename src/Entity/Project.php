@@ -47,6 +47,9 @@ class Project
     #[ORM\Column(length: 255, nullable: true)]
     private ?string $img7 = null;
 
+    #[ORM\Column(type: 'boolean')]
+    private $isPopular = false;
+
 
     #[Groups(["country_relationships"])]
     #[ORM\ManyToOne(inversedBy: 'projects')]
@@ -368,6 +371,19 @@ class Project
         if ($this->projects->removeElement($project)) {
             $project->removeSimilarProject($this);
         }
+
+        return $this;
+    }
+
+
+    public function getIsPopular(): bool
+    {
+        return $this->isPopular;
+    }
+
+    public function setIsPopular(bool $isPopular): self
+    {
+        $this->isPopular = $isPopular;
 
         return $this;
     }

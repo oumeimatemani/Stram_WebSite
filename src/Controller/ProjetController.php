@@ -301,8 +301,10 @@ class ProjetController extends AbstractController
             }
 
             $project->addService($service);
+            $service->addProject($project);
 
             $entityManager->persist($project);
+            $entityManager->persist($service);
             $entityManager->flush();
 
             return $this->json(['message' => 'Service added to project successfully']);
@@ -342,8 +344,9 @@ class ProjetController extends AbstractController
 
         // Remove the service from the project
         $project->removeService($service);
-
+        $service->removeProject($project);
         $entityManager->persist($project);
+        $entityManager->persist($service);
         $entityManager->flush();
 
         return $this->json(['message' => 'Service removed from project successfully']);
@@ -368,8 +371,9 @@ class ProjetController extends AbstractController
             }
 
             $project->addSimilarProject($similarProject);
-
+            $similarProject->addSimilarProject($project);
             $entityManager->persist($project);
+            $entityManager->persist($similarProject);
             $entityManager->flush();
 
             return $this->json(['message' => 'Similar project added to project successfully']);
@@ -410,11 +414,60 @@ class ProjetController extends AbstractController
 
         // Remove the service from the project
         $project->removeSimilarProject($similarProject);
+        $similarProject->removeSimilarProject($project);
 
         $entityManager->persist($project);
+        $entityManager->persist($similarProject);
         $entityManager->flush();
 
         return $this->json(['message' => 'similar project removed from project successfully']);
+    }
+
+
+    public function makeProjectPopular(Request $request, ProjectRepository $projectRepository, EntityManagerInterface $entityManager): Response
+    {
+        $data = json_decode($request->getContent(), true);
+        $projectId = $data['projectId'];
+        $project = $projectRepository->find($projectId);
+
+        if (!$project) {
+            return $this->json(['message' => 'Project not found'], Response::HTTP_NOT_FOUND);
+        }
+
+        if ($projectRepository->countPopularProjects() >= 6) {
+            return $this->json(['message' => 'Nombre maximum de projets populaires atteint'], Response::HTTP_BAD_REQUEST);
+        }
+
+        $project->setIsPopular(true);
+        $entityManager->persist($project);
+        $entityManager->flush();
+
+        return $this->json(['message' => 'Project marked as popular']);
+    }
+
+    public function makePopularProjectNotPopular(Request $request, ProjectRepository $projectRepository, EntityManagerInterface $entityManager): Response
+    {
+        $data = json_decode($request->getContent(), true);
+        $projectId = $data['projectId'];
+        $project = $projectRepository->find($projectId);
+
+        if (!$project) {
+            return $this->json(['message' => 'Project not found'], Response::HTTP_NOT_FOUND);
+        }
+
+        // Set the project as not popular
+        $project->setIsPopular(false);
+        $entityManager->persist($project);
+        $entityManager->flush();
+
+        return $this->json(['message' => 'Project is no longer marked as popular']);
+    }
+
+    public function getAllPopularProjects(ProjectRepository $projectRepository): Response
+    {
+        $popularProjects = $projectRepository->findAllPopularProjects();
+
+        return $this->json($popularProjects);
     }
 
 

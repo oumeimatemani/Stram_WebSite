@@ -24,7 +24,7 @@ class ProjectRepository extends ServiceEntityRepository
     public function getAllOne(): array
     {
         $queryBuilder = $this->createQueryBuilder('p')
-            ->select('p.id', 'p.title', 'p.description', 'p.shortDescription', 'c.countryName', 'p.img1', 'p.technic1', 'p.technic2','p.technic3','p.technic4','p.technic5','p.technic6')
+            ->select('p.id', 'p.title', 'p.description', 'p.shortDescription', 'c.countryName', 'p.img1', 'p.technic1', 'p.technic2','p.technic3','p.technic4','p.technic5','p.technic6','p.isPopular')
             ->leftJoin('p.country', 'c')
             ->getQuery();
 
@@ -49,6 +49,27 @@ class ProjectRepository extends ServiceEntityRepository
             ->join('p.country', 'c')
             ->where('c.countryName = :countryName')
             ->setParameter('countryName', $countryName)
+            ->getQuery()
+            ->getResult();
+    }
+
+    public function countPopularProjects(): int
+    {
+        return (int) $this->createQueryBuilder('p')
+            ->select('count(p.id)')
+            ->where('p.isPopular = :isPopular')
+            ->setParameter('isPopular', true)
+            ->getQuery()
+            ->getSingleScalarResult();
+    }
+
+    public function findAllPopularProjects(): array
+    {
+        return $this->createQueryBuilder('p')
+        ->select('p.id', 'p.title', 'p.shortDescription', 'c.countryName', 'p.img1','p.isPopular')
+            ->where('p.isPopular = :isPopular')
+            ->setParameter('isPopular', true)
+            ->leftJoin('p.country', 'c')
             ->getQuery()
             ->getResult();
     }
