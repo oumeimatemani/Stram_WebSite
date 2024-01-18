@@ -338,6 +338,20 @@ delete_service_from_project:
     controller: App\Controller\ProjetController::removeServiceFromProject
     methods: DELETE
 
+#similar-Project
+get_similar_projects_by_project:
+    path: /project/getSimilarProject
+    controller: App\Controller\ProjetController::getAllSimilarProjectsByProjectId
+    methods: POST
+add_similar_project_to_project:
+    path: /project/addSimilarProject
+    controller: App\Controller\ProjetController::addSimilarProjectToProject
+    methods: POST
+delete_similar_project_from_project:
+    path: /project/{projectId}/removeSimilarProject/{similarProjectId}
+    controller: App\Controller\ProjetController::removeSimilarProjectFromProject
+    methods: DELETE
+
 #authentification
 login:
     path: /login

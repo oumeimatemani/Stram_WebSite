@@ -6,6 +6,8 @@ namespace App\Controller;
 use App\Entity\Pays;
 use App\Entity\Project;
 use App\Entity\Service;
+use App\DTO\ServiceDTO;
+use App\DTO\SimilarProjectDTO;
 use App\Repository\ProjectRepository;
 use App\Form\ProjetType;
 use Doctrine\ORM\EntityManagerInterface;
@@ -13,7 +15,7 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
-use App\DTO\ServiceDTO;
+
 use Symfony\Component\Serializer\SerializerInterface;
 use Symfony\Component\Serializer\Normalizer\AbstractNormalizer;
 use Symfony\Component\Validator\Validator\ValidatorInterface;
@@ -346,4 +348,74 @@ class ProjetController extends AbstractController
 
         return $this->json(['message' => 'Service removed from project successfully']);
     }
+
+
+    public function addSimilarProjectToProject(Request $request, EntityManagerInterface $entityManager): Response
+        {
+            $data = json_decode($request->getContent(), true);
+            $projectId = $data['projectId'];
+            $similarProjectId = $data['similarProjectId'];
+
+            $project = $entityManager->getRepository(Project::class)->find($projectId);
+            $similarProject = $entityManager->getRepository(Project::class)->find($similarProjectId);
+
+            if (!$project) {
+                return $this->json(['message' => 'Project not found'], Response::HTTP_NOT_FOUND);
+            }
+
+            if (!$similarProject) {
+                return $this->json(['message' => 'smilar project not found'], Response::HTTP_NOT_FOUND);
+            }
+
+            $project->addSimilarProject($similarProject);
+
+            $entityManager->persist($project);
+            $entityManager->flush();
+
+            return $this->json(['message' => 'Similar project added to project successfully']);
+        }
+
+    public function getAllSimilarProjectsByProjectId(Request $request,ProjectRepository $projectRepository): Response
+    {
+        $data = json_decode($request->getContent(), true);
+        $projectId = $data['projectId'];
+        $project = $projectRepository->find($projectId);
+
+        if (!$project) {
+            return $this->json(['message' => 'Project not found'], Response::HTTP_NOT_FOUND);
+        }
+
+        $projectsDTOs = array_map(function ($similarProject) {
+            return new SimilarProjectDTO($similarProject->getId(), $similarProject->getTitle());
+        }, $project->getSimilarProjects()->toArray());
+
+        return $this->json( $projectsDTOs, Response::HTTP_OK);
+    }
+
+
+    public function removeSimilarProjectFromProject(int $projectId,int $similarProjectId, EntityManagerInterface $entityManager): Response
+    {
+
+        
+        $project = $entityManager->getRepository(Project::class)->find($projectId);
+        $similarProject = $entityManager->getRepository(Project::class)->find($similarProjectId);
+
+        if (!$project) {
+            return $this->json(['message' => 'Project not found'], Response::HTTP_NOT_FOUND);
+        }
+
+        if (!$similarProject) {
+            return $this->json(['message' => 'Service not found'], Response::HTTP_NOT_FOUND);
+        }
+
+        // Remove the service from the project
+        $project->removeSimilarProject($similarProject);
+
+        $entityManager->persist($project);
+        $entityManager->flush();
+
+        return $this->json(['message' => 'similar project removed from project successfully']);
+    }
+
+
 }

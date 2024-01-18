@@ -21,4 +21,5 @@ class ProjectDTO
         $this->similarProjects = $similarProjects;
         $this->services = $services;
     }
+
 }
