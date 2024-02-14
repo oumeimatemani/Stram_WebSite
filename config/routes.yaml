@@ -369,11 +369,11 @@ get_all_popular_project:
 
 #authentification
 login:
-    path: /login
+    path: /api/login
     controller: App\Controller\LoginController::login
-    methods: ['GET']
+    methods: ['POST']
 
 register:
     path: /register
-    controller: App\Controller\RegisterController::register
-    methods: ['GET']
+    controller: App\Controller\RegistrationController::register
+    methods: ['POST']

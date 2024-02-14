@@ -2,17 +2,27 @@
 
 namespace App\Controller;
 
-use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+
 use Symfony\Component\HttpFoundation\Response;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\Security\Http\Attribute\CurrentUser;
+use App\Entity\User;
 
 class LoginController extends AbstractController
 {
-    #[Route('/login', name: 'login')]
-    public function login(): Response
+    public function login(#[CurrentUser] ?User $user): Response
     {
-        return $this->render('authentification/login/index.html.twig', [
-            'controller_name' => 'LoginController',
+        // This method can be empty - it will be intercepted by the security layer
+        // If you reach here, it means the user is successfully authenticated
+        // You can return a custom JSON response or just inform the front end
+        return $this->json([
+            'message' => 'Login Successful',
+            'user' => [
+                'username' => $user->getUsername(),
+                'roles' => $user->getRoles(),
+            ],
         ]);
     }
 }
