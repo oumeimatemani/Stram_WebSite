@@ -24,6 +24,7 @@ use Symfony\Component\String\Slugger\SluggerInterface;
 use Symfony\Component\String\UnicodeString;
 use Symfony\Component\Filesystem\Filesystem;
 use Symfony\Component\HttpFoundation\File\UploadedFile;
+use Symfony\Component\HttpFoundation\JsonResponse;
 
 
 class ProjetController extends AbstractController
@@ -47,7 +48,8 @@ class ProjetController extends AbstractController
         $projects = $projectRepository->findByCountryName($countryName);
 
         if (!$projects) {
-            return $this->json(['message' => 'No projects found for this country'], JsonResponse::HTTP_NOT_FOUND);
+        //    return $this->json(['message' => 'No projects found for this country'], Response::HTTP_NOT_FOUND);
+            return $this->json([]);
         }
         return $this->json($projects);
     }
@@ -223,6 +225,83 @@ class ProjetController extends AbstractController
 
         return $this->json(['message' => 'Project updated'], Response::HTTP_OK);
     }
+
+
+    public function updateImages(Request $request, int $id,
+        EntityManagerInterface $entityManager,
+        SerializerInterface $serializer,
+        ValidatorInterface $validator,
+        ProjectRepository $repository,
+        SluggerInterface $slugger): Response
+    {
+        $data = $request->request->all();
+        $project = $repository->find($id);
+        $file1 = $request->files->get('img1');
+        $file2 = $request->files->get('img2');
+        $file3 = $request->files->get('img3');
+        $file4 = $request->files->get('img4');
+        $file5 = $request->files->get('img5');
+        $file6 = $request->files->get('img6');
+        $file7 = $request->files->get('img7');
+        //$em = $entityManager = $this->getDoctrine()->getManager();
+       
+        if ($file1){
+            $newFilename1 = $this->handleImage($file1,$slugger);
+            $project->setImg1($newFilename1);
+        }
+        
+        if ($file2){
+            $newFilename2 = $this->handleImage($file2,$slugger);
+            $project->setImg2($newFilename2);
+        }
+        
+        if ($file3){
+            
+            $newFilename3 = $this->handleImage($file3,$slugger);
+            $project->setImg3($newFilename3);
+            $this->entityManager->flush();
+        }
+        
+      //  if (isset($file4)){
+           // return $this->json(["file 4 herereeee"]);
+           if($file4 !=null){
+            $newFilename4 = $this->handleImage($file4,$slugger);
+            $project->setImg4($newFilename4);
+           }
+    //    }else{
+           // return $this->json(["file 4 noot existsss "]);
+    //    }
+       
+        if ($file5){
+            $newFilename5 = $this->handleImage($file5,$slugger);
+            $project->setImg5($newFilename5);
+        }
+        
+        if ($file6){
+            $newFilename6 = $this->handleImage($file6,$slugger);
+            $project->setImg6($newFilename6);
+        }
+
+        if ($file7){
+            $newFilename7 = $this->handleImage($file7,$slugger);
+            $project->setImg7($newFilename7);
+        }
+        
+       
+        $entityManager = $this->getDoctrine()->getManager();
+          $entityManager->persist($project);
+            $entityManager->flush();
+       
+
+        return $this->json(
+            $project,
+            Response::HTTP_OK,
+            [],
+            ['groups' => 'country_relationships']
+        );
+
+    }
+
 
 
     public function deleteProject(int $id, Filesystem $filesystem):Response{
