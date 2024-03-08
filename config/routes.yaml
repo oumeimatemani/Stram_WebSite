@@ -322,7 +322,7 @@ update_project:
 update_images_projects:
     path: /project/update/images/{id}
     controller: App\Controller\ProjetController::updateImages
-    methods: [PUT, PATCH]
+    methods: [PUT, PATCH,POST]
 delete_project:
     path: /project/delete/{id}
     controller: App\Controller\ProjetController::deleteProject
