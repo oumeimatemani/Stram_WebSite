@@ -53,6 +53,20 @@ class ProjectRepository extends ServiceEntityRepository
             ->getResult();
     }
 
+    public function findByCountryNameAndServiceName(string $countryName, string $serviceName): array
+    {
+        return $this->createQueryBuilder('p')
+            ->select('p.id', 'p.title', 'p.shortDescription', 'c.countryName', 'p.img1')
+            ->join('p.country', 'c')
+            ->leftJoin('p.services', 's')
+            ->where('c.countryName = :countryName')
+            ->andWhere('s.name = :serviceName')
+            ->setParameter('serviceName', $serviceName)
+            ->setParameter('countryName', $countryName)
+            ->getQuery()
+            ->getResult();
+    }
+
     public function countPopularProjects(): int
     {
         return (int) $this->createQueryBuilder('p')

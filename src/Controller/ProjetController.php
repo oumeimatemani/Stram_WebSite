@@ -53,6 +53,18 @@ class ProjetController extends AbstractController
         }
         return $this->json($projects);
     }
+    public function getProjectByCountryAndByService(Request $request, ProjectRepository $projectRepository): Response{
+        $data = json_decode($request->getContent(), true);
+        $countryName = $data['countryName'];
+        $serviceName = $data['serviceName'];
+        $projects = $projectRepository->findByCountryNameAndServiceName($countryName,$serviceName);
+
+        if (!$projects) {
+        //    return $this->json(['message' => 'No projects found for this country'], Response::HTTP_NOT_FOUND);
+            return $this->json([]);
+        }
+        return $this->json($projects);
+    }
     public function getOneProject(ProjectRepository $repository , int $id): Response
     {
         $project = $repository->findOneProject($id);
