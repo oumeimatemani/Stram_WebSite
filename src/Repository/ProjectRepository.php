@@ -26,6 +26,7 @@ class ProjectRepository extends ServiceEntityRepository
         $queryBuilder = $this->createQueryBuilder('p')
             ->select('p.id', 'p.title', 'p.description', 'p.shortDescription', 'c.countryName', 'p.img1', 'p.technic1', 'p.technic2','p.technic3','p.technic4','p.technic5','p.technic6','p.isPopular')
             ->leftJoin('p.country', 'c')
+            ->orderBy('p.id', 'DESC')
             ->getQuery();
 
         return $queryBuilder->getArrayResult();

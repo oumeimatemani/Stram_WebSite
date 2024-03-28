@@ -381,3 +381,43 @@ register:
     path: /register
     controller: App\Controller\RegistrationController::register
     methods: ['POST']
+
+create_blogs:
+    path: /blog/create
+    controller: App\Controller\BlogController::createBlog
+    methods: ['POST']
+
+bloggs:
+    path: /blog/getAllOne
+    controller: App\Controller\BlogController::getAllOne
+    methods: GET
+
+get_one_blog: 
+    path: /blog/getone/{id}
+    controller: App\Controller\BlogController::getOneBlog
+    methods: GET
+
+update_bloogs:
+    path: /blog/update/{id}
+    controller: App\Controller\BlogController::updateBloogs
+    methods: [PUT, PATCH]
+
+delete_bloogs:
+    path: /blog/delete/{id}
+    controller: App\Controller\BlogController::deleteBloggs
+    methods: DELETE
+
+make_blog_popular:
+    path: /blog/popular
+    controller: App\Controller\BlogController::makeBlogPopular
+    methods: POST
+
+make_blog_non_popular:
+    path: /blog/unpopular
+    controller: App\Controller\BlogController::makePopularBlogNotPopular
+    methods: POST
+
+get_all_popular_blogs:
+    path: /blogs/all/popular
+    controller: App\Controller\BlogController::getAllPopularBlogs
+    methods: GET
